@@ -1,0 +1,100 @@
+'use strict';
+/**
+ * Источник: kpez.nude-moon.pro (NUDE-MOON).
+ * Пост = сразу читалка: /view/<id>-<slug>/ (картинки в data-src).
+ * Каталог — / и /page/N/ (карточки a.thumb), теги — /cat/<slug>/ (+ /page/N/).
+ */
+const { fetchText, stripTags, absUrl } = require('./http');
+
+const BASE = 'https://kpez.nude-moon.pro';
+const cache = new Map();
+const urlCache = new Map();
+
+const cached = async (key, ttl, fn) => {
+  const hit = cache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+  const v = await fn();
+  cache.set(key, { exp: Date.now() + ttl, value: v });
+  return v;
+};
+
+function parseCards(html) {
+  const out = [];
+  const re = /<a class="thumb[^"]*"[^>]*href="(\/view\/(\d+)-[^"]+)"[^>]*>[\s\S]*?data-src="([^"]+)"[\s\S]*?<div class="thumb__title[^"]*">([\s\S]*?)<\/div>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const [, href, extId, img, title] = m;
+    urlCache.set(extId, BASE + href);
+    out.push({ extId, title: stripTags(title), url: BASE + href, cover: absUrl(BASE, img) });
+  }
+  return out;
+}
+
+async function catalogPage(page) {
+  const url = page <= 1 ? `${BASE}/` : `${BASE}/page/${page}/`;
+  return cached(`p:${page}`, 5 * 60e3, async () => parseCards(await fetchText(url).catch(() => '')));
+}
+
+async function viewHtml(extId) {
+  const url = urlCache.get(extId) || `${BASE}/view/${extId}-x/`;
+  return fetchText(url).catch(() => '');
+}
+
+async function detail(extId) {
+  return cached(`d:${extId}`, 30 * 60e3, async () => {
+    const html = await viewHtml(extId);
+    const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+    if (!h1) return null;
+    const genres = [...html.matchAll(/href="\/cat\/([^"/]+)\/"/g)]
+      .map((m) => m[1].replace(/-/g, ' '))
+      .filter((v, i, a) => a.indexOf(v) === i);
+    const cover = (html.match(/data-src="(https?:\/\/[^"]+\.(?:webp|jpg|jpeg|png))"/i) || [])[1];
+    const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/i) || [])[1] || '';
+    const title = stripTags(h1[1]).replace(/\s*—\s*хентай манга$/i, '');
+    return { extId, title, url: urlCache.get(extId) || `${BASE}/view/${extId}-x/`, cover: absUrl(BASE, cover), author: '', genres, description: desc };
+  });
+}
+
+async function chapters(extId) {
+  // каждый /view/ — самостоятельная глава; соседей ищем по индексу каталога (его даёт реестр)
+  return cached(`ch:${extId}`, 30 * 60e3, async () => {
+    const d = await detail(extId);
+    if (!d) return [];
+    const num = Number((d.title.match(/(?:№|#)\s*(\d+)/) || [])[1]) || null;
+    return [{ extId, number: num ?? 1, title: d.title, date: null }];
+  });
+}
+
+async function pages(chapterExtId) {
+  return cached(`pg:${chapterExtId}`, 60 * 60e3, async () => {
+    const html = await viewHtml(chapterExtId);
+    const out = [];
+    const re = /data-src="(https?:\/\/[^"]+\.(?:webp|jpg|jpeg|png))"/gi;
+    let m;
+    while ((m = re.exec(html))) {
+      const u = absUrl(BASE, m[1]);
+      if (!out.includes(u)) out.push(u);
+    }
+    if (!out.length) return null;
+    return { pages: out, prevChapterId: null, nextChapterId: null };
+  });
+}
+
+async function tags() {
+  return cached('tags', 6 * 3600e3, async () => {
+    const html = await fetchText(`${BASE}/tags/`).catch(() => '');
+    const seen = new Map();
+    for (const m of html.matchAll(/href="\/cat\/([^"/]+)\/"/g)) {
+      const slug = m[1];
+      if (!seen.has(slug)) seen.set(slug, { slug, name: slug.replace(/-/g, ' ') });
+    }
+    return [...seen.values()];
+  });
+}
+
+async function tagPage(slug, page) {
+  const url = page <= 1 ? `${BASE}/cat/${encodeURIComponent(slug)}/` : `${BASE}/cat/${encodeURIComponent(slug)}/page/${page}/`;
+  return cached(`t:${slug}:${page}`, 5 * 60e3, async () => parseCards(await fetchText(url).catch(() => '')));
+}
+
+module.exports = { id: 'nudemoon', name: 'kpez.nude-moon.pro', base: BASE, maxPages: 400, catalogPage, detail, chapters, pages, tags, tagPage };

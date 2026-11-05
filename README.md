@@ -6,7 +6,6 @@
 ## Запуск
 
 ```bash
-cd manga-api
 node server.js          # http://localhost:3001
 ```
 

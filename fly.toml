@@ -1,0 +1,28 @@
+app = "manga-reader-api"
+primary_region = "fra"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3001"
+  MM_MAX_PAGES = "700"
+  MM_CATALOG_TTL = "43200000"
+
+[http_service]
+  internal_port = 3001
+  force_https = true
+  auto_stop_machines = "suspend"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "120s"
+    method = "GET"
+    path = "/health"
+
+[[mounts]]
+  source = "catalog_cache"
+  destination = "/app/cache"

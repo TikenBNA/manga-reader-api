@@ -76,3 +76,31 @@ IP: `ipconfig` → IPv4 основного адаптера. Firewall: прав�
 входящие (Private/Public). Демо адаптировано под телефон: две колонки, липкая шапка, фильтры
 в отдельной строке, читалка с тап-зонами по краям и свайпами, `env(safe-area-inset-*)` под вырезы.
 Ответы API и HTML отдаются gzip, каталог кэшируется на клиенте.
+
+## Деплой
+
+Сервер долгоживущий (фоновый обход каталога + кэш в памяти), поэтому serverless не подходит.
+Готовы Dockerfile, `render.yaml` и `fly.toml`; `GET /health` отдаёт состояние источников.
+
+**1. Render** — самый простой путь: New → Blueprint → выбрать репозиторий, Render сам прочитает
+`render.yaml` (Docker, healthcheck `/health`, диск `/app/cache` под кэш каталога).
+Бесплатный план засыпает через 15 минут простоя — первый запрос после сна снова обходит каталог
+(2–4 минуты), поэтому лучше платный Starter.
+
+**2. Fly.io** — `fly launch --copy-config` (подхватит `fly.toml`) → `fly deploy`.
+Volume `catalog_cache` монтируется в `/app/cache`, поэтому каталог переживает перезапуски.
+
+**3. VPS (Timeweb/Beget/Hetzner)** — `docker build -t manga-api . && docker run -d -p 3001:3001 -v C:\Users\User\Documents\deepseek-harness\default-workspace/cache:/app/cache manga-api`,
+сверху nginx + сертификат (Caddy проще: одна строка в Caddyfile).
+
+**4. Быстро показать наружу без хостинга** — Cloudflare Tunnel с домашнего компьютера:
+
+```
+cloudflared tunnel --url http://localhost:3001
+```
+
+Выдаёт публичный `https://*.trycloudflare.com` без аккаунта; живёт, пока запущен процесс.
+
+Переменные для продакшена: `PORT` (даёт платформа), `MM_MAX_PAGES` (сколько страниц каталога
+обходить при старте), `MM_CATALOG_TTL` (время жизни кэша), `MM_CRAWL_CONCURRENCY` (1–3 на
+слабом CPU).

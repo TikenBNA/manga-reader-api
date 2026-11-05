@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: manga-reader-api
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: MM_MAX_PAGES
+        value: 700
+      - key: MM_CATALOG_TTL
+        value: 43200000
+    disk:
+      name: catalog-cache
+      mountPath: /app/cache
+      sizeGB: 1

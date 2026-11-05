@@ -165,6 +165,14 @@ const server = http.createServer(async (req, res) => {
       demo: '/demo',
     });
 
+    if (route === '/health') return json(res, 200, {
+      ok: !state.crawling,
+      crawling: state.crawling,
+      mergedWorks: state.merged?.length ?? null,
+      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
+      uptime: Math.round(process.uptime()),
+    });
+
     if (route === '/api/sources') return json(res, 200, state.sources.map((s) => ({
       id: s.id, name: s.name, base: s.base, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, error: s.error,
     })));

@@ -1,3 +1,13 @@
+---
+title: MangaReader API
+emoji: 📚
+colorFrom: gray
+colorTo: red
+sdk: docker
+app_port: 3001
+pinned: false
+---
+
 # MangaReader API — мультиисточниковый прокси
 
 Собирает каталоги нескольких хентай-сайтов, склеивает одинаковые работы и отдаёт всё

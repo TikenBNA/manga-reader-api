@@ -18,20 +18,32 @@
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
     color:var(--text); min-height:100vh; min-height:100dvh; overscroll-behavior-y: contain;
   }
-  header {
+  body.reader #topbar, body.reader #activebar { display:none; }
+
+  #topbar {
     position:sticky; top:0; z-index:20; display:flex; flex-wrap:wrap; align-items:center; gap:8px;
     padding:calc(8px + var(--safe-t)) 12px 8px;
     background:rgba(18,18,18,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--bg3);
   }
-  header .logo { font-weight:700; color:var(--accent); font-size:17px; white-space:nowrap; }
-  header .filters { display:flex; gap:8px; width:100%; }
-  header .filters select { flex:1 1 0; }
-  header select {
-    flex:1 1 44%; min-width:0; background:var(--bg2); color:var(--text); border:1px solid var(--bg3);
-    border-radius:8px; padding:8px 10px; font-size:13px; min-height:38px;
+  .logo { font-weight:700; color:var(--accent); font-size:17px; white-space:nowrap; cursor:pointer; }
+  .filters { display:flex; gap:8px; width:100%; }
+  .filters button, .filters select {
+    flex:1 1 0; min-width:0; background:var(--bg2); color:var(--text); border:1px solid var(--bg3);
+    border-radius:8px; padding:9px 10px; font-size:13px; min-height:40px; font-family:inherit;
   }
-  .wrap { padding:12px; max-width:1400px; margin:0 auto; }
+  .filters button { cursor:pointer; text-align:left; }
+  .filters button.has { border-color:var(--accent); color:#fff; }
 
+  #activebar[hidden] { display:none; }
+  #activebar { display:flex; gap:6px; overflow-x:auto; padding:8px 12px; background:var(--bg); border-bottom:1px solid var(--bg3); scrollbar-width:none; }
+  #activebar::-webkit-scrollbar { display:none; }
+  .pill { display:inline-flex; align-items:center; gap:6px; background:var(--bg2); border:1px solid var(--bg3);
+          color:#ddd; border-radius:16px; padding:5px 10px; font-size:12px; white-space:nowrap; }
+  .pill b { font-weight:600; }
+  .pill .x { color:var(--accent); font-weight:700; cursor:pointer; padding:0 2px; }
+  .pill.clear { border-color:var(--accent); color:var(--accent); cursor:pointer; }
+
+  .wrap { padding:12px; max-width:1400px; margin:0 auto; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:12px; }
   .card { cursor:pointer; }
   .card .cover { aspect-ratio:3/4; background:var(--bg2); border-radius:var(--r); overflow:hidden; }
@@ -56,10 +68,8 @@
   .ch .ttl { display:block; color:#bbb; font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .ch .d { color:var(--dim); font-size:11px; white-space:nowrap; }
 
-  button {
-    font-family:inherit; cursor:pointer; background:#232323; color:#ddd; border:1px solid #444;
-    padding:10px 14px; border-radius:8px; font-size:14px; min-height:44px;
-  }
+  button { font-family:inherit; cursor:pointer; background:#232323; color:#ddd; border:1px solid #444;
+           padding:10px 14px; border-radius:8px; font-size:14px; min-height:44px; }
   button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
   button:disabled { opacity:.35; }
   .msg { color:var(--dim); text-align:center; padding:50px 16px; }
@@ -67,7 +77,27 @@
   .more { padding:16px 0; display:flex; justify-content:center; }
   .more button { width:100%; max-width:420px; }
 
-  /* Читалка */
+  .modal { position:fixed; inset:0; z-index:60; background:rgba(0,0,0,.6); display:flex; align-items:flex-end; }
+  .modal[hidden] { display:none; }
+  .sheet {
+    background:var(--bg2); width:100%; max-height:82vh; border-radius:16px 16px 0 0;
+    display:flex; flex-direction:column; padding-bottom:var(--safe-b);
+  }
+  .sheet header { display:flex; align-items:center; gap:10px; padding:12px 14px; border-bottom:1px solid var(--bg3); }
+  .sheet header .title { font-weight:600; font-size:15px; }
+  .sheet header .close { margin-left:auto; }
+  .sheet .search { padding:10px 14px; }
+  .sheet .search input { width:100%; background:var(--bg3); border:1px solid #3a3a3a; color:var(--text);
+                         border-radius:8px; padding:10px 12px; font-size:14px; }
+  .taglist { overflow-y:auto; padding:4px 12px 12px; display:flex; flex-wrap:wrap; gap:8px; }
+  .taglist button {
+    background:var(--bg3); border:1px solid #3a3a3a; color:#ddd; border-radius:16px;
+    padding:7px 12px; font-size:12.5px; min-height:36px;
+  }
+  .taglist button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .sheet footer { display:flex; gap:8px; padding:10px 14px; border-top:1px solid var(--bg3); }
+  .sheet footer button { flex:1; }
+
   .reader-view { background:#000; }
   .reader-bar {
     position:fixed; top:0; left:0; right:0; z-index:30; display:flex; align-items:center; gap:8px;
@@ -91,21 +121,46 @@
   .toast {
     position:fixed; left:50%; bottom:calc(80px + var(--safe-b)); transform:translateX(-50%);
     background:rgba(0,0,0,.85); color:#eee; padding:8px 14px; border-radius:20px; font-size:13px;
-    z-index:40; opacity:0; pointer-events:none; transition:opacity .2s;
+    z-index:70; opacity:0; pointer-events:none; transition:opacity .2s;
   }
   .toast.show { opacity:1; }
 
-  @media (max-width: 420px) {
-    .grid { grid-template-columns:repeat(2, 1fr); gap:10px; }
-    .hero .cover { flex-basis:96px; }
-  }
-  @media (min-width: 900px) {
-    .grid { grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:16px; }
-  }
+  @media (max-width: 420px) { .grid { grid-template-columns:repeat(2, 1fr); gap:10px; } .hero .cover { flex-basis:96px; } }
+  @media (min-width: 900px) { .grid { grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:16px; } }
 </style>
 </head>
 <body>
+<header id="topbar">
+  <div class="logo" id="home">MangaReader</div>
+  <div class="filters">
+    <button id="tagBtn">Теги</button>
+    <select id="srcFilter">
+      <option value="">Все источники</option>
+      <option value="mm">mm</option>
+      <option value="moody">moody</option>
+      <option value="nudemoon">nudemoon</option>
+    </select>
+  </div>
+</header>
+<div id="activebar" hidden></div>
+
 <div id="app"><div class="msg">Загрузка…</div></div>
+
+<div class="modal" id="tagModal" hidden>
+  <div class="sheet">
+    <header>
+      <span class="title">Теги</span>
+      <button class="close" id="tagClose">Готово</button>
+    </header>
+    <div class="search"><input id="tagSearch" placeholder="Поиск тега…" autocomplete="off"></div>
+    <div class="taglist" id="tagList"></div>
+    <footer>
+      <button id="tagReset">Сбросить</button>
+      <button class="primary" id="tagApply">Применить</button>
+    </footer>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -114,13 +169,23 @@ const app = document.getElementById('app');
 const toastEl = document.getElementById('toast');
 const $ = (t, cls, txt) => { const el = document.createElement(t); if (cls) el.className = cls; if (txt != null) el.textContent = txt; return el; };
 
-const state = { page: 1, tag: '', source: '', loading: false, mangaId: null, chapters: [], chapterIdx: 0, barsHidden: false, cache: new Map() };
+const params = new URLSearchParams(location.search);
+const state = {
+  tags: (params.get('tags') || '').split(',').map((s) => s.trim()).filter(Boolean),
+  source: params.get('source') || '',
+  page: 1,
+  allTags: [],
+  mangaId: null,
+  chapters: [],
+  chapterIdx: 0,
+  cache: new Map(),
+};
 
 function toast(msg) {
   toastEl.textContent = msg;
   toastEl.classList.add('show');
   clearTimeout(toast.t);
-  toast.t = setTimeout(() => toastEl.classList.remove('show'), 1400);
+  toast.t = setTimeout(() => toastEl.classList.remove('show'), 1500);
 }
 
 async function api(path) {
@@ -129,8 +194,16 @@ async function api(path) {
   if (!res.ok) throw new Error('HTTP ' + res.status);
   const data = await res.json();
   state.cache.set(path, data);
-  if (state.cache.size > 60) state.cache.delete(state.cache.keys().next().value);
+  if (state.cache.size > 80) state.cache.delete(state.cache.keys().next().value);
   return data;
+}
+
+function syncUrl() {
+  const p = new URLSearchParams();
+  if (state.tags.length) p.set('tags', state.tags.join(','));
+  if (state.source) p.set('source', state.source);
+  const qs = p.toString();
+  history.replaceState(null, '', qs ? '?' + qs : location.pathname);
 }
 
 function mount(...nodes) {
@@ -138,25 +211,137 @@ function mount(...nodes) {
   window.scrollTo(0, 0);
 }
 
-function header({ withFilters = true } = {}) {
-  const h = $('header');
-  h.append($('div', 'logo', 'MangaReader'));
-  if (withFilters) {
-    const tagSel = $('select'); tagSel.id = 'tagFilter';
-    tagSel.append(new Option('Все теги', ''));
-    const srcSel = $('select'); srcSel.id = 'srcFilter';
-    srcSel.append(new Option('Все источники', ''));
-    for (const s of ['mm', 'moody', 'nudemoon']) srcSel.append(new Option(s, s));
-    tagSel.onchange = () => { state.tag = tagSel.value; renderList(); };
-    srcSel.onchange = () => { state.source = srcSel.value; renderList(); };
-    const filters = document.createElement('div');
-    filters.className = 'filters';
-    filters.append(tagSel, srcSel);
-    h.append(filters);
-    state.tagSel = tagSel;
-    state.srcSel = srcSel;
+const tagBtn = document.getElementById('tagBtn');
+const srcFilter = document.getElementById('srcFilter');
+const activebar = document.getElementById('activebar');
+const modal = document.getElementById('tagModal');
+const tagList = document.getElementById('tagList');
+const tagSearch = document.getElementById('tagSearch');
+
+srcFilter.value = state.source;
+srcFilter.onchange = () => { state.source = srcFilter.value; onFiltersChanged(); };
+
+function renderTagButton() {
+  const n = state.tags.length;
+  tagBtn.textContent = n ? `Теги: ${n}` : 'Теги';
+  tagBtn.classList.toggle('has', n > 0);
+}
+
+function renderActiveBar() {
+  activebar.replaceChildren();
+  if (!state.tags.length) { activebar.hidden = true; return; }
+  activebar.hidden = false;
+  for (const slug of state.tags) {
+    const name = (state.allTags.find((t) => t.slug === slug) || {}).name || slug;
+    const pill = $('span', 'pill');
+    pill.append($('b', null, name));
+    const x = $('span', 'x', '✕');
+    x.onclick = () => { state.tags = state.tags.filter((s) => s !== slug); onFiltersChanged(); };
+    pill.append(x);
+    activebar.append(pill);
   }
-  return h;
+  const clear = $('span', 'pill clear', 'Сбросить всё');
+  clear.onclick = () => { state.tags = []; onFiltersChanged(); };
+  activebar.append(clear);
+}
+
+function renderTagList() {
+  const q = tagSearch.value.trim().toLowerCase();
+  tagList.replaceChildren();
+  const list = state.allTags.filter((t) => !q || t.name.toLowerCase().includes(q));
+  if (!list.length) { tagList.append($('div', 'msg', 'Ничего не найдено')); return; }
+  for (const t of list) {
+    const b = $('button', state.tags.includes(t.slug) ? 'on' : null, t.name);
+    b.onclick = () => {
+      state.tags = state.tags.includes(t.slug)
+        ? state.tags.filter((s) => s !== t.slug)
+        : [...state.tags, t.slug];
+      renderTagList();
+      renderTagButton();
+    };
+    tagList.append(b);
+  }
+}
+
+function openTags() {
+  renderTagList();
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTags(apply) {
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  renderTagButton();
+  renderActiveBar();
+  if (apply) onFiltersChanged();
+}
+
+tagBtn.onclick = openTags;
+document.getElementById('tagClose').onclick = () => closeTags(true);
+document.getElementById('tagApply').onclick = () => closeTags(true);
+document.getElementById('tagReset').onclick = () => { state.tags = []; renderTagList(); renderTagButton(); };
+tagSearch.oninput = renderTagList;
+modal.onclick = (e) => { if (e.target === modal) closeTags(true); };
+document.getElementById('home').onclick = () => {
+  state.tags = []; state.source = ''; srcFilter.value = '';
+  onFiltersChanged();
+};
+
+function onFiltersChanged() {
+  syncUrl();
+  renderTagButton();
+  renderActiveBar();
+  renderList();
+}
+
+async function loadTags() {
+  try {
+    state.allTags = await api('/tags');
+    renderTagButton();
+    renderActiveBar();
+  } catch { /* фильтр необязателен */ }
+}
+
+async function renderList() {
+  state.page = 1;
+  const grid = $('div', 'grid');
+  const more = $('div', 'more');
+  const btn = $('button', 'primary', 'Показать ещё');
+  btn.onclick = () => loadPage();
+  more.append(btn);
+
+  const body = $('div', 'wrap');
+  body.append(grid, more);
+  mount(body);
+
+  state.grid = grid;
+  state.more = more;
+  await loadPage();
+}
+
+async function loadPage() {
+  try {
+    const qs = new URLSearchParams({ page: String(state.page) });
+    for (const t of state.tags) qs.append('tag', t);
+    if (state.source) qs.set('source', state.source);
+
+    const items = await api('/manga?' + qs.toString());
+    if (!items.length) {
+      if (state.page === 1) {
+        state.grid.replaceChildren($('div', 'msg', state.tags.length
+          ? 'По выбранным тегам ничего нет — убери один из них'
+          : 'Пустой ответ'));
+      }
+      state.more.remove();
+      return;
+    }
+    for (const m of items) state.grid.append(cardEl(m));
+    state.page += 1;
+    if (items.length < 20) state.more.remove();
+  } catch (e) {
+    app.append($('div', 'err', 'Ошибка каталога: ' + e.message));
+  }
 }
 
 function cardEl(m) {
@@ -171,50 +356,6 @@ function cardEl(m) {
   return card;
 }
 
-async function renderList() {
-  if (state.loading) return;
-  state.loading = true;
-  state.page = 1;
-
-  const h = header();
-  const grid = $('div', 'grid');
-  const more = $('div', 'more');
-  const btn = $('button', 'primary', 'Показать ещё');
-  btn.onclick = () => loadPage();
-  more.append(btn);
-
-  const body = $('div', 'wrap');
-  body.append(grid, more);
-  mount(h, body);
-
-  state.grid = grid; state.more = more;
-  await loadPage();
-  state.loading = false;
-
-  if (!state.tagsLoaded) { state.tagsLoaded = true; loadTags(state.tagSel); }
-}
-
-async function loadPage() {
-  try {
-    const qs = `?page=${state.page}` + (state.tag ? `&tag=${encodeURIComponent(state.tag)}` : '') + (state.source ? `&source=${state.source}` : '');
-    const items = await api('/manga' + qs);
-    if (!items.length) { state.more.remove(); return; }
-    for (const m of items) state.grid.append(cardEl(m));
-    state.page += 1;
-    if (items.length < 20) state.more.remove();
-  } catch (e) {
-    app.append($('div', 'err', 'Ошибка каталога: ' + e.message));
-  }
-}
-
-async function loadTags(sel) {
-  if (!sel) return;
-  try {
-    const tags = await api('/tags');
-    for (const t of tags) sel.append(new Option(t.name, t.slug));
-  } catch { /* необязательно */ }
-}
-
 async function renderManga(id) {
   state.mangaId = id;
   mount($('div', 'msg', 'Загрузка…'));
@@ -227,9 +368,7 @@ async function renderManga(id) {
     const img = $('img'); img.src = m.cover || ''; img.alt = m.title; cover.append(img);
     const info = $('div');
     info.append($('h1', null, m.title));
-    info.append($('div', 'meta', [
-      m.author, `${chapters.length} гл.`, (m.sources || []).map((s) => s.source).join('+'),
-    ].filter(Boolean).join(' · ')));
+    info.append($('div', 'meta', [m.author, `${chapters.length} гл.`, (m.sources || []).map((s) => s.source).join('+')].filter(Boolean).join(' · ')));
     if (m.genres?.length) {
       const chips = $('div', 'chips');
       for (const g of m.genres.slice(0, 8)) chips.append($('span', null, g));
@@ -253,8 +392,7 @@ async function renderManga(id) {
 
     const body = $('div', 'wrap');
     body.append(hero, list, more);
-    mount(header({ withFilters: false }), body);
-    body.querySelector('header');
+    mount(body);
   } catch (e) { mount($('div', 'err', 'Ошибка: ' + e.message)); }
 }
 
@@ -262,6 +400,7 @@ async function openChapter(idx) {
   const c = state.chapters[idx];
   if (!c) return;
   state.chapterIdx = idx;
+  document.body.classList.add('reader');
   mount($('div', 'msg', 'Загрузка главы…'));
   try {
     const data = await api(`/chapter/${c.id}/pages`);
@@ -269,7 +408,7 @@ async function openChapter(idx) {
     const view = $('div', 'reader-view');
     const bar = $('div', 'reader-bar');
     const backBtn = $('button', null, '←');
-    backBtn.onclick = (e) => { e.stopPropagation(); renderManga(state.mangaId); };
+    backBtn.onclick = (e) => { e.stopPropagation(); leaveReader(); };
     bar.append(backBtn, $('div', 'ttl', `${c.title || 'Глава ' + c.number} · ${data.pages.length} стр.`));
     bar.onclick = toggleBars;
 
@@ -306,6 +445,11 @@ async function openChapter(idx) {
   } catch (e) { mount($('div', 'err', 'Ошибка главы: ' + e.message)); }
 }
 
+function leaveReader() {
+  document.body.classList.remove('reader');
+  renderManga(state.mangaId);
+}
+
 function goChapter(delta) {
   const ni = state.chapterIdx + delta;
   if (ni < 0 || ni >= state.chapters.length) { toast(delta > 0 ? 'Это последняя глава' : 'Это первая глава'); return; }
@@ -315,12 +459,15 @@ function goChapter(delta) {
 function toggleBars() {
   const bar = document.querySelector('.reader-bar');
   const bottom = document.querySelector('.reader-bottom');
-  state.barsHidden = !state.barsHidden;
-  bar.classList.toggle('hidden', state.barsHidden);
-  bottom.style.opacity = state.barsHidden ? 0 : 1;
-  bottom.style.pointerEvents = state.barsHidden ? 'none' : 'auto';
+  const hidden = !(bar && bar.classList.contains('hidden'));
+  if (bar) bar.classList.toggle('hidden', hidden);
+  if (bottom) { bottom.style.opacity = hidden ? 0 : 1; bottom.style.pointerEvents = hidden ? 'none' : 'auto'; }
 }
 
+renderTagButton();
+renderActiveBar();
+syncUrl();
+loadTags();
 renderList();
 </script>
 </body>

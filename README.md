@@ -27,7 +27,7 @@ node server.js          # http://localhost:3001
 | Путь | Ответ |
 |------|-------|
 | `GET /api/manga?page=1[&source=nudemoon]` | `[{ id, title, cover, author, genres, sources[] }]` |
-| `GET /api/manga?tag=<slug>&page=1` | работы с тегом (из всех источников, умеющих теги) |
+| `GET /api/manga?tag=<slug>&page=1` | работы с тегом; несколько параметров `tag` = строгое И |
 | `GET /api/tags` | `[{ slug, name, sources[] }]` |
 | `GET /api/sources` | состояние источников |
 | `GET /api/manga/<src:id>` | `{ id, title, cover, author, description, genres, sources }` |
@@ -104,3 +104,8 @@ cloudflared tunnel --url http://localhost:3001
 Переменные для продакшена: `PORT` (даёт платформа), `MM_MAX_PAGES` (сколько страниц каталога
 обходить при старте), `MM_CATALOG_TTL` (время жизни кэша), `MM_CRAWL_CONCURRENCY` (1–3 на
 слабом CPU).
+
+Фильтр по тегам в демо: кнопка «Теги» открывает список с поиском, теги можно отмечать несколько,
+выбранные показываются пилюлями с «✕» и кнопкой «Сбросить всё». Состояние фильтра живёт в URL
+(`?tags=ahegao,без-цензуры&source=mm`), поэтому ссылку можно переслать или обновить страницу —
+фильтр сохранится. Несколько тегов дают строгое И: работа должна быть на странице каждого тега.

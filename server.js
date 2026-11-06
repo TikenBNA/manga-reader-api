@@ -54,40 +54,41 @@ function json(res, code, body) {
   send(res, code, Buffer.from(JSON.stringify(body), 'utf8'), 'application/json; charset=utf-8');
 }
 
-/** Работы, отфильтрованные по тегу: опрашиваем источники, умеющие tagPage. */
-async function taggedList(tag, page, perPage) {
-  // собираем выборки по источникам и сливаем «вперемешку», иначе первый источник
-  // займёт всю страницу и фильтр будет выглядеть односторонним
-  const perSource = [];
-  for (const a of registry.adapters) {
-    if (!a.tagPage) continue;
-    const items = await a.tagPage(tag, page).catch(() => []);
-    if (items.length) perSource.push({ source: a.id, items });
-  }
+/**
+ * Работы, отфильтрованные по тегам (строгое И): работа должна быть на странице
+ * каждого выбранного тега. Источники без поддержки тегов в такой фильтр не попадают.
+ */
+async function taggedList(tags, page, perPage) {
+  const perTag = new Map(); // tag -> Map(workKey -> item)
 
-  const byKey = new Map();
-  const order = [];
-  let added = true;
-  for (let i = 0; added; i++) {
-    added = false;
-    for (const { source, items } of perSource) {
-      const it = items[i];
-      if (!it) continue;
-      added = true;
-      const key = workKey(it.title);
-      if (!key) continue;
-      let w = byKey.get(key);
-      if (!w) {
-        w = { id: `${source}:${it.extId}`, title: it.title, cover: it.cover, author: '', genres: [], sources: [] };
-        byKey.set(key, w);
-        order.push(w);
-      }
-      if (!w.sources.some((s) => s.source === source)) {
-        w.sources.push({ source, id: it.extId, url: it.url });
+  for (const tag of tags) {
+    const byKey = new Map();
+    for (const a of registry.adapters) {
+      if (!a.tagPage) continue;
+      const items = await a.tagPage(tag, page).catch(() => []);
+      for (const it of items) {
+        const key = workKey(it.title);
+        if (!key) continue;
+        const cur = byKey.get(key);
+        if (!cur) {
+          byKey.set(key, { id: `${a.id}:${it.extId}`, title: it.title, cover: it.cover, author: '', genres: [], sources: [{ source: a.id, id: it.extId, url: it.url }] });
+        } else if (!cur.sources.some((s) => s.source === a.id)) {
+          cur.sources.push({ source: a.id, id: it.extId, url: it.url });
+        }
       }
     }
+    perTag.set(tag, byKey);
   }
-  return order.slice(0, perPage);
+
+  // пересечение по ключам: строгое И
+  const [firstTag, ...rest] = tags;
+  const base = perTag.get(firstTag) || new Map();
+  const out = [];
+  for (const [key, item] of base) {
+    if (rest.every((t) => perTag.get(t)?.has(key))) out.push(item);
+    if (out.length >= perPage) break;
+  }
+  return out;
 }
 
 async function apiMangaDetail(id) {
@@ -152,7 +153,7 @@ const server = http.createServer(async (req, res) => {
 
   const route = url.pathname.replace(/\/+$/, '') || '/';
   const page = Math.max(1, Number(url.searchParams.get('page') || 1) || 1);
-  const tag = url.searchParams.get('tag');
+  const tags = url.searchParams.getAll('tag').map((t) => t.trim()).filter(Boolean);
   const source = url.searchParams.get('source');
 
   try {
@@ -183,7 +184,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (route === '/api/manga') {
-      if (tag) return json(res, 200, await taggedList(tag, page, CONFIG.PER_PAGE));
+      if (tags.length) return json(res, 200, await taggedList(tags, page, CONFIG.PER_PAGE));
       const list = registry.listPage(page, CONFIG.PER_PAGE, source);
       if (!list) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
       return json(res, 200, list);

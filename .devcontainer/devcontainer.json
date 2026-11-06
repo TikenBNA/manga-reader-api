@@ -1,0 +1,19 @@
+{
+  "name": "MangaReader API",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "forwardPorts": [3001],
+  "portsAttributes": {
+    "3001": {
+      "label": "MangaReader API",
+      "onAutoForward": "openPreview",
+      "visibility": "public"
+    }
+  },
+  "postStartCommand": "nohup node server.js >/tmp/manga-api.log 2>&1 &",
+  "postAttachCommand": "echo 'API: http://localhost:3001/demo'",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  }
+}

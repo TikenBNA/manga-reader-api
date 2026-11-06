@@ -177,6 +177,7 @@ const state = {
   mangaId: null,
   chapters: [],
   chapterIdx: 0,
+  loadingPage: false,
   cache: new Map(),
 };
 
@@ -308,7 +309,7 @@ async function renderList() {
   const grid = $('div', 'grid');
   const more = $('div', 'more');
   const btn = $('button', 'primary', 'Показать ещё');
-  btn.onclick = () => loadPage();
+  btn.onclick = () => loadPage(btn);
   more.append(btn);
 
   const body = $('div', 'wrap');
@@ -317,16 +318,25 @@ async function renderList() {
 
   state.grid = grid;
   state.more = more;
-  await loadPage();
+  await loadPage(btn);
 }
 
-async function loadPage() {
+async function loadPage(btn) {
+  // защита от двойного нажатия: пока идёт загрузка, второй запрос не уходит
+  if (state.loadingPage) return;
+  state.loadingPage = true;
+  if (btn) btn.disabled = true;
+  const requested = state.page;
+
   try {
-    const qs = new URLSearchParams({ page: String(state.page) });
+    const qs = new URLSearchParams({ page: String(requested) });
     for (const t of state.tags) qs.append('tag', t);
     if (state.sort === 'old') qs.set('sort', 'old');
 
     const items = await api('/manga?' + qs.toString());
+    // пока грузили, фильтры сбросили список — этот ответ уже не нужен
+    if (requested !== state.page) return;
+
     if (!items.length) {
       if (state.page === 1) {
         state.grid.replaceChildren($('div', 'msg', state.tags.length
@@ -341,6 +351,9 @@ async function loadPage() {
     if (items.length < 20) state.more.remove();
   } catch (e) {
     app.append($('div', 'err', 'Ошибка каталога: ' + e.message));
+  } finally {
+    state.loadingPage = false;
+    if (btn && state.more && state.more.isConnected) btn.disabled = false;
   }
 }
 

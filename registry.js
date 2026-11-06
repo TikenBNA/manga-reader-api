@@ -20,7 +20,8 @@ const CACHE_DIR = path.join(__dirname, '..', 'cache');
 
 const adapters = [
   require('./mm'),
-  require('./moody'),
+  // moody отключён по просьбе: адаптер лежит в moody.js, вернуть — раскомментировать строку
+  // require('./moody'),
   require('./nudemoon'),
   require('./sexbase'),
 ];

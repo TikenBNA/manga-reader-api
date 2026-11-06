@@ -17,7 +17,7 @@ node server.js          # http://localhost:3001
 | id | Сайт | Как устроен | Статус |
 |----|------|-------------|--------|
 | `mm` | multi-manga.com | DLE, 669 стр. каталога | каталог, главы, страницы, теги |
-| `moody` | online.hentaimoody.com | DLE + JSON API (`json.imghmd.link`) | каталог, главы (манифест), страницы (`images.json`) |
+| `moody` | online.hentaimoody.com | DLE + JSON API (`json.imghmd.link`) | **отключён** по просьбе; код в `moody.js`, включается раскомментированием в `registry.js` |
 | `nudemoon` | kpez.nude-moon.pro | пост = читалка `/view/<id>/` | каталог, страницы, теги (`/cat/`) |
 | `sexbase` | sexbase.org (только манга) | JSON API `/api/v2/manga` | каталог, страницы, теги по названию |
 | `allhen` | 20.allhen.online | SSR, 30 112 тайтлов, `?offset=` | каталог/серии читаются, **ридер блокирует не-браузер** |

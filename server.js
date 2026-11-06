@@ -63,20 +63,29 @@ async function taggedList(tags, page, perPage) {
 
   for (const tag of tags) {
     const byKey = new Map();
+    const lists = [];
+
     for (const a of registry.adapters) {
       if (!a.tagPage) continue;
-      // у каждого источника свой slug тега — берём его из общего индекса
-      const slug = await registry.slugFor(a.id, tag);
-      if (!slug) continue;
+      // у каждого источника свой slug тега; если записи нет — пробуем значение как есть
+      // (у sexbase фильтр работает по названию тега, а не по slug)
+      const slug = (await registry.slugFor(a.id, tag)) || tag;
       const items = await a.tagPage(slug, page).catch(() => []);
-      for (const it of items) {
+      if (items.length) lists.push({ source: a.id, items });
+    }
+
+    // чередуем источники, иначе первый займёт всю страницу выдачи
+    for (let i = 0; lists.some((l) => l.items[i]); i++) {
+      for (const { source, items } of lists) {
+        const it = items[i];
+        if (!it) continue;
         const key = workKey(it.title);
         if (!key) continue;
         const cur = byKey.get(key);
         if (!cur) {
-          byKey.set(key, { id: `${a.id}:${it.extId}`, title: it.title, cover: it.cover, author: '', genres: [], sources: [{ source: a.id, id: it.extId, url: it.url }] });
-        } else if (!cur.sources.some((s) => s.source === a.id)) {
-          cur.sources.push({ source: a.id, id: it.extId, url: it.url });
+          byKey.set(key, { id: `${source}:${it.extId}`, title: it.title, cover: it.cover, author: '', genres: [], sources: [{ source, id: it.extId, url: it.url }] });
+        } else if (!cur.sources.some((s) => s.source === source)) {
+          cur.sources.push({ source, id: it.extId, url: it.url });
         }
       }
     }

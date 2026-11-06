@@ -22,6 +22,7 @@ const adapters = [
   require('./mm'),
   require('./moody'),
   require('./nudemoon'),
+  require('./sexbase'),
 ];
 
 const TTL = Number(process.env.MM_CATALOG_TTL || 12 * 3600 * 1000);

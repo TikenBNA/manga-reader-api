@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Манга</title>
+<style>
+  body { background:#121212; color:#e0e0e0; font-family: system-ui, sans-serif; margin:0; padding:40px 20px; text-align:center; }
+  h1 { color:#ff6b35; font-size:20px; }
+  p { color:#888; font-size:14px; line-height:1.6; }
+  a { display:inline-block; margin-top:16px; padding:12px 22px; border-radius:8px; background:#ff6b35; color:#fff; text-decoration:none; }
+</style>
+<script>
+  // Цель редиректа обновляется при перезапуске туннеля (см. tools/publish-redirect.js)
+  var TARGET = 'https://e2c4a082e4b38ce6-37-214-32-35.serveousercontent.com/demo?serveo-skip-browser-warning=true';
+  location.replace(TARGET);
+</script>
+</head>
+<body>
+  <h1>Манга</h1>
+  <p>Открываю читалку…</p>
+  <p><a id="link" href="#">Открыть вручную</a></p>
+  <script>document.getElementById('link').href = TARGET;</script>
+</body>
+</html>

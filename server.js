@@ -315,6 +315,14 @@ const server = http.createServer(async (req, res) => {
       uptime: Math.round(process.uptime()),
     });
 
+    if (route === '/MangaReader.apk') {
+      const apk = await fs.promises.readFile(path.join(__dirname, 'MangaReader.apk')).catch(() => null);
+      if (!apk) return json(res, 404, { error: 'apk not found' });
+      return send(res, 200, apk, 'application/vnd.android.package-archive', {
+        'Content-Disposition': 'attachment; filename="MangaReader.apk"',
+        'Cache-Control': 'public, max-age=300',
+      });
+    }
     if (route === '/api/sources') return json(res, 200, state.sources.map((s) => ({
       id: s.id, name: s.name, base: s.base, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, error: s.error,
     })));

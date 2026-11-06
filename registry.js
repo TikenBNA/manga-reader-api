@@ -88,12 +88,23 @@ function groupSource(s) {
 }
 
 function buildMerged() {
-  const map = new Map();
-  for (const s of state.sources) {
-    for (const g of groupSource(s)) {
-      const cur = map.get(g.key);
+  const mergedByKey = new Map();
+  const order = [];
+
+  // источники отдают каталог от новых к старым; сливаем «вперемешку» по позициям,
+  // чтобы в общем списке были работы всех сайтов, а не сначала один источник
+  const lists = state.sources.map((s) => groupSource(s));
+  const maxLen = Math.max(0, ...lists.map((l) => l.length));
+
+  for (let i = 0; i < maxLen; i++) {
+    for (const list of lists) {
+      const g = list[i];
+      if (!g) continue;
+      const cur = mergedByKey.get(g.key);
       if (!cur) {
-        map.set(g.key, { key: g.key, title: g.title, cover: g.cover, primary: g.sources[0], sources: [...g.sources] });
+        const item = { key: g.key, title: g.title, cover: g.cover, primary: g.sources[0], sources: [...g.sources] };
+        mergedByKey.set(g.key, item);
+        order.push(item);
       } else {
         // источник уже есть — добавляем только новый, чтобы не дублировать
         for (const src of g.sources) {
@@ -103,7 +114,7 @@ function buildMerged() {
       }
     }
   }
-  state.merged = [...map.values()];
+  state.merged = order;
   state.mergedAt = Date.now();
 }
 
@@ -161,10 +172,11 @@ function parseId(id) {
 
 const findAdapter = (id) => adapters.find((a) => a.id === id);
 
-function listPage(page, perPage, sourceId) {
+function listPage(page, perPage, sourceId, sort = 'new') {
   if (!state.merged) return null;
   let list = state.merged;
   if (sourceId) list = list.filter((w) => w.sources.some((s) => s.source === sourceId));
+  if (sort === 'old') list = [...list].reverse();
   return list.slice((page - 1) * perPage, page * perPage).map((w) => ({
     id: `${w.primary.source}:${w.primary.extId}`,
     title: w.title,

@@ -140,6 +140,10 @@
       <option value="moody">moody</option>
       <option value="nudemoon">nudemoon</option>
     </select>
+    <select id="sortFilter">
+      <option value="new">Новые</option>
+      <option value="old">Старые</option>
+    </select>
   </div>
 </header>
 <div id="activebar" hidden></div>
@@ -173,6 +177,7 @@ const params = new URLSearchParams(location.search);
 const state = {
   tags: (params.get('tags') || '').split(',').map((s) => s.trim()).filter(Boolean),
   source: params.get('source') || '',
+  sort: params.get('sort') === 'old' ? 'old' : 'new',
   page: 1,
   allTags: [],
   mangaId: null,
@@ -202,6 +207,7 @@ function syncUrl() {
   const p = new URLSearchParams();
   if (state.tags.length) p.set('tags', state.tags.join(','));
   if (state.source) p.set('source', state.source);
+  if (state.sort === 'old') p.set('sort', 'old');
   const qs = p.toString();
   history.replaceState(null, '', qs ? '?' + qs : location.pathname);
 }
@@ -213,6 +219,7 @@ function mount(...nodes) {
 
 const tagBtn = document.getElementById('tagBtn');
 const srcFilter = document.getElementById('srcFilter');
+const sortFilter = document.getElementById('sortFilter');
 const activebar = document.getElementById('activebar');
 const modal = document.getElementById('tagModal');
 const tagList = document.getElementById('tagList');
@@ -220,6 +227,8 @@ const tagSearch = document.getElementById('tagSearch');
 
 srcFilter.value = state.source;
 srcFilter.onchange = () => { state.source = srcFilter.value; onFiltersChanged(); };
+sortFilter.value = state.sort;
+sortFilter.onchange = () => { state.sort = sortFilter.value; onFiltersChanged(); };
 
 function renderTagButton() {
   const n = state.tags.length;
@@ -326,6 +335,7 @@ async function loadPage() {
     const qs = new URLSearchParams({ page: String(state.page) });
     for (const t of state.tags) qs.append('tag', t);
     if (state.source) qs.set('source', state.source);
+    if (state.sort === 'old') qs.set('sort', 'old');
 
     const items = await api('/manga?' + qs.toString());
     if (!items.length) {
@@ -357,8 +367,23 @@ function cardEl(m) {
   return card;
 }
 
+function backToCatalog() {
+  if (state.catalogEl && !state.catalogEl.isConnected) {
+    document.body.classList.remove('reader');
+    app.replaceChildren(state.catalogEl);
+    requestAnimationFrame(() => window.scrollTo(0, state.catalogScroll || 0));
+    return;
+  }
+  renderList();
+}
+
 async function renderManga(id) {
   state.mangaId = id;
+  const grid = app.querySelector('.grid');
+  if (grid) {
+    state.catalogEl = app.querySelector('.wrap');
+    state.catalogScroll = window.scrollY;
+  }
   mount($('div', 'msg', 'Загрузка…'));
   try {
     const [m, chapters] = await Promise.all([api('/manga/' + id), api(`/manga/${id}/chapters`)]);
@@ -388,7 +413,7 @@ async function renderManga(id) {
     });
 
     const back = $('button', null, '← Каталог');
-    back.onclick = () => renderList();
+    back.onclick = () => backToCatalog();
     const more = $('div', 'more'); more.append(back);
 
     const body = $('div', 'wrap');

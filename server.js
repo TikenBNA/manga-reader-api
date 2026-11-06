@@ -108,6 +108,7 @@ async function enrichWorks(items) {
         it.author = d.author || '';
         it.genres = d.genres || [];
         it.cover = it.cover || d.cover || '';
+        it.date = d.date || null;
       }
     }));
   }
@@ -197,6 +198,7 @@ const server = http.createServer(async (req, res) => {
   const page = Math.max(1, Number(url.searchParams.get('page') || 1) || 1);
   const tags = url.searchParams.getAll('tag').map((t) => t.trim()).filter(Boolean);
   const source = url.searchParams.get('source');
+  const sort = url.searchParams.get('sort') === 'old' ? 'old' : 'new';
 
   try {
     if (route === '/') return json(res, 200, {
@@ -226,8 +228,11 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (route === '/api/manga') {
-      if (tags.length) return json(res, 200, await enrichWorks(await taggedList(tags, page, CONFIG.PER_PAGE)));
-      const list = registry.listPage(page, CONFIG.PER_PAGE, source);
+      if (tags.length) {
+        const tagged = await taggedList(tags, page, CONFIG.PER_PAGE);
+        return json(res, 200, await enrichWorks(sort === 'old' ? tagged.reverse() : tagged));
+      }
+      const list = registry.listPage(page, CONFIG.PER_PAGE, source, sort);
       if (!list) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
       return json(res, 200, await enrichWorks(list));
     }

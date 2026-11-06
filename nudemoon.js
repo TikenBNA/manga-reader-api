@@ -5,6 +5,7 @@
  * Каталог — / и /page/N/ (карточки a.thumb), теги — /cat/<slug>/ (+ /page/N/).
  */
 const { fetchText, stripTags, absUrl } = require('./http');
+const tagsIndex = require('./tags');
 
 const BASE = 'https://kpez.nude-moon.pro';
 const cache = new Map();
@@ -45,9 +46,13 @@ async function detail(extId) {
     const html = await viewHtml(extId);
     const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
     if (!h1) return null;
-    const genres = [...html.matchAll(/href="\/cat\/([^"/]+)\/"/g)]
-      .map((m) => m[1].replace(/-/g, ' '))
-      .filter((v, i, a) => a.indexOf(v) === i);
+    const genres = [];
+    for (const m of html.matchAll(/href="\/cat\/([^"/]+)\/"/g)) {
+      const slug = m[1];
+      const name = slug.replace(/-/g, ' ');
+      if (!genres.includes(name)) genres.push(name);
+      tagsIndex.note('nudemoon', slug, name);
+    }
     const cover = (html.match(/data-src="(https?:\/\/[^"]+\.(?:webp|jpg|jpeg|png))"/i) || [])[1];
     const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/i) || [])[1] || '';
     const title = stripTags(h1[1]).replace(/\s*—\s*хентай манга$/i, '');
@@ -86,7 +91,11 @@ async function tags() {
     const seen = new Map();
     for (const m of html.matchAll(/href="\/cat\/([^"/]+)\/"/g)) {
       const slug = m[1];
-      if (!seen.has(slug)) seen.set(slug, { slug, name: slug.replace(/-/g, ' ') });
+      if (!seen.has(slug)) {
+        const name = slug.replace(/-/g, ' ');
+        seen.set(slug, { slug, name });
+        tagsIndex.note('nudemoon', slug, name);
+      }
     }
     return [...seen.values()];
   });

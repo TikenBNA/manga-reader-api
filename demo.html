@@ -232,7 +232,7 @@ function renderActiveBar() {
   if (!state.tags.length) { activebar.hidden = true; return; }
   activebar.hidden = false;
   for (const slug of state.tags) {
-    const name = (state.allTags.find((t) => t.slug === slug) || {}).name || slug;
+    const name = (state.allTags.find((t) => (t.key || t.slug) === slug) || {}).name || slug;
     const pill = $('span', 'pill');
     pill.append($('b', null, name));
     const x = $('span', 'x', '✕');
@@ -251,11 +251,12 @@ function renderTagList() {
   const list = state.allTags.filter((t) => !q || t.name.toLowerCase().includes(q));
   if (!list.length) { tagList.append($('div', 'msg', 'Ничего не найдено')); return; }
   for (const t of list) {
-    const b = $('button', state.tags.includes(t.slug) ? 'on' : null, t.name);
+    const tagVal = t.key || t.slug;
+    const b = $('button', state.tags.includes(tagVal) ? 'on' : null, t.name);
     b.onclick = () => {
-      state.tags = state.tags.includes(t.slug)
-        ? state.tags.filter((s) => s !== t.slug)
-        : [...state.tags, t.slug];
+      state.tags = state.tags.includes(tagVal)
+        ? state.tags.filter((s) => s !== tagVal)
+        : [...state.tags, tagVal];
       renderTagList();
       renderTagButton();
     };

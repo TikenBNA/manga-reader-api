@@ -1,6 +1,7 @@
 'use strict';
 /** Источник: multi-manga.com (DLE). */
 const { fetchText, fetchJson, stripTags, absUrl, workKey } = require('./http');
+const tagsIndex = require('./tags');
 
 const BASE = process.env.MM_BASE || 'https://multi-manga.com';
 const cache = new Map();
@@ -43,11 +44,14 @@ function parseDetail(html, extId) {
   const tagBlock = html.match(/<div class="tag-container field-name\s*">\s*Теги\s*<span class="tags">([\s\S]*?)<\/span>/);
   const genres = [];
   if (tagBlock) {
-    const re = /<a class="tag"[^>]*>([\s\S]*?)<\/a>/g;
+    // ссылка тега содержит настоящий slug: /tags/<slug>/ — его и запоминаем для фильтра
+    const re = /<a\b[^>]*href="[^"]*\/tags\/([^"/]+)\/"[^>]*>([\s\S]*?)<\/a>/g;
     let t;
     while ((t = re.exec(tagBlock[1]))) {
-      const g = stripTags(t[1]);
+      const slug = decodeURIComponent(t[1]);
+      const g = stripTags(t[2]);
       if (g) genres.push(g);
+      tagsIndex.note('mm', slug, g);
     }
   }
   const date = (html.match(/<time datetime="([^"]+)"/) || [])[1] || null;
@@ -136,7 +140,12 @@ async function tags() {
     const xml = await fetchText(`${BASE}/tags_pages.xml`);
     for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
       const hit = m[1].match(/\/tags\/([^/]+)\/$/);
-      if (hit) out.push({ slug: decodeURIComponent(hit[1]), name: decodeURIComponent(hit[1]).replace(/-/g, ' ') });
+      if (hit) {
+        const slug = decodeURIComponent(hit[1]);
+        const name = slug.replace(/-/g, ' ');
+        out.push({ slug, name });
+        tagsIndex.note('mm', slug, name);
+      }
     }
   } catch { /* ignore */ }
   return out;

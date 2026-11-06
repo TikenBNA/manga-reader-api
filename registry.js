@@ -11,6 +11,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { workKey, tagKey, stripTags } = require('./http');
+const tagsIndex = require('./tags');
 
 /** Название работы для показа: без хвоста «- глава N» / «- часть N». */
 const displayTitle = (t) => String(t)
@@ -174,23 +175,72 @@ function listPage(page, perPage, sourceId) {
   }));
 }
 
-async function tags(page, perPage, sourceId) {
-  const map = new Map();
-  for (const a of adapters) {
-    if (sourceId && a.id !== sourceId) continue;
-    if (!a.tags) continue;
-    const list = await a.tags().catch(() => []);
-    for (const t of list) {
-      const k = tagKey(t.name);
-      if (!k) continue;
-      const cur = map.get(k);
-      if (!cur) map.set(k, { slug: t.slug, name: t.name, sources: [{ source: a.id, slug: t.slug }] });
-      else if (!cur.sources.some((s) => s.source === a.id)) cur.sources.push({ source: a.id, slug: t.slug });
+/**
+ * Единый список тегов: собранные из постов (с настоящими slug'ами) + списки источников.
+ * Для каждого тега храним slug'и по источникам — фильтр подставляет их, а не угадывает.
+ */
+async function tagsList() {
+  return cachedTags(async () => {
+    const map = new Map(); // key -> { key, name, sources: Map(source -> slug) }
+    const add = (source, slug, name) => {
+      const display = String(name || slug).trim();
+      const k = tagKey(display) || tagKey(slug);
+      if (!k) return;
+      let e = map.get(k);
+      if (!e) { e = { key: k, name: display, sources: new Map() }; map.set(k, e); }
+      const cyr = /[а-яё]/i;
+      if (cyr.test(display) && !cyr.test(e.name)) e.name = display;
+      if (!e.sources.has(source)) e.sources.set(source, slug);
+    };
+
+    for (const t of tagsIndex.all()) add(t.source, t.slug, t.name);
+    for (const a of adapters) {
+      if (!a.tags) continue;
+      const list = await a.tags().catch(() => []);
+      for (const t of list) add(a.id, t.slug, t.name);
     }
-  }
-  const all = [...map.values()].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
-  const start = (page - 1) * perPage;
-  return all.slice(start, start + perPage);
+
+    return [...map.values()]
+      .map((e) => ({
+        key: e.key,
+        name: e.name,
+        slug: [...e.sources.values()][0],
+        sources: [...e.sources.entries()].map(([source, slug]) => ({ source, slug })),
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+  });
 }
 
-module.exports = { state, adapters, warm, parseId, findAdapter, listPage, tags };
+const TAG_TTL = 10 * 60 * 1000;
+let tagCache = { at: 0, list: [] };
+
+async function cachedTags(fn) {
+  if (Date.now() - tagCache.at < TAG_TTL && tagCache.list.length) return tagCache.list;
+  const list = await fn();
+  tagCache = { at: Date.now(), list };
+  return list;
+}
+
+async function tags(page, perPage, sourceId) {
+  let list = await tagsList();
+  if (sourceId) list = list.filter((t) => t.sources.some((s) => s.source === sourceId));
+  const start = (page - 1) * perPage;
+  return list.slice(start, start + perPage);
+}
+
+/** Значение из ?tag= (канонический ключ или slug) → slug конкретного источника. */
+async function slugFor(sourceId, value) {
+  const list = await tagsList();
+  const byKey = list.find((t) => t.key === value || t.name.toLowerCase() === value.toLowerCase());
+  if (byKey) {
+    const hit = byKey.sources.find((s) => s.source === sourceId);
+    return hit ? hit.slug : null;
+  }
+  const bySlug = list.find((t) => t.sources.some((s) => s.source === sourceId && s.slug === value));
+  if (bySlug) return value;
+  return null;
+}
+
+function invalidateTagCache() { tagCache = { at: 0, list: [] }; }
+
+module.exports = { state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache };

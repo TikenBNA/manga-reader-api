@@ -65,7 +65,10 @@ async function taggedList(tags, page, perPage) {
     const byKey = new Map();
     for (const a of registry.adapters) {
       if (!a.tagPage) continue;
-      const items = await a.tagPage(tag, page).catch(() => []);
+      // у каждого источника свой slug тега — берём его из общего индекса
+      const slug = await registry.slugFor(a.id, tag);
+      if (!slug) continue;
+      const items = await a.tagPage(slug, page).catch(() => []);
       for (const it of items) {
         const key = workKey(it.title);
         if (!key) continue;
@@ -91,6 +94,26 @@ async function taggedList(tags, page, perPage) {
   return out;
 }
 
+/** Догружает автора/жанры для карточек (и попутно пополняет индекс тегов). */
+async function enrichWorks(items) {
+  const chunk = 6;
+  for (let i = 0; i < items.length; i += chunk) {
+    await Promise.all(items.slice(i, i + chunk).map(async (it) => {
+      const parsed = registry.parseId(it.id);
+      if (!parsed) return;
+      const a = registry.findAdapter(parsed.source);
+      if (!a) return;
+      const d = await a.detail(parsed.extId).catch(() => null);
+      if (d) {
+        it.author = d.author || '';
+        it.genres = d.genres || [];
+        it.cover = it.cover || d.cover || '';
+      }
+    }));
+  }
+  registry.invalidateTagCache();
+  return items;
+}
 async function apiMangaDetail(id) {
   const parsed = registry.parseId(id);
   if (!parsed) return null;
@@ -138,6 +161,25 @@ async function apiPages(id) {
   return { pages: res.pages || [], prevChapterId: ns(res.prevChapterId), nextChapterId: ns(res.nextChapterId) };
 }
 
+/** Фоновый прогрев: разбираем часть работ, чтобы собрать теги, которых нет в sitemap. */
+async function warmTags(limit = 200) {
+  const works = registry.state.merged || [];
+  const chunk = 6;
+  let done = 0;
+  for (let i = 0; i < works.length && done < limit; i += chunk) {
+    const slice = works.slice(i, i + chunk);
+    await Promise.all(slice.map(async (w) => {
+      const parsed = registry.parseId(`${w.primary.source}:${w.primary.extId}`);
+      if (!parsed) return;
+      const a = registry.findAdapter(parsed.source);
+      if (a) await a.detail(parsed.extId).catch(() => null);
+      done += 1;
+    }));
+  }
+  registry.invalidateTagCache();
+  const list = await registry.tagsList();
+  console.log(`[tags] прогрев: разобрано ${done} работ, тегов ${list.length}`);
+}
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
@@ -184,10 +226,10 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (route === '/api/manga') {
-      if (tags.length) return json(res, 200, await taggedList(tags, page, CONFIG.PER_PAGE));
+      if (tags.length) return json(res, 200, await enrichWorks(await taggedList(tags, page, CONFIG.PER_PAGE)));
       const list = registry.listPage(page, CONFIG.PER_PAGE, source);
       if (!list) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
-      return json(res, 200, list);
+      return json(res, 200, await enrichWorks(list));
     }
 
     if (route === '/api/tags') return json(res, 200, await registry.tags(page, 500, source));
@@ -223,5 +265,7 @@ const server = http.createServer(async (req, res) => {
 server.listen(CONFIG.PORT, () => {
   console.log(`MangaReader API on http://localhost:${CONFIG.PORT}`);
   console.log('[catalog] источники:', registry.adapters.map((a) => a.id).join(', '));
-  registry.warm().catch((e) => console.error('[catalog] warm failed:', e.message));
+  registry.warm()
+    .then(() => { if (!process.env.MM_NO_TAG_WARM) warmTags(Number(process.env.MM_TAG_WARM || 200)); })
+    .catch((e) => console.error('[catalog] warm failed:', e.message));
 });

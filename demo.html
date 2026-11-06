@@ -361,7 +361,7 @@ function cardEl(m) {
   const card = $('div', 'card');
   const cover = $('div', 'cover');
   const img = $('img');
-  img.loading = 'lazy'; img.decoding = 'async'; img.src = m.cover || ''; img.alt = m.title;
+  img.loading = 'lazy'; img.decoding = 'async'; img.referrerPolicy = 'no-referrer'; img.src = m.cover || ''; img.alt = m.title;
   cover.append(img);
   const src = (m.sources || []).map((x) => x.source).join('+');
   card.append(cover, $('div', 't', m.title), $('div', 'a', [m.author, src].filter(Boolean).join(' · ')));
@@ -393,7 +393,7 @@ async function renderManga(id) {
 
     const hero = $('div', 'hero');
     const cover = $('div', 'cover');
-    const img = $('img'); img.src = m.cover || ''; img.alt = m.title; cover.append(img);
+    const img = $('img'); img.referrerPolicy = 'no-referrer'; img.src = m.cover || ''; img.alt = m.title; cover.append(img);
     const info = $('div');
     info.append($('h1', null, m.title));
     info.append($('div', 'meta', [m.author, `${chapters.length} гл.`, (m.sources || []).map((s) => s.source).join('+')].filter(Boolean).join(' · ')));
@@ -443,7 +443,7 @@ async function openChapter(idx) {
 
     const reader = $('div', 'reader');
     for (const src of data.pages) {
-      const img = $('img'); img.loading = 'lazy'; img.decoding = 'async'; img.src = src; img.alt = '';
+      const img = $('img'); img.loading = 'lazy'; img.decoding = 'async'; img.referrerPolicy = 'no-referrer'; img.src = src; img.alt = '';
       reader.append(img);
     }
 

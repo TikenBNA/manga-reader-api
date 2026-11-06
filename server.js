@@ -55,52 +55,72 @@ function json(res, code, body) {
 }
 
 /**
- * Работы, отфильтрованные по тегам (строгое И): работа должна быть на странице
- * каждого выбранного тега. Источники без поддержки тегов в такой фильтр не попадают.
+ * Полный набор работ по тегу у источника: листаем страницы тега (а не одну),
+ * иначе пересечение двух тегов видит только первые 20 карточек каждого.
+ */
+const tagSetCache = new Map();
+async function sourceTagSet(a, slug) {
+  const key = `${a.id}:${slug}`;
+  const hit = tagSetCache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+
+  const maxPages = Number(process.env.MM_TAG_PAGES || 6);
+  const map = new Map();
+  for (let p = 1; p <= maxPages; p++) {
+    const items = await a.tagPage(slug, p).catch(() => []);
+    if (!items.length) break;
+    for (const it of items) {
+      const k = workKey(it.title);
+      if (!k || map.has(k)) continue;
+      map.set(k, { source: a.id, extId: it.extId, title: it.title, cover: it.cover, url: it.url });
+    }
+  }
+  tagSetCache.set(key, { exp: Date.now() + 10 * 60e3, value: map });
+  return map;
+}
+
+/**
+ * Работы, отфильтрованные по тегам (строгое И): работа должна быть во всех выбранных тегах.
+ * Источники без поддержки тегов в такой фильтр не попадают.
  */
 async function taggedList(tags, page, perPage) {
-  const perTag = new Map(); // tag -> Map(workKey -> item)
+  const sets = [];
 
   for (const tag of tags) {
-    const byKey = new Map();
-    const lists = [];
-
+    const merged = new Map();
     for (const a of registry.adapters) {
       if (!a.tagPage) continue;
       // у каждого источника свой slug тега; если записи нет — пробуем значение как есть
       // (у sexbase фильтр работает по названию тега, а не по slug)
       const slug = (await registry.slugFor(a.id, tag)) || tag;
-      const items = await a.tagPage(slug, page).catch(() => []);
-      if (items.length) lists.push({ source: a.id, items });
-    }
-
-    // чередуем источники, иначе первый займёт всю страницу выдачи
-    for (let i = 0; lists.some((l) => l.items[i]); i++) {
-      for (const { source, items } of lists) {
-        const it = items[i];
-        if (!it) continue;
-        const key = workKey(it.title);
-        if (!key) continue;
-        const cur = byKey.get(key);
+      const map = await sourceTagSet(a, slug);
+      for (const [k, it] of map) {
+        const cur = merged.get(k);
         if (!cur) {
-          byKey.set(key, { id: `${source}:${it.extId}`, title: it.title, cover: it.cover, author: '', genres: [], sources: [{ source, id: it.extId, url: it.url }] });
-        } else if (!cur.sources.some((s) => s.source === source)) {
-          cur.sources.push({ source, id: it.extId, url: it.url });
+          merged.set(k, {
+            id: `${it.source}:${it.extId}`,
+            title: it.title,
+            cover: it.cover,
+            author: '',
+            genres: [],
+            sources: [{ source: it.source, id: it.extId, url: it.url }],
+          });
+        } else if (!cur.sources.some((s) => s.source === it.source)) {
+          cur.sources.push({ source: it.source, id: it.extId, url: it.url });
         }
       }
     }
-    perTag.set(tag, byKey);
+    sets.push(merged);
   }
 
-  // пересечение по ключам: строгое И
-  const [firstTag, ...rest] = tags;
-  const base = perTag.get(firstTag) || new Map();
+  const base = sets[0] || new Map();
   const out = [];
   for (const [key, item] of base) {
-    if (rest.every((t) => perTag.get(t)?.has(key))) out.push(item);
-    if (out.length >= perPage) break;
+    if (sets.slice(1).every((s) => s.has(key))) out.push(item);
   }
-  return out;
+
+  const start = (page - 1) * perPage;
+  return out.slice(start, start + perPage);
 }
 
 /** Догружает автора/жанры для карточек (и попутно пополняет индекс тегов). */
@@ -243,6 +263,18 @@ async function warmTags(limit = 200) {
   const list = await registry.tagsList();
   console.log(`[tags] прогрев: разобрано ${done} работ, тегов ${list.length}`);
 }
+/** Примитивный лимит запросов на IP, чтобы публичный URL не превращался в открытый прокси. */
+const rateHits = new Map();
+function rateLimited(req) {
+  const ip = req.socket.remoteAddress || '?';
+  const limit = Number(process.env.MM_RATE_LIMIT || 240);
+  const now = Date.now();
+  let rec = rateHits.get(ip);
+  if (!rec || now - rec.t > 60e3) { rec = { t: now, n: 0 }; rateHits.set(ip, rec); }
+  rec.n += 1;
+  if (rateHits.size > 5000) rateHits.clear();
+  return rec.n > limit;
+}
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
@@ -257,6 +289,9 @@ const server = http.createServer(async (req, res) => {
   }
 
   const route = url.pathname.replace(/\/+$/, '') || '/';
+  if (route !== '/health' && rateLimited(req)) {
+    return json(res, 429, { error: 'too many requests', retryAfter: 60 });
+  }
   const page = Math.max(1, Number(url.searchParams.get('page') || 1) || 1);
   const tags = url.searchParams.getAll('tag').map((t) => t.trim()).filter(Boolean);
   const source = url.searchParams.get('source');

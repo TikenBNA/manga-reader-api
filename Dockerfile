@@ -11,7 +11,7 @@ COPY server.js registry.js http.js mm.js moody.js nudemoon.js ./
 COPY demo.html README.md ./
 
 # кэш каталога переживает рестарты контейнера, если подключить volume на /app/cache
-RUN mkdir -p /app/cache
+RUN mkdir -p /app/cache && chmod 777 /app/cache
 VOLUME ["/app/cache"]
 
 EXPOSE 3001

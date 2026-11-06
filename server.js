@@ -18,7 +18,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const registry = require('./registry');
-const { workKey, tagKey } = require('./http');
+const { workKey, tagKey, stripChapterSuffix } = require('./http');
 
 const CONFIG = {
   PORT: Number(process.env.PORT || 3001),
@@ -115,6 +115,45 @@ async function enrichWorks(items) {
   registry.invalidateTagCache();
   return items;
 }
+/**
+ * Главы работы со ВСЕХ источников, где она есть: объединяем по номеру главы,
+ * чтобы список был единым (у одного сайта пост = глава, у другого — том/пачка глав).
+ */
+async function mergedChapters(workTitle) {
+  const key = workKey(workTitle);
+  const entry = state.merged?.find((w) => w.key === key);
+  const refs = entry ? entry.sources : [];
+
+  const lists = await Promise.all(refs.map(async (r) => {
+    const a = registry.findAdapter(r.source);
+    if (!a) return [];
+    const chs = await a.chapters(r.extId).catch(() => []);
+    return chs.map((c) => ({
+      id: `${r.source}:${c.extId}`,
+      number: c.number,
+      title: c.title,
+      date: c.date,
+      source: r.source,
+    }));
+  }));
+
+  const byNumber = new Map();
+  for (const list of lists) {
+    for (const c of list) {
+      const k = c.number != null ? `n:${c.number}` : `t:${String(c.title || '').toLowerCase()}`;
+      const prev = byNumber.get(k);
+      // при совпадении номера оставляем запись с более информативным названием
+      if (!prev || (!prev.title && c.title)) byNumber.set(k, c);
+    }
+  }
+
+  return [...byNumber.values()].sort((a, b) => {
+    const na = a.number ?? Number.MAX_SAFE_INTEGER;
+    const nb = b.number ?? Number.MAX_SAFE_INTEGER;
+    return na - nb || String(a.title || '').localeCompare(String(b.title || ''));
+  });
+}
+
 async function apiMangaDetail(id) {
   const parsed = registry.parseId(id);
   if (!parsed) return null;
@@ -133,7 +172,7 @@ async function apiMangaDetail(id) {
 
   return {
     id: `${parsed.source}:${parsed.extId}`,
-    title: d.title,
+    title: stripChapterSuffix(d.title) || d.title,
     cover: d.cover,
     author: d.author || '',
     description: d.description || '',
@@ -147,8 +186,9 @@ async function apiChapters(id) {
   if (!parsed) return [];
   const adapter = registry.findAdapter(parsed.source);
   if (!adapter) return [];
-  const list = await adapter.chapters(parsed.extId).catch(() => []);
-  return list.map((c) => ({ id: `${parsed.source}:${c.extId}`, number: c.number, title: c.title, date: c.date }));
+  const seed = await adapter.detail(parsed.extId).catch(() => null);
+  if (!seed) return [];
+  return mergedChapters(seed.work || seed.title);
 }
 
 async function apiPages(id) {
@@ -158,8 +198,21 @@ async function apiPages(id) {
   if (!adapter) return null;
   const res = await adapter.pages(parsed.extId).catch(() => null);
   if (!res) return null;
-  const ns = (v) => (v ? `${parsed.source}:${v}` : null);
-  return { pages: res.pages || [], prevChapterId: ns(res.prevChapterId), nextChapterId: ns(res.nextChapterId) };
+
+  // соседние главы считаем по объединённому списку, чтобы листать сквозь источники
+  let prevChapterId = res.prevChapterId ? `${parsed.source}:${res.prevChapterId}` : null;
+  let nextChapterId = res.nextChapterId ? `${parsed.source}:${res.nextChapterId}` : null;
+  try {
+    const seed = await adapter.detail(parsed.extId);
+    if (seed) {
+      const list = await mergedChapters(seed.work || seed.title);
+      const idx = list.findIndex((c) => c.id === id);
+      if (idx > 0) prevChapterId = list[idx - 1].id;
+      if (idx >= 0 && idx < list.length - 1) nextChapterId = list[idx + 1].id;
+    }
+  } catch { /* оставляем как есть */ }
+
+  return { pages: res.pages || [], prevChapterId, nextChapterId };
 }
 
 /** Фоновый прогрев: разбираем часть работ, чтобы собрать теги, которых нет в sitemap. */

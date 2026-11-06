@@ -134,12 +134,7 @@
   <div class="logo" id="home">MangaReader</div>
   <div class="filters">
     <button id="tagBtn">Теги</button>
-    <select id="srcFilter">
-      <option value="">Все источники</option>
-      <option value="mm">mm</option>
-      <option value="moody">moody</option>
-      <option value="nudemoon">nudemoon</option>
-    </select>
+
     <select id="sortFilter">
       <option value="new">Новые</option>
       <option value="old">Старые</option>
@@ -176,7 +171,6 @@ const $ = (t, cls, txt) => { const el = document.createElement(t); if (cls) el.c
 const params = new URLSearchParams(location.search);
 const state = {
   tags: (params.get('tags') || '').split(',').map((s) => s.trim()).filter(Boolean),
-  source: params.get('source') || '',
   sort: params.get('sort') === 'old' ? 'old' : 'new',
   page: 1,
   allTags: [],
@@ -206,7 +200,6 @@ async function api(path) {
 function syncUrl() {
   const p = new URLSearchParams();
   if (state.tags.length) p.set('tags', state.tags.join(','));
-  if (state.source) p.set('source', state.source);
   if (state.sort === 'old') p.set('sort', 'old');
   const qs = p.toString();
   history.replaceState(null, '', qs ? '?' + qs : location.pathname);
@@ -218,15 +211,12 @@ function mount(...nodes) {
 }
 
 const tagBtn = document.getElementById('tagBtn');
-const srcFilter = document.getElementById('srcFilter');
 const sortFilter = document.getElementById('sortFilter');
 const activebar = document.getElementById('activebar');
 const modal = document.getElementById('tagModal');
 const tagList = document.getElementById('tagList');
 const tagSearch = document.getElementById('tagSearch');
 
-srcFilter.value = state.source;
-srcFilter.onchange = () => { state.source = srcFilter.value; onFiltersChanged(); };
 sortFilter.value = state.sort;
 sortFilter.onchange = () => { state.sort = sortFilter.value; onFiltersChanged(); };
 
@@ -294,7 +284,7 @@ document.getElementById('tagReset').onclick = () => { state.tags = []; renderTag
 tagSearch.oninput = renderTagList;
 modal.onclick = (e) => { if (e.target === modal) closeTags(true); };
 document.getElementById('home').onclick = () => {
-  state.tags = []; state.source = ''; srcFilter.value = '';
+  state.tags = [];
   onFiltersChanged();
 };
 
@@ -334,7 +324,6 @@ async function loadPage() {
   try {
     const qs = new URLSearchParams({ page: String(state.page) });
     for (const t of state.tags) qs.append('tag', t);
-    if (state.source) qs.set('source', state.source);
     if (state.sort === 'old') qs.set('sort', 'old');
 
     const items = await api('/manga?' + qs.toString());
@@ -407,7 +396,8 @@ async function renderManga(id) {
       const row = $('div', 'ch');
       const left = $('div', 'left');
       left.append($('span', 'n', 'Гл. ' + c.number), $('span', 'ttl', c.title || ''));
-      row.append(left, $('div', 'd', (c.date || '').slice(0, 10)));
+      const meta = [(c.date || '').slice(0, 10), c.source].filter(Boolean).join(' · ');
+    row.append(left, $('div', 'd', meta));
       row.onclick = () => openChapter(i);
       list.append(row);
     });

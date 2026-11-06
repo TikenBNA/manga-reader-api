@@ -10,14 +10,11 @@
  */
 const fs = require('node:fs');
 const path = require('node:path');
-const { workKey, tagKey, stripTags } = require('./http');
+const { workKey, tagKey, stripTags, stripChapterSuffix } = require('./http');
 const tagsIndex = require('./tags');
 
 /** Название работы для показа: без хвоста «- глава N» / «- часть N». */
-const displayTitle = (t) => String(t)
-  .replace(/\s*[-–—]\s*(глава|главы|часть|chapter|part)\s*[\dIVXLC]+.*$/i, '')
-  .replace(/\s*[-–—]\s*$/, '')
-  .trim() || String(t);
+const displayTitle = (t) => stripChapterSuffix(t) || String(t);
 
 const CACHE_DIR = path.join(__dirname, '..', 'cache');
 

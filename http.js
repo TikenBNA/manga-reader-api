@@ -58,10 +58,19 @@ function absUrl(base, u) {
   return base + (u.startsWith('/') ? u : '/' + u);
 }
 
+/** Отрезает хвосты нумерации: «- глава 3», «Том - 1 Глава - 4», «часть 2». */
+function stripChapterSuffix(title) {
+  return String(title)
+    .replace(/\s*[-–—]?\s*(том|volume|vol\.?)\s*[-–—]?\s*\d+.*$/i, '')
+    .replace(/\s*[-–—]?\s*(глава|главы|главу|часть|chapter|part)\s*[-–—]?\s*[\dIVXLC]+.*$/i, '')
+    .replace(/[\s\-–—.,:]+$/, '')
+    .trim();
+}
+
 /** Ключ дедупликации работ (межсайтовый). */
 function workKey(title) {
-  return String(title)
-    .replace(/\s*[-–—]\s*(глава|главы|часть|chapter|part)\s*[\dIVXLC]+.*$/i, '')
+  const base = stripChapterSuffix(title) || String(title);
+  return base
     .toLowerCase()
     .replace(/ё/g, 'е')
     .replace(/(?:№|#|no\.)\s*\d+/gi, ' ')
@@ -80,4 +89,4 @@ function tagKey(name) {
     .trim();
 }
 
-module.exports = { UA, fetchText, fetchJson, decode, stripTags, absUrl, workKey, tagKey, sleep };
+module.exports = { UA, fetchText, fetchJson, decode, stripTags, absUrl, workKey, tagKey, stripChapterSuffix, sleep };

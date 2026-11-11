@@ -187,7 +187,6 @@
 <nav id="quickbar">
   <button class="chip" id="sortBtn">Сортировка</button>
   <button class="chip" id="tagBtn">Теги</button>
-  <button class="chip" id="favBtn">Избранное</button>
 </nav>
 <div id="activebar" hidden></div>
 
@@ -198,9 +197,9 @@
     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.6"></rect><rect x="14" y="3" width="7" height="7" rx="1.6"></rect><rect x="3" y="14" width="7" height="7" rx="1.6"></rect><rect x="14" y="14" width="7" height="7" rx="1.6"></rect></svg>
     <span>Каталог</span>
   </button>
-  <button class="navitem" data-nav="tags">
-    <svg viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0l-7-7A2 2 0 0 1 3 12.2V5a2 2 0 0 1 2-2h7.2a2 2 0 0 1 1.4.6l7 7a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.3"></circle></svg>
-    <span>Теги</span>
+  <button class="navitem" data-nav="fav">
+    <svg viewBox="0 0 24 24"><path d="M12 20.3l-1.1-1C6 15.1 3 12.4 3 9.1 3 6.5 5 4.5 7.6 4.5c1.5 0 2.9.7 3.9 1.9l.5.6.5-.6c1-1.2 2.4-1.9 3.9-1.9C20 4.5 22 6.5 22 9.1c0 3.3-3 6-7.9 10.2l-1.1 1z"></path></svg>
+    <span>Избранное</span>
   </button>
   <button class="navcenter" data-nav="top">М</button>
   <button class="navitem" data-nav="random">
@@ -353,7 +352,7 @@ function mount(...nodes) {
 }
 
 const tagBtn = document.getElementById('tagBtn');
-  const favBtn = document.getElementById('favBtn');
+  const favBtn = document.querySelector('[data-nav="fav"] span');
 const sortBtn = document.getElementById('sortBtn');
 const sortModal = document.getElementById('sortModal');
 const sortListEl = document.getElementById('sortList');
@@ -463,8 +462,7 @@ function renderTagButton() {
 
 function renderFavButton() {
   const n = favCount();
-  favBtn.textContent = n ? `Избранное: ${n}` : "Избранное";
-  favBtn.classList.toggle("has", n > 0);
+  if (favBtn) favBtn.textContent = n ? "Избранное: " + n : "Избранное";
 }
 
 /** Экран «Избранное + История» (две секции карточек). */
@@ -551,7 +549,6 @@ function closeTags(apply) {
 }
 
 tagBtn.onclick = openTags;
-  favBtn.onclick = openFavorites;
 document.getElementById('tagClose').onclick = () => closeTags(true);
 document.getElementById('tagApply').onclick = () => closeTags(true);
 document.getElementById('tagReset').onclick = () => { state.tags = []; renderTagList(); renderTagButton(); };
@@ -869,6 +866,7 @@ document.getElementById('bottomnav').addEventListener('click', (e) => {
   const nav = btn.dataset.nav;
   if (nav === 'catalog') { state.tags = []; searchInput.value = ''; onFiltersChanged(); }
   if (nav === 'tags') openTags();
+  if (nav === 'fav') openFavorites();
   if (nav === 'top') {
     if (document.body.classList.contains('detail') || document.body.classList.contains('reader')) {
       leaveToCatalog();

@@ -10,8 +10,8 @@ const { fetchText, stripTags, absUrl } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://hentaichan.live';
-const TIMEOUT_MS = 40000;   // сайт медленный: 6–11 с на страницу (страницы глав)
-const DETAIL_TIMEOUT = 12000; // карточку не ждём дольше — есть fallback на каталог
+const TIMEOUT_MS = 8000;    // страницы глав: сайт медленный, но туннель не ждёт дольше
+const DETAIL_TIMEOUT = 4500;  // через туннель запрос дольше ~5 с уже отдаёт 502
 const known = new Map();     // extId → карточка из каталога (на случай медленной страницы)
 
 /** Часть CDN-хостов (img4/mimg4) у провайдера не отвечает — переводим на рабочий img2. */
@@ -54,10 +54,21 @@ async function detail(extId) {
   return cached(`d:${extId}`, 12 * 3600e3, async () => {
     const html = await fetchText(`${BASE}/manga/${extId}.html`, 0, DETAIL_TIMEOUT).catch(() => '');
     if (!html) {
-      const k = known.get(extId); // страница не ответила — отдаём данные из каталога
-      return k
-        ? { extId, title: k.title, url: k.url, cover: k.cover, author: '', genres: [], description: '', date: null, chapterNumber: 1, chapterTitle: k.title }
-        : null;
+      // сайт не ответил: карточку не выбрасываем, отдаём то, что знаем из каталога/слага
+      const k = known.get(extId);
+      const title = (k && k.title) || titleFromSlug(extId);
+      return {
+        extId,
+        title,
+        url: (k && k.url) || `${BASE}/manga/${extId}.html`,
+        cover: (k && k.cover) || null,
+        author: '',
+        genres: [],
+        description: '',
+        date: null,
+        chapterNumber: 1,
+        chapterTitle: title,
+      };
     }
     const title = stripTags((html.match(/<h1[^>]*>([\s\S]{0,300}?)<\/h1>/) || [])[1] || '')
       || stripTags((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '').split('&raquo;')[0].trim();
@@ -92,37 +103,31 @@ function chapterNumber(extId) {
   return null;
 }
 
+/** Название из слага: «55772-volnuyuschee-pohischenie-glava-2» → «Volnuyuschee pohischenie». */
+function titleFromSlug(extId) {
+  const slug = String(extId).replace(/^\d+-/, '').replace(/-(?:glava|chapter|ch)[-_]?\d+.*$/i, '');
+  const words = slug.split('-').filter(Boolean);
+  if (!words.length) return `Глава ${chapterNumber(extId) ?? ''}`.trim();
+  const text = words.join(' ');
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 /**
- * Пост = глава, поэтому собираем все главы серии поиском по названию
- * и оставляем только посты с тем же базовым слагом.
+ * Пост = глава. Раньше здесь был поиск по сайту (до 40 секунд), из-за которого запрос
+ * не укладывался в таймаут туннеля и отдавал 502. Остальные главы серии теперь приходят
+ * из индекса каталога (registry.siblings), а этот метод отвечает мгновенно и без сети.
  */
 async function chapters(extId) {
   return cached(`ch:${extId}`, 3 * 3600e3, async () => {
-    const d = await detail(extId).catch(() => null);
-    const baseSlug = String(extId).replace(/^\d+-/, '').replace(/-(?:glava|chapter|ch)[-_]?\d+.*$/i, '');
+    const num = chapterNumber(extId) ?? 1;
+    // если карточка уже загружалась — возьмём её название из кэша, иначе соберём из слага
+    const hit = cache.get(`d:${extId}`);
+    const title = (hit && hit.exp > Date.now() && hit.value && hit.value.title) || titleFromSlug(extId);
 
-    const list = [];
-    const add = (id, title, num) => {
-      if (!id || list.some((x) => x.extId === id)) return;
-      list.push({ extId: id, number: num ?? chapterNumber(id) ?? list.length + 1, title: title || `Глава ${num ?? ''}`, date: null });
-    };
+    // прогреваем страницы главы в фоне, чтобы первое открытие было быстрым
+    setTimeout(() => { pages(extId).catch(() => {}); }, 10);
 
-    add(extId, d?.title || '', chapterNumber(extId));
-
-    // ищем остальные главы серии
-    const query = baseSlug.replace(/[-_]+/g, ' ').trim();
-    if (query) {
-      const url = `${BASE}/index.php?do=search&subaction=search&story=${encodeURIComponent(query)}`;
-      const html = await fetchText(url, 0, TIMEOUT_MS).catch(() => '');
-      for (const m of html.matchAll(/href="[^"]*\/manga\/(\d+-[a-z0-9_\-]+)\.html"[^>]*>([\s\S]{0,200}?)<\/a>/gi)) {
-        const id = m[1];
-        const slugOnly = id.replace(/^\d+-/, '');
-        if (slugOnly !== baseSlug && !slugOnly.startsWith(baseSlug + '-')) continue; // только эта серия
-        add(id, stripTags(m[2]), chapterNumber(id));
-      }
-    }
-
-    return list.sort((a, b) => (a.number ?? 1e9) - (b.number ?? 1e9));
+    return [{ extId, number: num, title, date: null }];
   });
 }
 

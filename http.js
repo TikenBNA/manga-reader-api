@@ -22,9 +22,12 @@ async function fetchText(url, attempt = 0, timeoutMs = TIMEOUT) {
     if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
     return await res.text();
   } catch (e) {
+    // таймаут повторять бессмысленно: сайт медленный, а туннель не ждёт дольше ~5 с
+    if (e && (e.name === 'AbortError' || e.name === 'TimeoutError')) throw e;
     if (attempt < 2) {
       await sleep(300 * (attempt + 1));
-      return fetchText(url, attempt + 1);
+      // важно: передаём timeoutMs дальше, иначе повтор уходит с дефолтными 15 с
+      return fetchText(url, attempt + 1, timeoutMs);
     }
     throw e;
   } finally {

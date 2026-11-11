@@ -247,10 +247,21 @@ async function mergedChapters(workTitle, seed) {
     refs = [seed, ...refs];
   }
 
+  const slow = [];
   const lists = await Promise.all(refs.map(async (r) => {
     const a = registry.findAdapter(r.source);
     if (!a) return [];
-    const chs = await a.chapters(r.extId).catch(() => []);
+    // у mm поиск глав по сайту — до 30 секунд; через туннель это 502, поэтому
+    // каждый источник ограничен по времени, а недоделанное дочитывается в фоне
+    const isSeed = seed && r.source === seed.source && r.extId === seed.extId;
+    const budget = isSeed ? 4000 : 3000;
+    let chs = null;
+    try {
+      chs = await withTimeout(a.chapters(r.extId), budget, 'chapters:' + r.source);
+    } catch {
+      slow.push(r);
+      chs = [];
+    }
     const sibs = registry.siblings(r.source, workTitle);
     const sibByExt = new Map(sibs.map((s) => [s.extId, s]));
 

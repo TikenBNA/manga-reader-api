@@ -1,228 +1,142 @@
-IyBNYW5nYVJlYWRlciBBUEkKCtCc0YPQu9GM0YLQuNC40YHRgtC+0YfQvdC4
-0LrQvtCy0YvQuSDQv9GA0L7QutGB0Lgg0LTQu9GPINGH0LjRgtCw0LvQutC4
-OiDRgdC+0LHQuNGA0LDQtdGCINC60LDRgtCw0LvQvtCz0Lgg0YXQtdC90YLQ
-sNC5LdGB0LDQudGC0L7Qsiwg0YHQutC70LXQuNCy0LDQtdGCINC+0LTQuNC9
-0LDQutC+0LLRi9C1CtGA0LDQsdC+0YLRiyDRgSDRgNCw0LfQvdGL0YUg0LjR
-gdGC0L7Rh9C90LjQutC+0LIg0Lgg0L7RgtC00LDRkdGCINC40YUg0LIg0L7Q
-tNC90L7QvCBKU09OLdC60L7QvdGC0YDQsNC60YLQtS4g0JHQtdC3INC30LDQ
-stC40YHQuNC80L7RgdGC0LXQuSwgTm9kZS5qcyAxOCsuCgrQotC10LrRg9GJ
-0LXQtSDRgdC+0YHRgtC+0Y/QvdC40LU6ICoqMjAgOTc2INGA0LDQsdC+0YIq
-KiwgKio3INC40YHRgtC+0YfQvdC40LrQvtCyKiosINGC0L7Qu9GM0LrQviDR
-gNGD0YHRgdC60L7Rj9C30YvRh9C90YvQtSDRgtCw0LnRgtC70YsuCgojIyDQ
-l9Cw0L/Rg9GB0LoKCmBgYGJhc2gKbm9kZSBzZXJ2ZXIuanMgICAgICAgICAg
-IyBodHRwOi8vbG9jYWxob3N0OjMwMDEKYGBgCgrQmtCw0YLQsNC70L7Qs9C4
-INC40YHRgtC+0YfQvdC40LrQvtCyINC60Y3RiNC40YDRg9GO0YLRgdGPINCy
-IGBjYWNoZS9jYXRhbG9nLTxpZD4uanNvbmAgKNC/0L4g0YPQvNC+0LvRh9Cw
-0L3QuNGOIDEyINGH0LDRgdC+0LIsCmBNTV9DQVRBTE9HX1RUTGApLiDQldGB
-0LvQuCDQutGN0YjQsCDQvdC10YIg4oCUINC40YHRgtC+0YfQvdC40Log0L7Q
-sdGF0L7QtNC40YLRgdGPINCyINGE0L7QvdC1LCBgL2FwaS9zb3VyY2VzYCDQ
-v9C+0LrQsNC30YvQstCw0LXRggrQv9GA0L7Qs9GA0LXRgdGBLCDQsCBgL2Fw
-aS9tYW5nYWAg0LTQviDQs9C+0YLQvtCy0L3QvtGB0YLQuCDQvtGC0LTQsNGR
-0YIgYDUwM2AuCgrQn9C10YDQtdC80LXQvdC90YvQtSDQvtC60YDRg9C20LXQ
-vdC40Y86Cgp8INCf0LXRgNC10LzQtdC90L3QsNGPIHwg0J/QviDRg9C80L7Q
-u9GH0LDQvdC40Y4gfCDQndCw0LfQvdCw0YfQtdC90LjQtSB8CnwtLS18LS0t
-fC0tLXwKfCBgUE9SVGAgfCBgMzAwMWAgfCDQv9C+0YDRgiDRgdC10YDQstC1
-0YDQsCB8CnwgYE1NX0NBQ0hFX0RJUmAgfCBgLi4vY2FjaGVgIHwg0LrRg9C0
-0LAg0L/QuNGB0LDRgtGMINC60Y3RiCDQutCw0YLQsNC70L7Qs9C+0LIgKNC9
-0LAg0YXQvtGB0YLQuNC90LPQtSDigJQg0L3QsCB2b2x1bWUpIHwKfCBgTU1f
-Q0FUQUxPR19UVExgIHwgYDQzMjAwMDAwYCAoMTIg0YcpIHwg0YHQutC+0LvR
-jNC60L4g0LbQuNGC0Ywg0LrRjdGI0YMg0LrQsNGC0LDQu9C+0LPQsCB8Cnwg
-YE1NX0VOUklDSF9CVURHRVRgIHwgYDcwMGAgfCDRgdC60L7Qu9GM0LrQviDQ
-vNC40LvQu9C40YHQtdC60YPQvdC0INC20LTQsNGC0Ywg0L7QsdC+0LPQsNGJ
-0LXQvdC40LUg0LrQsNGA0YLQvtGH0LXQuiB8CnwgYE1NX1RBR19QQUdFU2Ag
-fCBgM2AgfCDRgdC60L7Qu9GM0LrQviDRgdGC0YDQsNC90LjRhiDRgtC10LPQ
-sCDQu9C40YHRgtCw0YLRjCDRgyDQuNGB0YLQvtGH0L3QuNC60LAgfAp8IGBN
-TV9UQUdfVElNRU9VVGAgfCBgMzAwMGAgfCDQv9C+0YLQvtC70L7QuiDQvdCw
-INC+0LTQuNC9INC40YHRgtC+0YfQvdC40Log0L/RgNC4INGE0LjQu9GM0YLR
-gNC1INC/0L4g0YLQtdCz0YMgfAoKIyMg0JjRgdGC0L7Rh9C90LjQutC4Cgp8
-IGlkIHwg0KHQsNC50YIgfCDQmtCw0Log0YPRgdGC0YDQvtC10L0gfCDQp9GC
-0L4g0L7RgtC00LDRkdGCIHwKfC0tLS18LS0tLS0tfC0tLS0tLS0tLS0tLS18
-LS0tLS0tLS0tLS0tfAp8IGBtbWAgfCBtdWx0aS1tYW5nYS5jb20gfCBETEUs
-IDY2OSDRgdGC0YDQsNC90LjRhiDQutCw0YLQsNC70L7Qs9CwIHwg0LrQsNGC
-0LDQu9C+0LMsINCz0LvQsNCy0YssINGB0YLRgNCw0L3QuNGG0YssINGC0LXQ
-s9C4IHwKfCBgbnVkZW1vb25gIHwga3Blei5udWRlLW1vb24ucHJvIHwg0L/Q
-vtGB0YIgPSDRh9C40YLQsNC70LrQsCBgL3ZpZXcvPGlkPi9gIHwg0LrQsNGC
-0LDQu9C+0LMsINGB0YLRgNCw0L3QuNGG0YssINGC0LXQs9C4IChgL2NhdC9g
-KSB8CnwgYHNleGJhc2VgIHwgc2V4YmFzZS5vcmcgKNGC0L7Qu9GM0LrQviDR
-gNGD0YHRgdC60LjQtSkgfCBKU09OIEFQSSBgL2FwaS92Mi9tYW5nYWAgfCDQ
-utCw0YLQsNC70L7Qsywg0YHRgtGA0LDQvdC40YbRiywg0YLQtdCz0Lgg0L/Q
-viDQvdCw0LfQstCw0L3QuNGOIHwKfCBgbWFuZ2FzaGlgIHwgbWFuZ2Etc2hp
-Lm9yZyAo0YLQvtC70YzQutC+INGC0LXQsyBgI9GF0LXQvdGC0LDQuWApIHwg
-U1NSIEhUTUwsINCz0LvQsNCy0YsgYC90b20tTi9nbGF2YS1OL2AgfCDQutCw
-0YLQsNC70L7Qsywg0LPQu9Cw0LLRiywg0YHRgtGA0LDQvdC40YbRiyB8Cnwg
-YHpha3VyYWAgfCB6YWt1cmEuc3UgKNGA0LDQt9C00LXQuyDCq9GF0LXQvdGC
-0LDQuSDQvNCw0L3Qs9CwwrspIHwg0L/QvtGB0YIgPSDQvtC00L3QsCDQtNC7
-0LjQvdC90LDRjyDQv9C+0LvQvtGB0LAt0LrQsNGA0YLQuNC90LrQsCB8INC6
-0LDRgtCw0LvQvtCzLCDQvtC00L3QsCDCq9Cz0LvQsNCy0LDCuywg0YHRgtGA
-0LDQvdC40YbRiyB8CnwgYGRlc3VgIHwgZGVzdS51bm8gKNC20LDQvdGAIMKr
-0KXQtdC90YLQsNC5wrspIHwgSlNPTiBBUEkgYC9hcGkvbWFuZ2Ev4oCmYCB8
-INC60LDRgtCw0LvQvtCzLCDQs9C70LDQstGLLCDRgdGC0YDQsNC90LjRhtGL
-LCDRgtC10LPQuCB8CnwgYGhjaGFuYCB8IGhlbnRhaWNoYW4ubGl2ZSAo0KXQ
-tdC90YLQsNC5LdGC0Y/QvSkgfCBETEUsINGH0LjRgtCw0LvQutCwINC+0YLQ
-tNCw0ZHRgiBgZGF0YS5mdWxsaW1nYCB8INC60LDRgtCw0LvQvtCzLCDQs9C7
-0LDQstGLLCDRgdGC0YDQsNC90LjRhtGLIHwKCtCe0YHQvtCx0LXQvdC90L7R
-gdGC0Lg6Ci0gKipoY2hhbioqINGA0LDQt9C00LDRkdGCINC60LDRgNGC0LjQ
-vdC60Lgg0YEg0L3QtdGB0LrQvtC70YzQutC40YUgQ0ROLdGF0L7RgdGC0L7Q
-sjsg0YfQsNGB0YLRjCDQuNC3INC90LjRhSAoYGltZzRgLCBgbWltZzRgKQog
-INGDINC/0YDQvtCy0LDQudC00LXRgNCwINC90LUg0L7RgtCy0LXRh9Cw0LXR
-giwg0L/QvtGN0YLQvtC80YMg0LDQtNCw0L/RgtC10YAg0L/QtdGA0LXQv9C4
-0YHRi9Cy0LDQtdGCINGB0YHRi9C70LrQuCDQvdCwINGA0LDQsdC+0YfQuNC5
-IGBpbWcyLmltZ3NjaGFuLnh5emAKICDQuCDQsdC10YDRkdGCINC/0YDQtdCy
-0YzRji3QvtCx0LvQvtC20LrQuCDQstC80LXRgdGC0L4gMTAt0LzQtdCz0LDQ
-sdCw0LnRgtC90YvRhSByZXRpbmEt0LLQtdGA0YHQuNC5LgotICoqc2V4YmFz
-ZSoqINC+0YLQtNCw0ZHRgiDRgtC+0LvRjNC60L4g0YDQsNCx0L7RgtGLINGB
-INGA0YPRgdGB0LrQuNC8INC/0LXRgNC10LLQvtC00L7QvC4KLSAqKm1hbmdh
-c2hpKiog0YLRj9C90LXRgiDQuNGB0LrQu9GO0YfQuNGC0LXQu9GM0L3QviDR
-gNCw0LHQvtGC0Ysg0YEg0YLQtdCz0L7QvCDCq9GF0LXQvdGC0LDQucK7IChg
-dGFnLWYzZTU5YjZiYCkuCi0gKipkZXN1Kiog0LHQtdGA0ZHRgiDRgtC+0LvR
-jNC60L4g0YLQsNC50YLQu9GLLCDRgyDQutC+0YLQvtGA0YvRhSDQsiDQttCw
-0L3RgNCw0YUg0LXRgdGC0YwgwqvQpdC10L3RgtCw0LnCuy4KCtCd0LUg0L/Q
-vtC00LrQu9GO0YfQtdC90YsgKNC4INC/0L7Rh9C10LzRgyk6IGBhbGxoZW5g
-IOKAlCDQstC80LXRgdGC0L4g0YHRgtGA0LDQvdC40YYg0L7RgtC00LDRkdGC
-INC30LDQs9C70YPRiNC60YM7IGBoZW50YWlsaWJgIOKAlCDQutC+0L3RgtC1
-0L3RggrQtNC+0YHRgtGD0L/QtdC9INGC0L7Qu9GM0LrQviDRgSDRgtC+0LrQ
-tdC90L7QvDsgYG1hbmdhZGV4YCDigJQg0L3QtdGCINGF0LXQvdGC0LDQuS3R
-gtC10LPQsC4g0JrQvtC0INGD0LTQsNC70ZHQvS4KCiMjINCt0L3QtNC/0L7Q
-uNC90YLRiwoKfCDQn9GD0YLRjCB8INCe0YLQstC10YIgfAp8LS0tLS0tfC0t
-LS0tLS18CnwgYEdFVCAvYXBpL21hbmdhP3BhZ2U9MVsmc291cmNlPW51ZGVt
-b29uXWAgfCBgW3sgaWQsIHRpdGxlLCBjb3ZlciwgYXV0aG9yLCBnZW5yZXMs
-IHNvdXJjZXNbXSB9XWAgfAp8IGBHRVQgL2FwaS9tYW5nYT90YWc9PHNsdWc+
-JnBhZ2U9MWAgfCDRgNCw0LHQvtGC0Ysg0YEg0YLQtdCz0L7QvDsg0L3QtdGB
-0LrQvtC70YzQutC+INC/0LDRgNCw0LzQtdGC0YDQvtCyIGB0YWdgID0g0YHR
-gtGA0L7Qs9C+0LUg0JggfAp8IGAuLi4mc29ydD1uZXdcfG9sZFx8YXpcfHph
-YCB8INC/0L4g0LTQsNGC0LUg0LTQvtCx0LDQstC70LXQvdC40Y8g0LjQu9C4
-INC/0L4g0L3QsNC30LLQsNC90LjRjiAo0JAt0K8gLyDQry3QkCkgfAp8IGBH
-RVQgL2FwaS90YWdzYCB8IGBbeyBzbHVnLCBuYW1lLCBzb3VyY2VzW10gfV1g
-IHwKfCBgR0VUIC9hcGkvc291cmNlc2AgfCDRgdC+0YHRgtC+0Y/QvdC40LUg
-0LjRgdGC0L7Rh9C90LjQutC+0LIg0Lgg0LjRhSDQv9GA0L7Qs9GA0LXRgdGB
-IHwKfCBgR0VUIC9hcGkvbWFuZ2EvPHNyYzppZD5gIHwgYHsgaWQsIHRpdGxl
-LCBjb3ZlciwgYXV0aG9yLCBkZXNjcmlwdGlvbiwgZ2VucmVzLCBzb3VyY2Vz
-IH1gIHwKfCBgR0VUIC9hcGkvbWFuZ2EvPHNyYzppZD4vY2hhcHRlcnNgIHwg
-YFt7IGlkLCBudW1iZXIsIHZvbHVtZSwgdGl0bGUsIGRhdGUsIHNvdXJjZSB9
-XWAgfAp8IGBHRVQgL2FwaS9jaGFwdGVyLzxzcmM6aWQ+L3BhZ2VzYCB8IGB7
-IHBhZ2VzLCBwcmV2Q2hhcHRlcklkLCBuZXh0Q2hhcHRlcklkIH1gIHwKfCBg
-R0VUIC9oZWFsdGhgIHwgYHsgb2ssIG1lcmdlZFdvcmtzLCBzb3VyY2VzW10g
-fWAgfAp8IGBHRVQgL2RlbW9gIHwg0L/QtdGB0L7Rh9C90LjRhtCwOiDQutCw
-0YLQsNC70L7Qsywg0YLQtdCz0LgsINGB0L7RgNGC0LjRgNC+0LLQutCwLCDR
-h9C40YLQsNC70LrQsCB8CnwgYEdFVCAvTWFuZ2FSZWFkZXIuYXBrYCB8INC/
-0L7RgdC70LXQtNC90LjQuSBBUEsgfAoKYGlkYCDigJQg0YEg0L/RgNC10YTQ
-uNC60YHQvtC8INC40YHRgtC+0YfQvdC40LrQsCAoYG1tOjE2NzM3YCwgYG51
-ZGVtb29uOjMxNDcxYCk7INGB0YLQsNGA0YvQtSDRh9C40YHQu9C+0LLRi9C1
-INGC0YDQsNC60YLRg9GO0YLRgdGPINC60LDQuiBgbW1gLgoKIyMg0JrQsNC6
-INGB0LrQu9C10LjQstCw0Y7RgtGB0Y8g0YDQsNCx0L7RgtGLCgoxLiDQmNGB
-0YLQvtGH0L3QuNC6INC+0YLQtNCw0ZHRgiDQv9C70L7RgdC60LjQuSDRgdC/
-0LjRgdC+0Log0L/QvtGB0YLQvtCyLgoyLiDQndCw0LfQstCw0L3QuNC1INC/
-0YDQuNCy0L7QtNC40YLRgdGPINC6IGB3b3JrS2V5YDog0YDQtdCz0LjRgdGC
-0YAsIGDRkeKGktC1YCwg0LLRi9GA0LXQt9Cw0Y7RgtGB0Y8g0L/QvtC80LXR
-gtC60Lgg0LIg0LrQstCw0LTRgNCw0YLQvdGL0YUg0YHQutC+0LHQutCw0YUK
-ICAgKGBbUnVzc2lhbl1gLCBgW2RpcWt6XWApLCDQv9C10YDQtdCy0L7QtNGL
-INCyINGB0LrQvtCx0LrQsNGFLCDQv9GD0L3QutGC0YPQsNGG0LjRjywg0L3Q
-vtC80LXRgNCwINCz0LvQsNCyINC4INGH0LDRgdGC0LXQuToKICAgYC0g0LPQ
-u9Cw0LLQsCA1YCwgYNGC0L7QvCAyYCwgYNGH0LDRgdGC0YwgMWAsIGAjM2As
-IGDihJY0YCwgYDMgLSDQk9C70LDQt9CwINCb0Y7RgdC4YCwg0YXQstC+0YHR
-gtC+0LLQvtC1IGDigKYg0YLRiyA1YC4KMy4g0JXRgdC70Lgg0LIg0L3QsNC3
-0LLQsNC90LjQuCDQtdGB0YLRjCDQuCDQu9Cw0YLQuNC90LjRhtCwLCDQuCDQ
-utC40YDQuNC70LvQuNGG0LAgKGBPcmlnaW5hbCAvINCf0LXRgNC10LLQvtC0
-YCksINC60LvRjtGHINCx0LXRgNGR0YLRgdGPCiAgINC/0L4g0YDRg9GB0YHQ
-utC+0LzRgyDRgdC10LPQvNC10L3RgtGDIOKAlCDRgtCw0Log0YHQutC70LXQ
-uNCy0LDRjtGC0YHRjyDQvtC00LjQvdCw0LrQvtCy0YvQtSDRgNCw0LHQvtGC
-0Ysg0YEg0YDQsNC30L3Ri9GFINGB0LDQudGC0L7Qsi4KNC4g0J/QvtGB0YLR
-iyDRgSDQvtC00LjQvdCw0LrQvtCy0YvQvCDQutC70Y7Rh9C+0LwgPSDQvtC0
-0L3QsCDQutCw0YDRgtC+0YfQutCwOyDQvdCwINC60LDQttC00YvQuSDQuNGB
-0YLQvtGH0L3QuNC6INC+0YHRgtCw0ZHRgtGB0Y8g0L7QtNC40L0g0LDQtNGA
-0LXRgS4KNS4g0JPQu9Cw0LLRiyDRgdC+0LHQuNGA0LDRjtGC0YHRjyDQuNC3
-INC40L3QtNC10LrRgdCwINC60LDRgtCw0LvQvtCz0LA6INC10YHQu9C4INGB
-0LDQudGCINC/0YPQsdC70LjQutGD0LXRgiDCq9GH0LDRgdGC0LjCuyDQvtGC
-0LTQtdC70YzQvdGL0LzQuCDQv9C+0YHRgtCw0LzQuAogICAoYOKApiA0YCwg
-YOKApiA1YCksINC+0L3QuCDRgdGC0LDQvdC+0LLRj9GC0YHRjyDQs9C70LDQ
-stCw0LzQuCDQvtC00L3QvtC5INC60LDRgNGC0L7Rh9C60Lgg0LHQtdC3INC7
-0LjRiNC90LjRhSDQt9Cw0L/RgNC+0YHQvtCyINC6INGB0LDQudGC0YMuCgoj
-IyDQodC+0YDRgtC40YDQvtCy0LrQsAoKLSBgbmV3YCAvIGBvbGRgIOKAlCDQ
-v9C+INC/0L7RgNGP0LTQutGDINC00L7QsdCw0LLQu9C10L3QuNGPICjQuNGB
-0YLQvtGH0L3QuNC60Lgg0L7QsdGF0L7QtNGP0YLRgdGPINC+0YIg0L3QvtCy
-0YvRhSDQuiDRgdGC0LDRgNGL0LwpLgotIGBhemAgLyBgemFgIOKAlCDQv9C+
-INC90LDQt9Cy0LDQvdC40Y4uINCa0LvRjtGHINC+0YLQsdGA0LDRgdGL0LLQ
-sNC10YIg0L/RgNC10YTQuNC60YEgYFvQkNCy0YLQvtGAXWAsINCx0LXRgNGR
-0YIg0YDRg9GB0YHQutC40Lkg0YHQtdCz0LzQtdC90YIsCiAg0YPQsdC40YDQ
-sNC10YIg0L/Rg9C90LrRgtGD0LDRhtC40Y47INC/0L7RgNGP0LTQvtC6INCz
-0YDRg9C/0L86INGG0LjRhNGA0Ysg4oaSINC60LjRgNC40LvQu9C40YbQsCDi
-hpIg0LvQsNGC0LjQvdC40YbQsDsg0YHRgNCw0LLQvdC10L3QuNC1CiAgYElu
-dGwuQ29sbGF0b3IoJ3J1JywgeyBudW1lcmljOiB0cnVlIH0pYC4g0KHQvtGA
-0YLQuNGA0L7QstC60LAg0YDQsNCx0L7RgtCw0LXRgiDQuCDQsiDQvtCx0YnQ
-tdC8INC60LDRgtCw0LvQvtCz0LUsINC4INCy0L3Rg9GC0YDQuAogINCy0YvQ
-tNCw0YfQuCDQv9C+INGC0LXQs9GDLgoKIyMg0KLQtdCz0LgKCtCY0LzQtdC9
-0LAg0Lggc2x1ZyfQuCDRgyDQutCw0LbQtNC+0LPQviDQuNGB0YLQvtGH0L3Q
-uNC60LAg0YHQstC+0LgsINC/0L7RjdGC0L7QvNGDINC00LvRjyDRgtC10LPQ
-sCDRhdGA0LDQvdC40YLRgdGPINC90LDQsdC+0YAgc2x1ZyfQvtCyINC/0L4g
-0LjRgdGC0L7Rh9C90LjQutCw0LwuCtCk0LjQu9GM0YLRgCDQvtC/0YDQsNGI
-0LjQstCw0LXRgiDQuNGB0YLQvtGH0L3QuNC60Lgg0L/QsNGA0LDQu9C70LXQ
-u9GM0L3QviDRgSDQv9C+0YLQvtC70LrQvtC8IDMg0YHQtdC60YPQvdC00Ysg
-0L3QsCDQuNGB0YLQvtGH0L3QuNC6ICjQuNC90LDRh9C1INC+0LTQuNC9INC7
-0LXQttCw0YnQuNC5CtGB0LDQudGCINCy0LXRiNCw0Lsg0LLQtdGB0Ywg0LfQ
-sNC/0YDQvtGBKSwg0YDQtdC30YPQu9GM0YLQsNGC0Ysg0LrRjdGI0LjRgNGD
-0Y7RgtGB0Y8g0L3QsCDRh9Cw0YEsINCz0L7RgtC+0LLRi9C1INGB0YLRgNCw
-0L3QuNGG0Ysg4oCUINC90LAgMTAg0LzQuNC90YPRgi4KCiMjINCU0LXQv9C7
-0L7QuQoK0JPQvtGC0L7QstGL0Lkg0L7QsdGA0LDQtzoKCmBgYGJhc2gKZG9j
-a2VyIGJ1aWxkIC10IG1hbmdhLWFwaSAuCmRvY2tlciBydW4gLWQgLXAgMzAw
-MTozMDAxIC12IG1hbmdhLWNhY2hlOi9hcHAvY2FjaGUgbWFuZ2EtYXBpCmBg
-YAoK0KPRgdGC0LDQvdC+0LLQutCwINC90LAgVWJ1bnR1LdGB0LXRgNCy0LXR
-gCAoT3JhY2xlIENsb3VkIEFsd2F5cyBGcmVlLCDQu9GO0LHQvtC5IFZQUykg
-4oCUINGB0LwuIFtgZGVwbG95L1JFQURNRS5tZGBdKGRlcGxveS9SRUFETUUu
-bWQpOgrRgdC40YHRgtC10LzQvdGL0Lkg0YHQtdGA0LLQuNGBIGBzeXN0ZW1k
-YCwg0LDQstGC0L7Qv9C+0LvRg9GH0LXQvdC40LUgSFRUUFMg0YfQtdGA0LXQ
-tyBDYWRkeSwg0LTQvtC80LXQvSBEdWNrRE5TLCDQt9Cw0YnQuNGC0LAg0L7R
-ggrCq9C/0YDQvtGB0YLQvtGPwrsg0L3QsCDQsdC10YHQv9C70LDRgtC90YvR
-hSDQuNC90YHRgtCw0L3RgdCw0YUuINCh0LrRgNC40L/RgjogYHN1ZG8gYmFz
-aCBkZXBsb3kvaW5zdGFsbC11YnVudHUuc2ggPNC00L7QvNC10L0+YC4KCkh1
-Z2dpbmcgRmFjZSBTcGFjZXM6INGC0LjQvyBTcGFjZSDigJQgRG9ja2VyLCDQ
-siDQvdCw0YHRgtGA0L7QudC60LDRhSDQt9Cw0LTQsNGC0YwgYFBPUlQ9Nzg2
-MGAuCgojIyBBbmRyb2lkLdC/0YDQuNC70L7QttC10L3QuNC1CgpXZWJWaWV3
-LdC+0LHRkdGA0YLQutCwINC90LDQtCDRh9C40YLQsNC70LrQvtC5LiDQn9C+
-0YHQu9C10LTQvdGP0Y8g0LLQtdGA0YHQuNGPIOKAlCAqKjEuOCoqCihbcmVs
-ZWFzZV0oaHR0cHM6Ly9naXRodWIuY29tL1Rpa2VuQk5BL21hbmdhLXJlYWRl
-ci1hcGkvcmVsZWFzZXMvdGFnL2Fway0xLjgpKSwK0YHQsdC+0YDQutCwOiBg
-YW5kcm9pZC9idWlsZC5wczFgIChhYXB0MiDihpIgamF2YWMg4oaSIGQ4IOKG
-kiB6aXBhbGlnbiDihpIgYXBrc2lnbmVyLCDQsdC10LcgR3JhZGxlKS4K0J/R
-gNC40LvQvtC20LXQvdC40LUg0L7RgtC60YDRi9Cy0LDQtdGCINCw0LTRgNC1
-0YEg0L3QsNC/0YDRj9C80YPRjiDQuCDQv9C10YDQtdC/0L7QtNC60LvRjtGH
-0LDQtdGC0YHRjyDQv9GA0Lgg0L3QtdC00L7RgdGC0YPQv9C90L7RgdGC0Lgg
-0YHQtdGA0LLQtdGA0LAuCgojIyDQodGC0YDRg9C60YLRg9GA0LAKCmBgYApz
-ZXJ2ZXIuanMgICAgICBIVFRQLdGA0L7Rg9GC0LXRgCwg0L7QsdC+0LPQsNGJ
-0LXQvdC40LUg0LrQsNGA0YLQvtGH0LXQuiwg0YTQuNC70YzRgtGAINC/0L4g
-0YLQtdCz0LDQvApyZWdpc3RyeS5qcyAgICDQsNC00LDQv9GC0LXRgNGLLCDR
-gdC70LjRj9C90LjQtSDQuNGB0YLQvtGH0L3QuNC60L7Qsiwg0LrRjdGIINC6
-0LDRgtCw0LvQvtCz0L7Qsiwg0YHQvtGA0YLQuNGA0L7QstC60LAKaHR0cC5q
-cyAgICAgICAgZmV0Y2gg0YEg0YLQsNC50LzQsNGD0YLQvtC8LCDQvdC+0YDQ
-vNCw0LvQuNC30LDRhtC40Y8g0L3QsNC30LLQsNC90LjQuSAod29ya0tleSwg
-c3RyaXBDaGFwdGVyU3VmZml4KQp0YWdzLmpzICAgICAgICDQuNC90LTQtdC6
-0YEg0YLQtdCz0L7Qsgo8c291cmNlPi5qcyAgICDQsNC00LDQv9GC0LXRgNGL
-OiBtbSwgbnVkZW1vb24sIHNleGJhc2UsIG1hbmdhc2hpLCB6YWt1cmEsIGRl
-c3UsIGhjaGFuCmRlbW8uaHRtbCAgICAgINC/0LXRgdC+0YfQvdC40YbQsCAo
-0LrQsNGC0LDQu9C+0LMsINGC0LXQs9C4LCDRgdC+0YDRgtC40YDQvtCy0LrQ
-sCwg0YfQuNGC0LDQu9C60LApCmluZGV4Lmh0bWwgICAgINGB0YLRgNCw0L3Q
-uNGG0LAt0YDQtdC00LjRgNC10LrRgiDRgSDQv9C10YDQtdCx0L7RgNC+0Lwg
-0LDQtNGA0LXRgdC+0LIg0YLRg9C90L3QtdC70LXQuQpkZXBsb3kvICAgICAg
-ICBzeXN0ZW1kLCBDYWRkeSwg0YPRgdGC0LDQvdC+0LLRidC40LosINC40L3R
-gdGC0YDRg9C60YbQuNGPCmFuZHJvaWQvICAgICAgINC40YHRhdC+0LTQvdC4
-0LrQuCBBUEsKdG9vbHMvICAgICAgICAg0LvQvtC60LDQu9GM0L3Ri9C1INGD
-0YLQuNC70LjRgtGLICjQsiDRgNC10L/QvtC30LjRgtC+0YDQuNC5INC90LUg
-0L/QvtC/0LDQtNCw0Y7RgikKYGBgCgojIyDQntCz0YDQsNC90LjRh9C10L3Q
-uNGPCgoxLiBgaGNoYW5gIOKAlCDRgdCw0LnRgiDQv9C10YDQuNC+0LTQuNGH
-0LXRgdC60Lgg0L3QtdC00L7RgdGC0YPQv9C10L0g0YbQtdC70LjQutC+0Lw7
-INC60LDRgtCw0LvQvtCzINC/0YDQuCDRjdGC0L7QvCDQvdC1INC30LDRgtC4
-0YDQsNC10YLRgdGPCiAgINGH0LDRgdGC0LjRh9C90YvQvCDQvtCx0YXQvtC0
-0L7QvC4KMi4g0KTQuNC70YzRgtGAINC/0L4g0YLQtdCz0YMg0LLQuNC00LjR
-giDQv9C10YDQstGL0LUgYE1NX1RBR19QQUdFU2Ag0YHRgtGA0LDQvdC40YYg
-0LjRgdGC0L7Rh9C90LjQutCwICjQv9C+INGD0LzQvtC70YfQsNC90LjRjiAz
-KSwKICAg0LAg0L3QtSDQstC10YHRjCDQutCw0YLQsNC70L7Qsy4KMy4gYHph
-a3VyYWAg0LggYG51ZGVtb29uYCDQv9GD0LHQu9C40LrRg9GO0YIgwqvRh9Cw
-0YHRgtC4wrsg0L7RgtC00LXQu9GM0L3Ri9C80Lgg0L/QvtGB0YLQsNC80Lgg
-4oCUINC90L7QvNC10YAg0YfQsNGB0YLQuCDQsdC10YDRkdGC0YHRjwogICDQ
-uNC3INC90LDQt9Cy0LDQvdC40Y8sINC/0L7RjdGC0L7QvNGDINC90YPQvNC1
-0YDQsNGG0LjRjyDQs9C70LDQsiDQvNC+0LbQtdGCINC+0YLQu9C40YfQsNGC
-0YzRgdGPINC+0YIg0LDQstGC0L7RgNGB0LrQvtC5Lgo0LiDQlNCw0YLRiyDQ
-v9GD0LHQu9C40LrQsNGG0LjQuCDQtdGB0YLRjCDQvdC1INGDINCy0YHQtdGF
-INC40YHRgtC+0YfQvdC40LrQvtCyLCDQv9C+0Y3RgtC+0LzRgyDCq9C/0L4g
-0LTQsNGC0LUg0LTQvtCx0LDQstC70LXQvdC40Y/CuyDigJQg0Y3RgtC+INC/
-0L7RgNGP0LTQvtC6CiAgINC/0L7Rj9Cy0LvQtdC90LjRjyDQsiDQutCw0YLQ
-sNC70L7Qs9C1LCDQsCDQvdC1INGC0L7Rh9C90LDRjyDQtNCw0YLQsC4K
+# MangaReader API
+
+Мультиисточниковый прокси для читалки: собирает каталоги хентай-сайтов, склеивает одинаковые
+работы с разных источников и отдаёт их в одном JSON-контракте. Без зависимостей, Node.js 18+.
+
+Текущее состояние: **20 976 работ**, **7 источников**, только русскоязычные тайтлы.
+
+## Запуск
+
+```bash
+node server.js          # http://localhost:3001
+```
+
+Каталоги источников кэшируются в `cache/catalog-<id>.json` (по умолчанию 12 часов,
+`MM_CATALOG_TTL`). Если кэша нет — источник обходится в фоне, `/api/sources` показывает
+прогресс, а `/api/manga` до готовности отдаёт `503`.
+
+Переменные окружения:
+
+| Переменная | По умолчанию | Назначение |
+|---|---|---|
+| `PORT` | `3001` | порт сервера |
+| `MM_CACHE_DIR` | `../cache` | куда писать кэш каталогов (на хостинге — на volume) |
+| `MM_CATALOG_TTL` | `43200000` (12 ч) | сколько жить кэшу каталога |
+| `MM_ENRICH_BUDGET` | `700` | сколько миллисекунд ждать обогащение карточек |
+| `MM_TAG_PAGES` | `3` | сколько страниц тега листать у источника |
+| `MM_TAG_TIMEOUT` | `3000` | потолок на один источник при фильтре по тегу |
+
+## Источники
+
+| id | Сайт | Как устроен | Что отдаёт |
+|----|------|-------------|------------|
+| `mm` | multi-manga.com | DLE, 669 страниц каталога | каталог, главы, страницы, теги |
+| `nudemoon` | kpez.nude-moon.pro | пост = читалка `/view/<id>/` | каталог, страницы, теги (`/cat/`) |
+| `sexbase` | sexbase.org (только русские) | JSON API `/api/v2/manga` | каталог, страницы, теги по названию |
+| `mangashi` | manga-shi.org (только тег `#хентай`) | SSR HTML, главы `/tom-N/glava-N/` | каталог, главы, страницы |
+| `zakura` | zakura.su (раздел «хентай манга») | пост = одна длинная полоса-картинка | каталог, одна «глава», страницы |
+| `desu` | desu.uno (жанр «Хентай») | JSON API `/api/manga/…` | каталог, главы, страницы, теги |
+| `hchan` | hentaichan.live (Хентай-тян) | DLE, читалка отдаёт `data.fullimg` | каталог, главы, страницы |
+
+Особенности:
+- **hchan** раздаёт картинки с нескольких CDN-хостов; часть из них (`img4`, `mimg4`)
+  у провайдера не отвечает, поэтому адаптер переписывает ссылки на рабочий `img2.imgschan.xyz`
+  и берёт превью-обложки вместо 10-мегабайтных retina-версий.
+- **sexbase** отдаёт только работы с русским переводом.
+- **mangashi** тянет исключительно работы с тегом «хентай» (`tag-f3e59b6b`).
+- **desu** берёт только тайтлы, у которых в жанрах есть «Хентай».
+
+Не подключены (и почему): `allhen` — вместо страниц отдаёт заглушку; `hentailib` — контент
+доступен только с токеном; `mangadex` — нет хентай-тега. Код удалён.
+
+## Эндпоинты
+
+| Путь | Ответ |
+|------|-------|
+| `GET /api/manga?page=1[&source=nudemoon]` | `[{ id, title, cover, author, genres, sources[] }]` |
+| `GET /api/manga?tag=<slug>&page=1` | работы с тегом; несколько параметров `tag` = строгое И |
+| `...&sort=new\|old\|az\|za` | по дате добавления или по названию (А-Я / Я-А) |
+| `GET /api/tags` | `[{ slug, name, sources[] }]` |
+| `GET /api/sources` | состояние источников и их прогресс |
+| `GET /api/manga/<src:id>` | `{ id, title, cover, author, description, genres, sources }` |
+| `GET /api/manga/<src:id>/chapters` | `[{ id, number, volume, title, date, source }]` |
+| `GET /api/chapter/<src:id>/pages` | `{ pages, prevChapterId, nextChapterId }` |
+| `GET /health` | `{ ok, mergedWorks, sources[] }` |
+| `GET /demo` | песочница: каталог, теги, сортировка, читалка |
+| `GET /MangaReader.apk` | последний APK |
+
+`id` — с префиксом источника (`mm:16737`, `nudemoon:31471`); старые числовые трактуются как `mm`.
+
+## Как склеиваются работы
+
+1. Источник отдаёт плоский список постов.
+2. Название приводится к `workKey`: регистр, `ё→е`, вырезаются пометки в квадратных скобках
+   (`[Russian]`, `[diqkz]`), переводы в скобках, пунктуация, номера глав и частей:
+   `- глава 5`, `том 2`, `часть 1`, `#3`, `№4`, `3 - Глаза Люси`, хвостовое `… ты 5`.
+3. Если в названии есть и латиница, и кириллица (`Original / Перевод`), ключ берётся
+   по русскому сегменту — так склеиваются одинаковые работы с разных сайтов.
+4. Посты с одинаковым ключом = одна карточка; на каждый источник остаётся один адрес.
+5. Главы собираются из индекса каталога: если сайт публикует «части» отдельными постами
+   (`… 4`, `… 5`), они становятся главами одной карточки без лишних запросов к сайту.
+
+## Сортировка
+
+- `new` / `old` — по порядку добавления (источники обходятся от новых к старым).
+- `az` / `za` — по названию. Ключ отбрасывает префикс `[Автор]`, берёт русский сегмент,
+  убирает пунктуацию; порядок групп: цифры → кириллица → латиница; сравнение
+  `Intl.Collator('ru', { numeric: true })`. Сортировка работает и в общем каталоге, и внутри
+  выдачи по тегу.
+
+## Теги
+
+Имена и slug'и у каждого источника свои, поэтому для тега хранится набор slug'ов по источникам.
+Фильтр опрашивает источники параллельно с потолком 3 секунды на источник (иначе один лежащий
+сайт вешал весь запрос), результаты кэшируются на час, готовые страницы — на 10 минут.
+
+## Деплой
+
+Готовый образ:
+
+```bash
+docker build -t manga-api .
+docker run -d -p 3001:3001 -v manga-cache:/app/cache manga-api
+```
+
+Установка на Ubuntu-сервер (Oracle Cloud Always Free, любой VPS) — см. [`deploy/README.md`](deploy/README.md):
+системный сервис `systemd`, автополучение HTTPS через Caddy, домен DuckDNS, защита от
+«простоя» на бесплатных инстансах. Скрипт: `sudo bash deploy/install-ubuntu.sh <домен>`.
+
+Hugging Face Spaces: тип Space — Docker, в настройках задать `PORT=7860`.
+
+## Android-приложение
+
+WebView-обёртка над читалкой. Последняя версия — **1.8**
+([release](https://github.com/TikenBNA/manga-reader-api/releases/tag/apk-1.8)),
+сборка: `android/build.ps1` (aapt2 → javac → d8 → zipalign → apksigner, без Gradle).
+Приложение открывает адрес напрямую и переподключается при недоступности сервера.
+
+## Структура
+
+```
+server.js      HTTP-роутер, обогащение карточек, фильтр по тегам
+registry.js    адаптеры, слияние источников, кэш каталогов, сортировка
+http.js        fetch с таймаутом, нормализация названий (workKey, stripChapterSuffix)
+tags.js        индекс тегов
+<source>.js    адаптеры: mm, nudemoon, sexbase, mangashi, zakura, desu, hchan
+demo.html      песочница (каталог, теги, сортировка, читалка)
+index.html     страница-редирект с перебором адресов туннелей
+deploy/        systemd, Caddy, установщик, инструкция
+android/       исходники APK
+tools/         локальные утилиты (в репозиторий не попадают)
+```
+
+## Ограничения
+
+1. `hchan` — сайт периодически недоступен целиком; каталог при этом не затирается
+   частичным обходом.
+2. Фильтр по тегу видит первые `MM_TAG_PAGES` страниц источника (по умолчанию 3),
+   а не весь каталог.
+3. `zakura` и `nudemoon` публикуют «части» отдельными постами — номер части берётся
+   из названия, поэтому нумерация глав может отличаться от авторской.
+4. Даты публикации есть не у всех источников, поэтому «по дате добавления» — это порядок
+   появления в каталоге, а не точная дата.

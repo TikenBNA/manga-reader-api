@@ -1,150 +1,140 @@
-J3VzZSBzdHJpY3QnOwovKiog0J7QsdGJ0LjQtSDRg9GC0LjQu9C40YLRiyDQ
-tNC70Y8g0LDQtNCw0L/RgtC10YDQvtCyINC40YHRgtC+0YfQvdC40LrQvtCy
-LiAqLwoKY29uc3QgVUEgPSAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAu
-MDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlr
-ZSBHZWNrbykgQ2hyb21lLzEzMS4wLjAuMCBTYWZhcmkvNTM3LjM2JzsKY29u
-c3QgVElNRU9VVCA9IDE1MDAwOwoKY29uc3Qgc2xlZXAgPSAobXMpID0+IG5l
-dyBQcm9taXNlKChyKSA9PiBzZXRUaW1lb3V0KHIsIG1zKSk7Cgphc3luYyBm
-dW5jdGlvbiBmZXRjaFRleHQodXJsLCBhdHRlbXB0ID0gMCwgdGltZW91dE1z
-ID0gVElNRU9VVCkgewogIGNvbnN0IGN0cmwgPSBuZXcgQWJvcnRDb250cm9s
-bGVyKCk7CiAgY29uc3QgdGltZXIgPSBzZXRUaW1lb3V0KCgpID0+IGN0cmwu
-YWJvcnQoKSwgdGltZW91dE1zKTsKICB0cnkgewogICAgY29uc3QgcmVzID0g
-YXdhaXQgZmV0Y2godXJsLCB7CiAgICAgIHNpZ25hbDogY3RybC5zaWduYWws
-CiAgICAgIHJlZGlyZWN0OiAnZm9sbG93JywKICAgICAgaGVhZGVyczogewog
-ICAgICAgICdVc2VyLUFnZW50JzogVUEsCiAgICAgICAgJ0FjY2VwdCc6ICd0
-ZXh0L2h0bWwsYXBwbGljYXRpb24veGh0bWwreG1sLGFwcGxpY2F0aW9uL2pz
-b24sYXBwbGljYXRpb24veG1sJywKICAgICAgICAnQWNjZXB0LUxhbmd1YWdl
-JzogJ3J1LVJVLHJ1O3E9MC45LGVuO3E9MC44JywKICAgICAgfSwKICAgIH0p
-OwogICAgaWYgKCFyZXMub2spIHRocm93IG5ldyBFcnJvcihgSFRUUCAke3Jl
-cy5zdGF0dXN9IGZvciAke3VybH1gKTsKICAgIHJldHVybiBhd2FpdCByZXMu
-dGV4dCgpOwogIH0gY2F0Y2ggKGUpIHsKICAgIGlmIChhdHRlbXB0IDwgMikg
-ewogICAgICBhd2FpdCBzbGVlcCgzMDAgKiAoYXR0ZW1wdCArIDEpKTsKICAg
-ICAgcmV0dXJuIGZldGNoVGV4dCh1cmwsIGF0dGVtcHQgKyAxKTsKICAgIH0K
-ICAgIHRocm93IGU7CiAgfSBmaW5hbGx5IHsKICAgIGNsZWFyVGltZW91dCh0
-aW1lcik7CiAgfQp9Cgphc3luYyBmdW5jdGlvbiBmZXRjaEpzb24odXJsLCBh
-dHRlbXB0ID0gMCkgewogIHRyeSB7CiAgICByZXR1cm4gSlNPTi5wYXJzZShh
-d2FpdCBmZXRjaFRleHQodXJsLCBhdHRlbXB0KSk7CiAgfSBjYXRjaCAoZSkg
-ewogICAgaWYgKGF0dGVtcHQgPCAyKSB7CiAgICAgIGF3YWl0IHNsZWVwKDMw
-MCAqIChhdHRlbXB0ICsgMSkpOwogICAgICByZXR1cm4gZmV0Y2hKc29uKHVy
-bCwgYXR0ZW1wdCArIDEpOwogICAgfQogICAgdGhyb3cgZTsKICB9Cn0KCmNv
-bnN0IEVOVElUSUVTID0gewogICcmbmJzcDsnOiAnICcsICcmYW1wOyc6ICcm
-JywgJyZxdW90Oyc6ICciJywgJyYjMDM5Oyc6ICInIiwgJyZhcG9zOyc6ICIn
-IiwKICAnJmx0Oyc6ICc8JywgJyZndDsnOiAnPicsICcmbGFxdW87JzogJ8Kr
-JywgJyZyYXF1bzsnOiAnwrsnLCAnJm1kYXNoOyc6ICfigJQnLCAnJm5kYXNo
-Oyc6ICfigJMnLAp9Owpjb25zdCBkZWNvZGUgPSAocykgPT4gcy5yZXBsYWNl
-KC8mW2EteiMwLTldKzsvZ2ksIChtKSA9PiBFTlRJVElFU1ttLnRvTG93ZXJD
-YXNlKCldID8/IG0pOwpjb25zdCBzdHJpcFRhZ3MgPSAocykgPT4gZGVjb2Rl
-KFN0cmluZyhzKS5yZXBsYWNlKC88W14+XSs+L2csICcgJykpLnJlcGxhY2Uo
-L1xzKy9nLCAnICcpLnRyaW0oKTsKCmZ1bmN0aW9uIGFic1VybChiYXNlLCB1
-KSB7CiAgaWYgKCF1KSByZXR1cm4gbnVsbDsKICBpZiAoL15odHRwcz86XC9c
-Ly9pLnRlc3QodSkpIHJldHVybiB1OwogIGlmICh1LnN0YXJ0c1dpdGgoJy8v
-JykpIHJldHVybiAnaHR0cHM6JyArIHU7CiAgcmV0dXJuIGJhc2UgKyAodS5z
-dGFydHNXaXRoKCcvJykgPyB1IDogJy8nICsgdSk7Cn0KCi8qKiDQntGC0YDQ
-tdC30LDQtdGCINGF0LLQvtGB0YLRiyDQvdGD0LzQtdGA0LDRhtC40Lg6IMKr
-LSDQs9C70LDQstCwIDPCuywgwqvQotC+0LwgLSAxINCT0LvQsNCy0LAgLSA0
-wrssIMKr0YfQsNGB0YLRjCAywrsuICovCmZ1bmN0aW9uIHN0cmlwQ2hhcHRl
-clN1ZmZpeCh0aXRsZSkgewogIGNvbnN0IHRhaWwgPSBTdHJpbmcucmF3YFxz
-Kig/OlsoW11bXigpXFtcXV0qWylcXV0pP1xzKiRgOwogIGNvbnN0IGt3ID0g
-U3RyaW5nLnJhd2DRgtC+0Lx8dm9sdW1lfHZvbHzQs9C70LDQstCwfNCz0LvQ
-sNCy0Yt80LPQu9Cw0LLRg3zRh9Cw0YHRgtGMfGNoYXB0ZXJ8Y2h8cGFydGA7
-CiAgY29uc3QgbnVtID0gU3RyaW5nLnJhd2BccypbLlwt4oCT4oCUOuKEliNd
-P1xzKlxkKyg/OlxzKlst4oCT4oCUXVxzKlxkKyk/YDsKICByZXR1cm4gU3Ry
-aW5nKHRpdGxlKS50cmltKCkKICAgIC8vIMKrW1J1c3NpYW5dwrsgLyDCqyjQ
-v9C10YDQtdCy0L7QtCnCuyDQsiDQutC+0L3RhtC1IOKAlCDRg9Cx0LjRgNCw
-0LXQvCDRgdGA0LDQt9GDLCDQuNC90LDRh9C1INC90L7QvNC10YAg0LPQu9Cw
-0LLRiyDQv9C10YDQtdC0INC90LjQvNC4INC90LUg0L7RgtGA0LXQt9Cw0YLR
-jAogICAgLnJlcGxhY2UoL1xzKltcWyhdXHMqKD86cnVzc2lhbnxydXN8cnV8
-0L/QtdGA0LXQstC+0LR80L/QtdGAXC4pXHMqW1xdKV1ccyokL2ksICcnKQog
-ICAgLy8g0YXQstC+0YHRgiDQsiDRgdC60L7QsdC60LDRhTogwqsoUGFydCAx
-KcK7LCDCq1vQotC+0LwgMl3Cuywgwqso0LPQu9Cw0LLQsCAzKcK7CiAgICAu
-cmVwbGFjZShuZXcgUmVnRXhwKFN0cmluZy5yYXdgXHMqWyhbe11ccyooPzok
-e2t3fSkke251bX1ccypbKVxdfV0/XHMqJGAsICdpJyksICcnKQogICAgLy8g
-0L7QsdGL0YfQvdGL0Lkg0YXQstC+0YHRgjogwqstIFBhcnQuMcK7LCDCq9Ci
-0L7QvCAywrssIMKr0LPQu9Cw0LLQsCA1wrssIMKr0KfQsNGB0YLRjCAzLTTC
-uyAoKyDQstC+0LfQvNC+0LbQvdCw0Y8g0L/QvtC80LXRgtC60LAg0LIg0YHQ
-utC+0LHQutCw0YUpCiAgICAucmVwbGFjZShuZXcgUmVnRXhwKFN0cmluZy5y
-YXdgXHMqWy3igJPigJQ6fF0/XHMqKD86JHtrd30pJHtudW19JHt0YWlsfWAs
-ICdpJyksICcnKQogICAgLy8gwqvihJY1wrssIMKrIzXCuywgwqtuby41wrsg
-0LIg0LrQvtC90YbQtQogICAgLnJlcGxhY2UoL1xzKlst4oCT4oCUXT9ccyoo
-PzrihJZ8I3xubylccypcLj9ccypcZCtccyokL2ksICcnKQogICAgLy8g0YXQ
-stC+0YHRgtC+0LLQvtC1INGH0LjRgdC70L4g0LHQtdC3INC60LvRjtGH0LXQ
-stC+0LPQviDRgdC70L7QstCwOiDCq9Cc0LDQvNCwINGN0YLQviDQtNC+0LvQ
-ttC90LAg0LHRi9GC0Ywg0YLRiyA1wrsg4oaSIMKr0JzQsNC80LAg0Y3RgtC+
-INC00L7Qu9C20L3QsCDQsdGL0YLRjCDRgtGLwrsKICAgIC5yZXBsYWNlKC9c
-cytcZHsxLDN9KD86Wy4sXVxkKyk/XHMqJC8sICcnKQogICAgLy8gwqvQpdC+
-0LvQvtC00L3Ri9C5INGB0LLQtdGCIDIgLSDQntCz0L7QvdGMINC/0YDQtdC0
-0LrQsMK7IOKGkiDCq9Cl0L7Qu9C+0LTQvdGL0Lkg0YHQstC10YLCuwogICAg
-LnJlcGxhY2UoL1xzK1xkezEsM30oPzpbLixdXGQrKT9ccypbLeKAk+KAlDp8
-XVxzKltcc1xTXSokLywgJycpCiAgICAvLyDQv9C+0LzQtdGC0LrQuCDRj9C3
-0YvQutCwL9C/0LXRgNC10LLQvtC00LAg0Lgg0YLQtdCz0Lgt0LzQtdGC0LrQ
-uCDQsiDQutC+0L3RhtC1OiDCq1tSdXNzaWFuXcK7LCDCq1tkaXFrel3Cuywg
-wqtbVW5jZW5zb3JlZF3CuwogICAgLnJlcGxhY2UoLyg/OlxzKltcWyhdXHMq
-KD86cnVzc2lhbnxydXN8cnV8ZW5nbGlzaHxlbmd8dW5jZW5zb3JlZHzQv9C1
-0YDQtdCy0L7QtHzQv9C10YBcLilccypbXF0pXSkrXHMqJC9pLCAnJykKICAg
-IC5yZXBsYWNlKC8oPzpccypcW1thLXowLTlfXC1dezIsMTV9XF0pK1xzKiQv
-aSwgJycpCiAgICAucmVwbGFjZSgvXltcc1wt4oCT4oCUOnxdKy8sICcnKQog
-ICAgLnJlcGxhY2UoL1tcc1wt4oCT4oCULiw6O10rJC8sICcnKQogICAgLnRy
-aW0oKTsKfQoKLyoqINCa0LvRjtGHINC00LXQtNGD0L/Qu9C40LrQsNGG0LjQ
-uCDRgNCw0LHQvtGCICjQvNC10LbRgdCw0LnRgtC+0LLRi9C5KS4gKi8KZnVu
-Y3Rpb24gd29ya0tleSh0aXRsZSkgewogIC8vIMKrW0FMQU1BTUFdIEFUIFRI
-RSBCRUFDSCAtIENIMSB8INCd0JAg0J/Qm9Cv0JbQlSAtINGH0LDRgdGC0Ywg
-McK7IOKGkiDQsdC10YDRkdC8INGA0YPRgdGB0LrQuNC5INGB0LXQs9C80LXQ
-vdGCLAogIC8vINC40L3QsNGH0LUg0L7QtNC40L3QsNC60L7QstGL0LUg0YDQ
-sNCx0L7RgtGLINGBINGA0LDQt9C90YvRhSDRgdCw0LnRgtC+0LIg0L3QtSDR
-gdC60LvQtdC40LLQsNGO0YLRgdGPCiAgbGV0IHNyYyA9IFN0cmluZyh0aXRs
-ZSk7CiAgY29uc3Qgc2VncyA9IHNyYy5zcGxpdCgvXHMqXHxccyp8XHMrXC9c
-cysvKTsKICBpZiAoc2Vncy5sZW5ndGggPiAxKSB7CiAgICBjb25zdCBjeXIg
-PSBzZWdzLmZpbHRlcigocykgPT4gL1vQsC3Rj9GRXS9pLnRlc3QocykpOwog
-ICAgaWYgKGN5ci5sZW5ndGgpIHsKICAgICAgY3lyLnNvcnQoKGEsIGIpID0+
-IChiLm1hdGNoKC9b0LAt0Y/RkV0vZ2kpIHx8IFtdKS5sZW5ndGggLSAoYS5t
-YXRjaCgvW9CwLdGP0ZFdL2dpKSB8fCBbXSkubGVuZ3RoKTsKICAgICAgc3Jj
-ID0gY3lyWzBdOwogICAgfQogIH0KICAvLyDQtNC70Y8g0LrQu9GO0YfQsCDR
-gNC10LbQtdC8INC90L7QvNC10YAg0LPQu9Cw0LLRiyDCq9C00L4g0LrQvtC9
-0YbQsCDRgdGC0YDQvtC60LjCuywg0LTQsNC20LUg0LXRgdC70Lgg0LTQsNC7
-0YzRiNC1INGB0LrQvtCx0LrQuCDRgSDRgNGD0YHRgdC60LjQvCDQvdCw0LfQ
-stCw0L3QuNC10Lwg4oCUCiAgLy8g0LjQvdCw0YfQtSDCq1N3ZWV0IGd1eSAt
-INCz0LvQsNCy0LAgMTcgKOKApinCuyDQuCDCq1N3ZWV0IGd1eSAtINCz0LvQ
-sNCy0LAgMTggKOKApinCuyDQvdC1INGB0LrQu9C10Y/RgtGB0Y8KICBjb25z
-dCBhZ2dyZXNzaXZlID0gU3RyaW5nKHNyYykKICAgIC8vINGC0LXQs9C4LdC/
-0L7QvNC10YLQutC4INCyINC60LLQsNC00YDQsNGC0L3Ri9GFINGB0LrQvtCx
-0LrQsNGFOiDCq1tSdXNzaWFuXcK7LCDCq1tkaXFrel3CuywgwqtbVW5jZW5z
-b3JlZF3CuwogICAgLnJlcGxhY2UoL1xbW15cXV17MCw0MH1cXS9nLCAnICcp
-CiAgICAvLyDCq+KApkZpcnN0IOKEljIgLyDQmNGB0YLQvtGA0LjRj+KApsK7
-IOKAlCDQvdC+0LzQtdGAINGH0LDRgdGC0Lgg0LIg0YHQtdGA0LXQtNC40L3Q
-tSwg0LTQsNC70YzRiNC1INC40LTRkdGCINC/0LXRgNC10LLQvtC0INC90LDQ
-t9Cy0LDQvdC40Y8KICAgIC5yZXBsYWNlKC9ccyooPzrihJZ8IylccypcZCso
-PzpbLixdXGQrKT9bXHNcU10qJC9pLCAnJykKICAgIC8vIMKr0KXQvtC70L7Q
-tNC90YvQuSDRgdCy0LXRgiAzIC0g0JPQu9Cw0LfQsCDQm9GO0YHQuMK7IOKA
-lCDQvdC+0LzQtdGAINGH0LDRgdGC0Lgg0YEg0L/QvtC00LfQsNCz0L7Qu9C+
-0LLQutC+0LwKICAgIC5yZXBsYWNlKC9ccytcZHsxLDN9KD86Wy4sXVxkKyk/
-XHMqWy3igJPigJQ6fF1ccypbXHNcU10qJC9pLCAnJykKICAgIC5yZXBsYWNl
-KAogICAgICAvXHMqWy3igJPigJQ6fF0/XHMqKD860YLQvtC8fHZvbHVtZXx2
-b2x80LPQu9Cw0LLQsHzQs9C70LDQstGLfNCz0LvQsNCy0YN80YfQsNGB0YLR
-jHxjaGFwdGVyfGNofHBhcnQpXHMqWy5cLeKAk+KAlDrihJYjXT9ccypcZCtb
-XHNcU10qJC9pLAogICAgICAnJywKICAgICk7CiAgLy8gwqvQnNCw0LzQsCDR
-jdGC0L4g0LTQvtC70LbQvdCwINCx0YvRgtGMINGC0YsgNcK7INC4IMKr4oCm
-IDTCuyDigJQg0Y3RgtC+INGH0LDRgdGC0Lgg0L7QtNC90L7QuSDRgNCw0LHQ
-vtGC0YssINGF0LLQvtGB0YLQvtCy0L7QtSDRh9C40YHQu9C+INGA0LXQttC1
-0LwKICBjb25zdCBub1BhcnQgPSBhZ2dyZXNzaXZlLnJlcGxhY2UoL1xzKyg/
-OuKElnwjKT9ccypcZHsxLDN9KD86Wy4sXVxkKyk/XHMqJC8sIChtLCBvZmYs
-IHN0cikgPT4gewogICAgY29uc3QgcmVzdCA9IHN0ci5zbGljZSgwLCBzdHIu
-bGVuZ3RoIC0gbS5sZW5ndGgpLnRyaW0oKTsKICAgIHJldHVybiByZXN0Lmxl
-bmd0aCA+PSA2ID8gJycgOiBtOwogIH0pOwogIGNvbnN0IGJhc2UgPSBub1Bh
-cnQgfHwgc3RyaXBDaGFwdGVyU3VmZml4KHRpdGxlKSB8fCBTdHJpbmcodGl0
-bGUpOwogIHJldHVybiBiYXNlCiAgICAudG9Mb3dlckNhc2UoKQogICAgLnJl
-cGxhY2UoL9GRL2csICfQtScpCiAgICAvLyDQutC+0YDQvtGC0LrQuNC1INGH
-0LjRgdC70LAt0L3QvtC80LXRgNCwINGH0LDRgdGC0LXQuSDQs9C00LUg0YPQ
-s9C+0LTQvdC+OiDCq9CR0LXRgdGB0LzQtdGA0YLQvdGL0Lkg0LDRg9C60YbQ
-uNC+0L0gMiAvIEltbW9ydGFsIEF1Y3Rpb27CuwogICAgLnJlcGxhY2UoLyhe
-fFtccy98LDs64oCT4oCULV0pXGR7MSwzfSg/PVtccy98LDs64oCT4oCULV18
-JCkvZywgJyQxICcpCiAgICAucmVwbGFjZSgvKD864oSWfCN8bm9cLilccypc
-ZCsvZ2ksICcgJykKICAgIC5yZXBsYWNlKC9cKFteKV0qXCkvZywgJyAnKQog
-ICAgLnJlcGxhY2UoL1teMC05YS160LAt0Y9dKy9nLCAnICcpCiAgICAucmVw
-bGFjZSgvXHMrL2csICcgJykKICAgIC50cmltKCk7Cn0KCmZ1bmN0aW9uIHRh
-Z0tleShuYW1lKSB7CiAgcmV0dXJuIFN0cmluZyhuYW1lKQogICAgLnRvTG93
-ZXJDYXNlKCkKICAgIC5yZXBsYWNlKC/RkS9nLCAn0LUnKQogICAgLnJlcGxh
-Y2UoL1tcc18tXSsvZywgJyAnKQogICAgLnJlcGxhY2UoL1teMC05YS160LAt
-0Y8gXSsvZywgJycpCiAgICAudHJpbSgpOwp9Cgptb2R1bGUuZXhwb3J0cyA9
-IHsgVUEsIGZldGNoVGV4dCwgZmV0Y2hKc29uLCBkZWNvZGUsIHN0cmlwVGFn
-cywgYWJzVXJsLCB3b3JrS2V5LCB0YWdLZXksIHN0cmlwQ2hhcHRlclN1ZmZp
-eCwgc2xlZXAgfTsK
+'use strict';
+/** Общие утилиты для адаптеров источников. */
+
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+const TIMEOUT = 15000;
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function fetchText(url, attempt = 0, timeoutMs = TIMEOUT) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      redirect: 'follow',
+      headers: {
+        'User-Agent': UA,
+        'Accept': 'text/html,application/xhtml+xml,application/json,application/xml',
+        'Accept-Language': 'ru-RU,ru;q=0.9,en;q=0.8',
+      },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+    return await res.text();
+  } catch (e) {
+    if (attempt < 2) {
+      await sleep(300 * (attempt + 1));
+      return fetchText(url, attempt + 1);
+    }
+    throw e;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchJson(url, attempt = 0) {
+  try {
+    return JSON.parse(await fetchText(url, attempt));
+  } catch (e) {
+    if (attempt < 2) {
+      await sleep(300 * (attempt + 1));
+      return fetchJson(url, attempt + 1);
+    }
+    throw e;
+  }
+}
+
+const ENTITIES = {
+  '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#039;': "'", '&apos;': "'",
+  '&lt;': '<', '&gt;': '>', '&laquo;': '«', '&raquo;': '»', '&mdash;': '—', '&ndash;': '–',
+};
+const decode = (s) => s.replace(/&[a-z#0-9]+;/gi, (m) => ENTITIES[m.toLowerCase()] ?? m);
+const stripTags = (s) => decode(String(s).replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+
+function absUrl(base, u) {
+  if (!u) return null;
+  if (/^https?:\/\//i.test(u)) return u;
+  if (u.startsWith('//')) return 'https:' + u;
+  return base + (u.startsWith('/') ? u : '/' + u);
+}
+
+/** Отрезает хвосты нумерации: «- глава 3», «Том - 1 Глава - 4», «часть 2». */
+function stripChapterSuffix(title) {
+  const tail = String.raw`\s*(?:[([][^()\[\]]*[)\]])?\s*$`;
+  const kw = String.raw`том|volume|vol|глава|главы|главу|часть|chapter|ch|part`;
+  const num = String.raw`\s*[.\-–—:№#]?\s*\d+(?:\s*[-–—]\s*\d+)?`;
+  return String(title).trim()
+    // «[Russian]» / «(перевод)» в конце — убираем сразу, иначе номер главы перед ними не отрезать
+    .replace(/\s*[\[(]\s*(?:russian|rus|ru|перевод|пер\.)\s*[\])]\s*$/i, '')
+    // хвост в скобках: «(Part 1)», «[Том 2]», «(глава 3)»
+    .replace(new RegExp(String.raw`\s*[([{]\s*(?:${kw})${num}\s*[)\]}]?\s*$`, 'i'), '')
+    // обычный хвост: «- Part.1», «Том 2», «глава 5», «Часть 3-4» (+ возможная пометка в скобках)
+    .replace(new RegExp(String.raw`\s*[-–—:|]?\s*(?:${kw})${num}${tail}`, 'i'), '')
+    // «№5», «#5», «no.5» в конце
+    .replace(/\s*[-–—]?\s*(?:№|#|no)\s*\.?\s*\d+\s*$/i, '')
+    // хвостовое число без ключевого слова: «Мама это должна быть ты 5» → «Мама это должна быть ты»
+    .replace(/\s+\d{1,3}(?:[.,]\d+)?\s*$/, '')
+    // «Холодный свет 2 - Огонь предка» → «Холодный свет»
+    .replace(/\s+\d{1,3}(?:[.,]\d+)?\s*[-–—:|]\s*[\s\S]*$/, '')
+    // пометки языка/перевода и теги-метки в конце: «[Russian]», «[diqkz]», «[Uncensored]»
+    .replace(/(?:\s*[\[(]\s*(?:russian|rus|ru|english|eng|uncensored|перевод|пер\.)\s*[\])])+\s*$/i, '')
+    .replace(/(?:\s*\[[a-z0-9_\-]{2,15}\])+\s*$/i, '')
+    .replace(/^[\s\-–—:|]+/, '')
+    .replace(/[\s\-–—.,:;]+$/, '')
+    .trim();
+}
+
+/** Ключ дедупликации работ (межсайтовый). */
+function workKey(title) {
+  // «[ALAMAMA] AT THE BEACH - CH1 | НА ПЛЯЖЕ - часть 1» → берём русский сегмент,
+  // иначе одинаковые работы с разных сайтов не склеиваются
+  let src = String(title);
+  const segs = src.split(/\s*\|\s*|\s+\/\s+/);
+  if (segs.length > 1) {
+    const cyr = segs.filter((s) => /[а-яё]/i.test(s));
+    if (cyr.length) {
+      cyr.sort((a, b) => (b.match(/[а-яё]/gi) || []).length - (a.match(/[а-яё]/gi) || []).length);
+      src = cyr[0];
+    }
+  }
+  // для ключа режем номер главы «до конца строки», даже если дальше скобки с русским названием —
+  // иначе «Sweet guy - глава 17 (…)» и «Sweet guy - глава 18 (…)» не склеятся
+  const aggressive = String(src)
+    // теги-пометки в квадратных скобках: «[Russian]», «[diqkz]», «[Uncensored]»
+    .replace(/\[[^\]]{0,40}\]/g, ' ')
+    // «…First №2 / История…» — номер части в середине, дальше идёт перевод названия
+    .replace(/\s*(?:№|#)\s*\d+(?:[.,]\d+)?[\s\S]*$/i, '')
+    // «Холодный свет 3 - Глаза Люси» — номер части с подзаголовком
+    .replace(/\s+\d{1,3}(?:[.,]\d+)?\s*[-–—:|]\s*[\s\S]*$/i, '')
+    .replace(
+      /\s*[-–—:|]?\s*(?:том|volume|vol|глава|главы|главу|часть|chapter|ch|part)\s*[.\-–—:№#]?\s*\d+[\s\S]*$/i,
+      '',
+    );
+  // «Мама это должна быть ты 5» и «… 4» — это части одной работы, хвостовое число режем
+  const noPart = aggressive.replace(/\s+(?:№|#)?\s*\d{1,3}(?:[.,]\d+)?\s*$/, (m, off, str) => {
+    const rest = str.slice(0, str.length - m.length).trim();
+    return rest.length >= 6 ? '' : m;
+  });
+  const base = noPart || stripChapterSuffix(title) || String(title);
+  return base
+    .toLowerCase()
+    .replace(/ё/g, 'е')
+    // короткие числа-номера частей где угодно: «Бессмертный аукцион 2 / Immortal Auction»
+    .replace(/(^|[\s/|,;:–—-])\d{1,3}(?=[\s/|,;:–—-]|$)/g, '$1 ')
+    .replace(/(?:№|#|no\.)\s*\d+/gi, ' ')
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/[^0-9a-zа-я]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function tagKey(name) {
+  return String(name)
+    .toLowerCase()
+    .replace(/ё/g, 'е')
+    .replace(/[\s_-]+/g, ' ')
+    .replace(/[^0-9a-zа-я ]+/g, '')
+    .trim();
+}
+
+module.exports = { UA, fetchText, fetchJson, decode, stripTags, absUrl, workKey, tagKey, stripChapterSuffix, sleep };

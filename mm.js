@@ -1,146 +1,162 @@
-J3VzZSBzdHJpY3QnOwovKiog0JjRgdGC0L7Rh9C90LjQujogbXVsdGktbWFu
-Z2EuY29tIChETEUpLiAqLwpjb25zdCB7IGZldGNoVGV4dCwgZmV0Y2hKc29u
-LCBzdHJpcFRhZ3MsIGFic1VybCwgd29ya0tleSB9ID0gcmVxdWlyZSgnLi9o
-dHRwJyk7DQpjb25zdCB0YWdzSW5kZXggPSByZXF1aXJlKCcuL3RhZ3MnKTsK
-CmNvbnN0IEJBU0UgPSBwcm9jZXNzLmVudi5NTV9CQVNFIHx8ICdodHRwczov
-L211bHRpLW1hbmdhLmNvbSc7CmNvbnN0IGNhY2hlID0gbmV3IE1hcCgpOwpj
-b25zdCB1cmxDYWNoZSA9IG5ldyBNYXAoKTsKCmNvbnN0IGNhY2hlZCA9IGFz
-eW5jIChrZXksIHR0bCwgZm4pID0+IHsKICBjb25zdCBoaXQgPSBjYWNoZS5n
-ZXQoa2V5KTsKICBpZiAoaGl0ICYmIGhpdC5leHAgPiBEYXRlLm5vdygpKSBy
-ZXR1cm4gaGl0LnZhbHVlOwogIGNvbnN0IHYgPSBhd2FpdCBmbigpOwogIGNh
-Y2hlLnNldChrZXksIHsgZXhwOiBEYXRlLm5vdygpICsgdHRsLCB2YWx1ZTog
-diB9KTsKICByZXR1cm4gdjsKfTsKCmNvbnN0IENBUkRfUkUgPSAvPGFccyto
-cmVmPSIoaHR0cHM/OlwvXC9bXiJdK1wvXGQrLVteIl0rXC5odG1sKSJccytj
-bGFzcz0iY292ZXIiW1xzXFNdKj9kYXRhLXNyYz0iKFteIl0rKSJbXHNcU10q
-PzxkaXYgY2xhc3M9ImNhcHRpb24iW14+XSo+KFtcc1xTXSo/KTxcL2Rpdj4v
-ZzsKCmZ1bmN0aW9uIHBhcnNlQ2FyZHMoaHRtbCkgewogIGNvbnN0IG91dCA9
-IFtdOwogIGNvbnN0IHNlZW4gPSBuZXcgU2V0KCk7CiAgQ0FSRF9SRS5sYXN0
-SW5kZXggPSAwOwogIGxldCBtOwogIHdoaWxlICgobSA9IENBUkRfUkUuZXhl
-YyhodG1sKSkpIHsKICAgIGNvbnN0IFssIHVybCwgaW1nLCBjYXB0aW9uXSA9
-IG07CiAgICBjb25zdCBoaXQgPSB1cmwubWF0Y2goL1wvKFxkKyktKFteLz8j
-XSspXC5odG1sLyk7CiAgICBpZiAoIWhpdCB8fCBzZWVuLmhhcyhoaXRbMV0p
-KSBjb250aW51ZTsKICAgIHNlZW4uYWRkKGhpdFsxXSk7CiAgICB1cmxDYWNo
-ZS5zZXQoaGl0WzFdLCBgJHtCQVNFfS8ke2hpdFsxXX0tJHtoaXRbMl19Lmh0
-bWxgKTsKICAgIG91dC5wdXNoKHsgZXh0SWQ6IGhpdFsxXSwgdGl0bGU6IHN0
-cmlwVGFncyhjYXB0aW9uKSwgdXJsOiBgJHtCQVNFfS8ke2hpdFsxXX0tJHto
-aXRbMl19Lmh0bWxgLCBjb3ZlcjogYWJzVXJsKEJBU0UsIGltZykgfSk7CiAg
-fQogIHJldHVybiBvdXQ7Cn0KCmZ1bmN0aW9uIHBhcnNlRGV0YWlsKGh0bWws
-IGV4dElkKSB7CiAgY29uc3QgaDEgPSBodG1sLm1hdGNoKC88aDE+KFtcc1xT
-XSo/KTxcL2gxPi8pOwogIGlmICghaDEpIHJldHVybiBudWxsOwogIGNvbnN0
-IHRpdGxlID0gc3RyaXBUYWdzKGgxWzFdKTsKICBjb25zdCBmaWVsZCA9IChs
-YWJlbCkgPT4gewogICAgY29uc3QgbSA9IGh0bWwubWF0Y2gobmV3IFJlZ0V4
-cChgJHtsYWJlbH1cXHMqPHNwYW4gY2xhc3M9InRhZ3MiPihbXFxzXFxTXSo/
-KTxcXC9zcGFuPmApKTsKICAgIHJldHVybiBtID8gc3RyaXBUYWdzKG1bMV0p
-IDogJyc7CiAgfTsKICBjb25zdCB0YWdCbG9jayA9IGh0bWwubWF0Y2goLzxk
-aXYgY2xhc3M9InRhZy1jb250YWluZXIgZmllbGQtbmFtZVxzKiI+XHMq0KLQ
-tdCz0Lhccyo8c3BhbiBjbGFzcz0idGFncyI+KFtcc1xTXSo/KTxcL3NwYW4+
-Lyk7CiAgY29uc3QgZ2VucmVzID0gW107CiAgaWYgKHRhZ0Jsb2NrKSB7CiAg
-ICAvLyDRgdGB0YvQu9C60LAg0YLQtdCz0LAg0YHQvtC00LXRgNC20LjRgiDQ
-vdCw0YHRgtC+0Y/RidC40Lkgc2x1ZzogL3RhZ3MvPHNsdWc+LyDigJQg0LXQ
-s9C+INC4INC30LDQv9C+0LzQuNC90LDQtdC8INC00LvRjyDRhNC40LvRjNGC
-0YDQsAogICAgY29uc3QgcmUgPSAvPGFcYltePl0qaHJlZj0iW14iXSpcL3Rh
-Z3NcLyhbXiIvXSspXC8iW14+XSo+KFtcc1xTXSo/KTxcL2E+L2c7CiAgICBs
-ZXQgdDsKICAgIHdoaWxlICgodCA9IHJlLmV4ZWModGFnQmxvY2tbMV0pKSkg
-ewogICAgICBjb25zdCBzbHVnID0gZGVjb2RlVVJJQ29tcG9uZW50KHRbMV0p
-OwogICAgICBjb25zdCBnID0gc3RyaXBUYWdzKHRbMl0pOwogICAgICBpZiAo
-ZykgZ2VucmVzLnB1c2goZyk7CiAgICAgIHRhZ3NJbmRleC5ub3RlKCdtbScs
-IHNsdWcsIGcpOwogICAgfQogIH0KICBjb25zdCBkYXRlID0gKGh0bWwubWF0
-Y2goLzx0aW1lIGRhdGV0aW1lPSIoW14iXSspIi8pIHx8IFtdKVsxXSB8fCBu
-dWxsOwogIGNvbnN0IHBhZ2VzQ291bnQgPSBOdW1iZXIoKGh0bWwubWF0Y2go
-LyhcZCspXHMq0YHRgtGA0LDQvdC40YYvKSB8fCBbXSlbMV0gfHwgMSk7CiAg
-Y29uc3QgY292ZXIgPSAoaHRtbC5tYXRjaCgvaWQ9ImNvdmVyIltcc1xTXSo/
-ZGF0YS1zcmM9IihbXiJdKykiLykgfHwgW10pWzFdOwogIGNvbnN0IGRlc2Mg
-PSAoaHRtbC5tYXRjaCgvPG1ldGFccytuYW1lPSJkZXNjcmlwdGlvbiJccytj
-b250ZW50PSIoW14iXSopIi9pKSB8fCBbXSlbMV0gfHwgJyc7CgogIHJldHVy
-biB7IGV4dElkLCB0aXRsZSwgdXJsOiBgJHtCQVNFfS8ke2V4dElkfS14Lmh0
-bWxgLCBhdXRob3I6IGZpZWxkKCfQkNCy0YLQvtGAJyksIGdlbnJlcywgZGF0
-ZSwgcGFnZXNDb3VudCwgY292ZXI6IGFic1VybChCQVNFLCBjb3ZlciksIGRl
-c2NyaXB0aW9uOiBkZXNjIH07Cn0KCi8qKiDQodC+0LLQvNC10YHRgtC40LzQ
-vtGB0YLRjCDRgSDQv9GA0LXQttC90LjQvCDQutC+0LTQvtC8OiDQs9C70LDQ
-stGLINC40YnRg9GC0YHRjyDQv9C+0LjRgdC60L7QvCDQv9C+INC90LDQt9Cy
-0LDQvdC40Y4g0YDQsNCx0L7RgtGLLiAqLwphc3luYyBmdW5jdGlvbiBkZXRh
-aWwoZXh0SWQpIHsKICByZXR1cm4gY2FjaGVkKGBkOiR7ZXh0SWR9YCwgMzAg
-KiA2MGUzLCBhc3luYyAoKSA9PiB7CiAgICBjb25zdCB1cmwgPSB1cmxDYWNo
-ZS5nZXQoZXh0SWQpIHx8IGAke0JBU0V9LyR7ZXh0SWR9LXguaHRtbGA7CiAg
-ICBjb25zdCBodG1sID0gYXdhaXQgZmV0Y2hUZXh0KHVybCkuY2F0Y2goKCkg
-PT4gJycpOwogICAgY29uc3QgZCA9IHBhcnNlRGV0YWlsKGh0bWwsIGV4dElk
-KTsKICAgIGlmICghZCkgcmV0dXJuIG51bGw7CiAgICBjb25zdCBjYW5vbmlj
-YWwgPSAoaHRtbC5tYXRjaCgvPGxpbmsgcmVsPSJjYW5vbmljYWwiIGhyZWY9
-IihbXiJdKykiL2kpIHx8IFtdKVsxXTsKICAgIGlmIChjYW5vbmljYWwpIHsg
-ZC51cmwgPSBjYW5vbmljYWw7IHVybENhY2hlLnNldChleHRJZCwgY2Fub25p
-Y2FsKTsgfQogICAgcmV0dXJuIGQ7CiAgfSk7Cn0KCmFzeW5jIGZ1bmN0aW9u
-IGNhdGFsb2dQYWdlKHBhZ2UpIHsKICBjb25zdCB1cmwgPSBwYWdlIDw9IDEg
-PyBgJHtCQVNFfS9gIDogYCR7QkFTRX0vcGFnZS8ke3BhZ2V9L2A7CiAgcmV0
-dXJuIGNhY2hlZChgcDoke3BhZ2V9YCwgNSAqIDYwZTMsIGFzeW5jICgpID0+
-IHBhcnNlQ2FyZHMoYXdhaXQgZmV0Y2hUZXh0KHVybCkuY2F0Y2goKCkgPT4g
-JycpKSk7Cn0KCmNvbnN0IHdvcmtOYW1lID0gKHRpdGxlKSA9PiB0aXRsZS5y
-ZXBsYWNlKC9ccypbLeKAk+KAlF1ccyoo0LPQu9Cw0LLQsHzQs9C70LDQstGL
-fNGH0LDRgdGC0Yx8Y2hhcHRlcnxwYXJ0KS4qJC9pLCAnJykudHJpbSgpIHx8
-IHRpdGxlOwoKYXN5bmMgZnVuY3Rpb24gY2hhcHRlcnMoZXh0SWQpIHsKICBj
-b25zdCBzZWVkID0gYXdhaXQgZGV0YWlsKGV4dElkKTsKICBpZiAoIXNlZWQp
-IHJldHVybiBbXTsKICBjb25zdCBuYW1lID0gd29ya05hbWUoc2VlZC50aXRs
-ZSk7CiAgY29uc3Qga2V5ID0gd29ya0tleShuYW1lKTsKICByZXR1cm4gY2Fj
-aGVkKGBjaDoke2tleX1gLCAxMCAqIDYwZTMsIGFzeW5jICgpID0+IHsKICAg
-IGNvbnN0IGh0bWwgPSBhd2FpdCBmZXRjaFRleHQoYCR7QkFTRX0vaW5kZXgu
-cGhwP2RvPXNlYXJjaCZzdWJhY3Rpb249c2VhcmNoJnN0b3J5PSR7ZW5jb2Rl
-VVJJQ29tcG9uZW50KG5hbWUpfWApLmNhdGNoKCgpID0+ICcnKTsKICAgIGNv
-bnN0IGNhcmRzID0gcGFyc2VDYXJkcyhodG1sKTsKICAgIGNvbnN0IG91dCA9
-IFtdOwogICAgZm9yIChjb25zdCBjIG9mIGNhcmRzKSB7CiAgICAgIGNvbnN0
-IGQgPSBhd2FpdCBkZXRhaWwoYy5leHRJZCkuY2F0Y2goKCkgPT4gbnVsbCk7
-CiAgICAgIGlmICghZCB8fCB3b3JrS2V5KHdvcmtOYW1lKGQudGl0bGUpKSAh
-PT0ga2V5KSBjb250aW51ZTsKICAgICAgY29uc3QgbnVtID0gKGQudGl0bGUu
-bWF0Y2goLyg/OtCz0LvQsNCyW9Cw0YvRg10/fNGH0LDRgdGC0Yx8Y2hhcHRl
-cnxwYXJ0KVxzKihcZCsoPzpbLixdXGQrKT8pL2kpIHx8IFtdKVsxXTsKICAg
-ICAgb3V0LnB1c2goeyBleHRJZDogYy5leHRJZCwgbnVtYmVyOiBudW0gPyBO
-dW1iZXIobnVtLnJlcGxhY2UoJywnLCAnLicpKSA6IG51bGwsIHRpdGxlOiBk
-LnRpdGxlLCBkYXRlOiBkLmRhdGUgfSk7CiAgICB9CiAgICBvdXQuc29ydCgo
-YSwgYikgPT4gKGEubnVtYmVyID8/IDFlOSkgLSAoYi5udW1iZXIgPz8gMWU5
-KSB8fCBTdHJpbmcoYS5kYXRlKS5sb2NhbGVDb21wYXJlKFN0cmluZyhiLmRh
-dGUpKSk7CiAgICByZXR1cm4gb3V0Lm1hcCgoYywgaSkgPT4gKHsgLi4uYywg
-bnVtYmVyOiBjLm51bWJlciA/PyBpICsgMSB9KSk7CiAgfSk7Cn0KCmZ1bmN0
-aW9uIHBhcnNlSW1hZ2VzKGh0bWwpIHsKICBjb25zdCBvdXQgPSBbXTsKICBj
-b25zdCByZSA9IC88ZGl2IGNsYXNzPSJ0aHVtYi1jb250YWluZXIiPltcc1xT
-XSo/ZGF0YS1zcmM9IihbXiJdK1wuKD86d2VicHxqcGd8anBlZ3xwbmcpKSIv
-Z2k7CiAgbGV0IG07CiAgd2hpbGUgKChtID0gcmUuZXhlYyhodG1sKSkpIHsK
-ICAgIGNvbnN0IHUgPSBhYnNVcmwoQkFTRSwgbVsxXSk7CiAgICBpZiAoIW91
-dC5pbmNsdWRlcyh1KSkgb3V0LnB1c2godSk7CiAgfQogIHJldHVybiBvdXQ7
-Cn0KCmFzeW5jIGZ1bmN0aW9uIHBhZ2VzKGNoYXB0ZXJFeHRJZCkgewogIHJl
-dHVybiBjYWNoZWQoYHBnOiR7Y2hhcHRlckV4dElkfWAsIDYwICogNjBlMywg
-YXN5bmMgKCkgPT4gewogICAgY29uc3QgZCA9IGF3YWl0IGRldGFpbChjaGFw
-dGVyRXh0SWQpOwogICAgaWYgKCFkKSByZXR1cm4gbnVsbDsKICAgIGNvbnN0
-IGJhc2VVcmwgPSBkLnVybC5yZXBsYWNlKC9cLyQvLCAnJyk7CiAgICBjb25z
-dCB0b3RhbCA9IE1hdGgubWF4KDEsIGQucGFnZXNDb3VudCk7CiAgICBjb25z
-dCBsaXN0ID0gW107CiAgICBmb3IgKGNvbnN0IHUgb2YgcGFyc2VJbWFnZXMo
-YXdhaXQgZmV0Y2hUZXh0KGJhc2VVcmwpLmNhdGNoKCgpID0+ICcnKSkpIGxp
-c3QucHVzaCh1KTsKICAgIGZvciAobGV0IHAgPSAyOyBwIDw9IHRvdGFsICYm
-IGxpc3QubGVuZ3RoIDwgdG90YWw7IHArKykgewogICAgICBmb3IgKGNvbnN0
-IHUgb2YgcGFyc2VJbWFnZXMoYXdhaXQgZmV0Y2hUZXh0KGAke2Jhc2VVcmx9
-LyR7cH0vYCkuY2F0Y2goKCkgPT4gJycpKSkgaWYgKCFsaXN0LmluY2x1ZGVz
-KHUpKSBsaXN0LnB1c2godSk7CiAgICB9CiAgICBjb25zdCBjaHMgPSBhd2Fp
-dCBjaGFwdGVycyhjaGFwdGVyRXh0SWQpLmNhdGNoKCgpID0+IFtdKTsKICAg
-IGNvbnN0IGlkeCA9IGNocy5maW5kSW5kZXgoKGMpID0+IGMuZXh0SWQgPT09
-IGNoYXB0ZXJFeHRJZCk7CiAgICByZXR1cm4gewogICAgICBwYWdlczogbGlz
-dCwKICAgICAgcHJldkNoYXB0ZXJJZDogaWR4ID4gMCA/IGNoc1tpZHggLSAx
-XS5leHRJZCA6IG51bGwsCiAgICAgIG5leHRDaGFwdGVySWQ6IGlkeCA+PSAw
-ICYmIGlkeCA8IGNocy5sZW5ndGggLSAxID8gY2hzW2lkeCArIDFdLmV4dElk
-IDogbnVsbCwKICAgIH07CiAgfSk7Cn0KCmFzeW5jIGZ1bmN0aW9uIHRhZ3Mo
-KSB7CiAgY29uc3Qgb3V0ID0gW107CiAgdHJ5IHsKICAgIGNvbnN0IHhtbCA9
-IGF3YWl0IGZldGNoVGV4dChgJHtCQVNFfS90YWdzX3BhZ2VzLnhtbGApOwog
-ICAgZm9yIChjb25zdCBtIG9mIHhtbC5tYXRjaEFsbCgvPGxvYz4oW148XSsp
-PFwvbG9jPi9nKSkgewogICAgICBjb25zdCBoaXQgPSBtWzFdLm1hdGNoKC9c
-L3RhZ3NcLyhbXi9dKylcLyQvKTsKICAgICAgaWYgKGhpdCkgewogICAgICAg
-IGNvbnN0IHNsdWcgPSBkZWNvZGVVUklDb21wb25lbnQoaGl0WzFdKTsKICAg
-ICAgICBjb25zdCBuYW1lID0gc2x1Zy5yZXBsYWNlKC8tL2csICcgJyk7CiAg
-ICAgICAgb3V0LnB1c2goeyBzbHVnLCBuYW1lIH0pOwogICAgICAgIHRhZ3NJ
-bmRleC5ub3RlKCdtbScsIHNsdWcsIG5hbWUpOwogICAgICB9CiAgICB9CiAg
-fSBjYXRjaCB7IC8qIGlnbm9yZSAqLyB9CiAgcmV0dXJuIG91dDsKfQoKYXN5
-bmMgZnVuY3Rpb24gdGFnUGFnZShzbHVnLCBwYWdlKSB7CiAgY29uc3QgdXJs
-ID0gcGFnZSA8PSAxID8gYCR7QkFTRX0vdGFncy8ke2VuY29kZVVSSUNvbXBv
-bmVudChzbHVnKX0vYCA6IGAke0JBU0V9L3RhZ3MvJHtlbmNvZGVVUklDb21w
-b25lbnQoc2x1Zyl9L3BhZ2UvJHtwYWdlfS9gOwogIHJldHVybiBjYWNoZWQo
-YHQ6JHtzbHVnfToke3BhZ2V9YCwgNSAqIDYwZTMsIGFzeW5jICgpID0+IHBh
-cnNlQ2FyZHMoYXdhaXQgZmV0Y2hUZXh0KHVybCkuY2F0Y2goKCkgPT4gJycp
-KSk7Cn0KCm1vZHVsZS5leHBvcnRzID0gewogIGlkOiAnbW0nLCBuYW1lOiAn
-bXVsdGktbWFuZ2EuY29tJywgYmFzZTogQkFTRSwgbWF4UGFnZXM6IDcwMCwK
-ICBjYXRhbG9nUGFnZSwgZGV0YWlsLCBjaGFwdGVycywgcGFnZXMsIHRhZ3Ms
-IHRhZ1BhZ2UsCn07Cg==
+'use strict';
+/** Источник: multi-manga.com (DLE). */
+const { fetchText, fetchJson, stripTags, absUrl, workKey } = require('./http');
+const tagsIndex = require('./tags');
+
+const BASE = process.env.MM_BASE || 'https://multi-manga.com';
+const cache = new Map();
+const urlCache = new Map();
+
+const cached = async (key, ttl, fn) => {
+  const hit = cache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+  const v = await fn();
+  cache.set(key, { exp: Date.now() + ttl, value: v });
+  return v;
+};
+
+const CARD_RE = /<a\s+href="(https?:\/\/[^"]+\/\d+-[^"]+\.html)"\s+class="cover"[\s\S]*?data-src="([^"]+)"[\s\S]*?<div class="caption"[^>]*>([\s\S]*?)<\/div>/g;
+
+function parseCards(html) {
+  const out = [];
+  const seen = new Set();
+  CARD_RE.lastIndex = 0;
+  let m;
+  while ((m = CARD_RE.exec(html))) {
+    const [, url, img, caption] = m;
+    const hit = url.match(/\/(\d+)-([^/?#]+)\.html/);
+    if (!hit || seen.has(hit[1])) continue;
+    seen.add(hit[1]);
+    urlCache.set(hit[1], `${BASE}/${hit[1]}-${hit[2]}.html`);
+    out.push({ extId: hit[1], title: stripTags(caption), url: `${BASE}/${hit[1]}-${hit[2]}.html`, cover: absUrl(BASE, img) });
+  }
+  return out;
+}
+
+function parseDetail(html, extId) {
+  const h1 = html.match(/<h1>([\s\S]*?)<\/h1>/);
+  if (!h1) return null;
+  const title = stripTags(h1[1]);
+  const field = (label) => {
+    const m = html.match(new RegExp(`${label}\\s*<span class="tags">([\\s\\S]*?)<\\/span>`));
+    return m ? stripTags(m[1]) : '';
+  };
+  const tagBlock = html.match(/<div class="tag-container field-name\s*">\s*Теги\s*<span class="tags">([\s\S]*?)<\/span>/);
+  const genres = [];
+  if (tagBlock) {
+    // ссылка тега содержит настоящий slug: /tags/<slug>/ — его и запоминаем для фильтра
+    const re = /<a\b[^>]*href="[^"]*\/tags\/([^"/]+)\/"[^>]*>([\s\S]*?)<\/a>/g;
+    let t;
+    while ((t = re.exec(tagBlock[1]))) {
+      const slug = decodeURIComponent(t[1]);
+      const g = stripTags(t[2]);
+      if (g) genres.push(g);
+      tagsIndex.note('mm', slug, g);
+    }
+  }
+  const date = (html.match(/<time datetime="([^"]+)"/) || [])[1] || null;
+  const pagesCount = Number((html.match(/(\d+)\s*страниц/) || [])[1] || 1);
+  const cover = (html.match(/id="cover"[\s\S]*?data-src="([^"]+)"/) || [])[1];
+  const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/i) || [])[1] || '';
+
+  return { extId, title, url: `${BASE}/${extId}-x.html`, author: field('Автор'), genres, date, pagesCount, cover: absUrl(BASE, cover), description: desc };
+}
+
+/** Совместимость с прежним кодом: главы ищутся поиском по названию работы. */
+async function detail(extId) {
+  return cached(`d:${extId}`, 30 * 60e3, async () => {
+    const url = urlCache.get(extId) || `${BASE}/${extId}-x.html`;
+    const html = await fetchText(url).catch(() => '');
+    const d = parseDetail(html, extId);
+    if (!d) return null;
+    const canonical = (html.match(/<link rel="canonical" href="([^"]+)"/i) || [])[1];
+    if (canonical) { d.url = canonical; urlCache.set(extId, canonical); }
+    return d;
+  });
+}
+
+async function catalogPage(page) {
+  const url = page <= 1 ? `${BASE}/` : `${BASE}/page/${page}/`;
+  return cached(`p:${page}`, 5 * 60e3, async () => parseCards(await fetchText(url).catch(() => '')));
+}
+
+const workName = (title) => title.replace(/\s*[-–—]\s*(глава|главы|часть|chapter|part).*$/i, '').trim() || title;
+
+async function chapters(extId) {
+  const seed = await detail(extId);
+  if (!seed) return [];
+  const name = workName(seed.title);
+  const key = workKey(name);
+  return cached(`ch:${key}`, 10 * 60e3, async () => {
+    const html = await fetchText(`${BASE}/index.php?do=search&subaction=search&story=${encodeURIComponent(name)}`).catch(() => '');
+    const cards = parseCards(html);
+    const out = [];
+    for (const c of cards) {
+      const d = await detail(c.extId).catch(() => null);
+      if (!d || workKey(workName(d.title)) !== key) continue;
+      const num = (d.title.match(/(?:глав[аыу]?|часть|chapter|part)\s*(\d+(?:[.,]\d+)?)/i) || [])[1];
+      out.push({ extId: c.extId, number: num ? Number(num.replace(',', '.')) : null, title: d.title, date: d.date });
+    }
+    out.sort((a, b) => (a.number ?? 1e9) - (b.number ?? 1e9) || String(a.date).localeCompare(String(b.date)));
+    return out.map((c, i) => ({ ...c, number: c.number ?? i + 1 }));
+  });
+}
+
+function parseImages(html) {
+  const out = [];
+  const re = /<div class="thumb-container">[\s\S]*?data-src="([^"]+\.(?:webp|jpg|jpeg|png))"/gi;
+  let m;
+  while ((m = re.exec(html))) {
+    const u = absUrl(BASE, m[1]);
+    if (!out.includes(u)) out.push(u);
+  }
+  return out;
+}
+
+async function pages(chapterExtId) {
+  return cached(`pg:${chapterExtId}`, 60 * 60e3, async () => {
+    const d = await detail(chapterExtId);
+    if (!d) return null;
+    const baseUrl = d.url.replace(/\/$/, '');
+    const total = Math.max(1, d.pagesCount);
+    const list = [];
+    for (const u of parseImages(await fetchText(baseUrl).catch(() => ''))) list.push(u);
+    for (let p = 2; p <= total && list.length < total; p++) {
+      for (const u of parseImages(await fetchText(`${baseUrl}/${p}/`).catch(() => ''))) if (!list.includes(u)) list.push(u);
+    }
+    const chs = await chapters(chapterExtId).catch(() => []);
+    const idx = chs.findIndex((c) => c.extId === chapterExtId);
+    return {
+      pages: list,
+      prevChapterId: idx > 0 ? chs[idx - 1].extId : null,
+      nextChapterId: idx >= 0 && idx < chs.length - 1 ? chs[idx + 1].extId : null,
+    };
+  });
+}
+
+async function tags() {
+  const out = [];
+  try {
+    const xml = await fetchText(`${BASE}/tags_pages.xml`);
+    for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+      const hit = m[1].match(/\/tags\/([^/]+)\/$/);
+      if (hit) {
+        const slug = decodeURIComponent(hit[1]);
+        const name = slug.replace(/-/g, ' ');
+        out.push({ slug, name });
+        tagsIndex.note('mm', slug, name);
+      }
+    }
+  } catch { /* ignore */ }
+  return out;
+}
+
+async function tagPage(slug, page) {
+  const url = page <= 1 ? `${BASE}/tags/${encodeURIComponent(slug)}/` : `${BASE}/tags/${encodeURIComponent(slug)}/page/${page}/`;
+  return cached(`t:${slug}:${page}`, 5 * 60e3, async () => parseCards(await fetchText(url).catch(() => '')));
+}
+
+module.exports = {
+  id: 'mm', name: 'multi-manga.com', base: BASE, maxPages: 700,
+  catalogPage, detail, chapters, pages, tags, tagPage,
+};

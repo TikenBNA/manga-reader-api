@@ -1,130 +1,136 @@
-J3VzZSBzdHJpY3QnOwovKioKICog0JjRgdGC0L7Rh9C90LjQujoga3Blei5u
-dWRlLW1vb24ucHJvIChOVURFLU1PT04pLgogKiDQn9C+0YHRgiA9INGB0YDQ
-sNC30YMg0YfQuNGC0LDQu9C60LA6IC92aWV3LzxpZD4tPHNsdWc+LyAo0LrQ
-sNGA0YLQuNC90LrQuCDQsiBkYXRhLXNyYykuCiAqINCa0LDRgtCw0LvQvtCz
-IOKAlCAvINC4IC9wYWdlL04vICjQutCw0YDRgtC+0YfQutC4IGEudGh1bWIp
-LCDRgtC10LPQuCDigJQgL2NhdC88c2x1Zz4vICgrIC9wYWdlL04vKS4KICov
-CmNvbnN0IHsgZmV0Y2hUZXh0LCBzdHJpcFRhZ3MsIGFic1VybCB9ID0gcmVx
-dWlyZSgnLi9odHRwJyk7CmNvbnN0IHRhZ3NJbmRleCA9IHJlcXVpcmUoJy4v
-dGFncycpOwoKY29uc3QgQkFTRSA9ICdodHRwczovL2twZXoubnVkZS1tb29u
-LnBybyc7CmNvbnN0IGNhY2hlID0gbmV3IE1hcCgpOwpjb25zdCB1cmxDYWNo
-ZSA9IG5ldyBNYXAoKTsKCmNvbnN0IGNhY2hlZCA9IGFzeW5jIChrZXksIHR0
-bCwgZm4pID0+IHsKICBjb25zdCBoaXQgPSBjYWNoZS5nZXQoa2V5KTsKICBp
-ZiAoaGl0ICYmIGhpdC5leHAgPiBEYXRlLm5vdygpKSByZXR1cm4gaGl0LnZh
-bHVlOwogIGNvbnN0IHYgPSBhd2FpdCBmbigpOwogIGNhY2hlLnNldChrZXks
-IHsgZXhwOiBEYXRlLm5vdygpICsgdHRsLCB2YWx1ZTogdiB9KTsKICByZXR1
-cm4gdjsKfTsKCi8qKiDCqzAtMyDQs9C70LDQstGLwrssIMKrMS00INCz0LvQ
-sNCy0YsgK9Cx0L7QvdGD0YHCuywgwqsxLTgg0LPQu9C/0LLRi8K7IOKAlCDR
-jdGC0L4g0LTQuNCw0L/QsNC30L7QvSDQs9C70LDQsiwg0LAg0L3QtSDQvdCw
-0LfQstCw0L3QuNC1LiAqLwpjb25zdCBpc1JhbmdlVGl0bGUgPSAocykgPT4g
-ewogIGNvbnN0IHggPSBTdHJpbmcocyB8fCAnJykudHJpbSgpOwogIHJldHVy
-biAheCB8fCAvXltcZFxzLC4rXC3igJPigJQvXSooPzrQs9C70LDQstGLfNCz
-0LvQsNCy0LB80LPQu9Cw0LJ80LPQu9C/0LLRi3zQs9C70LDQstGDfNGH0LDR
-gdGC0Yx80YLQvtC8W9CwXT8pP1tcc1xkLC4rXC3igJPigJQvXSokL2kudGVz
-dCh4KTsKfTsKCi8qKiDQndCw0LfQstCw0L3QuNC1INC40Lcg0LDQtNGA0LXR
-gdCwOiAvdmlldy8yNzQxNC1rYWdvLW5vLW5ha2Etbm8ta290b3JpLS4uLi0w
-LTMtZ2xhdnkvICovCmZ1bmN0aW9uIHRpdGxlRnJvbVNsdWcoaHJlZikgewog
-IGxldCBzbHVnID0gU3RyaW5nKGhyZWYpLnJlcGxhY2UoL15cL3ZpZXdcL1xk
-Ky0vLCAnJykucmVwbGFjZSgvXC8kLywgJycpOwogIHNsdWcgPSBzbHVnLnJl
-cGxhY2UoLy1cZCstXGQrLWdsYXZ5LiokL2ksICcnKS5yZXBsYWNlKC8tZ2xh
-dmEtP1xkKy4qJC9pLCAnJykucmVwbGFjZSgvLXgkLywgJycpOwogIGNvbnN0
-IHdvcmRzID0gc2x1Zy5zcGxpdCgnLScpLmZpbHRlcihCb29sZWFuKTsKICBp
-ZiAoIXdvcmRzLmxlbmd0aCkgcmV0dXJuICcnOwogIGNvbnN0IHRleHQgPSB3
-b3Jkcy5qb2luKCcgJyk7CiAgcmV0dXJuIHRleHQuY2hhckF0KDApLnRvVXBw
-ZXJDYXNlKCkgKyB0ZXh0LnNsaWNlKDEpOwp9CgpmdW5jdGlvbiBwYXJzZUNh
-cmRzKGh0bWwpIHsKICBjb25zdCBvdXQgPSBbXTsKICAvLyDRgNC10LbQtdC8
-INC/0L4g0L3QsNGH0LDQu9GDINC60LDRgNGC0L7Rh9C60Lg6INC40L3QsNGH
-0LUgwqvQu9C10L3QuNCy0YvQucK7IHJlZ2V4INC/0LXRgNC10YHQutCw0LrQ
-uNCy0LDQtdGCINCyINGB0LvQtdC00YPRjtGJ0YPRjiDQutCw0YDRgtC+0YfQ
-utGDCiAgLy8g0Lgg0L/QvtC00YLRj9Cz0LjQstCw0LXRgiDRh9GD0LbRg9GO
-INC+0LHQu9C+0LbQutGDL9C90LDQt9Cy0LDQvdC40LUgKNCx0YvQu9C+OiDQ
-t9Cw0LPQvtC70L7QstC+0Log0L7QtNC90L7QuSDQvNCw0L3Qs9C4ICsg0LrQ
-sNGA0YLQuNC90LrQsCDQtNGA0YPQs9C+0LkpCiAgY29uc3QgY2h1bmtzID0g
-aHRtbC5zcGxpdCgnPGEgY2xhc3M9InRodW1iJyk7CiAgZm9yIChsZXQgaSA9
-IDE7IGkgPCBjaHVua3MubGVuZ3RoOyBpKyspIHsKICAgIGNvbnN0IGIgPSBj
-aHVua3NbaV07CiAgICBjb25zdCBobSA9IGIubWF0Y2goL2hyZWY9IihcL3Zp
-ZXdcLyhcZCspLVteIl0rKSIvKTsKICAgIGlmICghaG0pIGNvbnRpbnVlOwog
-ICAgY29uc3QgaW1nID0gKGIubWF0Y2goL2RhdGEtc3JjPSIoW14iXSspIi8p
-IHx8IFtdKVsxXTsKICAgIGNvbnN0IHRtID0gYi5tYXRjaCgvdGh1bWJfX3Rp
-dGxlW14iXSoiPihbXHNcU10qPyk8XC9kaXY+Lyk7CiAgICBjb25zdCBbLCBo
-cmVmLCBleHRJZF0gPSBobTsKICAgIGxldCB0aXRsZSA9IHRtID8gc3RyaXBU
-YWdzKHRtWzFdKSA6ICcnOwogICAgLy8g0YMg0YfQsNGB0YLQuCDRgdGC0LDR
-gNGL0YUg0L/QvtGB0YLQvtCyINCyINC30LDQs9C+0LvQvtCy0LrQtSDQutCw
-0YDRgtC+0YfQutC4INGC0L7Qu9GM0LrQviDQtNC40LDQv9Cw0LfQvtC9INCz
-0LvQsNCyIOKAlCDQsdC10YDRkdC8INC90LDQt9Cy0LDQvdC40LUg0LjQtyDQ
-sNC00YDQtdGB0LAKICAgIGlmIChpc1JhbmdlVGl0bGUodGl0bGUpKSB0aXRs
-ZSA9IHRpdGxlRnJvbVNsdWcoaHJlZik7CiAgICBpZiAoIXRpdGxlIHx8ICFp
-bWcpIGNvbnRpbnVlOwogICAgdXJsQ2FjaGUuc2V0KGV4dElkLCBCQVNFICsg
-aHJlZik7CiAgICBpZiAob3V0LnNvbWUoKHgpID0+IHguZXh0SWQgPT09IGV4
-dElkKSkgY29udGludWU7CiAgICBvdXQucHVzaCh7IGV4dElkLCB0aXRsZSwg
-dXJsOiBCQVNFICsgaHJlZiwgY292ZXI6IGFic1VybChCQVNFLCBpbWcpIH0p
-OwogIH0KICByZXR1cm4gb3V0Owp9Cgphc3luYyBmdW5jdGlvbiBjYXRhbG9n
-UGFnZShwYWdlKSB7CiAgY29uc3QgdXJsID0gcGFnZSA8PSAxID8gYCR7QkFT
-RX0vYCA6IGAke0JBU0V9L3BhZ2UvJHtwYWdlfS9gOwogIHJldHVybiBjYWNo
-ZWQoYHA6JHtwYWdlfWAsIDUgKiA2MGUzLCBhc3luYyAoKSA9PiBwYXJzZUNh
-cmRzKGF3YWl0IGZldGNoVGV4dCh1cmwpLmNhdGNoKCgpID0+ICcnKSkpOwp9
-Cgphc3luYyBmdW5jdGlvbiB2aWV3SHRtbChleHRJZCkgewogIGNvbnN0IHVy
-bCA9IHVybENhY2hlLmdldChleHRJZCkgfHwgYCR7QkFTRX0vdmlldy8ke2V4
-dElkfS14L2A7CiAgcmV0dXJuIGZldGNoVGV4dCh1cmwpLmNhdGNoKCgpID0+
-ICcnKTsKfQoKYXN5bmMgZnVuY3Rpb24gZGV0YWlsKGV4dElkKSB7CiAgcmV0
-dXJuIGNhY2hlZChgZDoke2V4dElkfWAsIDMwICogNjBlMywgYXN5bmMgKCkg
-PT4gewogICAgY29uc3QgaHRtbCA9IGF3YWl0IHZpZXdIdG1sKGV4dElkKTsK
-ICAgIGNvbnN0IGgxID0gaHRtbC5tYXRjaCgvPGgxW14+XSo+KFtcc1xTXSo/
-KTxcL2gxPi8pOwogICAgaWYgKCFoMSkgcmV0dXJuIG51bGw7CiAgICBjb25z
-dCBnZW5yZXMgPSBbXTsKICAgIGZvciAoY29uc3QgbSBvZiBodG1sLm1hdGNo
-QWxsKC9ocmVmPSJcL2NhdFwvKFteIi9dKylcLyIvZykpIHsKICAgICAgY29u
-c3Qgc2x1ZyA9IG1bMV07CiAgICAgIGNvbnN0IG5hbWUgPSBzbHVnLnJlcGxh
-Y2UoLy0vZywgJyAnKTsKICAgICAgaWYgKCFnZW5yZXMuaW5jbHVkZXMobmFt
-ZSkpIGdlbnJlcy5wdXNoKG5hbWUpOwogICAgICB0YWdzSW5kZXgubm90ZSgn
-bnVkZW1vb24nLCBzbHVnLCBuYW1lKTsKICAgIH0KICAgIGNvbnN0IGNvdmVy
-ID0gKGh0bWwubWF0Y2goL2RhdGEtc3JjPSIoaHR0cHM/OlwvXC9bXiJdK1wu
-KD86d2VicHxqcGd8anBlZ3xwbmcpKSIvaSkgfHwgW10pWzFdOwogICAgY29u
-c3QgZGVzYyA9IChodG1sLm1hdGNoKC88bWV0YVxzK25hbWU9ImRlc2NyaXB0
-aW9uIlxzK2NvbnRlbnQ9IihbXiJdKikiL2kpIHx8IFtdKVsxXSB8fCAnJzsK
-ICAgIGNvbnN0IHRpdGxlID0gc3RyaXBUYWdzKGgxWzFdKS5yZXBsYWNlKC9c
-cyrigJRccyrRhdC10L3RgtCw0Lkg0LzQsNC90LPQsCQvaSwgJycpOwogICAg
-cmV0dXJuIHsgZXh0SWQsIHRpdGxlLCB1cmw6IHVybENhY2hlLmdldChleHRJ
-ZCkgfHwgYCR7QkFTRX0vdmlldy8ke2V4dElkfS14L2AsIGNvdmVyOiBhYnNV
-cmwoQkFTRSwgY292ZXIpLCBhdXRob3I6ICcnLCBnZW5yZXMsIGRlc2NyaXB0
-aW9uOiBkZXNjIH07CiAgfSk7Cn0KCmFzeW5jIGZ1bmN0aW9uIGNoYXB0ZXJz
-KGV4dElkKSB7CiAgLy8g0LrQsNC20LTRi9C5IC92aWV3LyDigJQg0YHQsNC8
-0L7RgdGC0L7Rj9GC0LXQu9GM0L3QsNGPINCz0LvQsNCy0LA7INGB0L7RgdC1
-0LTQtdC5INC40YnQtdC8INC/0L4g0LjQvdC00LXQutGB0YMg0LrQsNGC0LDQ
-u9C+0LPQsCAo0LXQs9C+INC00LDRkdGCINGA0LXQtdGB0YLRgCkKICByZXR1
-cm4gY2FjaGVkKGBjaDoke2V4dElkfWAsIDMwICogNjBlMywgYXN5bmMgKCkg
-PT4gewogICAgY29uc3QgZCA9IGF3YWl0IGRldGFpbChleHRJZCk7CiAgICBp
-ZiAoIWQpIHJldHVybiBbXTsKICAgIGNvbnN0IG51bSA9IE51bWJlcigoZC50
-aXRsZS5tYXRjaCgvKD864oSWfCMpXHMqKFxkKykvKSB8fCBbXSlbMV0pIHx8
-IG51bGw7CiAgICByZXR1cm4gW3sgZXh0SWQsIG51bWJlcjogbnVtID8/IDEs
-IHRpdGxlOiBkLnRpdGxlLCBkYXRlOiBudWxsIH1dOwogIH0pOwp9Cgphc3lu
-YyBmdW5jdGlvbiBwYWdlcyhjaGFwdGVyRXh0SWQpIHsKICByZXR1cm4gY2Fj
-aGVkKGBwZzoke2NoYXB0ZXJFeHRJZH1gLCA2MCAqIDYwZTMsIGFzeW5jICgp
-ID0+IHsKICAgIGNvbnN0IGh0bWwgPSBhd2FpdCB2aWV3SHRtbChjaGFwdGVy
-RXh0SWQpOwogICAgY29uc3Qgb3V0ID0gW107CiAgICBjb25zdCByZSA9IC9k
-YXRhLXNyYz0iKGh0dHBzPzpcL1wvW14iXStcLig/OndlYnB8anBnfGpwZWd8
-cG5nKSkiL2dpOwogICAgbGV0IG07CiAgICB3aGlsZSAoKG0gPSByZS5leGVj
-KGh0bWwpKSkgewogICAgICBjb25zdCB1ID0gYWJzVXJsKEJBU0UsIG1bMV0p
-OwogICAgICBpZiAoIW91dC5pbmNsdWRlcyh1KSkgb3V0LnB1c2godSk7CiAg
-ICB9CiAgICBpZiAoIW91dC5sZW5ndGgpIHJldHVybiBudWxsOwogICAgcmV0
-dXJuIHsgcGFnZXM6IG91dCwgcHJldkNoYXB0ZXJJZDogbnVsbCwgbmV4dENo
-YXB0ZXJJZDogbnVsbCB9OwogIH0pOwp9Cgphc3luYyBmdW5jdGlvbiB0YWdz
-KCkgewogIHJldHVybiBjYWNoZWQoJ3RhZ3MnLCA2ICogMzYwMGUzLCBhc3lu
-YyAoKSA9PiB7CiAgICBjb25zdCBodG1sID0gYXdhaXQgZmV0Y2hUZXh0KGAk
-e0JBU0V9L3RhZ3MvYCkuY2F0Y2goKCkgPT4gJycpOwogICAgY29uc3Qgc2Vl
-biA9IG5ldyBNYXAoKTsKICAgIGZvciAoY29uc3QgbSBvZiBodG1sLm1hdGNo
-QWxsKC9ocmVmPSJcL2NhdFwvKFteIi9dKylcLyIvZykpIHsKICAgICAgY29u
-c3Qgc2x1ZyA9IG1bMV07CiAgICAgIGlmICghc2Vlbi5oYXMoc2x1ZykpIHsK
-ICAgICAgICBjb25zdCBuYW1lID0gc2x1Zy5yZXBsYWNlKC8tL2csICcgJyk7
-CiAgICAgICAgc2Vlbi5zZXQoc2x1ZywgeyBzbHVnLCBuYW1lIH0pOwogICAg
-ICAgIHRhZ3NJbmRleC5ub3RlKCdudWRlbW9vbicsIHNsdWcsIG5hbWUpOwog
-ICAgICB9CiAgICB9CiAgICByZXR1cm4gWy4uLnNlZW4udmFsdWVzKCldOwog
-IH0pOwp9Cgphc3luYyBmdW5jdGlvbiB0YWdQYWdlKHNsdWcsIHBhZ2UpIHsK
-ICBjb25zdCB1cmwgPSBwYWdlIDw9IDEgPyBgJHtCQVNFfS9jYXQvJHtlbmNv
-ZGVVUklDb21wb25lbnQoc2x1Zyl9L2AgOiBgJHtCQVNFfS9jYXQvJHtlbmNv
-ZGVVUklDb21wb25lbnQoc2x1Zyl9L3BhZ2UvJHtwYWdlfS9gOwogIHJldHVy
-biBjYWNoZWQoYHQ6JHtzbHVnfToke3BhZ2V9YCwgNSAqIDYwZTMsIGFzeW5j
-ICgpID0+IHBhcnNlQ2FyZHMoYXdhaXQgZmV0Y2hUZXh0KHVybCkuY2F0Y2go
-KCkgPT4gJycpKSk7Cn0KCm1vZHVsZS5leHBvcnRzID0geyBpZDogJ251ZGVt
-b29uJywgbmFtZTogJ2twZXoubnVkZS1tb29uLnBybycsIGJhc2U6IEJBU0Us
-IG1heFBhZ2VzOiA0MDAsIGNhdGFsb2dQYWdlLCBkZXRhaWwsIGNoYXB0ZXJz
-LCBwYWdlcywgdGFncywgdGFnUGFnZSB9Owo=
+'use strict';
+/**
+ * Источник: kpez.nude-moon.pro (NUDE-MOON).
+ * Пост = сразу читалка: /view/<id>-<slug>/ (картинки в data-src).
+ * Каталог — / и /page/N/ (карточки a.thumb), теги — /cat/<slug>/ (+ /page/N/).
+ */
+const { fetchText, stripTags, absUrl } = require('./http');
+const tagsIndex = require('./tags');
+
+const BASE = 'https://kpez.nude-moon.pro';
+const cache = new Map();
+const urlCache = new Map();
+
+const cached = async (key, ttl, fn) => {
+  const hit = cache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+  const v = await fn();
+  cache.set(key, { exp: Date.now() + ttl, value: v });
+  return v;
+};
+
+/** «0-3 главы», «1-4 главы +бонус», «1-8 глпвы» — это диапазон глав, а не название. */
+const isRangeTitle = (s) => {
+  const x = String(s || '').trim();
+  return !x || /^[\d\s,.+\-–—/]*(?:главы|глава|глав|глпвы|главу|часть|том[а]?)?[\s\d,.+\-–—/]*$/i.test(x);
+};
+
+/** Название из адреса: /view/27414-kago-no-naka-no-kotori-...-0-3-glavy/ */
+function titleFromSlug(href) {
+  let slug = String(href).replace(/^\/view\/\d+-/, '').replace(/\/$/, '');
+  slug = slug.replace(/-\d+-\d+-glavy.*$/i, '').replace(/-glava-?\d+.*$/i, '').replace(/-x$/, '');
+  const words = slug.split('-').filter(Boolean);
+  if (!words.length) return '';
+  const text = words.join(' ');
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function parseCards(html) {
+  const out = [];
+  // режем по началу карточки: иначе «ленивый» regex перескакивает в следующую карточку
+  // и подтягивает чужую обложку/название (было: заголовок одной манги + картинка другой)
+  const chunks = html.split('<a class="thumb');
+  for (let i = 1; i < chunks.length; i++) {
+    const b = chunks[i];
+    const hm = b.match(/href="(\/view\/(\d+)-[^"]+)"/);
+    if (!hm) continue;
+    const img = (b.match(/data-src="([^"]+)"/) || [])[1];
+    const tm = b.match(/thumb__title[^"]*">([\s\S]*?)<\/div>/);
+    const [, href, extId] = hm;
+    let title = tm ? stripTags(tm[1]) : '';
+    // у части старых постов в заголовке карточки только диапазон глав — берём название из адреса
+    if (isRangeTitle(title)) title = titleFromSlug(href);
+    if (!title || !img) continue;
+    urlCache.set(extId, BASE + href);
+    if (out.some((x) => x.extId === extId)) continue;
+    out.push({ extId, title, url: BASE + href, cover: absUrl(BASE, img) });
+  }
+  return out;
+}
+
+async function catalogPage(page) {
+  const url = page <= 1 ? `${BASE}/` : `${BASE}/page/${page}/`;
+  return cached(`p:${page}`, 5 * 60e3, async () => parseCards(await fetchText(url).catch(() => '')));
+}
+
+async function viewHtml(extId) {
+  const url = urlCache.get(extId) || `${BASE}/view/${extId}-x/`;
+  return fetchText(url).catch(() => '');
+}
+
+async function detail(extId) {
+  return cached(`d:${extId}`, 30 * 60e3, async () => {
+    const html = await viewHtml(extId);
+    const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+    if (!h1) return null;
+    const genres = [];
+    for (const m of html.matchAll(/href="\/cat\/([^"/]+)\/"/g)) {
+      const slug = m[1];
+      const name = slug.replace(/-/g, ' ');
+      if (!genres.includes(name)) genres.push(name);
+      tagsIndex.note('nudemoon', slug, name);
+    }
+    const cover = (html.match(/data-src="(https?:\/\/[^"]+\.(?:webp|jpg|jpeg|png))"/i) || [])[1];
+    const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/i) || [])[1] || '';
+    const title = stripTags(h1[1]).replace(/\s*—\s*хентай манга$/i, '');
+    return { extId, title, url: urlCache.get(extId) || `${BASE}/view/${extId}-x/`, cover: absUrl(BASE, cover), author: '', genres, description: desc };
+  });
+}
+
+async function chapters(extId) {
+  // каждый /view/ — самостоятельная глава; соседей ищем по индексу каталога (его даёт реестр)
+  return cached(`ch:${extId}`, 30 * 60e3, async () => {
+    const d = await detail(extId);
+    if (!d) return [];
+    const num = Number((d.title.match(/(?:№|#)\s*(\d+)/) || [])[1]) || null;
+    return [{ extId, number: num ?? 1, title: d.title, date: null }];
+  });
+}
+
+async function pages(chapterExtId) {
+  return cached(`pg:${chapterExtId}`, 60 * 60e3, async () => {
+    const html = await viewHtml(chapterExtId);
+    const out = [];
+    const re = /data-src="(https?:\/\/[^"]+\.(?:webp|jpg|jpeg|png))"/gi;
+    let m;
+    while ((m = re.exec(html))) {
+      const u = absUrl(BASE, m[1]);
+      if (!out.includes(u)) out.push(u);
+    }
+    if (!out.length) return null;
+    return { pages: out, prevChapterId: null, nextChapterId: null };
+  });
+}
+
+async function tags() {
+  return cached('tags', 6 * 3600e3, async () => {
+    const html = await fetchText(`${BASE}/tags/`).catch(() => '');
+    const seen = new Map();
+    for (const m of html.matchAll(/href="\/cat\/([^"/]+)\/"/g)) {
+      const slug = m[1];
+      if (!seen.has(slug)) {
+        const name = slug.replace(/-/g, ' ');
+        seen.set(slug, { slug, name });
+        tagsIndex.note('nudemoon', slug, name);
+      }
+    }
+    return [...seen.values()];
+  });
+}
+
+async function tagPage(slug, page) {
+  const url = page <= 1 ? `${BASE}/cat/${encodeURIComponent(slug)}/` : `${BASE}/cat/${encodeURIComponent(slug)}/page/${page}/`;
+  return cached(`t:${slug}:${page}`, 5 * 60e3, async () => parseCards(await fetchText(url).catch(() => '')));
+}
+
+module.exports = { id: 'nudemoon', name: 'kpez.nude-moon.pro', base: BASE, maxPages: 400, catalogPage, detail, chapters, pages, tags, tagPage };

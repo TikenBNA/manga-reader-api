@@ -1,14 +1,23 @@
-W1VuaXRdCkRlc2NyaXB0aW9uPU1hbmdhIHJlYWRlciBBUEkKQWZ0ZXI9bmV0
-d29yay1vbmxpbmUudGFyZ2V0CldhbnRzPW5ldHdvcmstb25saW5lLnRhcmdl
-dAoKW1NlcnZpY2VdClR5cGU9c2ltcGxlClVzZXI9bWFuZ2EKV29ya2luZ0Rp
-cmVjdG9yeT0vb3B0L21hbmdhCkVudmlyb25tZW50PU5PREVfRU5WPXByb2R1
-Y3Rpb24KRW52aXJvbm1lbnQ9UE9SVD0zMDAxCkVudmlyb25tZW50PU1NX0NB
-Q0hFX0RJUj0vb3B0L21hbmdhL2NhY2hlCkVudmlyb25tZW50PU1NX1RBR19Q
-QUdFUz0zCkVudmlyb25tZW50PU1NX1RBR19USU1FT1VUPTMwMDAKRW52aXJv
-bm1lbnQ9TU1fQ0FUQUxPR19UVEw9NDMyMDAwMDAKRXhlY1N0YXJ0PS91c3Iv
-YmluL25vZGUgL29wdC9tYW5nYS9zZXJ2ZXIuanMKUmVzdGFydD1hbHdheXMK
-UmVzdGFydFNlYz0zCiMg0YHQtdGA0LLQtdGAINC70ZHQs9C60LjQuTog0L3Q
-tSDQtNCw0ZHQvCDRj9C00YDRgyDRg9Cx0LjRgtGMINC10LPQviDQv9C+INC/
-0LDQvNGP0YLQuCDQvdCwINC80LjQutGA0L4t0LjQvdGB0YLQsNC90YHQtQpN
-ZW1vcnlNYXg9OTAwTQoKW0luc3RhbGxdCldhbnRlZEJ5PW11bHRpLXVzZXIu
-dGFyZ2V0Cg==
+[Unit]
+Description=Manga reader API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=manga
+WorkingDirectory=/opt/manga
+Environment=NODE_ENV=production
+Environment=PORT=3001
+Environment=MM_CACHE_DIR=/opt/manga/cache
+Environment=MM_TAG_PAGES=3
+Environment=MM_TAG_TIMEOUT=3000
+Environment=MM_CATALOG_TTL=43200000
+ExecStart=/usr/bin/node /opt/manga/server.js
+Restart=always
+RestartSec=3
+# сервер лёгкий: не даём ядру убить его по памяти на микро-инстансе
+MemoryMax=900M
+
+[Install]
+WantedBy=multi-user.target

@@ -1,49 +1,57 @@
-IyEvdXNyL2Jpbi9lbnYgYmFzaAojINCj0YHRgtCw0L3QvtCy0LrQsCDQvNCw
-0L3Qs9CwLdGB0LXRgNCy0LXRgNCwINC90LAgVWJ1bnR1IDIyLjA0LzI0LjA0
-IChPcmFjbGUgQ2xvdWQgQWx3YXlzIEZyZWUsINC70Y7QsdC+0LkgVlBTKS4K
-IyDQl9Cw0L/Rg9GB0Log0L7RgiByb290OiAgYmFzaCBpbnN0YWxsLXVidW50
-dS5zaCB0aWtlbm1hbmdhLmR1Y2tkbnMub3JnCnNldCAtZXVvIHBpcGVmYWls
-CgpET01BSU49IiR7MTotfSIKaWYgW1sgLXogIiRET01BSU4iIF1dOyB0aGVu
-CiAgZWNobyAi0L3Rg9C20LXQvSDQtNC+0LzQtdC9OiBiYXNoIGluc3RhbGwt
-dWJ1bnR1LnNoIDzQtNC+0LzQtdC9PiI7IGV4aXQgMQpmaQoKZWNobyAiPT0g
-0L/QsNC60LXRgtGLIgphcHQtZ2V0IHVwZGF0ZSAteQphcHQtZ2V0IGluc3Rh
-bGwgLXkgY3VybCBjYS1jZXJ0aWZpY2F0ZXMgZ251cGcgZ2l0IHVmdyBkZWJp
-YW4ta2V5cmluZyBkZWJpYW4tYXJjaGl2ZS1rZXlyaW5nIGFwdC10cmFuc3Bv
-cnQtaHR0cHMKCmVjaG8gIj09IE5vZGUuanMgMjIiCmlmICEgY29tbWFuZCAt
-diBub2RlID4vZGV2L251bGwgfHwgW1sgIiQobm9kZSAtdiB8IGN1dCAtYzIt
-MykiIC1sdCAyMCBdXTsgdGhlbgogIGN1cmwgLWZzU0wgaHR0cHM6Ly9kZWIu
-bm9kZXNvdXJjZS5jb20vc2V0dXBfMjIueCB8IGJhc2ggLQogIGFwdC1nZXQg
-aW5zdGFsbCAteSBub2RlanMKZmkKCmVjaG8gIj09INC/0L7Qu9GM0LfQvtCy
-0LDRgtC10LvRjCDQuCDQutCw0YLQsNC70L7QsyIKaWQgLXUgbWFuZ2EgPi9k
-ZXYvbnVsbCAyPiYxIHx8IHVzZXJhZGQgLXIgLW0gLWQgL29wdC9tYW5nYSAt
-cyAvdXNyL3NiaW4vbm9sb2dpbiBtYW5nYQpta2RpciAtcCAvb3B0L21hbmdh
-L2NhY2hlCmNob3duIC1SIG1hbmdhOm1hbmdhIC9vcHQvbWFuZ2EKCmVjaG8g
-Ij09INC40YHRhdC+0LTQvdC40LrQuCIKIyDQu9C+0LrQsNC70YzQvdC+INGD
-0LbQtSDQtdGB0YLRjCDQutCw0YLQsNC70L7QsyBtYW5nYS1hcGkg4oCUINC6
-0L7Qv9C40YDRg9C10Lwg0LXQs9C+INGB0L7QtNC10YDQttC40LzQvtC1ClNS
-Qz0iJChjZCAiJChkaXJuYW1lICIkMCIpLy4uIiAmJiBwd2QpIgpjcCAtZiAi
-JFNSQyIvKi5qcyAiJFNSQyIvZGVtby5odG1sICIkU1JDIi9wYWNrYWdlLmpz
-b24gIiRTUkMiL1JFQURNRS5tZCAvb3B0L21hbmdhLyAyPi9kZXYvbnVsbCB8
-fCB0cnVlCmNob3duIC1SIG1hbmdhOm1hbmdhIC9vcHQvbWFuZ2EKCmVjaG8g
-Ij09IHN5c3RlbWQiCmNwIC1mICIkU1JDL2RlcGxveS9zeXN0ZW1kL21hbmdh
-LWFwaS5zZXJ2aWNlIiAvZXRjL3N5c3RlbWQvc3lzdGVtL21hbmdhLWFwaS5z
-ZXJ2aWNlCnN5c3RlbWN0bCBkYWVtb24tcmVsb2FkCnN5c3RlbWN0bCBlbmFi
-bGUgLS1ub3cgbWFuZ2EtYXBpCgplY2hvICI9PSBDYWRkeSAoSFRUUFMpIgpp
-ZiAhIGNvbW1hbmQgLXYgY2FkZHkgPi9kZXYvbnVsbDsgdGhlbgogIGN1cmwg
-LTFzTGYgJ2h0dHBzOi8vZGwuY2xvdWRzbWl0aC5pby9wdWJsaWMvY2FkZHkv
-c3RhYmxlL2dwZy5rZXknIHwgZ3BnIC0tZGVhcm1vciAtbyAvdXNyL3NoYXJl
-L2tleXJpbmdzL2NhZGR5LXN0YWJsZS1hcmNoaXZlLWtleXJpbmcuZ3BnCiAg
-Y3VybCAtMXNMZiAnaHR0cHM6Ly9kbC5jbG91ZHNtaXRoLmlvL3B1YmxpYy9j
-YWRkeS9zdGFibGUvZGViaWFuLmRlYi50eHQnIHwgdGVlIC9ldGMvYXB0L3Nv
-dXJjZXMubGlzdC5kL2NhZGR5LXN0YWJsZS5saXN0ID4vZGV2L251bGwKICBh
-cHQtZ2V0IHVwZGF0ZSAteQogIGFwdC1nZXQgaW5zdGFsbCAteSBjYWRkeQpm
-aQpta2RpciAtcCAvdmFyL2xvZy9jYWRkeSAmJiBjaG93biBjYWRkeTpjYWRk
-eSAvdmFyL2xvZy9jYWRkeQpzZWQgInMvdGlrZW5tYW5nYS5kdWNrZG5zLm9y
-Zy8kRE9NQUlOL2ciICIkU1JDL2RlcGxveS9DYWRkeWZpbGUiID4gL2V0Yy9j
-YWRkeS9DYWRkeWZpbGUKc3lzdGVtY3RsIHJlc3RhcnQgY2FkZHkKCmVjaG8g
-Ij09INGE0LDQudGA0LLQvtC7Igp1ZncgYWxsb3cgMjIvdGNwIHx8IHRydWUK
-dWZ3IGFsbG93IDgwL3RjcCB8fCB0cnVlCnVmdyBhbGxvdyA0NDMvdGNwIHx8
-IHRydWUKdWZ3IC0tZm9yY2UgZW5hYmxlIHx8IHRydWUKCmVjaG8gIj09INC/
-0YDQvtCy0LXRgNC60LAiCnNsZWVwIDMKY3VybCAtZnNTICJodHRwOi8vMTI3
-LjAuMC4xOjMwMDEvaGVhbHRoIiB8IGhlYWQgLWMgMjAwOyBlY2hvCmVjaG8g
-ItCz0L7RgtC+0LLQvjogaHR0cHM6Ly8kRE9NQUlOL2RlbW8iCg==
+#!/usr/bin/env bash
+# Установка манга-сервера на Ubuntu 22.04/24.04 (Oracle Cloud Always Free, любой VPS).
+# Запуск от root:  bash install-ubuntu.sh tikenmanga.duckdns.org
+set -euo pipefail
+
+DOMAIN="${1:-}"
+if [[ -z "$DOMAIN" ]]; then
+  echo "нужен домен: bash install-ubuntu.sh <домен>"; exit 1
+fi
+
+echo "== пакеты"
+apt-get update -y
+apt-get install -y curl ca-certificates gnupg git ufw debian-keyring debian-archive-keyring apt-transport-https
+
+echo "== Node.js 22"
+if ! command -v node >/dev/null || [[ "$(node -v | cut -c2-3)" -lt 20 ]]; then
+  curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+  apt-get install -y nodejs
+fi
+
+echo "== пользователь и каталог"
+id -u manga >/dev/null 2>&1 || useradd -r -m -d /opt/manga -s /usr/sbin/nologin manga
+mkdir -p /opt/manga/cache
+chown -R manga:manga /opt/manga
+
+echo "== исходники"
+# локально уже есть каталог manga-api — копируем его содержимое
+SRC="$(cd "$(dirname "$0")/.." && pwd)"
+cp -f "$SRC"/*.js "$SRC"/demo.html "$SRC"/package.json "$SRC"/README.md /opt/manga/ 2>/dev/null || true
+chown -R manga:manga /opt/manga
+
+echo "== systemd"
+cp -f "$SRC/deploy/systemd/manga-api.service" /etc/systemd/system/manga-api.service
+systemctl daemon-reload
+systemctl enable --now manga-api
+
+echo "== Caddy (HTTPS)"
+if ! command -v caddy >/dev/null; then
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list >/dev/null
+  apt-get update -y
+  apt-get install -y caddy
+fi
+mkdir -p /var/log/caddy && chown caddy:caddy /var/log/caddy
+sed "s/tikenmanga.duckdns.org/$DOMAIN/g" "$SRC/deploy/Caddyfile" > /etc/caddy/Caddyfile
+systemctl restart caddy
+
+echo "== файрвол"
+ufw allow 22/tcp || true
+ufw allow 80/tcp || true
+ufw allow 443/tcp || true
+ufw --force enable || true
+
+echo "== проверка"
+sleep 3
+curl -fsS "http://127.0.0.1:3001/health" | head -c 200; echo
+echo "готово: https://$DOMAIN/demo"

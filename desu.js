@@ -1,98 +1,109 @@
-J3VzZSBzdHJpY3QnOwovKioKICog0JjRgdGC0L7Rh9C90LjQujogZGVzdS51
-bm8gKERlc3UuTWUpIOKAlCDRgNCw0LfQtNC10Lsg0LzQsNC90LPQuCwg0YTQ
-uNC70YzRgtGAINC/0L4g0LbQsNC90YDRgyDCq9Cl0LXQvdGC0LDQucK7IChn
-ZW5yZXM9NTktSGVudGFpKS4KICoKICogICDQutCw0YLQsNC70L7QszogIC9t
-YW5nYS8/Z2VucmVzPTU5LUhlbnRhaSZwYWdlPU4gICAoSFRNTCkKICogICDQ
-utCw0YDRgtC+0YfQutCwOiAvYXBpL21hbmdhLzxpZD4gICAgICAgICAgICAg
-ICAgICAgKEpTT04pCiAqICAg0LPQu9Cw0LLRizogICAgL2FwaS9tYW5nYS88
-aWQ+L2NoYXB0ZXJzICAgICAgICAgIChKU09OKQogKiAgINGB0YLRgNCw0L3Q
-uNGG0Ys6IC9hcGkvbWFuZ2EvPGlkPi9jaGFwdGVycy88Y2hhcElkPiAoSlNP
-TiwgcGFnZXNbXS51cmwpCiAqLwpjb25zdCB7IGZldGNoSnNvbiwgZmV0Y2hU
-ZXh0LCBzdHJpcFRhZ3MsIGFic1VybCB9ID0gcmVxdWlyZSgnLi9odHRwJyk7
-CmNvbnN0IHRhZ3NJbmRleCA9IHJlcXVpcmUoJy4vdGFncycpOwoKY29uc3Qg
-QkFTRSA9ICdodHRwczovL2Rlc3UudW5vJzsKY29uc3QgQ0FUQUxPRyA9ICcv
-bWFuZ2EvP2dlbnJlcz01OS1IZW50YWknOwoKY29uc3QgY2FjaGUgPSBuZXcg
-TWFwKCk7CmNvbnN0IGNhY2hlZCA9IGFzeW5jIChrZXksIHR0bCwgZm4pID0+
-IHsKICBjb25zdCBoaXQgPSBjYWNoZS5nZXQoa2V5KTsKICBpZiAoaGl0ICYm
-IGhpdC5leHAgPiBEYXRlLm5vdygpKSByZXR1cm4gaGl0LnZhbHVlOwogIGNv
-bnN0IHYgPSBhd2FpdCBmbigpOwogIGlmICh2ICE9IG51bGwpIGNhY2hlLnNl
-dChrZXksIHsgZXhwOiBEYXRlLm5vdygpICsgdHRsLCB2YWx1ZTogdiB9KTsg
-Ly8g0L3QtdGD0LTQsNGH0YMg0L3QtSDQutGN0YjQuNGA0YPQtdC8CiAgcmV0
-dXJuIHY7Cn07Cgphc3luYyBmdW5jdGlvbiBjYXRhbG9nUGFnZShwYWdlKSB7
-CiAgcmV0dXJuIGNhY2hlZChgcDoke3BhZ2V9YCwgMTAgKiA2MGUzLCBhc3lu
-YyAoKSA9PiB7CiAgICBjb25zdCB1cmwgPSBwYWdlIDw9IDEgPyBgJHtCQVNF
-fSR7Q0FUQUxPR31gIDogYCR7QkFTRX0ke0NBVEFMT0d9JnBhZ2U9JHtwYWdl
-fWA7CiAgICBjb25zdCBodG1sID0gYXdhaXQgZmV0Y2hUZXh0KHVybCkuY2F0
-Y2goKCkgPT4gJycpOwogICAgY29uc3Qgb3V0ID0gW107CiAgICBmb3IgKGNv
-bnN0IG0gb2YgaHRtbC5tYXRjaEFsbCgvPGEgaHJlZj0ibWFuZ2FcLyhbXiJd
-Kz8pXC4oXGQrKVwvIltePl0qY2xhc3M9ImF2YXRhclteIl0qIltcc1xTXXsw
-LDYwMH0/PHNwYW4gY2xhc3M9ImltZyJbXj5dKmJhY2tncm91bmQtaW1hZ2U6
-IHVybFwoJyhbXiddKyknXClbXj5dKnRpdGxlPSIoW14iXSopIi9nKSkgewog
-ICAgICBjb25zdCBleHRJZCA9IG1bMl07CiAgICAgIGNvbnN0IHRpdGxlID0g
-c3RyaXBUYWdzKG1bNF0pOwogICAgICBpZiAoIWV4dElkIHx8ICF0aXRsZSB8
-fCBvdXQuc29tZSgoeCkgPT4geC5leHRJZCA9PT0gZXh0SWQpKSBjb250aW51
-ZTsKICAgICAgb3V0LnB1c2goeyBleHRJZCwgdGl0bGUsIHVybDogYCR7QkFT
-RX0vbWFuZ2EvJHttWzFdfS4ke21bMl19L2AsIGNvdmVyOiBtWzNdIH0pOwog
-ICAgfQogICAgcmV0dXJuIG91dDsKICB9KTsKfQoKYXN5bmMgZnVuY3Rpb24g
-ZGV0YWlsKGV4dElkKSB7CiAgcmV0dXJuIGNhY2hlZChgZDoke2V4dElkfWAs
-IDMwICogNjBlMywgYXN5bmMgKCkgPT4gewogICAgY29uc3QgZGF0YSA9IGF3
-YWl0IGZldGNoSnNvbihgJHtCQVNFfS9hcGkvbWFuZ2EvJHtleHRJZH1gKS5j
-YXRjaCgoKSA9PiBudWxsKTsKICAgIGNvbnN0IG0gPSBkYXRhPy5tYW5nYTsK
-ICAgIGlmICghbSkgcmV0dXJuIG51bGw7CiAgICBjb25zdCBnZW5yZXMgPSBb
-XTsKICAgIGZvciAoY29uc3QgZyBvZiBtLmdlbnJlcyB8fCBbXSkgewogICAg
-ICBjb25zdCBuYW1lID0gc3RyaXBUYWdzKGcucnVzc2lhbiB8fCBnLm5hbWUg
-fHwgJycpOwogICAgICBpZiAoIW5hbWUpIGNvbnRpbnVlOwogICAgICBnZW5y
-ZXMucHVzaChuYW1lKTsKICAgICAgdGFnc0luZGV4Lm5vdGUoJ2Rlc3UnLCBT
-dHJpbmcoZy5pZCB8fCBuYW1lKSwgbmFtZSk7CiAgICB9CiAgICAvLyDQsdC1
-0YDRkdC8INGC0L7Qu9GM0LrQviDRgtCw0LnRgtC70YssINGDINC60L7RgtC+
-0YDRi9GFINCyINC20LDQvdGA0LDRhSDQtdGB0YLRjCDCq9Cl0LXQvdGC0LDQ
-ucK7CiAgICBpZiAoIWdlbnJlcy5zb21lKChnKSA9PiAv0YXQtdC90YLQsNC5
-L2kudGVzdChnKSkpIHJldHVybiBudWxsOwoKICAgIHJldHVybiB7CiAgICAg
-IGV4dElkLAogICAgICB0aXRsZTogc3RyaXBUYWdzKG0ucnVzc2lhbiB8fCBt
-Lm5hbWUgfHwgJycpLAogICAgICB1cmw6IGAke0JBU0V9JHttLnZpZXdfdXJs
-IHx8IGAvbWFuZ2EvJHtleHRJZH0vYH1gLAogICAgICBjb3ZlcjogbS5jb3Zl
-cj8uc25pcHBldCB8fCBtLmNvdmVyPy5wcmV2aWV3IHx8IG51bGwsCiAgICAg
-IGF1dGhvcjogKG0uYXV0aG9ycyB8fCBbXSkubWFwKChhKSA9PiBhLm5hbWUp
-LmZpbHRlcihCb29sZWFuKS5qb2luKCcsICcpLAogICAgICBnZW5yZXMsCiAg
-ICAgIGRlc2NyaXB0aW9uOiBzdHJpcFRhZ3MobS5kZXNjcmlwdGlvbiB8fCAn
-Jykuc2xpY2UoMCwgMTAwMCksCiAgICAgIGRhdGU6IG0uYWlyZWRfb24gPyBu
-ZXcgRGF0ZShtLmFpcmVkX29uICogMTAwMCkudG9JU09TdHJpbmcoKS5zbGlj
-ZSgwLCAxOSkucmVwbGFjZSgnVCcsICcgJykgOiBudWxsLAogICAgICBjaGFw
-dGVyTnVtYmVyOiBudWxsLAogICAgICBjaGFwdGVyVGl0bGU6IG51bGwsCiAg
-ICB9OwogIH0pOwp9Cgphc3luYyBmdW5jdGlvbiBjaGFwdGVycyhleHRJZCkg
-ewogIHJldHVybiBjYWNoZWQoYGNoOiR7ZXh0SWR9YCwgMTAgKiA2MGUzLCBh
-c3luYyAoKSA9PiB7CiAgICBjb25zdCBkYXRhID0gYXdhaXQgZmV0Y2hKc29u
-KGAke0JBU0V9L2FwaS9tYW5nYS8ke2V4dElkfS9jaGFwdGVyc2ApLmNhdGNo
-KCgpID0+IG51bGwpOwogICAgaWYgKCFkYXRhIHx8ICFBcnJheS5pc0FycmF5
-KGRhdGEuY2hhcHRlcnMpKSByZXR1cm4gW107CiAgICByZXR1cm4gZGF0YS5j
-aGFwdGVycwogICAgICAubWFwKChjKSA9PiB7CiAgICAgICAgY29uc3Qgdm9s
-dW1lID0gTnVtYmVyKGMudm9sdW1lKSB8fCAwOwogICAgICAgIGNvbnN0IG51
-bWJlciA9IE51bWJlcihTdHJpbmcoYy5udW1iZXIgfHwgJycpLnJlcGxhY2Uo
-JywnLCAnLicpKSB8fCAwOwogICAgICAgIHJldHVybiB7CiAgICAgICAgICBl
-eHRJZDogYCR7ZXh0SWR9fiR7Yy5pZH1gLAogICAgICAgICAgbnVtYmVyLA0K
-ICAgICAgICAgIHZvbHVtZTogdm9sdW1lIHx8IG51bGwsDQogICAgICAgICAg
-b3JkZXI6IHZvbHVtZSAqIDEwMDAgKyBudW1iZXIsCiAgICAgICAgICB0aXRs
-ZTogYNCT0LvQsNCy0LAgJHtjLm51bWJlcn0ke3ZvbHVtZSA/IGAgKNGC0L7Q
-vCAke3ZvbHVtZX0pYCA6ICcnfSR7Yy50aXRsZSA/ICcg4oCUICcgKyBjLnRp
-dGxlIDogJyd9YCwKICAgICAgICAgIGRhdGU6IGMucHVibGlzaF9kYXRlID8g
-bmV3IERhdGUoYy5wdWJsaXNoX2RhdGUgKiAxMDAwKS50b0lTT1N0cmluZygp
-LnNsaWNlKDAsIDE5KS5yZXBsYWNlKCdUJywgJyAnKSA6IG51bGwsCiAgICAg
-ICAgfTsKICAgICAgfSkKICAgICAgLnNvcnQoKGEsIGIpID0+IGEubnVtYmVy
-IC0gYi5udW1iZXIpCiAgICAgIC5tYXAoKGMsIGkpID0+ICh7IC4uLmMsIG51
-bWJlcjogYy5udW1iZXIgfHwgaSArIDEgfSkpOwogIH0pOwp9Cgphc3luYyBm
-dW5jdGlvbiBwYWdlcyhjaGFwdGVyRXh0SWQpIHsKICByZXR1cm4gY2FjaGVk
-KGBwZzoke2NoYXB0ZXJFeHRJZH1gLCAzMCAqIDYwZTMsIGFzeW5jICgpID0+
-IHsKICAgIGNvbnN0IFttYW5nYUlkLCBjaGFwdGVySWRdID0gU3RyaW5nKGNo
-YXB0ZXJFeHRJZCkuc3BsaXQoJ34nKTsKICAgIGlmICghbWFuZ2FJZCB8fCAh
-Y2hhcHRlcklkKSByZXR1cm4gbnVsbDsKICAgIGNvbnN0IGRhdGEgPSBhd2Fp
-dCBmZXRjaEpzb24oYCR7QkFTRX0vYXBpL21hbmdhLyR7bWFuZ2FJZH0vY2hh
-cHRlcnMvJHtjaGFwdGVySWR9YCkuY2F0Y2goKCkgPT4gbnVsbCk7CiAgICBj
-b25zdCBsaXN0ID0gKGRhdGE/LmNoYXB0ZXI/LnBhZ2VzIHx8IFtdKS5tYXAo
-KHApID0+IHAudXJsKS5maWx0ZXIoQm9vbGVhbik7CiAgICBpZiAoIWxpc3Qu
-bGVuZ3RoKSByZXR1cm4gbnVsbDsKICAgIHJldHVybiB7IHBhZ2VzOiBsaXN0
-LCBwcmV2Q2hhcHRlcklkOiBudWxsLCBuZXh0Q2hhcHRlcklkOiBudWxsIH07
-CiAgfSk7Cn0KCmFzeW5jIGZ1bmN0aW9uIHRhZ3MoKSB7IHJldHVybiBbXTsg
-fQphc3luYyBmdW5jdGlvbiB0YWdQYWdlKCkgeyByZXR1cm4gW107IH0KCm1v
-ZHVsZS5leHBvcnRzID0gewogIGlkOiAnZGVzdScsIG5hbWU6ICdkZXN1LnVu
-bycsIGJhc2U6IEJBU0UsIG1heFBhZ2VzOiAyOCwKICBjYXRhbG9nUGFnZSwg
-ZGV0YWlsLCBjaGFwdGVycywgcGFnZXMsIHRhZ3MsIHRhZ1BhZ2UsCn07Cg==
+'use strict';
+/**
+ * Источник: desu.uno (Desu.Me) — раздел манги, фильтр по жанру «Хентай» (genres=59-Hentai).
+ *
+ *   каталог:  /manga/?genres=59-Hentai&page=N   (HTML)
+ *   карточка: /api/manga/<id>                   (JSON)
+ *   главы:    /api/manga/<id>/chapters          (JSON)
+ *   страницы: /api/manga/<id>/chapters/<chapId> (JSON, pages[].url)
+ */
+const { fetchJson, fetchText, stripTags, absUrl } = require('./http');
+const tagsIndex = require('./tags');
+
+const BASE = 'https://desu.uno';
+const CATALOG = '/manga/?genres=59-Hentai';
+
+const cache = new Map();
+const cached = async (key, ttl, fn) => {
+  const hit = cache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+  const v = await fn();
+  if (v != null) cache.set(key, { exp: Date.now() + ttl, value: v }); // неудачу не кэшируем
+  return v;
+};
+
+async function catalogPage(page) {
+  return cached(`p:${page}`, 10 * 60e3, async () => {
+    const url = page <= 1 ? `${BASE}${CATALOG}` : `${BASE}${CATALOG}&page=${page}`;
+    const html = await fetchText(url).catch(() => '');
+    const out = [];
+    for (const m of html.matchAll(/<a href="manga\/([^"]+?)\.(\d+)\/"[^>]*class="avatar[^"]*"[\s\S]{0,600}?<span class="img"[^>]*background-image: url\('([^']+)'\)[^>]*title="([^"]*)"/g)) {
+      const extId = m[2];
+      const title = stripTags(m[4]);
+      if (!extId || !title || out.some((x) => x.extId === extId)) continue;
+      out.push({ extId, title, url: `${BASE}/manga/${m[1]}.${m[2]}/`, cover: m[3] });
+    }
+    return out;
+  });
+}
+
+async function detail(extId) {
+  return cached(`d:${extId}`, 30 * 60e3, async () => {
+    const data = await fetchJson(`${BASE}/api/manga/${extId}`).catch(() => null);
+    const m = data?.manga;
+    if (!m) return null;
+    const genres = [];
+    for (const g of m.genres || []) {
+      const name = stripTags(g.russian || g.name || '');
+      if (!name) continue;
+      genres.push(name);
+      tagsIndex.note('desu', String(g.id || name), name);
+    }
+    // берём только тайтлы, у которых в жанрах есть «Хентай»
+    if (!genres.some((g) => /хентай/i.test(g))) return null;
+
+    return {
+      extId,
+      title: stripTags(m.russian || m.name || ''),
+      url: `${BASE}${m.view_url || `/manga/${extId}/`}`,
+      cover: m.cover?.snippet || m.cover?.preview || null,
+      author: (m.authors || []).map((a) => a.name).filter(Boolean).join(', '),
+      genres,
+      description: stripTags(m.description || '').slice(0, 1000),
+      date: m.aired_on ? new Date(m.aired_on * 1000).toISOString().slice(0, 19).replace('T', ' ') : null,
+      chapterNumber: null,
+      chapterTitle: null,
+    };
+  });
+}
+
+async function chapters(extId) {
+  return cached(`ch:${extId}`, 10 * 60e3, async () => {
+    const data = await fetchJson(`${BASE}/api/manga/${extId}/chapters`).catch(() => null);
+    if (!data || !Array.isArray(data.chapters)) return [];
+    return data.chapters
+      .map((c) => {
+        const volume = Number(c.volume) || 0;
+        const number = Number(String(c.number || '').replace(',', '.')) || 0;
+        return {
+          extId: `${extId}~${c.id}`,
+          number,
+          volume: volume || null,
+          order: volume * 1000 + number,
+          title: `Глава ${c.number}${volume ? ` (том ${volume})` : ''}${c.title ? ' — ' + c.title : ''}`,
+          date: c.publish_date ? new Date(c.publish_date * 1000).toISOString().slice(0, 19).replace('T', ' ') : null,
+        };
+      })
+      .sort((a, b) => a.number - b.number)
+      .map((c, i) => ({ ...c, number: c.number || i + 1 }));
+  });
+}
+
+async function pages(chapterExtId) {
+  return cached(`pg:${chapterExtId}`, 30 * 60e3, async () => {
+    const [mangaId, chapterId] = String(chapterExtId).split('~');
+    if (!mangaId || !chapterId) return null;
+    const data = await fetchJson(`${BASE}/api/manga/${mangaId}/chapters/${chapterId}`).catch(() => null);
+    const list = (data?.chapter?.pages || []).map((p) => p.url).filter(Boolean);
+    if (!list.length) return null;
+    return { pages: list, prevChapterId: null, nextChapterId: null };
+  });
+}
+
+async function tags() { return []; }
+async function tagPage() { return []; }
+
+module.exports = {
+  id: 'desu', name: 'desu.uno', base: BASE, maxPages: 28,
+  catalogPage, detail, chapters, pages, tags, tagPage,
+};

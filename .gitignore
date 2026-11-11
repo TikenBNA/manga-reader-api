@@ -1,2 +1,7 @@
-77u/bm9kZV9tb2R1bGVzLwpjYWNoZS8KKi5wbmcKdG9vbHMvCnRtcC0qDQoN
-Ck1hbmdhUmVhZGVyLmFwaw0K
+﻿node_modules/
+cache/
+*.png
+tools/
+tmp-*
+
+MangaReader.apk

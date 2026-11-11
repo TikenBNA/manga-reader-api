@@ -1,10 +1,19 @@
-bmFtZTogU3luYyB0byBIdWdnaW5nIEZhY2UgU3BhY2UKb246CiAgcHVzaDoK
-ICAgIGJyYW5jaGVzOiBbbWFpbl0KICB3b3JrZmxvd19kaXNwYXRjaDoKCmpv
-YnM6CiAgc3luYzoKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKICAgIHN0
-ZXBzOgogICAgICAtIHVzZXM6IGFjdGlvbnMvY2hlY2tvdXRAdjQKICAgICAg
-ICB3aXRoOgogICAgICAgICAgZmV0Y2gtZGVwdGg6IDAKICAgICAgLSBuYW1l
-OiBQdXNoIHRvIEhGCiAgICAgICAgZW52OgogICAgICAgICAgSEZfVE9LRU46
-ICR7eyBzZWNyZXRzLkhGX1RPS0VOIH19CiAgICAgICAgcnVuOiB8CiAgICAg
-ICAgICBnaXQgcmVtb3RlIGFkZCBzcGFjZSBodHRwczovL1Rpa2VuQk5BOiRI
-Rl9UT0tFTkBodWdnaW5nZmFjZS5jby9zcGFjZXMvVGlrZW5CTkEvTWFuZ2EK
-ICAgICAgICAgIGdpdCBwdXNoIC0tZm9yY2Ugc3BhY2UgbWFpbgo=
+name: Sync to Hugging Face Space
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push to HF
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git remote add space https://TikenBNA:$HF_TOKEN@huggingface.co/spaces/TikenBNA/Manga
+          git push --force space main

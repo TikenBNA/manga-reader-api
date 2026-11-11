@@ -1,496 +1,522 @@
-J3VzZSBzdHJpY3QnOw0KLyoqDQogKiBNYW5nYVJlYWRlciBBUEkg4oCUINC8
-0YPQu9GM0YLQuNC40YHRgtC+0YfQvdC40LrQvtCy0YvQuSDQv9GA0L7QutGB
-0LguDQogKg0KICogICBHRVQgL2FwaS9tYW5nYT9wYWdlPTFbJnNvdXJjZT1u
-dWRlbW9vbl1bJnRhZz08c2x1Zz5dDQogKiAgIEdFVCAvYXBpL3RhZ3MNCiAq
-ICAgR0VUIC9hcGkvbWFuZ2EvOmlkICAgICAgICAgICAgICAgICAoaWQgPSAi
-bW06MTY3MzciIHwgIm51ZGVtb29uOjMxNDcxIiB8ICIxNjczNyIpDQogKiAg
-IEdFVCAvYXBpL21hbmdhLzppZC9jaGFwdGVycw0KICogICBHRVQgL2FwaS9j
-aGFwdGVyLzppZC9wYWdlcw0KICogICBHRVQgL2FwaS9zb3VyY2VzDQogKiAg
-IEdFVCAvZGVtbw0KICoNCiAqINCh0LvQuNGP0L3QuNC1INC40YHRgtC+0YfQ
-vdC40LrQvtCyIOKAlCDQv9C+INC90L7RgNC80LDQu9C40LfQvtCy0LDQvdC9
-0L7QvNGDINC90LDQt9Cy0LDQvdC40Y4g0YDQsNCx0L7RgtGLICjRgdC8LiBz
-b3VyY2VzL2luZGV4LmpzKSwNCiAqINC/0L7RjdGC0L7QvNGDINC+0LTQvdCw
-INC4INGC0LAg0LbQtSDQvNCw0L3Qs9CwINGBINC00LLRg9GFINGB0LDQudGC
-0L7QsiDQv9C+0L/QsNC00LDQtdGCINCyINC60LDRgtCw0LvQvtCzINC+0LTQ
-uNC9INGA0LDQty4NCiAqLw0KY29uc3QgaHR0cCA9IHJlcXVpcmUoJ25vZGU6
-aHR0cCcpOw0KY29uc3QgZnMgPSByZXF1aXJlKCdub2RlOmZzJyk7DQpjb25z
-dCBwYXRoID0gcmVxdWlyZSgnbm9kZTpwYXRoJyk7DQoNCmNvbnN0IHJlZ2lz
-dHJ5ID0gcmVxdWlyZSgnLi9yZWdpc3RyeScpOw0KY29uc3QgeyB3b3JrS2V5
-LCB0YWdLZXksIHN0cmlwQ2hhcHRlclN1ZmZpeCB9ID0gcmVxdWlyZSgnLi9o
-dHRwJyk7DQoNCmNvbnN0IENPTkZJRyA9IHsNCiAgUE9SVDogTnVtYmVyKHBy
-b2Nlc3MuZW52LlBPUlQgfHwgMzAwMSksDQogIFBFUl9QQUdFOiBOdW1iZXIo
-cHJvY2Vzcy5lbnYuTU1fUEVSX1BBR0UgfHwgMjApLA0KfTsNCg0KY29uc3Qg
-c3RhdGUgPSByZWdpc3RyeS5zdGF0ZTsNCg0KY29uc3QgemxpYiA9IHJlcXVp
-cmUoJ25vZGU6emxpYicpOw0KY29uc3QgZ3ppcCA9IChidWYpID0+IHpsaWIu
-Z3ppcFN5bmMoYnVmLCB7IGxldmVsOiA2IH0pOw0KY29uc3QgYnJvdGxpID0g
-KGJ1ZikgPT4gemxpYi5icm90bGlDb21wcmVzc1N5bmMoYnVmLCB7DQogIHBh
-cmFtczogew0KICAgIFt6bGliLmNvbnN0YW50cy5CUk9UTElfUEFSQU1fUVVB
-TElUWV06IDQsDQogICAgW3psaWIuY29uc3RhbnRzLkJST1RMSV9QQVJBTV9T
-SVpFX0hJTlRdOiBidWYubGVuZ3RoLA0KICB9LA0KfSk7DQoNCi8qKiDQntGC
-0LTQsNGR0YIg0LHRg9GE0LXRgCDRgSBnemlwLCDQtdGB0LvQuCDQutC70LjQ
-tdC90YIg0Y3RgtC+INGD0LzQtdC10YIgKNGC0LXQu9C10YTQvtC9INC90LAg
-0LzQvtCx0LjQu9GM0L3QvtC8INC40L3RgtC10YDQvdC10YLQtSDigJQg0LLQ
-sNC20L3QvikuICovDQpmdW5jdGlvbiBzZW5kKHJlcywgY29kZSwgYnVmLCB0
-eXBlLCBleHRyYSA9IHt9KSB7DQogIGNvbnN0IGhlYWRlcnMgPSB7DQogICAg
-J0NvbnRlbnQtVHlwZSc6IHR5cGUsDQogICAgJ0FjY2Vzcy1Db250cm9sLUFs
-bG93LU9yaWdpbic6ICcqJywNCiAgICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ct
-SGVhZGVycyc6ICcqJywNCiAgICAnQ2FjaGUtQ29udHJvbCc6ICdwdWJsaWMs
-IG1heC1hZ2U9NjAnLA0KICAgIFZhcnk6ICdBY2NlcHQtRW5jb2RpbmcnLA0K
-ICAgIC4uLmV4dHJhLA0KICB9Ow0KICBjb25zdCBhY2NlcHRzID0gU3RyaW5n
-KHJlcy5yZXE/LmhlYWRlcnNbJ2FjY2VwdC1lbmNvZGluZyddIHx8ICcnKTsN
-CiAgaWYgKGJ1Zi5sZW5ndGggPiAxMDI0KSB7DQogICAgaWYgKC9cYmJyXGIv
-LnRlc3QoYWNjZXB0cykpIHsNCiAgICAgIGJ1ZiA9IGJyb3RsaShidWYpOw0K
-ICAgICAgaGVhZGVyc1snQ29udGVudC1FbmNvZGluZyddID0gJ2JyJzsNCiAg
-ICB9IGVsc2UgaWYgKC9cYmd6aXBcYi8udGVzdChhY2NlcHRzKSkgew0KICAg
-ICAgYnVmID0gZ3ppcChidWYpOw0KICAgICAgaGVhZGVyc1snQ29udGVudC1F
-bmNvZGluZyddID0gJ2d6aXAnOw0KICAgIH0NCiAgfQ0KICBoZWFkZXJzWydD
-b250ZW50LUxlbmd0aCddID0gYnVmLmxlbmd0aDsNCiAgcmVzLndyaXRlSGVh
-ZChjb2RlLCBoZWFkZXJzKTsNCiAgcmVzLmVuZChidWYpOw0KfQ0KDQpmdW5j
-dGlvbiBqc29uKHJlcywgY29kZSwgYm9keSkgew0KICBzZW5kKHJlcywgY29k
-ZSwgQnVmZmVyLmZyb20oSlNPTi5zdHJpbmdpZnkoYm9keSksICd1dGY4Jyks
-ICdhcHBsaWNhdGlvbi9qc29uOyBjaGFyc2V0PXV0Zi04Jyk7DQp9DQoNCi8q
-Kg0KICog0J/QvtC70L3Ri9C5INC90LDQsdC+0YAg0YDQsNCx0L7RgiDQv9C+
-INGC0LXQs9GDINGDINC40YHRgtC+0YfQvdC40LrQsDog0LvQuNGB0YLQsNC1
-0Lwg0YHRgtGA0LDQvdC40YbRiyDRgtC10LPQsCAo0LAg0L3QtSDQvtC00L3R
-gyksDQogKiDQuNC90LDRh9C1INC/0LXRgNC10YHQtdGH0LXQvdC40LUg0LTQ
-stGD0YUg0YLQtdCz0L7QsiDQstC40LTQuNGCINGC0L7Qu9GM0LrQviDQv9C1
-0YDQstGL0LUgMjAg0LrQsNGA0YLQvtGH0LXQuiDQutCw0LbQtNC+0LPQvi4N
-CiAqLw0KY29uc3QgdGFnU2V0Q2FjaGUgPSBuZXcgTWFwKCk7DQphc3luYyBm
-dW5jdGlvbiBzb3VyY2VUYWdTZXQoYSwgc2x1Zykgew0KICBjb25zdCBrZXkg
-PSBgJHthLmlkfToke3NsdWd9YDsNCiAgY29uc3QgaGl0ID0gdGFnU2V0Q2Fj
-aGUuZ2V0KGtleSk7DQogIGlmIChoaXQgJiYgaGl0LmV4cCA+IERhdGUubm93
-KCkpIHJldHVybiBoaXQudmFsdWU7DQoNCiAgY29uc3QgbWF4UGFnZXMgPSBO
-dW1iZXIocHJvY2Vzcy5lbnYuTU1fVEFHX1BBR0VTIHx8IDMpOw0KICBjb25z
-dCBtYXAgPSBuZXcgTWFwKCk7DQogIGZvciAobGV0IHAgPSAxOyBwIDw9IG1h
-eFBhZ2VzOyBwKyspIHsNCiAgICBjb25zdCBpdGVtcyA9IGF3YWl0IGEudGFn
-UGFnZShzbHVnLCBwKS5jYXRjaCgoKSA9PiBbXSk7DQogICAgaWYgKCFpdGVt
-cy5sZW5ndGgpIGJyZWFrOw0KICAgIGZvciAoY29uc3QgaXQgb2YgaXRlbXMp
-IHsNCiAgICAgIGNvbnN0IGsgPSB3b3JrS2V5KGl0LnRpdGxlKTsNCiAgICAg
-IGlmICghayB8fCBtYXAuaGFzKGspKSBjb250aW51ZTsNCiAgICAgIG1hcC5z
-ZXQoaywgeyBzb3VyY2U6IGEuaWQsIGV4dElkOiBpdC5leHRJZCwgdGl0bGU6
-IGl0LnRpdGxlLCBjb3ZlcjogaXQuY292ZXIsIHVybDogaXQudXJsIH0pOw0K
-ICAgIH0NCiAgfQ0KICB0YWdTZXRDYWNoZS5zZXQoa2V5LCB7IGV4cDogRGF0
-ZS5ub3coKSArIDYwICogNjBlMywgdmFsdWU6IG1hcCB9KTsNCiAgcmV0dXJu
-IG1hcDsNCn0NCg0KLyoqDQogKiDQoNCw0LHQvtGC0YssINC+0YLRhNC40LvR
-jNGC0YDQvtCy0LDQvdC90YvQtSDQv9C+INGC0LXQs9Cw0LwgKNGB0YLRgNC+
-0LPQvtC1INCYKTog0YDQsNCx0L7RgtCwINC00L7Qu9C20L3QsCDQsdGL0YLR
-jCDQstC+INCy0YHQtdGFINCy0YvQsdGA0LDQvdC90YvRhSDRgtC10LPQsNGF
-Lg0KICog0JjRgdGC0L7Rh9C90LjQutC4INCx0LXQtyDQv9C+0LTQtNC10YDQ
-ttC60Lgg0YLQtdCz0L7QsiDQsiDRgtCw0LrQvtC5INGE0LjQu9GM0YLRgCDQ
-vdC1INC/0L7Qv9Cw0LTQsNGO0YIuDQogKi8NCmNvbnN0IHRhZ2dlZENhY2hl
-ID0gbmV3IE1hcCgpOyAvLyDQs9C+0YLQvtCy0YvQtSDRgdGC0YDQsNC90LjR
-htGLINC/0L4g0YLQtdCz0LDQvDog0L/QvtCy0YLQvtGA0L3Ri9C1INC+0YLQ
-utGA0YvRgtC40Y8g0LzQs9C90L7QstC10L3QvdGL0LUNCg0KY29uc3QgVEFH
-X0NPTExBVE9SID0gbmV3IEludGwuQ29sbGF0b3IoJ3J1JywgeyBudW1lcmlj
-OiB0cnVlLCBzZW5zaXRpdml0eTogJ2Jhc2UnIH0pOw0KDQphc3luYyBmdW5j
-dGlvbiB0YWdnZWRMaXN0KHRhZ3MsIHBhZ2UsIHBlclBhZ2UsIHNvcnQgPSAn
-bmV3Jykgew0KICBjb25zdCBjYWNoZUtleSA9IFsuLi50YWdzXS5zb3J0KCku
-am9pbignXHUwMDAxJykgKyAnIycgKyBwYWdlICsgJyMnICsgcGVyUGFnZSAr
-ICcjJyArIHNvcnQ7DQogIGNvbnN0IGNhY2hlZEhpdCA9IHRhZ2dlZENhY2hl
-LmdldChjYWNoZUtleSk7DQogIGlmIChjYWNoZWRIaXQgJiYgY2FjaGVkSGl0
-LmV4cCA+IERhdGUubm93KCkpIHJldHVybiBjYWNoZWRIaXQudmFsdWU7DQoN
-CiAgY29uc3Qgc2V0cyA9IFtdOw0KICBjb25zdCBUQUdfU09VUkNFX1RJTUVP
-VVQgPSBOdW1iZXIocHJvY2Vzcy5lbnYuTU1fVEFHX1RJTUVPVVQgfHwgMzAw
-MCk7DQoNCiAgZm9yIChjb25zdCB0YWcgb2YgdGFncykgew0KICAgIGNvbnN0
-IG1lcmdlZCA9IG5ldyBNYXAoKTsNCiAgICAvLyDQuNGB0YLQvtGH0L3QuNC6
-0Lgg0L7Qv9GA0LDRiNC40LLQsNC10Lwg0L/QsNGA0LDQu9C70LXQu9GM0L3Q
-viDQuCDRgSDQv9C+0YLQvtC70LrQvtC8INC/0L4g0LLRgNC10LzQtdC90Lg6
-INGA0LDQvdGM0YjQtSDQvNC10LTQu9C10L3QvdGL0Lkg0YHQsNC50YINCiAg
-ICAvLyAo0LjQu9C4INC70LXQttCw0YnQuNC5IGhjaGFuKSDQtNC10YDQttCw
-0Lsg0LLQtdGB0Ywg0LfQsNC/0YDQvtGBLCDQuCDRh9C10YDQtdC3INGC0YPQ
-vdC90LXQu9GMINCy0L7Qt9Cy0YDQsNGJ0LDQu9GB0Y8gNTAyDQogICAgY29u
-c3Qgc291cmNlcyA9IHJlZ2lzdHJ5LmFkYXB0ZXJzLmZpbHRlcigoYSkgPT4g
-YS50YWdQYWdlKTsNCiAgICBjb25zdCByZXN1bHRzID0gYXdhaXQgUHJvbWlz
-ZS5hbGwoc291cmNlcy5tYXAoYXN5bmMgKGEpID0+IHsNCiAgICAgIGNvbnN0
-IHNsdWcgPSAoYXdhaXQgcmVnaXN0cnkuc2x1Z0ZvcihhLmlkLCB0YWcpLmNh
-dGNoKCgpID0+IG51bGwpKSB8fCB0YWc7DQogICAgICBjb25zdCBtYXAgPSBh
-d2FpdCB3aXRoVGltZW91dChzb3VyY2VUYWdTZXQoYSwgc2x1ZyksIFRBR19T
-T1VSQ0VfVElNRU9VVCwgJ3RhZzonICsgYS5pZCkuY2F0Y2goKCkgPT4gbmV3
-IE1hcCgpKTsNCiAgICAgIHJldHVybiBtYXA7DQogICAgfSkpOw0KDQogICAg
-Zm9yIChjb25zdCBtYXAgb2YgcmVzdWx0cykgew0KICAgICAgZm9yIChjb25z
-dCBbaywgaXRdIG9mIG1hcCkgew0KICAgICAgICBjb25zdCBjdXIgPSBtZXJn
-ZWQuZ2V0KGspOw0KICAgICAgICBpZiAoIWN1cikgew0KICAgICAgICAgIG1l
-cmdlZC5zZXQoaywgew0KICAgICAgICAgICAgaWQ6IGAke2l0LnNvdXJjZX06
-JHtpdC5leHRJZH1gLA0KICAgICAgICAgICAgdGl0bGU6IHJlZ2lzdHJ5LmRp
-c3BsYXlUaXRsZShpdC50aXRsZSksIC8vINGC0LAg0LbQtSDQv9C+0LTQv9C4
-0YHRjCwg0YfRgtC+INC4INCyINC60LDRgtCw0LvQvtCz0LUNCiAgICAgICAg
-ICAgIGNvdmVyOiBpdC5jb3ZlciwNCiAgICAgICAgICAgIGF1dGhvcjogJycs
-DQogICAgICAgICAgICBnZW5yZXM6IFtdLA0KICAgICAgICAgICAgc291cmNl
-czogW3sgc291cmNlOiBpdC5zb3VyY2UsIGlkOiBpdC5leHRJZCwgdXJsOiBp
-dC51cmwgfV0sDQogICAgICAgICAgfSk7DQogICAgICAgIH0gZWxzZSBpZiAo
-IWN1ci5zb3VyY2VzLnNvbWUoKHMpID0+IHMuc291cmNlID09PSBpdC5zb3Vy
-Y2UpKSB7DQogICAgICAgICAgY3VyLnNvdXJjZXMucHVzaCh7IHNvdXJjZTog
-aXQuc291cmNlLCBpZDogaXQuZXh0SWQsIHVybDogaXQudXJsIH0pOw0KICAg
-ICAgICB9DQogICAgICB9DQogICAgfQ0KICAgIHNldHMucHVzaChtZXJnZWQp
-Ow0KICB9DQoNCiAgY29uc3QgYmFzZSA9IHNldHNbMF0gfHwgbmV3IE1hcCgp
-Ow0KICBjb25zdCBvdXQgPSBbXTsNCiAgZm9yIChjb25zdCBba2V5LCBpdGVt
-XSBvZiBiYXNlKSB7DQogICAgaWYgKHNldHMuc2xpY2UoMSkuZXZlcnkoKHMp
-ID0+IHMuaGFzKGtleSkpKSBvdXQucHVzaChpdGVtKTsNCiAgfQ0KDQogIC8v
-INGB0L7RgNGC0LjRgNC+0LLQutCwINCy0L3Rg9GC0YDQuCDQstGL0LTQsNGH
-0Lgg0L/QviDRgtC10LPRgzog0YDQsNC90YzRiNC1INGA0LXQttC40LzRiyBh
-ei96YSDQt9C00LXRgdGMINC/0YDQvtGB0YLQviDQuNCz0L3QvtGA0LjRgNC+
-0LLQsNC70LjRgdGMDQogIGlmIChzb3J0ID09PSAnYXonIHx8IHNvcnQgPT09
-ICd6YScpIHsNCiAgICBjb25zdCBrZXlPZiA9IChpdCkgPT4gcmVnaXN0cnku
-c29ydEtleShyZWdpc3RyeS5kaXNwbGF5VGl0bGUoaXQudGl0bGUpKTsNCiAg
-ICBvdXQuc29ydCgoYSwgYikgPT4gVEFHX0NPTExBVE9SLmNvbXBhcmUoa2V5
-T2YoYSksIGtleU9mKGIpKSk7DQogICAgaWYgKHNvcnQgPT09ICd6YScpIG91
-dC5yZXZlcnNlKCk7DQogIH0gZWxzZSBpZiAoc29ydCA9PT0gJ29sZCcpIHsN
-CiAgICBvdXQucmV2ZXJzZSgpOw0KICB9DQoNCiAgY29uc3Qgc3RhcnQgPSAo
-cGFnZSAtIDEpICogcGVyUGFnZTsNCiAgY29uc3QgcmVzdWx0ID0gb3V0LnNs
-aWNlKHN0YXJ0LCBzdGFydCArIHBlclBhZ2UpOw0KICB0YWdnZWRDYWNoZS5z
-ZXQoY2FjaGVLZXksIHsgZXhwOiBEYXRlLm5vdygpICsgMTAgKiA2MGUzLCB2
-YWx1ZTogcmVzdWx0IH0pOw0KICByZXR1cm4gcmVzdWx0Ow0KfQ0KDQovKiog
-0JTQvtCz0YDRg9C20LDQtdGCINCw0LLRgtC+0YDQsC/QttCw0L3RgNGLINC0
-0LvRjyDQutCw0YDRgtC+0YfQtdC6ICjQuCDQv9C+0L/Rg9GC0L3QviDQv9C+
-0L/QvtC70L3Rj9C10YIg0LjQvdC00LXQutGBINGC0LXQs9C+0LIpLiAqLw0K
-LyoqDQogKiDQntCx0L7Qs9Cw0YnQtdC90LjQtSDQutCw0YDRgtC+0YfQtdC6
-LiDQoNCw0L3RjNGI0LUg0YLRj9C90YPQu9C+IGRldGFpbCtjaGFwdGVycyDQ
-tNC70Y8g0LrQsNC20LTQvtCz0L4g0Y3Qu9C10LzQtdC90YLQsCDQvdCwINC6
-0LDQttC00YvQuSDQt9Cw0L/RgNC+0YEg4oCUDQogKiDQuNC3LdC30LAg0LzQ
-tdC00LvQtdC90L3Ri9GFINC40YHRgtC+0YfQvdC40LrQvtCyIChoY2hhbiwg
-ZGVzdSkg0YHRgtGA0LDQvdC40YbQsCDQutCw0YLQsNC70L7Qs9CwINC+0YLQ
-utGA0YvQstCw0LvQsNGB0Ywg0LTQviA4NiDRgdC10LrRg9C90LQuDQogKiDQ
-otC10L/QtdGA0Yw6INC60Y3RiCDQvdCwIDEwINC80LjQvdGD0YIgKyDQvtCx
-0YnQuNC5INCx0Y7QtNC20LXRgiDQstGA0LXQvNC10L3QuCwg0YfRgtC+0LHR
-iyDQvtGC0LLQtdGCINC90LUg0LbQtNCw0Lsg0LLQtdGH0L3Qvi4NCiAqLw0K
-Y29uc3QgZW5yaWNoQ2FjaGUgPSBuZXcgTWFwKCk7IC8vIGlkIC0+IHsgZXhw
-LCBkYXRhIH0NCmNvbnN0IEVOUklDSF9CVURHRVRfTVMgPSBOdW1iZXIocHJv
-Y2Vzcy5lbnYuTU1fRU5SSUNIX0JVREdFVCB8fCA3MDApOw0KY29uc3QgRU5S
-SUNIX0lURU1fTVMgPSBOdW1iZXIocHJvY2Vzcy5lbnYuTU1fRU5SSUNIX0lU
-RU0gfHwgMzUwMCk7IC8vINC/0L7RgtC+0LvQvtC6INC90LAg0L7QtNC90YMg
-0LrQsNGA0YLQvtGH0LrRgw0KY29uc3QgRU5SSUNIX1RUTF9NUyA9IDEwICog
-NjBlMzsNCmNvbnN0IEVOUklDSF9QQVJUSUFMX1RUTF9NUyA9IDIgKiA2MGUz
-Ow0KDQpjb25zdCB3aXRoVGltZW91dCA9IChwLCBtcywgbGFiZWwpID0+IFBy
-b21pc2UucmFjZShbDQogIHAsDQogIG5ldyBQcm9taXNlKChfLCByZWopID0+
-IHNldFRpbWVvdXQoKCkgPT4gcmVqKG5ldyBFcnJvcigndGltZW91dDonICsg
-bGFiZWwpKSwgbXMpKSwNCl0pOw0KDQphc3luYyBmdW5jdGlvbiBlbnJpY2hX
-b3JrcyhpdGVtcywgYnVkZ2V0TXMgPSBFTlJJQ0hfQlVER0VUX01TKSB7DQog
-IGNvbnN0IG5vdyA9IERhdGUubm93KCk7DQogIGNvbnN0IHBlbmRpbmcgPSBb
-XTsNCiAgZm9yIChjb25zdCBpdCBvZiBpdGVtcykgew0KICAgIGNvbnN0IGhp
-dCA9IGVucmljaENhY2hlLmdldChpdC5pZCk7DQogICAgaWYgKGhpdCAmJiBo
-aXQuZXhwID4gbm93KSB7DQogICAgICBPYmplY3QuYXNzaWduKGl0LCBoaXQu
-ZGF0YSk7DQogICAgfSBlbHNlIHsNCiAgICAgIHBlbmRpbmcucHVzaChpdCk7
-DQogICAgfQ0KICB9DQogIGlmICghcGVuZGluZy5sZW5ndGgpIHJldHVybiBp
-dGVtczsNCg0KICBjb25zdCB3b3JrID0gYXN5bmMgKHNsaWNlKSA9PiB7DQog
-ICAgYXdhaXQgUHJvbWlzZS5hbGwoc2xpY2UubWFwKGFzeW5jIChpdCkgPT4g
-ew0KICAgICAgY29uc3QgcGFyc2VkID0gcmVnaXN0cnkucGFyc2VJZChpdC5p
-ZCk7DQogICAgICBpZiAoIXBhcnNlZCkgcmV0dXJuOw0KICAgICAgY29uc3Qg
-YSA9IHJlZ2lzdHJ5LmZpbmRBZGFwdGVyKHBhcnNlZC5zb3VyY2UpOw0KICAg
-ICAgaWYgKCFhKSByZXR1cm47DQogICAgICAvLyDQutCw0LbQtNGL0Lkg0LfQ
-sNC/0YDQvtGBINC+0LPRgNCw0L3QuNGH0LXQvSDRgdCy0L7QuNC8INGC0LDQ
-udC80LDRg9GC0L7QvDog0L7QtNC40L0g0LvQtdC20LDRidC40Lkg0YHQsNC5
-0YIg0L3QtSDQtNC+0LvQttC10L0g0YLQvtGA0LzQvtC30LjRgtGMINCy0YHR
-jiDQstGL0LTQsNGH0YMNCiAgICAgIGNvbnN0IGQgPSBhd2FpdCB3aXRoVGlt
-ZW91dChhLmRldGFpbChwYXJzZWQuZXh0SWQpLCBFTlJJQ0hfSVRFTV9NUywg
-J2RldGFpbCcpLmNhdGNoKCgpID0+IG51bGwpOw0KICAgICAgaWYgKCFkKSB7
-IGl0LmRyb3AgPSB0cnVlOyByZXR1cm47IH0NCiAgICAgIGlmIChwYXJzZWQu
-c291cmNlICE9PSAnbW0nKSB7DQogICAgICAgIGNvbnN0IGNocyA9IGF3YWl0
-IHdpdGhUaW1lb3V0KGEuY2hhcHRlcnMocGFyc2VkLmV4dElkKSwgRU5SSUNI
-X0lURU1fTVMsICdjaGFwdGVycycpLmNhdGNoKCgpID0+IG51bGwpOw0KICAg
-ICAgICBpZiAoIUFycmF5LmlzQXJyYXkoY2hzKSkgeyBpdC5wYXJ0aWFsID0g
-dHJ1ZTsgcmV0dXJuOyB9IC8vINC40YHRgtC+0YfQvdC40Log0L3QtSDQvtGC
-0LLQtdGC0LjQuyDigJQg0LrQsNGA0YLQvtGH0LrRgyDQvdC1INCy0YvQutC4
-0LTRi9Cy0LDQtdC8DQogICAgICAgIGlmICghY2hzLmxlbmd0aCkgeyBpdC5k
-cm9wID0gdHJ1ZTsgcmV0dXJuOyB9DQogICAgICB9DQogICAgICBpdC5hdXRo
-b3IgPSBkLmF1dGhvciB8fCAnJzsNCiAgICAgIGl0LmdlbnJlcyA9IGQuZ2Vu
-cmVzIHx8IFtdOw0KICAgICAgaXQuY292ZXIgPSBpdC5jb3ZlciB8fCBkLmNv
-dmVyIHx8ICcnOw0KICAgICAgaXQuZGF0ZSA9IGQuZGF0ZSB8fCBudWxsOw0K
-ICAgICAgZW5yaWNoQ2FjaGUuc2V0KGl0LmlkLCB7DQogICAgICAgIGV4cDog
-RGF0ZS5ub3coKSArIEVOUklDSF9UVExfTVMsDQogICAgICAgIGRhdGE6IHsg
-YXV0aG9yOiBpdC5hdXRob3IsIGdlbnJlczogaXQuZ2VucmVzLCBjb3Zlcjog
-aXQuY292ZXIsIGRhdGU6IGl0LmRhdGUgfSwNCiAgICAgIH0pOw0KICAgIH0p
-KTsNCiAgfTsNCg0KICBjb25zdCBjaHVuayA9IDY7DQogIGNvbnN0IHJ1bm5l
-ciA9IChhc3luYyAoKSA9PiB7DQogICAgZm9yIChsZXQgaSA9IDA7IGkgPCBw
-ZW5kaW5nLmxlbmd0aDsgaSArPSBjaHVuaykgew0KICAgICAgYXdhaXQgd29y
-ayhwZW5kaW5nLnNsaWNlKGksIGkgKyBjaHVuaykpOw0KICAgIH0NCiAgfSko
-KTsNCg0KICAvLyDQvtGC0LLQtdGCINC90LUg0LbQtNGR0YIg0LHQvtC70YzR
-iNC1INCx0Y7QtNC20LXRgtCwLCDQvtCx0L7Qs9Cw0YnQtdC90LjQtSDQv9GA
-0L7QtNC+0LvQttCw0LXRgtGB0Y8g0LIg0YTQvtC90LUNCiAgYXdhaXQgd2l0
-aFRpbWVvdXQocnVubmVyLCBidWRnZXRNcywgJ2J1ZGdldCcpLmNhdGNoKCgp
-ID0+IHt9KTsNCg0KICBmb3IgKGNvbnN0IGl0IG9mIHBlbmRpbmcpIHsNCiAg
-ICBpZiAoIWVucmljaENhY2hlLmhhcyhpdC5pZCkpIHsNCiAgICAgIGVucmlj
-aENhY2hlLnNldChpdC5pZCwgew0KICAgICAgICBleHA6IERhdGUubm93KCkg
-KyBFTlJJQ0hfUEFSVElBTF9UVExfTVMsDQogICAgICAgIGRhdGE6IHsgYXV0
-aG9yOiBpdC5hdXRob3IgfHwgJycsIGdlbnJlczogaXQuZ2VucmVzIHx8IFtd
-LCBjb3ZlcjogaXQuY292ZXIgfHwgJycsIGRhdGU6IGl0LmRhdGUgfHwgbnVs
-bCB9LA0KICAgICAgfSk7DQogICAgfQ0KICB9DQogIHJlZ2lzdHJ5LmludmFs
-aWRhdGVUYWdDYWNoZSgpOw0KICByZXR1cm4gaXRlbXM7DQp9DQovKioNCiAq
-INCT0LvQsNCy0Ysg0YDQsNCx0L7RgtGLINGB0L4g0JLQodCV0KUg0LjRgdGC
-0L7Rh9C90LjQutC+0LIsINCz0LTQtSDQvtC90LAg0LXRgdGC0Yw6INC+0LHR
-itC10LTQuNC90Y/QtdC8INC/0L4g0L3QvtC80LXRgNGDINCz0LvQsNCy0Yss
-DQogKiDRh9GC0L7QsdGLINGB0L/QuNGB0L7QuiDQsdGL0Lsg0LXQtNC40L3R
-i9C8ICjRgyDQvtC00L3QvtCz0L4g0YHQsNC50YLQsCDQv9C+0YHRgiA9INCz
-0LvQsNCy0LAsINGDINC00YDRg9Cz0L7Qs9C+IOKAlCDRgtC+0Lwv0L/QsNGH
-0LrQsCDQs9C70LDQsikuDQogKi8NCmFzeW5jIGZ1bmN0aW9uIG1lcmdlZENo
-YXB0ZXJzKHdvcmtUaXRsZSwgc2VlZCkgew0KICBjb25zdCBrZXkgPSB3b3Jr
-S2V5KHdvcmtUaXRsZSk7DQogIGNvbnN0IGVudHJ5ID0gc3RhdGUubWVyZ2Vk
-Py5maW5kKCh3KSA9PiB3LmtleSA9PT0ga2V5KTsNCiAgbGV0IHJlZnMgPSBl
-bnRyeSA/IGVudHJ5LnNvdXJjZXMgOiBbXTsNCiAgLy8g0YDQsNCx0L7RgtCw
-INC80L7Qs9C70LAg0L3QtSDQv9C+0L/QsNGB0YLRjCDQsiDQvtCx0YrQtdC0
-0LjQvdGR0L3QvdGL0Lkg0LjQvdC00LXQutGBIOKAlCDRgtC+0LPQtNCwINC1
-0ZEg0YHQvtCx0YHRgtCy0LXQvdC90YvQuSDQuNGB0YLQvtGH0L3QuNC6INC4
-INC10YHRgtGMINC/0LXRgNCy0YvQuQ0KICBpZiAoc2VlZCAmJiAhcmVmcy5z
-b21lKChyKSA9PiByLnNvdXJjZSA9PT0gc2VlZC5zb3VyY2UgJiYgci5leHRJ
-ZCA9PT0gc2VlZC5leHRJZCkpIHsNCiAgICByZWZzID0gW3NlZWQsIC4uLnJl
-ZnNdOw0KICB9DQoNCiAgY29uc3QgbGlzdHMgPSBhd2FpdCBQcm9taXNlLmFs
-bChyZWZzLm1hcChhc3luYyAocikgPT4gew0KICAgIGNvbnN0IGEgPSByZWdp
-c3RyeS5maW5kQWRhcHRlcihyLnNvdXJjZSk7DQogICAgaWYgKCFhKSByZXR1
-cm4gW107DQogICAgY29uc3QgY2hzID0gYXdhaXQgYS5jaGFwdGVycyhyLmV4
-dElkKS5jYXRjaCgoKSA9PiBbXSk7DQogICAgY29uc3Qgc2licyA9IHJlZ2lz
-dHJ5LnNpYmxpbmdzKHIuc291cmNlLCB3b3JrVGl0bGUpOw0KICAgIGNvbnN0
-IHNpYkJ5RXh0ID0gbmV3IE1hcChzaWJzLm1hcCgocykgPT4gW3MuZXh0SWQs
-IHNdKSk7DQoNCiAgICBjb25zdCBtYXBwZWQgPSBjaHMubWFwKChjKSA9PiB7
-DQogICAgICAvLyDQtdGB0LvQuCDQsNC00LDQv9GC0LXRgCDQvdC1INC30L3Q
-sNC10YIg0L3QvtC80LXRgCDRh9Cw0YHRgtC4ICjRgyB6YWt1cmEvbnVkZW1v
-b24g0L/QvtGB0YIgPSDRh9Cw0YHRgtGMINGB0LXRgNC40LgpLA0KICAgICAg
-Ly8g0LHQtdGA0ZHQvCDQtdCz0L4g0LjQtyDQuNC90LTQtdC60YHQsCDQutCw
-0YLQsNC70L7Qs9CwOiDCq+KAptGC0YsgNcK7IOKGkiDQvdC+0LzQtdGAIDUN
-CiAgICAgIGNvbnN0IHNpYiA9IHNpYkJ5RXh0LmdldChjLmV4dElkKTsNCiAg
-ICAgIGNvbnN0IG51bSA9IHNpYiAmJiBzaWIucGFydCAhPSBudWxsID8gc2li
-LnBhcnQgOiBjLm51bWJlcjsNCiAgICAgIHJldHVybiB7DQogICAgICAgIGlk
-OiBgJHtyLnNvdXJjZX06JHtjLmV4dElkfWAsDQogICAgICAgIG51bWJlcjog
-bnVtID8/IG51bGwsDQogICAgICAgIHZvbHVtZTogYy52b2x1bWUgPz8gbnVs
-bCwNCiAgICAgICAgb3JkZXI6IHNpYiAmJiBzaWIucGFydCAhPSBudWxsID8g
-c2liLnBhcnQgOiAoYy5vcmRlciA/PyBjLm51bWJlciksDQogICAgICAgIHRp
-dGxlOiBjLnRpdGxlLA0KICAgICAgICBkYXRlOiBjLmRhdGUsDQogICAgICAg
-IHNvdXJjZTogci5zb3VyY2UsDQogICAgICB9Ow0KICAgIH0pOw0KDQogICAg
-Ly8g0L7RgdGC0LDQu9GM0L3Ri9C1INC/0L7RgdGC0Ysg0YHQtdGA0LjQuCDQ
-uNC3INC40L3QtNC10LrRgdCwOiDRjdGC0L4g0LPQu9Cw0LLRiyDRgtC+0Lkg
-0LbQtSDQutCw0YDRgtC+0YfQutC4LCDQsCDQvdC1INC+0YLQtNC10LvRjNC9
-0YvQtSDRgNCw0LHQvtGC0YsNCiAgICBmb3IgKGNvbnN0IHNpYiBvZiBzaWJz
-KSB7DQogICAgICBpZiAobWFwcGVkLnNvbWUoKGMpID0+IGMuaWQgPT09IGAk
-e3Iuc291cmNlfToke3NpYi5leHRJZH1gKSkgY29udGludWU7DQogICAgICBt
-YXBwZWQucHVzaCh7DQogICAgICAgIGlkOiBgJHtyLnNvdXJjZX06JHtzaWIu
-ZXh0SWR9YCwNCiAgICAgICAgbnVtYmVyOiBzaWIucGFydCA/PyBudWxsLA0K
-ICAgICAgICB2b2x1bWU6IG51bGwsDQogICAgICAgIG9yZGVyOiBzaWIucGFy
-dCA/PyBudWxsLA0KICAgICAgICB0aXRsZTogc2liLnRpdGxlLA0KICAgICAg
-ICBkYXRlOiBudWxsLA0KICAgICAgICBzb3VyY2U6IHIuc291cmNlLA0KICAg
-ICAgfSk7DQogICAgfQ0KICAgIHJldHVybiBtYXBwZWQ7DQogIH0pKTsNCg0K
-ICBjb25zdCBieU51bWJlciA9IG5ldyBNYXAoKTsNCiAgZm9yIChjb25zdCBs
-aXN0IG9mIGxpc3RzKSB7DQogICAgZm9yIChjb25zdCBjIG9mIGxpc3QpIHsN
-CiAgICAgIC8vINGC0L7QvCDQstGF0L7QtNC40YIg0LIg0LrQu9GO0Yc6IMKr
-0LPQu9Cw0LLQsCAxwrsg0LjQtyDRgtC+0LzQsCAxINC4INGC0L7QvNCwIDIg
-4oCUINGA0LDQt9C90YvQtSDQs9C70LDQstGLDQogICAgICBjb25zdCBrID0g
-Yy5udW1iZXIgIT0gbnVsbCA/IGB2OiR7Yy52b2x1bWUgPz8gMH18bjoke2Mu
-bnVtYmVyfWAgOiBgdDoke1N0cmluZyhjLnRpdGxlIHx8ICcnKS50b0xvd2Vy
-Q2FzZSgpfWA7DQogICAgICBjb25zdCBwcmV2ID0gYnlOdW1iZXIuZ2V0KGsp
-Ow0KICAgICAgLy8g0L/RgNC4INGB0L7QstC/0LDQtNC10L3QuNC4INC90L7Q
-vNC10YDQsCDQvtGB0YLQsNCy0LvRj9C10Lwg0LfQsNC/0LjRgdGMINGBINCx
-0L7Qu9C10LUg0LjQvdGE0L7RgNC80LDRgtC40LLQvdGL0Lwg0L3QsNC30LLQ
-sNC90LjQtdC8DQogICAgICBpZiAoIXByZXYgfHwgKCFwcmV2LnRpdGxlICYm
-IGMudGl0bGUpKSBieU51bWJlci5zZXQoaywgYyk7DQogICAgfQ0KICB9DQoN
-CiAgY29uc3Qgb3V0ID0gWy4uLmJ5TnVtYmVyLnZhbHVlcygpXTsNCiAgLy8g
-0YMg0L/QvtGB0YLQvtCyINCx0LXQtyDQvdC+0LzQtdGA0LAg0LIg0L3QsNC3
-0LLQsNC90LjQuCAo0L/QtdGA0LLQsNGPINGH0LDRgdGC0Ywg0YHQtdGA0LjQ
-uCkg0YHRgtCw0LLQuNC8INGB0LLQvtCx0L7QtNC90YvQuSDQvdC+0LzQtdGA
-LA0KICAvLyDQuNC90LDRh9C1INGC0LDQutCw0Y8g0LPQu9Cw0LLQsCDRg9C1
-0LfQttCw0LXRgiDQsiDQutC+0L3QtdGGINGB0L/QuNGB0LrQsA0KICBjb25z
-dCB1c2VkID0gbmV3IFNldChvdXQuZmlsdGVyKChjKSA9PiBjLm51bWJlciAh
-PSBudWxsKS5tYXAoKGMpID0+IE51bWJlcihjLm51bWJlcikpKTsNCiAgbGV0
-IG5leHQgPSAxOw0KICBmb3IgKGNvbnN0IGMgb2Ygb3V0KSB7DQogICAgaWYg
-KGMubnVtYmVyICE9IG51bGwpIGNvbnRpbnVlOw0KICAgIHdoaWxlICh1c2Vk
-LmhhcyhuZXh0KSkgbmV4dCArPSAxOw0KICAgIGMubnVtYmVyID0gbmV4dDsN
-CiAgICBjLm9yZGVyID0gbmV4dDsNCiAgICB1c2VkLmFkZChuZXh0KTsNCiAg
-fQ0KDQogIHJldHVybiBvdXQuc29ydCgoYSwgYikgPT4gew0KICAgIGNvbnN0
-IG5hID0gYS5vcmRlciA/PyBhLm51bWJlciA/PyBOdW1iZXIuTUFYX1NBRkVf
-SU5URUdFUjsNCiAgICBjb25zdCBuYiA9IGIub3JkZXIgPz8gYi5udW1iZXIg
-Pz8gTnVtYmVyLk1BWF9TQUZFX0lOVEVHRVI7DQogICAgcmV0dXJuIG5hIC0g
-bmIgfHwgU3RyaW5nKGEudGl0bGUgfHwgJycpLmxvY2FsZUNvbXBhcmUoU3Ry
-aW5nKGIudGl0bGUgfHwgJycpKTsNCiAgfSk7DQp9DQoNCmFzeW5jIGZ1bmN0
-aW9uIGFwaU1hbmdhRGV0YWlsKGlkKSB7DQogIGNvbnN0IHBhcnNlZCA9IHJl
-Z2lzdHJ5LnBhcnNlSWQoaWQpOw0KICBpZiAoIXBhcnNlZCkgcmV0dXJuIG51
-bGw7DQogIGNvbnN0IGFkYXB0ZXIgPSByZWdpc3RyeS5maW5kQWRhcHRlcihw
-YXJzZWQuc291cmNlKTsNCiAgaWYgKCFhZGFwdGVyKSByZXR1cm4gbnVsbDsN
-CiAgY29uc3QgZCA9IGF3YWl0IGFkYXB0ZXIuZGV0YWlsKHBhcnNlZC5leHRJ
-ZCk7DQogIGlmICghZCkgcmV0dXJuIG51bGw7DQoNCiAgLy8g0LTRgNGD0LPQ
-uNC1INC40YHRgtC+0YfQvdC40LrQuCDRgSDRgtC+0Lkg0LbQtSDRgNCw0LHQ
-vtGC0L7QuQ0KICBsZXQgb3RoZXJzID0gW107DQogIHRyeSB7DQogICAgY29u
-c3Qga2V5ID0gd29ya0tleShkLnRpdGxlKTsNCiAgICBjb25zdCBoaXQgPSBz
-dGF0ZS5tZXJnZWQ/LmZpbmQoKHcpID0+IHcua2V5ID09PSBrZXkpOw0KICAg
-IGlmIChoaXQpIG90aGVycyA9IGhpdC5zb3VyY2VzLm1hcCgocykgPT4gKHsg
-c291cmNlOiBzLnNvdXJjZSwgaWQ6IHMuZXh0SWQsIHVybDogcy51cmwgfSkp
-Ow0KICB9IGNhdGNoIHsgLyogaWdub3JlICovIH0NCg0KICByZXR1cm4gew0K
-ICAgIGlkOiBgJHtwYXJzZWQuc291cmNlfToke3BhcnNlZC5leHRJZH1gLA0K
-ICAgIHRpdGxlOiBzdHJpcENoYXB0ZXJTdWZmaXgoZC50aXRsZSkgfHwgZC50
-aXRsZSwNCiAgICBjb3ZlcjogZC5jb3ZlciwNCiAgICBhdXRob3I6IGQuYXV0
-aG9yIHx8ICcnLA0KICAgIGRlc2NyaXB0aW9uOiBkLmRlc2NyaXB0aW9uIHx8
-ICcnLA0KICAgIGdlbnJlczogZC5nZW5yZXMgfHwgW10sDQogICAgc291cmNl
-czogb3RoZXJzLA0KICB9Ow0KfQ0KDQphc3luYyBmdW5jdGlvbiBhcGlDaGFw
-dGVycyhpZCkgew0KICBjb25zdCBwYXJzZWQgPSByZWdpc3RyeS5wYXJzZUlk
-KGlkKTsNCiAgaWYgKCFwYXJzZWQpIHJldHVybiBbXTsNCiAgY29uc3QgYWRh
-cHRlciA9IHJlZ2lzdHJ5LmZpbmRBZGFwdGVyKHBhcnNlZC5zb3VyY2UpOw0K
-ICBpZiAoIWFkYXB0ZXIpIHJldHVybiBbXTsNCiAgY29uc3Qgc2VlZCA9IGF3
-YWl0IGFkYXB0ZXIuZGV0YWlsKHBhcnNlZC5leHRJZCkuY2F0Y2goKCkgPT4g
-bnVsbCk7DQogIGlmICghc2VlZCkgcmV0dXJuIFtdOw0KICByZXR1cm4gbWVy
-Z2VkQ2hhcHRlcnMoc2VlZC53b3JrIHx8IHNlZWQudGl0bGUsIHsgc291cmNl
-OiBwYXJzZWQuc291cmNlLCBleHRJZDogcGFyc2VkLmV4dElkIH0pOw0KfQ0K
-DQphc3luYyBmdW5jdGlvbiBhcGlQYWdlcyhpZCkgew0KICBjb25zdCBwYXJz
-ZWQgPSByZWdpc3RyeS5wYXJzZUlkKGlkKTsNCiAgaWYgKCFwYXJzZWQpIHJl
-dHVybiBudWxsOw0KICBjb25zdCBhZGFwdGVyID0gcmVnaXN0cnkuZmluZEFk
-YXB0ZXIocGFyc2VkLnNvdXJjZSk7DQogIGlmICghYWRhcHRlcikgcmV0dXJu
-IG51bGw7DQogIGNvbnN0IHJlcyA9IGF3YWl0IGFkYXB0ZXIucGFnZXMocGFy
-c2VkLmV4dElkKS5jYXRjaCgoKSA9PiBudWxsKTsNCiAgaWYgKCFyZXMpIHJl
-dHVybiBudWxsOw0KDQogIC8vINGB0L7RgdC10LTQvdC40LUg0LPQu9Cw0LLR
-iyDRgdGH0LjRgtCw0LXQvCDQv9C+INC+0LHRitC10LTQuNC90ZHQvdC90L7Q
-vNGDINGB0L/QuNGB0LrRgywg0YfRgtC+0LHRiyDQu9C40YHRgtCw0YLRjCDR
-gdC60LLQvtC30Ywg0LjRgdGC0L7Rh9C90LjQutC4DQogIGxldCBwcmV2Q2hh
-cHRlcklkID0gcmVzLnByZXZDaGFwdGVySWQgPyBgJHtwYXJzZWQuc291cmNl
-fToke3Jlcy5wcmV2Q2hhcHRlcklkfWAgOiBudWxsOw0KICBsZXQgbmV4dENo
-YXB0ZXJJZCA9IHJlcy5uZXh0Q2hhcHRlcklkID8gYCR7cGFyc2VkLnNvdXJj
-ZX06JHtyZXMubmV4dENoYXB0ZXJJZH1gIDogbnVsbDsNCiAgdHJ5IHsNCiAg
-ICBjb25zdCBzZWVkID0gYXdhaXQgYWRhcHRlci5kZXRhaWwocGFyc2VkLmV4
-dElkKTsNCiAgICBpZiAoc2VlZCkgew0KICAgIGNvbnN0IGxpc3QgPSBhd2Fp
-dCBtZXJnZWRDaGFwdGVycyhzZWVkLndvcmsgfHwgc2VlZC50aXRsZSwgeyBz
-b3VyY2U6IHBhcnNlZC5zb3VyY2UsIGV4dElkOiBwYXJzZWQuZXh0SWQgfSk7
-DQogICAgICBjb25zdCBpZHggPSBsaXN0LmZpbmRJbmRleCgoYykgPT4gYy5p
-ZCA9PT0gaWQpOw0KICAgICAgaWYgKGlkeCA+IDApIHByZXZDaGFwdGVySWQg
-PSBsaXN0W2lkeCAtIDFdLmlkOw0KICAgICAgaWYgKGlkeCA+PSAwICYmIGlk
-eCA8IGxpc3QubGVuZ3RoIC0gMSkgbmV4dENoYXB0ZXJJZCA9IGxpc3RbaWR4
-ICsgMV0uaWQ7DQogICAgfQ0KICB9IGNhdGNoIHsgLyog0L7RgdGC0LDQstC7
-0Y/QtdC8INC60LDQuiDQtdGB0YLRjCAqLyB9DQoNCiAgcmV0dXJuIHsgcGFn
-ZXM6IHJlcy5wYWdlcyB8fCBbXSwgcHJldkNoYXB0ZXJJZCwgbmV4dENoYXB0
-ZXJJZCB9Ow0KfQ0KDQovKiog0KTQvtC90L7QstGL0Lkg0L/RgNC+0LPRgNC1
-0LI6INGA0LDQt9Cx0LjRgNCw0LXQvCDRh9Cw0YHRgtGMINGA0LDQsdC+0YIs
-INGH0YLQvtCx0Ysg0YHQvtCx0YDQsNGC0Ywg0YLQtdCz0LgsINC60L7RgtC+
-0YDRi9GFINC90LXRgiDQsiBzaXRlbWFwLiAqLw0KYXN5bmMgZnVuY3Rpb24g
-d2FybVRhZ3MobGltaXQgPSAyMDApIHsNCiAgY29uc3Qgd29ya3MgPSByZWdp
-c3RyeS5zdGF0ZS5tZXJnZWQgfHwgW107DQogIGNvbnN0IGNodW5rID0gNjsN
-CiAgbGV0IGRvbmUgPSAwOw0KICBmb3IgKGxldCBpID0gMDsgaSA8IHdvcmtz
-Lmxlbmd0aCAmJiBkb25lIDwgbGltaXQ7IGkgKz0gY2h1bmspIHsNCiAgICBj
-b25zdCBzbGljZSA9IHdvcmtzLnNsaWNlKGksIGkgKyBjaHVuayk7DQogICAg
-YXdhaXQgUHJvbWlzZS5hbGwoc2xpY2UubWFwKGFzeW5jICh3KSA9PiB7DQog
-ICAgICBjb25zdCBwYXJzZWQgPSByZWdpc3RyeS5wYXJzZUlkKGAke3cucHJp
-bWFyeS5zb3VyY2V9OiR7dy5wcmltYXJ5LmV4dElkfWApOw0KICAgICAgaWYg
-KCFwYXJzZWQpIHJldHVybjsNCiAgICAgIGNvbnN0IGEgPSByZWdpc3RyeS5m
-aW5kQWRhcHRlcihwYXJzZWQuc291cmNlKTsNCiAgICAgIGlmIChhKSBhd2Fp
-dCBhLmRldGFpbChwYXJzZWQuZXh0SWQpLmNhdGNoKCgpID0+IG51bGwpOw0K
-ICAgICAgZG9uZSArPSAxOw0KICAgIH0pKTsNCiAgfQ0KICByZWdpc3RyeS5p
-bnZhbGlkYXRlVGFnQ2FjaGUoKTsNCiAgY29uc3QgbGlzdCA9IGF3YWl0IHJl
-Z2lzdHJ5LnRhZ3NMaXN0KCk7DQogIGNvbnNvbGUubG9nKGBbdGFnc10g0L/R
-gNC+0LPRgNC10LI6INGA0LDQt9C+0LHRgNCw0L3QviAke2RvbmV9INGA0LDQ
-sdC+0YIsINGC0LXQs9C+0LIgJHtsaXN0Lmxlbmd0aH1gKTsNCn0NCi8qKiDQ
-n9GA0LjQvNC40YLQuNCy0L3Ri9C5INC70LjQvNC40YIg0LfQsNC/0YDQvtGB
-0L7QsiDQvdCwIElQLCDRh9GC0L7QsdGLINC/0YPQsdC70LjRh9C90YvQuSBV
-Ukwg0L3QtSDQv9GA0LXQstGA0LDRidCw0LvRgdGPINCyINC+0YLQutGA0YvR
-gtGL0Lkg0L/RgNC+0LrRgdC4LiAqLw0KY29uc3QgcmF0ZUhpdHMgPSBuZXcg
-TWFwKCk7DQpmdW5jdGlvbiByYXRlTGltaXRlZChyZXEpIHsNCiAgY29uc3Qg
-aXAgPSByZXEuc29ja2V0LnJlbW90ZUFkZHJlc3MgfHwgJz8nOw0KICBjb25z
-dCBsaW1pdCA9IE51bWJlcihwcm9jZXNzLmVudi5NTV9SQVRFX0xJTUlUIHx8
-IDI0MCk7DQogIGNvbnN0IG5vdyA9IERhdGUubm93KCk7DQogIGxldCByZWMg
-PSByYXRlSGl0cy5nZXQoaXApOw0KICBpZiAoIXJlYyB8fCBub3cgLSByZWMu
-dCA+IDYwZTMpIHsgcmVjID0geyB0OiBub3csIG46IDAgfTsgcmF0ZUhpdHMu
-c2V0KGlwLCByZWMpOyB9DQogIHJlYy5uICs9IDE7DQogIGlmIChyYXRlSGl0
-cy5zaXplID4gNTAwMCkgcmF0ZUhpdHMuY2xlYXIoKTsNCiAgcmV0dXJuIHJl
-Yy5uID4gbGltaXQ7DQp9DQpjb25zdCBzZXJ2ZXIgPSBodHRwLmNyZWF0ZVNl
-cnZlcihhc3luYyAocmVxLCByZXMpID0+IHsNCiAgY29uc3QgdXJsID0gbmV3
-IFVSTChyZXEudXJsLCBgaHR0cDovLyR7cmVxLmhlYWRlcnMuaG9zdCB8fCAn
-bG9jYWxob3N0J31gKTsNCg0KICBpZiAocmVxLm1ldGhvZCA9PT0gJ09QVElP
-TlMnKSB7DQogICAgcmVzLndyaXRlSGVhZCgyMDQsIHsNCiAgICAgICdBY2Nl
-c3MtQ29udHJvbC1BbGxvdy1PcmlnaW4nOiAnKicsDQogICAgICAnQWNjZXNz
-LUNvbnRyb2wtQWxsb3ctTWV0aG9kcyc6ICdHRVQsT1BUSU9OUycsDQogICAg
-ICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ctSGVhZGVycyc6ICcqJywNCiAgICAg
-ICdBY2Nlc3MtQ29udHJvbC1NYXgtQWdlJzogJzg2NDAwJywNCiAgICB9KTsN
-CiAgICByZXR1cm4gcmVzLmVuZCgpOw0KICB9DQoNCiAgY29uc3Qgcm91dGUg
-PSB1cmwucGF0aG5hbWUucmVwbGFjZSgvXC8rJC8sICcnKSB8fCAnLyc7DQog
-IGlmIChyb3V0ZSAhPT0gJy9oZWFsdGgnICYmIHJhdGVMaW1pdGVkKHJlcSkp
-IHsNCiAgICByZXR1cm4ganNvbihyZXMsIDQyOSwgeyBlcnJvcjogJ3RvbyBt
-YW55IHJlcXVlc3RzJywgcmV0cnlBZnRlcjogNjAgfSk7DQogIH0NCiAgY29u
-c3QgcGFnZSA9IE1hdGgubWF4KDEsIE51bWJlcih1cmwuc2VhcmNoUGFyYW1z
-LmdldCgncGFnZScpIHx8IDEpIHx8IDEpOw0KICBjb25zdCB0YWdzID0gdXJs
-LnNlYXJjaFBhcmFtcy5nZXRBbGwoJ3RhZycpLm1hcCgodCkgPT4gdC50cmlt
-KCkpLmZpbHRlcihCb29sZWFuKTsNCiAgY29uc3Qgc291cmNlID0gdXJsLnNl
-YXJjaFBhcmFtcy5nZXQoJ3NvdXJjZScpOw0KICBjb25zdCBzb3J0UmF3ID0g
-U3RyaW5nKHVybC5zZWFyY2hQYXJhbXMuZ2V0KCdzb3J0JykgfHwgJ25ldycp
-LnRvTG93ZXJDYXNlKCk7DQogIGNvbnN0IHNvcnQgPSBbJ25ldycsICdvbGQn
-LCAnYXonLCAnemEnXS5pbmNsdWRlcyhzb3J0UmF3KSA/IHNvcnRSYXcgOiAn
-bmV3JzsNCg0KICB0cnkgew0KICAgIGlmIChyb3V0ZSA9PT0gJy8nKSByZXR1
-cm4ganNvbihyZXMsIDIwMCwgew0KICAgICAgb2s6IHRydWUsDQogICAgICBj
-cmF3bGluZzogc3RhdGUuY3Jhd2xpbmcsDQogICAgICBtZXJnZWRXb3Jrczog
-c3RhdGUubWVyZ2VkPy5sZW5ndGggPz8gbnVsbCwNCiAgICAgIHNvdXJjZXM6
-IHN0YXRlLnNvdXJjZXMubWFwKChzKSA9PiAoeyBpZDogcy5pZCwgcmVhZHk6
-IHMucmVhZHksIHBvc3RzOiBzLnBvc3RzLCB3b3Jrczogcy53b3Jrcywgc2Nh
-bm5lZDogcy5zY2FubmVkLCBlcnJvcjogcy5lcnJvciB9KSksDQogICAgICBl
-bmRwb2ludHM6IFsnL2FwaS9tYW5nYT9wYWdlPTEnLCAnL2FwaS9tYW5nYT90
-YWc9PHNsdWc+JywgJy9hcGkvdGFncycsICcvYXBpL3NvdXJjZXMnLCAnL2Fw
-aS9tYW5nYS88c3JjOmlkPicsICcvYXBpL21hbmdhLzxzcmM6aWQ+L2NoYXB0
-ZXJzJywgJy9hcGkvY2hhcHRlci88c3JjOmlkPi9wYWdlcyddLA0KICAgICAg
-ZGVtbzogJy9kZW1vJywNCiAgICB9KTsNCg0KICAgIGlmIChyb3V0ZSA9PT0g
-Jy9oZWFsdGgnKSByZXR1cm4ganNvbihyZXMsIDIwMCwgew0KICAgICAgb2s6
-ICFzdGF0ZS5jcmF3bGluZywNCiAgICAgIGNyYXdsaW5nOiBzdGF0ZS5jcmF3
-bGluZywNCiAgICAgIG1lcmdlZFdvcmtzOiBzdGF0ZS5tZXJnZWQ/Lmxlbmd0
-aCA/PyBudWxsLA0KICAgICAgc291cmNlczogc3RhdGUuc291cmNlcy5tYXAo
-KHMpID0+ICh7IGlkOiBzLmlkLCByZWFkeTogcy5yZWFkeSwgcG9zdHM6IHMu
-cG9zdHMsIHdvcmtzOiBzLndvcmtzLCBzY2FubmVkOiBzLnNjYW5uZWQsIGVy
-cm9yOiBzLmVycm9yIH0pKSwNCiAgICAgIHVwdGltZTogTWF0aC5yb3VuZChw
-cm9jZXNzLnVwdGltZSgpKSwNCiAgICB9KTsNCg0KICAgIGlmIChyb3V0ZSA9
-PT0gJy9NYW5nYVJlYWRlci5hcGsnKSB7DQogICAgICBjb25zdCBhcGsgPSBh
-d2FpdCBmcy5wcm9taXNlcy5yZWFkRmlsZShwYXRoLmpvaW4oX19kaXJuYW1l
-LCAnTWFuZ2FSZWFkZXIuYXBrJykpLmNhdGNoKCgpID0+IG51bGwpOw0KICAg
-ICAgaWYgKCFhcGspIHJldHVybiBqc29uKHJlcywgNDA0LCB7IGVycm9yOiAn
-YXBrIG5vdCBmb3VuZCcgfSk7DQogICAgICByZXR1cm4gc2VuZChyZXMsIDIw
-MCwgYXBrLCAnYXBwbGljYXRpb24vdm5kLmFuZHJvaWQucGFja2FnZS1hcmNo
-aXZlJywgew0KICAgICAgICAnQ29udGVudC1EaXNwb3NpdGlvbic6ICdhdHRh
-Y2htZW50OyBmaWxlbmFtZT0iTWFuZ2FSZWFkZXIuYXBrIicsDQogICAgICAg
-ICdDYWNoZS1Db250cm9sJzogJ3B1YmxpYywgbWF4LWFnZT0zMDAnLA0KICAg
-ICAgfSk7DQogICAgfQ0KICAgIGlmIChyb3V0ZSA9PT0gJy9hcGkvc291cmNl
-cycpIHJldHVybiBqc29uKHJlcywgMjAwLCBzdGF0ZS5zb3VyY2VzLm1hcCgo
-cykgPT4gKHsNCiAgICAgIGlkOiBzLmlkLCBuYW1lOiBzLm5hbWUsIGJhc2U6
-IHMuYmFzZSwgcmVhZHk6IHMucmVhZHksIHBvc3RzOiBzLnBvc3RzLCB3b3Jr
-czogcy53b3Jrcywgc2Nhbm5lZDogcy5zY2FubmVkLCBidWlsdEF0OiBzLmJ1
-aWx0QXQsIGVycm9yOiBzLmVycm9yLA0KICAgIH0pKSk7DQoNCiAgICBpZiAo
-cm91dGUgPT09ICcvZGVtbycgfHwgcm91dGUgPT09ICcvZGVtby5odG1sJykg
-ew0KICAgICAgY29uc3QgaHRtbCA9IGF3YWl0IGZzLnByb21pc2VzLnJlYWRG
-aWxlKHBhdGguam9pbihfX2Rpcm5hbWUsICdkZW1vLmh0bWwnKSk7DQogICAg
-ICByZXR1cm4gc2VuZChyZXMsIDIwMCwgaHRtbCwgJ3RleHQvaHRtbDsgY2hh
-cnNldD11dGYtOCcsIHsgJ0NhY2hlLUNvbnRyb2wnOiAnbm8tc3RvcmUnIH0p
-Ow0KICAgIH0NCg0KICAgIGlmIChyb3V0ZSA9PT0gJy9hcGkvbWFuZ2EnKSB7
-DQogICAgICBpZiAodGFncy5sZW5ndGgpIHsNCiAgICAgICAgY29uc3QgdGFn
-Z2VkID0gYXdhaXQgdGFnZ2VkTGlzdCh0YWdzLCBwYWdlLCBDT05GSUcuUEVS
-X1BBR0UsIHNvcnQpOw0KICAgICAgICBjb25zdCBlbnJpY2hlZCA9IGF3YWl0
-IGVucmljaFdvcmtzKHRhZ2dlZCk7DQogICAgICAgIHJldHVybiBqc29uKHJl
-cywgMjAwLCBlbnJpY2hlZC5maWx0ZXIoKGl0KSA9PiAhaXQuZHJvcCkpOw0K
-ICAgICAgfQ0KICAgICAgY29uc3QgbGlzdCA9IHJlZ2lzdHJ5Lmxpc3RQYWdl
-KHBhZ2UsIENPTkZJRy5QRVJfUEFHRSwgc291cmNlLCBzb3J0KTsNCiAgICAg
-IGlmICghbGlzdCkgcmV0dXJuIGpzb24ocmVzLCA1MDMsIHsgZXJyb3I6ICdj
-YXRhbG9nIG5vdCByZWFkeScsIGNyYXdsaW5nOiBzdGF0ZS5jcmF3bGluZyB9
-KTsNCiAgICAgICAgY29uc3QgZW5yaWNoZWQgPSBhd2FpdCBlbnJpY2hXb3Jr
-cyhsaXN0KTsNCiAgICAgICAgcmV0dXJuIGpzb24ocmVzLCAyMDAsIGVucmlj
-aGVkLmZpbHRlcigoaXQpID0+ICFpdC5kcm9wKSk7DQogICAgfQ0KDQogICAg
-aWYgKHJvdXRlID09PSAnL2FwaS90YWdzJykgcmV0dXJuIGpzb24ocmVzLCAy
-MDAsIGF3YWl0IHJlZ2lzdHJ5LnRhZ3MocGFnZSwgNTAwLCBzb3VyY2UpKTsN
-Cg0KICAgIGxldCBtID0gcm91dGUubWF0Y2goL15cL2FwaVwvbWFuZ2FcLyhb
-Xi9dKylcL2NoYXB0ZXJzJC8pOw0KICAgIGlmIChtKSB7DQogICAgICBjb25z
-dCBwYXJzZWQgPSByZWdpc3RyeS5wYXJzZUlkKG1bMV0pOw0KICAgICAgaWYg
-KCFwYXJzZWQpIHJldHVybiBqc29uKHJlcywgNDAwLCB7IGVycm9yOiAnYmFk
-IG1hbmdhIGlkJyB9KTsNCiAgICAgIHJldHVybiBqc29uKHJlcywgMjAwLCBh
-d2FpdCBhcGlDaGFwdGVycyhtWzFdKSk7DQogICAgfQ0KDQogICAgbSA9IHJv
-dXRlLm1hdGNoKC9eXC9hcGlcL21hbmdhXC8oW14vXSspJC8pOw0KICAgIGlm
-IChtKSB7DQogICAgICBjb25zdCBkZXRhaWwgPSBhd2FpdCBhcGlNYW5nYURl
-dGFpbChtWzFdKTsNCiAgICAgIGlmICghZGV0YWlsKSByZXR1cm4ganNvbihy
-ZXMsIDQwNCwgeyBlcnJvcjogJ21hbmdhIG5vdCBmb3VuZCcgfSk7DQogICAg
-ICByZXR1cm4ganNvbihyZXMsIDIwMCwgZGV0YWlsKTsNCiAgICB9DQoNCiAg
-ICBtID0gcm91dGUubWF0Y2goL15cL2FwaVwvY2hhcHRlclwvKFteL10rKVwv
-cGFnZXMkLyk7DQogICAgaWYgKG0pIHsNCiAgICAgIGNvbnN0IGRhdGEgPSBh
-d2FpdCBhcGlQYWdlcyhtWzFdKTsNCiAgICAgIGlmICghZGF0YSkgcmV0dXJu
-IGpzb24ocmVzLCA0MDQsIHsgZXJyb3I6ICdjaGFwdGVyIG5vdCBmb3VuZCcg
-fSk7DQogICAgICByZXR1cm4ganNvbihyZXMsIDIwMCwgZGF0YSk7DQogICAg
-fQ0KDQogICAgcmV0dXJuIGpzb24ocmVzLCA0MDQsIHsgZXJyb3I6ICdub3Qg
-Zm91bmQnIH0pOw0KICB9IGNhdGNoIChlKSB7DQogICAgY29uc29sZS5lcnJv
-cignW2FwaV0nLCByZXEubWV0aG9kLCByZXEudXJsLCBlLm1lc3NhZ2UpOw0K
-ICAgIHJldHVybiBqc29uKHJlcywgNTAyLCB7IGVycm9yOiAndXBzdHJlYW0g
-ZXJyb3InLCBkZXRhaWw6IGUubWVzc2FnZSB9KTsNCiAgfQ0KfSk7DQoNCi8v
-INGC0LXQu9C10YTQvtC9INC90LAg0LzQvtCx0LjQu9GM0L3QvtC8INC40L3R
-gtC10YDQvdC10YLQtTog0LTQtdGA0LbQuNC8INGB0L7QtdC00LjQvdC10L3Q
-uNC1INC20LjQstGL0LwsINCwINC90LUg0L/QtdGA0LXRgdC+0LfQtNCw0ZHQ
-vCDQvdCwINC60LDQttC00YvQuSDQt9Cw0L/RgNC+0YENCnNlcnZlci5rZWVw
-QWxpdmVUaW1lb3V0ID0gNjUwMDA7DQpzZXJ2ZXIuaGVhZGVyc1RpbWVvdXQg
-PSA2NjAwMDsNCg0Kc2VydmVyLmxpc3RlbihDT05GSUcuUE9SVCwgKCkgPT4g
-ew0KICBjb25zb2xlLmxvZyhgTWFuZ2FSZWFkZXIgQVBJIG9uIGh0dHA6Ly9s
-b2NhbGhvc3Q6JHtDT05GSUcuUE9SVH1gKTsNCiAgY29uc29sZS5sb2coJ1tj
-YXRhbG9nXSDQuNGB0YLQvtGH0L3QuNC60Lg6JywgcmVnaXN0cnkuYWRhcHRl
-cnMubWFwKChhKSA9PiBhLmlkKS5qb2luKCcsICcpKTsNCiAgcmVnaXN0cnku
-d2FybSgpDQogICAgLnRoZW4oKCkgPT4geyBpZiAoIXByb2Nlc3MuZW52Lk1N
-X05PX1RBR19XQVJNKSB3YXJtVGFncyhOdW1iZXIocHJvY2Vzcy5lbnYuTU1f
-VEFHX1dBUk0gfHwgMjAwKSk7IH0pDQogICAgLmNhdGNoKChlKSA9PiBjb25z
-b2xlLmVycm9yKCdbY2F0YWxvZ10gd2FybSBmYWlsZWQ6JywgZS5tZXNzYWdl
-KSk7DQp9KTsNCg==
+'use strict';
+/**
+ * MangaReader API — мультиисточниковый прокси.
+ *
+ *   GET /api/manga?page=1[&source=nudemoon][&tag=<slug>]
+ *   GET /api/tags
+ *   GET /api/manga/:id                 (id = "mm:16737" | "nudemoon:31471" | "16737")
+ *   GET /api/manga/:id/chapters
+ *   GET /api/chapter/:id/pages
+ *   GET /api/sources
+ *   GET /demo
+ *
+ * Слияние источников — по нормализованному названию работы (см. sources/index.js),
+ * поэтому одна и та же манга с двух сайтов попадает в каталог один раз.
+ */
+const http = require('node:http');
+const fs = require('node:fs');
+const path = require('node:path');
+
+const registry = require('./registry');
+const { workKey, tagKey, stripChapterSuffix } = require('./http');
+
+const CONFIG = {
+  PORT: Number(process.env.PORT || 3001),
+  PER_PAGE: Number(process.env.MM_PER_PAGE || 20),
+};
+
+const state = registry.state;
+
+const zlib = require('node:zlib');
+const gzip = (buf) => zlib.gzipSync(buf, { level: 6 });
+const brotli = (buf) => zlib.brotliCompressSync(buf, {
+  params: {
+    [zlib.constants.BROTLI_PARAM_QUALITY]: 4,
+    [zlib.constants.BROTLI_PARAM_SIZE_HINT]: buf.length,
+  },
+});
+
+/** Отдаёт буфер с gzip, если клиент это умеет (телефон на мобильном интернете — важно). */
+function send(res, code, buf, type, extra = {}) {
+  const headers = {
+    'Content-Type': type,
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
+    'Cache-Control': 'public, max-age=60',
+    Vary: 'Accept-Encoding',
+    ...extra,
+  };
+  const accepts = String(res.req?.headers['accept-encoding'] || '');
+  if (buf.length > 1024) {
+    if (/\bbr\b/.test(accepts)) {
+      buf = brotli(buf);
+      headers['Content-Encoding'] = 'br';
+    } else if (/\bgzip\b/.test(accepts)) {
+      buf = gzip(buf);
+      headers['Content-Encoding'] = 'gzip';
+    }
+  }
+  headers['Content-Length'] = buf.length;
+  res.writeHead(code, headers);
+  res.end(buf);
+}
+
+function json(res, code, body) {
+  send(res, code, Buffer.from(JSON.stringify(body), 'utf8'), 'application/json; charset=utf-8');
+}
+
+/**
+ * Полный набор работ по тегу у источника: листаем страницы тега (а не одну),
+ * иначе пересечение двух тегов видит только первые 20 карточек каждого.
+ */
+const tagSetCache = new Map();
+async function sourceTagSet(a, slug) {
+  const key = `${a.id}:${slug}`;
+  const hit = tagSetCache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+
+  const maxPages = Number(process.env.MM_TAG_PAGES || 3);
+  const map = new Map();
+  for (let p = 1; p <= maxPages; p++) {
+    const items = await a.tagPage(slug, p).catch(() => []);
+    if (!items.length) break;
+    for (const it of items) {
+      const k = workKey(it.title);
+      if (!k || map.has(k)) continue;
+      map.set(k, { source: a.id, extId: it.extId, title: it.title, cover: it.cover, url: it.url });
+    }
+  }
+  tagSetCache.set(key, { exp: Date.now() + 60 * 60e3, value: map });
+  return map;
+}
+
+/**
+ * Работы, отфильтрованные по тегам (строгое И): работа должна быть во всех выбранных тегах.
+ * Источники без поддержки тегов в такой фильтр не попадают.
+ */
+const taggedCache = new Map(); // готовые страницы по тегам: повторные открытия мгновенные
+
+const TAG_COLLATOR = new Intl.Collator('ru', { numeric: true, sensitivity: 'base' });
+
+async function taggedList(tags, page, perPage, sort = 'new') {
+  const cacheKey = [...tags].sort().join('\u0001') + '#' + page + '#' + perPage + '#' + sort;
+  const cachedHit = taggedCache.get(cacheKey);
+  if (cachedHit && cachedHit.exp > Date.now()) return cachedHit.value;
+
+  const sets = [];
+  const TAG_SOURCE_TIMEOUT = Number(process.env.MM_TAG_TIMEOUT || 3000);
+
+  for (const tag of tags) {
+    const merged = new Map();
+    // источники опрашиваем параллельно и с потолком по времени: раньше медленный сайт
+    // (или лежащий hchan) держал весь запрос, и через туннель возвращался 502
+    const sources = registry.adapters.filter((a) => a.tagPage);
+    const results = await Promise.all(sources.map(async (a) => {
+      const slug = (await registry.slugFor(a.id, tag).catch(() => null)) || tag;
+      const map = await withTimeout(sourceTagSet(a, slug), TAG_SOURCE_TIMEOUT, 'tag:' + a.id).catch(() => new Map());
+      return map;
+    }));
+
+    for (const map of results) {
+      for (const [k, it] of map) {
+        const cur = merged.get(k);
+        if (!cur) {
+          merged.set(k, {
+            id: `${it.source}:${it.extId}`,
+            title: registry.displayTitle(it.title), // та же подпись, что и в каталоге
+            cover: it.cover,
+            author: '',
+            genres: [],
+            sources: [{ source: it.source, id: it.extId, url: it.url }],
+          });
+        } else if (!cur.sources.some((s) => s.source === it.source)) {
+          cur.sources.push({ source: it.source, id: it.extId, url: it.url });
+        }
+      }
+    }
+    sets.push(merged);
+  }
+
+  const base = sets[0] || new Map();
+  const out = [];
+  for (const [key, item] of base) {
+    if (sets.slice(1).every((s) => s.has(key))) out.push(item);
+  }
+
+  // сортировка внутри выдачи по тегу: раньше режимы az/za здесь просто игнорировались
+  if (sort === 'az' || sort === 'za') {
+    const keyOf = (it) => registry.sortKey(registry.displayTitle(it.title));
+    out.sort((a, b) => TAG_COLLATOR.compare(keyOf(a), keyOf(b)));
+    if (sort === 'za') out.reverse();
+  } else if (sort === 'old') {
+    out.reverse();
+  }
+
+  const start = (page - 1) * perPage;
+  const result = out.slice(start, start + perPage);
+  taggedCache.set(cacheKey, { exp: Date.now() + 10 * 60e3, value: result });
+  return result;
+}
+
+/** Догружает автора/жанры для карточек (и попутно пополняет индекс тегов). */
+/**
+ * Обогащение карточек. Раньше тянуло detail+chapters для каждого элемента на каждый запрос —
+ * из-за медленных источников (hchan, desu) страница каталога открывалась до 86 секунд.
+ * Теперь: кэш на 10 минут + общий бюджет времени, чтобы ответ не ждал вечно.
+ */
+const enrichCache = new Map(); // id -> { exp, data }
+const ENRICH_BUDGET_MS = Number(process.env.MM_ENRICH_BUDGET || 700);
+const ENRICH_ITEM_MS = Number(process.env.MM_ENRICH_ITEM || 3500); // потолок на одну карточку
+const ENRICH_TTL_MS = 10 * 60e3;
+const ENRICH_PARTIAL_TTL_MS = 2 * 60e3;
+
+const withTimeout = (p, ms, label) => Promise.race([
+  p,
+  new Promise((_, rej) => setTimeout(() => rej(new Error('timeout:' + label)), ms)),
+]);
+
+async function enrichWorks(items, budgetMs = ENRICH_BUDGET_MS) {
+  const now = Date.now();
+  const pending = [];
+  for (const it of items) {
+    const hit = enrichCache.get(it.id);
+    if (hit && hit.exp > now) {
+      Object.assign(it, hit.data);
+    } else {
+      pending.push(it);
+    }
+  }
+  if (!pending.length) return items;
+
+  const work = async (slice) => {
+    await Promise.all(slice.map(async (it) => {
+      const parsed = registry.parseId(it.id);
+      if (!parsed) return;
+      const a = registry.findAdapter(parsed.source);
+      if (!a) return;
+      // каждый запрос ограничен своим таймаутом: один лежащий сайт не должен тормозить всю выдачу
+      const d = await withTimeout(a.detail(parsed.extId), ENRICH_ITEM_MS, 'detail').catch(() => null);
+      if (!d) { it.drop = true; return; }
+      if (parsed.source !== 'mm') {
+        const chs = await withTimeout(a.chapters(parsed.extId), ENRICH_ITEM_MS, 'chapters').catch(() => null);
+        if (!Array.isArray(chs)) { it.partial = true; return; } // источник не ответил — карточку не выкидываем
+        if (!chs.length) { it.drop = true; return; }
+      }
+      it.author = d.author || '';
+      it.genres = d.genres || [];
+      it.cover = it.cover || d.cover || '';
+      it.date = d.date || null;
+      enrichCache.set(it.id, {
+        exp: Date.now() + ENRICH_TTL_MS,
+        data: { author: it.author, genres: it.genres, cover: it.cover, date: it.date },
+      });
+    }));
+  };
+
+  const chunk = 6;
+  const runner = (async () => {
+    for (let i = 0; i < pending.length; i += chunk) {
+      await work(pending.slice(i, i + chunk));
+    }
+  })();
+
+  // ответ не ждёт больше бюджета, обогащение продолжается в фоне
+  await withTimeout(runner, budgetMs, 'budget').catch(() => {});
+
+  for (const it of pending) {
+    if (!enrichCache.has(it.id)) {
+      enrichCache.set(it.id, {
+        exp: Date.now() + ENRICH_PARTIAL_TTL_MS,
+        data: { author: it.author || '', genres: it.genres || [], cover: it.cover || '', date: it.date || null },
+      });
+    }
+  }
+  registry.invalidateTagCache();
+  return items;
+}
+/**
+ * Главы работы со ВСЕХ источников, где она есть: объединяем по номеру главы,
+ * чтобы список был единым (у одного сайта пост = глава, у другого — том/пачка глав).
+ */
+async function mergedChapters(workTitle, seed) {
+  const key = workKey(workTitle);
+  const entry = state.merged?.find((w) => w.key === key);
+  let refs = entry ? entry.sources : [];
+  // работа могла не попасть в объединённый индекс — тогда её собственный источник и есть первый
+  if (seed && !refs.some((r) => r.source === seed.source && r.extId === seed.extId)) {
+    refs = [seed, ...refs];
+  }
+
+  const lists = await Promise.all(refs.map(async (r) => {
+    const a = registry.findAdapter(r.source);
+    if (!a) return [];
+    const chs = await a.chapters(r.extId).catch(() => []);
+    const sibs = registry.siblings(r.source, workTitle);
+    const sibByExt = new Map(sibs.map((s) => [s.extId, s]));
+
+    const mapped = chs.map((c) => {
+      // если адаптер не знает номер части (у zakura/nudemoon пост = часть серии),
+      // берём его из индекса каталога: «…ты 5» → номер 5
+      const sib = sibByExt.get(c.extId);
+      const num = sib && sib.part != null ? sib.part : c.number;
+      return {
+        id: `${r.source}:${c.extId}`,
+        number: num ?? null,
+        volume: c.volume ?? null,
+        order: sib && sib.part != null ? sib.part : (c.order ?? c.number),
+        title: c.title,
+        date: c.date,
+        source: r.source,
+      };
+    });
+
+    // остальные посты серии из индекса: это главы той же карточки, а не отдельные работы
+    for (const sib of sibs) {
+      if (mapped.some((c) => c.id === `${r.source}:${sib.extId}`)) continue;
+      mapped.push({
+        id: `${r.source}:${sib.extId}`,
+        number: sib.part ?? null,
+        volume: null,
+        order: sib.part ?? null,
+        title: sib.title,
+        date: null,
+        source: r.source,
+      });
+    }
+    return mapped;
+  }));
+
+  const byNumber = new Map();
+  for (const list of lists) {
+    for (const c of list) {
+      // том входит в ключ: «глава 1» из тома 1 и тома 2 — разные главы
+      const k = c.number != null ? `v:${c.volume ?? 0}|n:${c.number}` : `t:${String(c.title || '').toLowerCase()}`;
+      const prev = byNumber.get(k);
+      // при совпадении номера оставляем запись с более информативным названием
+      if (!prev || (!prev.title && c.title)) byNumber.set(k, c);
+    }
+  }
+
+  const out = [...byNumber.values()];
+  // у постов без номера в названии (первая часть серии) ставим свободный номер,
+  // иначе такая глава уезжает в конец списка
+  const used = new Set(out.filter((c) => c.number != null).map((c) => Number(c.number)));
+  let next = 1;
+  for (const c of out) {
+    if (c.number != null) continue;
+    while (used.has(next)) next += 1;
+    c.number = next;
+    c.order = next;
+    used.add(next);
+  }
+
+  return out.sort((a, b) => {
+    const na = a.order ?? a.number ?? Number.MAX_SAFE_INTEGER;
+    const nb = b.order ?? b.number ?? Number.MAX_SAFE_INTEGER;
+    return na - nb || String(a.title || '').localeCompare(String(b.title || ''));
+  });
+}
+
+async function apiMangaDetail(id) {
+  const parsed = registry.parseId(id);
+  if (!parsed) return null;
+  const adapter = registry.findAdapter(parsed.source);
+  if (!adapter) return null;
+  const d = await adapter.detail(parsed.extId);
+  if (!d) return null;
+
+  // другие источники с той же работой
+  let others = [];
+  try {
+    const key = workKey(d.title);
+    const hit = state.merged?.find((w) => w.key === key);
+    if (hit) others = hit.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url }));
+  } catch { /* ignore */ }
+
+  return {
+    id: `${parsed.source}:${parsed.extId}`,
+    title: stripChapterSuffix(d.title) || d.title,
+    cover: d.cover,
+    author: d.author || '',
+    description: d.description || '',
+    genres: d.genres || [],
+    sources: others,
+  };
+}
+
+async function apiChapters(id) {
+  const parsed = registry.parseId(id);
+  if (!parsed) return [];
+  const adapter = registry.findAdapter(parsed.source);
+  if (!adapter) return [];
+  const seed = await adapter.detail(parsed.extId).catch(() => null);
+  if (!seed) return [];
+  return mergedChapters(seed.work || seed.title, { source: parsed.source, extId: parsed.extId });
+}
+
+async function apiPages(id) {
+  const parsed = registry.parseId(id);
+  if (!parsed) return null;
+  const adapter = registry.findAdapter(parsed.source);
+  if (!adapter) return null;
+  const res = await adapter.pages(parsed.extId).catch(() => null);
+  if (!res) return null;
+
+  // соседние главы считаем по объединённому списку, чтобы листать сквозь источники
+  let prevChapterId = res.prevChapterId ? `${parsed.source}:${res.prevChapterId}` : null;
+  let nextChapterId = res.nextChapterId ? `${parsed.source}:${res.nextChapterId}` : null;
+  try {
+    const seed = await adapter.detail(parsed.extId);
+    if (seed) {
+    const list = await mergedChapters(seed.work || seed.title, { source: parsed.source, extId: parsed.extId });
+      const idx = list.findIndex((c) => c.id === id);
+      if (idx > 0) prevChapterId = list[idx - 1].id;
+      if (idx >= 0 && idx < list.length - 1) nextChapterId = list[idx + 1].id;
+    }
+  } catch { /* оставляем как есть */ }
+
+  return { pages: res.pages || [], prevChapterId, nextChapterId };
+}
+
+/** Фоновый прогрев: разбираем часть работ, чтобы собрать теги, которых нет в sitemap. */
+async function warmTags(limit = 200) {
+  const works = registry.state.merged || [];
+  const chunk = 6;
+  let done = 0;
+  for (let i = 0; i < works.length && done < limit; i += chunk) {
+    const slice = works.slice(i, i + chunk);
+    await Promise.all(slice.map(async (w) => {
+      const parsed = registry.parseId(`${w.primary.source}:${w.primary.extId}`);
+      if (!parsed) return;
+      const a = registry.findAdapter(parsed.source);
+      if (a) await a.detail(parsed.extId).catch(() => null);
+      done += 1;
+    }));
+  }
+  registry.invalidateTagCache();
+  const list = await registry.tagsList();
+  console.log(`[tags] прогрев: разобрано ${done} работ, тегов ${list.length}`);
+}
+/** Примитивный лимит запросов на IP, чтобы публичный URL не превращался в открытый прокси. */
+const rateHits = new Map();
+function rateLimited(req) {
+  const ip = req.socket.remoteAddress || '?';
+  const limit = Number(process.env.MM_RATE_LIMIT || 240);
+  const now = Date.now();
+  let rec = rateHits.get(ip);
+  if (!rec || now - rec.t > 60e3) { rec = { t: now, n: 0 }; rateHits.set(ip, rec); }
+  rec.n += 1;
+  if (rateHits.size > 5000) rateHits.clear();
+  return rec.n > limit;
+}
+const server = http.createServer(async (req, res) => {
+  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,OPTIONS',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Max-Age': '86400',
+    });
+    return res.end();
+  }
+
+  const route = url.pathname.replace(/\/+$/, '') || '/';
+  if (route !== '/health' && rateLimited(req)) {
+    return json(res, 429, { error: 'too many requests', retryAfter: 60 });
+  }
+  const page = Math.max(1, Number(url.searchParams.get('page') || 1) || 1);
+  const tags = url.searchParams.getAll('tag').map((t) => t.trim()).filter(Boolean);
+  const source = url.searchParams.get('source');
+  const sortRaw = String(url.searchParams.get('sort') || 'new').toLowerCase();
+  const sort = ['new', 'old', 'az', 'za'].includes(sortRaw) ? sortRaw : 'new';
+
+  try {
+    if (route === '/') return json(res, 200, {
+      ok: true,
+      crawling: state.crawling,
+      mergedWorks: state.merged?.length ?? null,
+      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
+      endpoints: ['/api/manga?page=1', '/api/manga?tag=<slug>', '/api/tags', '/api/sources', '/api/manga/<src:id>', '/api/manga/<src:id>/chapters', '/api/chapter/<src:id>/pages'],
+      demo: '/demo',
+    });
+
+    if (route === '/health') return json(res, 200, {
+      ok: !state.crawling,
+      crawling: state.crawling,
+      mergedWorks: state.merged?.length ?? null,
+      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
+      uptime: Math.round(process.uptime()),
+    });
+
+    if (route === '/MangaReader.apk') {
+      const apk = await fs.promises.readFile(path.join(__dirname, 'MangaReader.apk')).catch(() => null);
+      if (!apk) return json(res, 404, { error: 'apk not found' });
+      return send(res, 200, apk, 'application/vnd.android.package-archive', {
+        'Content-Disposition': 'attachment; filename="MangaReader.apk"',
+        'Cache-Control': 'public, max-age=300',
+      });
+    }
+    if (route === '/api/sources') return json(res, 200, state.sources.map((s) => ({
+      id: s.id, name: s.name, base: s.base, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, error: s.error,
+    })));
+
+    if (route === '/demo' || route === '/demo.html') {
+      const html = await fs.promises.readFile(path.join(__dirname, 'demo.html'));
+      return send(res, 200, html, 'text/html; charset=utf-8', { 'Cache-Control': 'no-store' });
+    }
+
+    if (route === '/api/manga') {
+      if (tags.length) {
+        const tagged = await taggedList(tags, page, CONFIG.PER_PAGE, sort);
+        const enriched = await enrichWorks(tagged);
+        return json(res, 200, enriched.filter((it) => !it.drop));
+      }
+      const list = registry.listPage(page, CONFIG.PER_PAGE, source, sort);
+      if (!list) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
+        const enriched = await enrichWorks(list);
+        return json(res, 200, enriched.filter((it) => !it.drop));
+    }
+
+    if (route === '/api/tags') return json(res, 200, await registry.tags(page, 500, source));
+
+    let m = route.match(/^\/api\/manga\/([^/]+)\/chapters$/);
+    if (m) {
+      const parsed = registry.parseId(m[1]);
+      if (!parsed) return json(res, 400, { error: 'bad manga id' });
+      return json(res, 200, await apiChapters(m[1]));
+    }
+
+    m = route.match(/^\/api\/manga\/([^/]+)$/);
+    if (m) {
+      const detail = await apiMangaDetail(m[1]);
+      if (!detail) return json(res, 404, { error: 'manga not found' });
+      return json(res, 200, detail);
+    }
+
+    m = route.match(/^\/api\/chapter\/([^/]+)\/pages$/);
+    if (m) {
+      const data = await apiPages(m[1]);
+      if (!data) return json(res, 404, { error: 'chapter not found' });
+      return json(res, 200, data);
+    }
+
+    return json(res, 404, { error: 'not found' });
+  } catch (e) {
+    console.error('[api]', req.method, req.url, e.message);
+    return json(res, 502, { error: 'upstream error', detail: e.message });
+  }
+});
+
+// телефон на мобильном интернете: держим соединение живым, а не пересоздаём на каждый запрос
+server.keepAliveTimeout = 65000;
+server.headersTimeout = 66000;
+
+server.listen(CONFIG.PORT, () => {
+  console.log(`MangaReader API on http://localhost:${CONFIG.PORT}`);
+  console.log('[catalog] источники:', registry.adapters.map((a) => a.id).join(', '));
+  registry.warm()
+    .then(() => { if (!process.env.MM_NO_TAG_WARM) warmTags(Number(process.env.MM_TAG_WARM || 200)); })
+    .catch((e) => console.error('[catalog] warm failed:', e.message));
+});

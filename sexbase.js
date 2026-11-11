@@ -1,113 +1,129 @@
-J3VzZSBzdHJpY3QnOw0KLyoqDQogKiDQmNGB0YLQvtGH0L3QuNC6OiBzZXhi
-YXNlLm9yZyDigJQg0YLQvtC70YzQutC+INGA0LDQt9C00LXQuyDQvNCw0L3Q
-s9C4ICjQstC40LTQtdC+INC40LPQvdC+0YDQuNGA0YPQtdC8KS4NCiAqINCj
-INGB0LDQudGC0LAg0LXRgdGC0Ywg0L7RgtC60YDRi9GC0YvQuSBKU09OIEFQ
-SToNCiAqICAgR0VUIC9hcGkvdjIvbWFuZ2E/bGltaXQ9MTAwJm9mZnNldD1O
-ICAgICAgICDigJQg0LrQsNGC0LDQu9C+0LMgKHRvdGFsINC10YHRgtGMINCy
-INC+0YLQstC10YLQtSkNCiAqICAgR0VUIC9hcGkvdjIvbWFuZ2EvPGlkPiAg
-ICAgICAgICAgICAgICAgICAgICDigJQg0LrQsNGA0YLQvtGH0LrQsCAodGl0
-bGVzLCB0YWdzLCBjb3ZlcikNCiAqICAgR0VUIC9hcGkvdjIvbWFuZ2EvPGlk
-Pi9wYWdlcyAgICAgICAgICAgICAgICDigJQg0LLRgdC1INGB0YLRgNCw0L3Q
-uNGG0Ysg0L7QtNC90L7QuSDRgNCw0LHQvtGC0YsNCiAqICAgR0VUIC9hcGkv
-djIvbWFuZ2E/dGFnPTzQvdCw0LfQstCw0L3QuNC1INGC0LXQs9CwPiAgICAg
-ICDigJQg0YTQuNC70YzRgtGAINC/0L4g0YLQtdCz0YMgKNGA0YPRgdGB0LrQ
-vtC1INC90LDQt9Cy0LDQvdC40LUpDQogKiDQntC00L3QsCDQt9Cw0L/QuNGB
-0YwgPSDQvtC00L3QsCDRgNCw0LHQvtGC0LAg0YbQtdC70LjQutC+0LwgKNCx
-0LXQtyDRgNCw0LfQsdC40LLQutC4INC90LAg0LPQu9Cw0LLRiyksINGH0LjR
-gtCw0LXRgtGB0Y8g0YHRgNCw0LfRgy4NCiAqLw0KY29uc3QgeyBmZXRjaEpz
-b24sIHN0cmlwVGFncywgc3RyaXBDaGFwdGVyU3VmZml4IH0gPSByZXF1aXJl
-KCcuL2h0dHAnKTsNCmNvbnN0IHRhZ3NJbmRleCA9IHJlcXVpcmUoJy4vdGFn
-cycpOw0KDQpjb25zdCBCQVNFID0gJ2h0dHBzOi8vc2V4YmFzZS5vcmcnOw0K
-Y29uc3QgQVBJID0gYCR7QkFTRX0vYXBpL3YyYDsNCmNvbnN0IExJTUlUID0g
-MTAwOw0KY29uc3QgTEFORyA9IHByb2Nlc3MuZW52Lk1NX1NFWEJBU0VfTEFO
-RyB8fCAncnUnOyAvLyDQsdC10YDRkdC8INGC0L7Qu9GM0LrQviDRgNGD0YHR
-gdC60L7Rj9C30YvRh9C90YvQtSDRgNCw0LHQvtGC0YsNCg0KY29uc3QgY2Fj
-aGUgPSBuZXcgTWFwKCk7DQpjb25zdCBjYWNoZWQgPSBhc3luYyAoa2V5LCB0
-dGwsIGZuKSA9PiB7DQogIGNvbnN0IGhpdCA9IGNhY2hlLmdldChrZXkpOw0K
-ICBpZiAoaGl0ICYmIGhpdC5leHAgPiBEYXRlLm5vdygpKSByZXR1cm4gaGl0
-LnZhbHVlOw0KICBjb25zdCB2ID0gYXdhaXQgZm4oKTsNCiAgY2FjaGUuc2V0
-KGtleSwgeyBleHA6IERhdGUubm93KCkgKyB0dGwsIHZhbHVlOiB2IH0pOw0K
-ICByZXR1cm4gdjsNCn07DQoNCi8qKiDQndCw0LfQstCw0L3QuNC1INC90LAg
-0YDRg9GB0YHQutC+0Lw7IG51bGwg4oCUINC10YHQu9C4INC/0L7RgdC70LUg
-0L7RgtGB0LXRh9C10L3QuNGPINC90YPQvNC10YDQsNGG0LjQuCDQs9C70LDQ
-stGLINGA0YPRgdGB0LrQvtCz0L4g0L3QtSDQvtGB0YLQsNC70L7RgdGMLiAq
-Lw0KZnVuY3Rpb24gdGl0bGVPZihtKSB7DQogIGNvbnN0IHQgPSBtLnRpdGxl
-cyB8fCB7fTsNCiAgY29uc3QgcmF3ID0gKHQucnVzc2lhbiB8fCB0LnByZXR0
-eSB8fCAnJykudHJpbSgpOw0KICBpZiAoIXJhdykgcmV0dXJuIG51bGw7DQog
-IGNvbnN0IGJhc2UgPSBzdHJpcENoYXB0ZXJTdWZmaXgocmF3KTsNCiAgaWYg
-KCEvW9CwLdGP0ZFdL2kudGVzdChiYXNlKSkgcmV0dXJuIG51bGw7ICAgLy8g
-0Y/Qv9C+0L3RgdC60LjQtS/QsNC90LPQu9C40LnRgdC60LjQtSDQvdCw0LfQ
-stCw0L3QuNGPINC90LUg0LHQtdGA0ZHQvA0KICByZXR1cm4gcmF3Ow0KfQ0K
-DQphc3luYyBmdW5jdGlvbiBjYXRhbG9nUGFnZShwYWdlKSB7DQogIGNvbnN0
-IG9mZnNldCA9IChwYWdlIC0gMSkgKiBMSU1JVDsNCiAgcmV0dXJuIGNhY2hl
-ZChgcDoke3BhZ2V9YCwgNSAqIDYwZTMsIGFzeW5jICgpID0+IHsNCiAgICBj
-b25zdCBkYXRhID0gYXdhaXQgZmV0Y2hKc29uKGAke0FQSX0vbWFuZ2E/bGlt
-aXQ9JHtMSU1JVH0mb2Zmc2V0PSR7b2Zmc2V0fSZsYW5nPSR7TEFOR31gKS5j
-YXRjaCgoKSA9PiAoeyBtYW5nYTogW10gfSkpOw0KICAgIHJldHVybiAoZGF0
-YS5tYW5nYSB8fCBbXSkubWFwKChtKSA9PiB7DQogICAgICBjb25zdCB0aXRs
-ZSA9IHRpdGxlT2YobSk7DQogICAgICBpZiAoIXRpdGxlKSByZXR1cm4gbnVs
-bDsgICAvLyDQvdC1INGA0YPRgdGB0LrQsNGPIOKAlCDQv9GA0L7Qv9GD0YHQ
-utCw0LXQvA0KICAgICAgY29uc3Qgc2x1ZyA9IG0uc2x1ZyB8fCBtLm1lZGlh
-X2lkIHx8IG0uaWQ7DQogICAgICByZXR1cm4gew0KICAgICAgICBleHRJZDog
-U3RyaW5nKG0uaWQpLA0KICAgICAgICB0aXRsZSwNCiAgICAgICAgdXJsOiBg
-JHtCQVNFfS9ydS9tYW5nYS8ke3NsdWd9XyR7bS5pZH1gLA0KICAgICAgICBj
-b3ZlcjogbS50aHVtYm5haWwgfHwgbS5jb3ZlciB8fCBudWxsLA0KICAgICAg
-fTsNCiAgICB9KS5maWx0ZXIoQm9vbGVhbik7DQogIH0pOw0KfQ0KDQphc3lu
-YyBmdW5jdGlvbiBkZXRhaWwoZXh0SWQpIHsNCiAgcmV0dXJuIGNhY2hlZChg
-ZDoke2V4dElkfWAsIDMwICogNjBlMywgYXN5bmMgKCkgPT4gew0KICAgIGNv
-bnN0IGQgPSBhd2FpdCBmZXRjaEpzb24oYCR7QVBJfS9tYW5nYS8ke2V4dElk
-fWApLmNhdGNoKCgpID0+IG51bGwpOw0KICAgIGlmICghZCB8fCAhZC5pZCkg
-cmV0dXJuIG51bGw7DQogICAgY29uc3QgZ2VucmVzID0gW107DQogICAgZm9y
-IChjb25zdCB0IG9mIGQudGFncyB8fCBbXSkgew0KICAgICAgY29uc3QgbmFt
-ZSA9IHN0cmlwVGFncyh0Lm5hbWUgfHwgJycpOw0KICAgICAgaWYgKCFuYW1l
-KSBjb250aW51ZTsNCiAgICAgIGdlbnJlcy5wdXNoKG5hbWUpOw0KICAgICAg
-Ly8gc2x1ZyDQtNC70Y8g0YTQuNC70YzRgtGA0LAg4oCUINGB0LDQvNC+INC9
-0LDQt9Cy0LDQvdC40LU6IEFQSSDQv9C+0L3QuNC80LDQtdGCID90YWc9PNC9
-0LDQt9Cy0LDQvdC40LU+DQogICAgICB0YWdzSW5kZXgubm90ZSgnc2V4YmFz
-ZScsIG5hbWUsIG5hbWUpOw0KICAgIH0NCiAgICBjb25zdCBzbHVnID0gZC5z
-bHVnIHx8IGQubWVkaWFfaWQgfHwgZC5pZDsNCiAgICByZXR1cm4gew0KICAg
-ICAgZXh0SWQ6IFN0cmluZyhleHRJZCksDQogICAgICB0aXRsZTogdGl0bGVP
-ZihkKSB8fCAoKGQudGl0bGVzICYmIChkLnRpdGxlcy5ydXNzaWFuIHx8IGQu
-dGl0bGVzLnByZXR0eSkpIHx8IFN0cmluZyhleHRJZCkpLnRyaW0oKSwNCiAg
-ICAgIHVybDogYCR7QkFTRX0vcnUvbWFuZ2EvJHtzbHVnfV8ke2QuaWR9YCwN
-CiAgICAgIGNvdmVyOiBkLmNvdmVyIHx8IGQudGh1bWJuYWlsIHx8IG51bGws
-DQogICAgICBhdXRob3I6ICcnLA0KICAgICAgZ2VucmVzLA0KICAgICAgZGVz
-Y3JpcHRpb246ICcnLA0KICAgICAgZGF0ZTogKGQuY3JlYXRlZF9hdCB8fCAn
-JykucmVwbGFjZSgnVCcsICcgJykuc2xpY2UoMCwgMTkpIHx8IG51bGwsDQog
-ICAgICBjaGFwdGVyTnVtYmVyOiBkLmNoYXB0ZXJfbnVtYmVyID8/IG51bGws
-DQogICAgICBjaGFwdGVyVGl0bGU6IGQuY2hhcHRlcl90aXRsZSB8fCBudWxs
-LA0KICAgIH07DQogIH0pOw0KfQ0KDQphc3luYyBmdW5jdGlvbiBjaGFwdGVy
-cyhleHRJZCkgew0KICBjb25zdCBkID0gYXdhaXQgZGV0YWlsKGV4dElkKTsN
-CiAgaWYgKCFkKSByZXR1cm4gW107DQogIHJldHVybiBbew0KICAgIGV4dElk
-OiBTdHJpbmcoZXh0SWQpLA0KICAgIG51bWJlcjogZC5jaGFwdGVyTnVtYmVy
-ID8/IDEsDQogICAgdGl0bGU6IGQuY2hhcHRlclRpdGxlIHx8IGQudGl0bGUs
-DQogICAgZGF0ZTogZC5kYXRlLA0KICB9XTsNCn0NCg0KYXN5bmMgZnVuY3Rp
-b24gcGFnZXMoZXh0SWQpIHsNCiAgcmV0dXJuIGNhY2hlZChgcGc6JHtleHRJ
-ZH1gLCA2MCAqIDYwZTMsIGFzeW5jICgpID0+IHsNCiAgICBjb25zdCBkYXRh
-ID0gYXdhaXQgZmV0Y2hKc29uKGAke0FQSX0vbWFuZ2EvJHtleHRJZH0vcGFn
-ZXNgKS5jYXRjaCgoKSA9PiBudWxsKTsNCiAgICBpZiAoIWRhdGEgfHwgIUFy
-cmF5LmlzQXJyYXkoZGF0YS5wYWdlcykgfHwgIWRhdGEucGFnZXMubGVuZ3Ro
-KSByZXR1cm4gbnVsbDsNCiAgICByZXR1cm4gew0KICAgICAgcGFnZXM6IGRh
-dGEucGFnZXMubWFwKChwKSA9PiBwLnVybCkuZmlsdGVyKEJvb2xlYW4pLA0K
-ICAgICAgcHJldkNoYXB0ZXJJZDogbnVsbCwNCiAgICAgIG5leHRDaGFwdGVy
-SWQ6IG51bGwsDQogICAgfTsNCiAgfSk7DQp9DQoNCi8qKiDQodC/0LjRgdC+
-0Log0YLQtdCz0L7QsiDRgyDQuNGB0YLQvtGH0L3QuNC60LAg0L3QtSDQvtGC
-0LTQsNGR0YLRgdGPIOKAlCDQvdCw0L/QvtC70L3Rj9C10Lwg0LjQtyDQutCw
-0YDRgtC+0YfQtdC6ICh0YWdzSW5kZXgpLiAqLw0KYXN5bmMgZnVuY3Rpb24g
-dGFncygpIHsgcmV0dXJuIFtdOyB9DQoNCmFzeW5jIGZ1bmN0aW9uIHRhZ1Bh
-Z2UodGFnLCBwYWdlKSB7DQogIGNvbnN0IG9mZnNldCA9IChwYWdlIC0gMSkg
-KiBMSU1JVDsNCiAgcmV0dXJuIGNhY2hlZChgdDoke3RhZ306JHtwYWdlfWAs
-IDUgKiA2MGUzLCBhc3luYyAoKSA9PiB7DQogICAgY29uc3QgZGF0YSA9IGF3
-YWl0IGZldGNoSnNvbigNCiAgICAgIGAke0FQSX0vbWFuZ2E/dGFnPSR7ZW5j
-b2RlVVJJQ29tcG9uZW50KHRhZyl9JmxpbWl0PSR7TElNSVR9Jm9mZnNldD0k
-e29mZnNldH0mbGFuZz0ke0xBTkd9YCwNCiAgICApLmNhdGNoKCgpID0+ICh7
-IG1hbmdhOiBbXSB9KSk7DQogICAgcmV0dXJuIChkYXRhLm1hbmdhIHx8IFtd
-KS5tYXAoKG0pID0+ICh7DQogICAgICBleHRJZDogU3RyaW5nKG0uaWQpLA0K
-ICAgICAgdGl0bGU6IHRpdGxlT2YobSksDQogICAgICB1cmw6IGAke0JBU0V9
-L3J1L21hbmdhLyR7bS5zbHVnIHx8IG0ubWVkaWFfaWQgfHwgbS5pZH1fJHtt
-LmlkfWAsDQogICAgICBjb3ZlcjogbS50aHVtYm5haWwgfHwgbS5jb3ZlciB8
-fCBudWxsLA0KICAgIH0pKTsNCiAgfSk7DQp9DQoNCm1vZHVsZS5leHBvcnRz
-ID0gew0KICBpZDogJ3NleGJhc2UnLCBuYW1lOiAnc2V4YmFzZS5vcmcnLCBi
-YXNlOiBCQVNFLA0KICBtYXhQYWdlczogTnVtYmVyKHByb2Nlc3MuZW52Lk1N
-X1NFWEJBU0VfUEFHRVMgfHwgNjApLA0KICBjYXRhbG9nUGFnZSwgZGV0YWls
-LCBjaGFwdGVycywgcGFnZXMsIHRhZ3MsIHRhZ1BhZ2UsDQp9Ow0K
+'use strict';
+/**
+ * Источник: sexbase.org — только раздел манги (видео игнорируем).
+ * У сайта есть открытый JSON API:
+ *   GET /api/v2/manga?limit=100&offset=N        — каталог (total есть в ответе)
+ *   GET /api/v2/manga/<id>                      — карточка (titles, tags, cover)
+ *   GET /api/v2/manga/<id>/pages                — все страницы одной работы
+ *   GET /api/v2/manga?tag=<название тега>       — фильтр по тегу (русское название)
+ * Одна запись = одна работа целиком (без разбивки на главы), читается сразу.
+ */
+const { fetchJson, stripTags, stripChapterSuffix } = require('./http');
+const tagsIndex = require('./tags');
+
+const BASE = 'https://sexbase.org';
+const API = `${BASE}/api/v2`;
+const LIMIT = 100;
+const LANG = process.env.MM_SEXBASE_LANG || 'ru'; // берём только русскоязычные работы
+
+const cache = new Map();
+const cached = async (key, ttl, fn) => {
+  const hit = cache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+  const v = await fn();
+  cache.set(key, { exp: Date.now() + ttl, value: v });
+  return v;
+};
+
+/** Название на русском; null — если после отсечения нумерации главы русского не осталось. */
+function titleOf(m) {
+  const t = m.titles || {};
+  const raw = (t.russian || t.pretty || '').trim();
+  if (!raw) return null;
+  const base = stripChapterSuffix(raw);
+  if (!/[а-яё]/i.test(base)) return null;   // японские/английские названия не берём
+  return raw;
+}
+
+async function catalogPage(page) {
+  const offset = (page - 1) * LIMIT;
+  return cached(`p:${page}`, 5 * 60e3, async () => {
+    const data = await fetchJson(`${API}/manga?limit=${LIMIT}&offset=${offset}&lang=${LANG}`).catch(() => ({ manga: [] }));
+    return (data.manga || []).map((m) => {
+      const title = titleOf(m);
+      if (!title) return null;   // не русская — пропускаем
+      const slug = m.slug || m.media_id || m.id;
+      return {
+        extId: String(m.id),
+        title,
+        url: `${BASE}/ru/manga/${slug}_${m.id}`,
+        cover: m.thumbnail || m.cover || null,
+      };
+    }).filter(Boolean);
+  });
+}
+
+async function detail(extId) {
+  return cached(`d:${extId}`, 30 * 60e3, async () => {
+    const d = await fetchJson(`${API}/manga/${extId}`).catch(() => null);
+    if (!d || !d.id) return null;
+    const genres = [];
+    for (const t of d.tags || []) {
+      const name = stripTags(t.name || '');
+      if (!name) continue;
+      genres.push(name);
+      // slug для фильтра — само название: API понимает ?tag=<название>
+      tagsIndex.note('sexbase', name, name);
+    }
+    const slug = d.slug || d.media_id || d.id;
+    return {
+      extId: String(extId),
+      title: titleOf(d) || ((d.titles && (d.titles.russian || d.titles.pretty)) || String(extId)).trim(),
+      url: `${BASE}/ru/manga/${slug}_${d.id}`,
+      cover: d.cover || d.thumbnail || null,
+      author: '',
+      genres,
+      description: '',
+      date: (d.created_at || '').replace('T', ' ').slice(0, 19) || null,
+      chapterNumber: d.chapter_number ?? null,
+      chapterTitle: d.chapter_title || null,
+    };
+  });
+}
+
+async function chapters(extId) {
+  const d = await detail(extId);
+  if (!d) return [];
+  return [{
+    extId: String(extId),
+    number: d.chapterNumber ?? 1,
+    title: d.chapterTitle || d.title,
+    date: d.date,
+  }];
+}
+
+async function pages(extId) {
+  return cached(`pg:${extId}`, 60 * 60e3, async () => {
+    const data = await fetchJson(`${API}/manga/${extId}/pages`).catch(() => null);
+    if (!data || !Array.isArray(data.pages) || !data.pages.length) return null;
+    return {
+      pages: data.pages.map((p) => p.url).filter(Boolean),
+      prevChapterId: null,
+      nextChapterId: null,
+    };
+  });
+}
+
+/** Список тегов у источника не отдаётся — наполняем из карточек (tagsIndex). */
+async function tags() { return []; }
+
+async function tagPage(tag, page) {
+  const offset = (page - 1) * LIMIT;
+  return cached(`t:${tag}:${page}`, 5 * 60e3, async () => {
+    const data = await fetchJson(
+      `${API}/manga?tag=${encodeURIComponent(tag)}&limit=${LIMIT}&offset=${offset}&lang=${LANG}`,
+    ).catch(() => ({ manga: [] }));
+    return (data.manga || []).map((m) => ({
+      extId: String(m.id),
+      title: titleOf(m),
+      url: `${BASE}/ru/manga/${m.slug || m.media_id || m.id}_${m.id}`,
+      cover: m.thumbnail || m.cover || null,
+    }));
+  });
+}
+
+module.exports = {
+  id: 'sexbase', name: 'sexbase.org', base: BASE,
+  maxPages: Number(process.env.MM_SEXBASE_PAGES || 60),
+  catalogPage, detail, chapters, pages, tags, tagPage,
+};

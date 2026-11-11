@@ -1,1 +1,6 @@
-bm9kZV9tb2R1bGVzCmNhY2hlCioucG5nCnRvb2xzCnRtcC0qCi5naXQK
+node_modules
+cache
+*.png
+tools
+tmp-*
+.git

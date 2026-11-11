@@ -14,6 +14,7 @@
  * поэтому одна и та же манга с двух сайтов попадает в каталог один раз.
  */
 const http = require('node:http');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -517,7 +518,7 @@ function searchWorks(query, sort, page, perPage) {
 const cleanCursors = new Map();
 const CLEAN_CHUNK = 40;
 
-async function cleanPage(sort, sourceId, page, perPage) {
+async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
   const raw = registry.listRaw(sort);
   if (!raw) return null;
 
@@ -554,8 +555,73 @@ async function cleanPage(sort, sourceId, page, perPage) {
     for (const it of mapped) if (!it.drop) cur.items.push(it);
   }
 
+  // готовим следующую страницу заранее, чтобы «Показать ещё» открывалось мгновенно
+  if (!prefetch && !cur.done) {
+    setTimeout(() => { cleanPage(sort, sourceId, page + 1, perPage, true).catch(() => {}); }, 40);
+  }
+
   const start = (page - 1) * perPage;
   return cur.items.slice(start, start + perPage);
+}
+/**
+ * Прокси картинок: /img?u=<url>. Нужен для офлайн-скачивания (чужой CDN не даёт читать
+ * байты из браузера) и заодно кэширует обложки на диске.
+ * Разрешены только известные хосты источников — иначе это превратилось бы в открытый прокси.
+ */
+const IMG_HOSTS = [
+  'multi-manga.com', 'nude-moon.pro', 'cfz.one', 'cfru.me', 'imgschan.xyz',
+  'desu.uno', 'zakura.su', 'sexbase.org', 'manga-shi.org', 'h-chan.me', 'qawa.org',
+];
+const IMG_DIR = path.join(registry.CACHE_DIR, 'img');
+
+function imgAllowed(u) {
+  try {
+    const url = new URL(u);
+    if (url.protocol !== 'https:') return false;
+    return IMG_HOSTS.some((h) => url.hostname === h || url.hostname.endsWith('.' + h));
+  } catch { return false; }
+}
+
+async function serveImage(res, rawUrl) {
+  const u = String(rawUrl || '').trim();
+  if (!imgAllowed(u)) return json(res, 403, { error: 'host not allowed' });
+
+  const hash = crypto.createHash('sha1').update(u).digest('hex');
+  const file = path.join(IMG_DIR, hash);
+  const metaFile = file + '.json';
+
+  let buf = null;
+  let type = 'image/jpeg';
+  try {
+    buf = await fs.promises.readFile(file);
+    const meta = JSON.parse(await fs.promises.readFile(metaFile, 'utf8'));
+    type = meta.type || type;
+  } catch { buf = null; }
+
+  if (!buf) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 15000);
+    try {
+      const res2 = await fetch(u, {
+        signal: ctrl.signal,
+        headers: { 'User-Agent': 'Mozilla/5.0', 'Referer': new URL(u).origin + '/', 'Accept': 'image/*' },
+      });
+      if (!res2.ok) return json(res, 502, { error: 'upstream ' + res2.status });
+      const ab = await res2.arrayBuffer();
+      if (ab.byteLength > 25 * 1024 * 1024) return json(res, 413, { error: 'too large' });
+      buf = Buffer.from(ab);
+      type = res2.headers.get('content-type') || 'image/jpeg';
+      await fs.promises.mkdir(IMG_DIR, { recursive: true }).catch(() => {});
+      fs.promises.writeFile(file, buf).catch(() => {});
+      fs.promises.writeFile(metaFile, JSON.stringify({ type, at: Date.now() })).catch(() => {});
+    } catch {
+      return json(res, 504, { error: 'image timeout' });
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  return send(res, 200, buf, type, { 'Cache-Control': 'public, max-age=2592000, immutable' });
 }
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
@@ -571,7 +637,7 @@ const server = http.createServer(async (req, res) => {
   }
 
   const route = url.pathname.replace(/\/+$/, '') || '/';
-  if (route !== '/health' && rateLimited(req)) {
+  if (route !== '/health' && route !== '/img' && rateLimited(req)) {
     return json(res, 429, { error: 'too many requests', retryAfter: 60 });
   }
   const page = Math.max(1, Number(url.searchParams.get('page') || 1) || 1);
@@ -590,6 +656,8 @@ const server = http.createServer(async (req, res) => {
       endpoints: ['/api/manga?page=1', '/api/manga?tag=<slug>', '/api/tags', '/api/sources', '/api/manga/<src:id>', '/api/manga/<src:id>/chapters', '/api/chapter/<src:id>/pages'],
       demo: '/demo',
     });
+
+    if (route === '/img') return serveImage(res, url.searchParams.get('u'));
 
     if (route === '/health') return json(res, 200, {
       ok: !state.crawling,

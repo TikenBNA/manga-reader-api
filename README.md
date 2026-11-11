@@ -69,6 +69,7 @@ npm test    # node --test: нормализация названий, partNumber
 | `GET /api/manga/<src:id>` | `{ id, title, cover, author, description, genres, sources }` |
 | `GET /api/manga/<src:id>/chapters` | `[{ id, number, volume, title, date, source }]` |
 | `GET /api/chapter/<src:id>/pages` | `{ pages, prevChapterId, nextChapterId }` |
+| `GET /img?u=<url>` | прокси картинки (только известные хосты, кэш на диске) |
 | `GET /health` | `{ ok, mergedWorks, sources[] }` |
 | `GET /demo` | песочница: каталог, поиск, теги, сортировка, читалка, прогресс |
 | `GET /MangaReader.apk` | последний APK |
@@ -107,6 +108,11 @@ npm test    # node --test: нормализация названий, partNumber
 кнопка «Продолжить», читалка открывается на сохранённой странице.
 
 APK при запуске проверяет последний релиз на GitHub и предлагает обновиться, если версия новее.
+
+## Офлайн, избранное, история
+
+В читалке кнопка **⤓** скачивает главу в Cache API через прокси `/img` — страницы читаются без сети.
+На карточке работы есть **♡ В избранное**, в шапке — чип **Избранное** со списком избранного и истории.
 
 ## Деплой
 

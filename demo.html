@@ -95,6 +95,7 @@
   button:disabled { opacity:.35; }
   .msg { color:var(--dim); text-align:center; padding:60px 16px; font-size:13.5px; }
   .err { color:#ff6b6b; text-align:center; padding:24px; font-size:14px; }
+  .favhead { padding:16px 2px 8px; font-size:15px; font-weight:700; color:var(--text); }
   .more { padding:18px 0 4px; display:flex; justify-content:center; }
   .more button { width:100%; max-width:420px; }
 
@@ -186,6 +187,7 @@
 <nav id="quickbar">
   <button class="chip" id="sortBtn">Сортировка</button>
   <button class="chip" id="tagBtn">Теги</button>
+  <button class="chip" id="favBtn">Избранное</button>
 </nav>
 <div id="activebar" hidden></div>
 
@@ -285,6 +287,54 @@ function syncUrl() {
 
 
 /* Прогресс чтения: глава и страница каждой работы (localStorage, без сервера). */
+
+/* Избранное и история просмотров — только в браузере (localStorage). */
+
+/* Офлайн-главы: страницы качаются через серверный прокси /img и кладутся в Cache API. */
+const PAGES_CACHE = "mr-pages-v1";
+const offKey = (chId, i) => location.origin + "/offline/" + encodeURIComponent(chId) + "/" + i;
+async function cacheGetPage(chId, i) {
+  try { const c = await caches.open(PAGES_CACHE); return await c.match(offKey(chId, i)); } catch { return null; }
+}
+async function cachePutPage(chId, i, url) {
+  const c = await caches.open(PAGES_CACHE);
+  const res = await fetch("/img?u=" + encodeURIComponent(url));
+  if (!res.ok) throw new Error("img " + res.status);
+  await c.put(offKey(chId, i), res);
+}
+async function cachedCount(chId, total) {
+  let n = 0;
+  for (let i = 0; i < total; i++) if (await cacheGetPage(chId, i)) n++;
+  return n;
+}
+
+const FAV_KEY = "mr:fav";
+const HIST_KEY = "mr:hist";
+function readMap(key) {
+  try { return JSON.parse(localStorage.getItem(key) || "{}"); } catch { return {}; }
+}
+function writeMap(key, obj) {
+  try { localStorage.setItem(key, JSON.stringify(obj)); } catch { /* приватный режим */ }
+}
+const isFav = (id) => !!readMap(FAV_KEY)[id];
+function toggleFav(item) {
+  const all = readMap(FAV_KEY);
+  if (all[item.id]) delete all[item.id];
+  else all[item.id] = { id: item.id, title: item.title, cover: item.cover, t: Date.now() };
+  writeMap(FAV_KEY, all);
+  return !!all[item.id];
+}
+function pushHistory(item) {
+  if (!item || !item.id) return;
+  const all = readMap(HIST_KEY);
+  all[item.id] = { id: item.id, title: item.title, cover: item.cover, t: Date.now() };
+  const keys = Object.keys(all).sort((a, b) => all[b].t - all[a].t).slice(0, 40);
+  const trimmed = {};
+  for (const k of keys) trimmed[k] = all[k];
+  writeMap(HIST_KEY, trimmed);
+}
+const favCount = () => Object.keys(readMap(FAV_KEY)).length;
+
 const PROGRESS_KEY = "mr:progress";
 function readProgress() {
   try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}"); } catch { return {}; }
@@ -303,6 +353,7 @@ function mount(...nodes) {
 }
 
 const tagBtn = document.getElementById('tagBtn');
+  const favBtn = document.getElementById('favBtn');
 const sortBtn = document.getElementById('sortBtn');
 const sortModal = document.getElementById('sortModal');
 const sortListEl = document.getElementById('sortList');
@@ -410,6 +461,43 @@ function renderTagButton() {
   tagBtn.classList.toggle('has', n > 0);
 }
 
+function renderFavButton() {
+  const n = favCount();
+  favBtn.textContent = n ? `Избранное: ${n}` : "Избранное";
+  favBtn.classList.toggle("has", n > 0);
+}
+
+/** Экран «Избранное + История» (две секции карточек). */
+function openFavorites() {
+  const favs = Object.values(readMap(FAV_KEY)).sort((a, b) => b.t - a.t);
+  const hist = Object.values(readMap(HIST_KEY)).sort((a, b) => b.t - a.t).slice(0, 20);
+  const wrap = $("div", "wrap");
+  const head = (title) => $("div", "favhead", title);
+
+  wrap.append(head("Избранное"));
+  if (!favs.length) wrap.append($("div", "msg", "Пока пусто — жми ♡ на карточке"));
+  else {
+    const grid = $("div", "grid");
+    for (const it of favs) grid.append(cardEl(it));
+    wrap.append(grid);
+  }
+
+  wrap.append(head("История"));
+  if (!hist.length) wrap.append($("div", "msg", "Здесь появятся открытые работы"));
+  else {
+    const grid2 = $("div", "grid");
+    for (const it of hist) grid2.append(cardEl(it));
+    wrap.append(grid2);
+  }
+
+  const back = $("button", null, "← Каталог");
+  back.onclick = () => backToCatalog();
+  const more = $("div", "more"); more.append(back);
+  wrap.append(more);
+  mount(wrap);
+  renderFavButton();
+}
+
 function renderActiveBar() {
   activebar.replaceChildren();
   if (!state.tags.length) { activebar.hidden = true; return; }
@@ -457,11 +545,13 @@ function closeTags(apply) {
   modal.hidden = true;
   document.body.style.overflow = '';
   renderTagButton();
+  renderFavButton();
   renderActiveBar();
   if (apply) onFiltersChanged();
 }
 
 tagBtn.onclick = openTags;
+  favBtn.onclick = openFavorites;
 document.getElementById('tagClose').onclick = () => closeTags(true);
 document.getElementById('tagApply').onclick = () => closeTags(true);
 document.getElementById('tagReset').onclick = () => { state.tags = []; renderTagList(); renderTagButton(); };
@@ -475,6 +565,7 @@ document.getElementById('home').onclick = () => {
 function onFiltersChanged() {
   syncUrl();
   renderTagButton();
+  renderFavButton();
   renderActiveBar();
   renderList();
 }
@@ -603,6 +694,7 @@ async function renderManga(id) {
   try {
     const [m, chapters] = await Promise.all([api('/manga/' + id), api(`/manga/${id}/chapters`)]);
     state.chapters = chapters;
+    pushHistory({ id, title: m.title, cover: m.cover });
 
     const hero = $('div', 'hero');
     const cover = $('div', 'cover');
@@ -638,9 +730,11 @@ async function renderManga(id) {
       list.append(row);
     });
 
+    const fav = $("button", null, isFav(id) ? "♥ В избранном" : "♡ В избранное");
+    fav.onclick = () => { const on = toggleFav({ id, title: m.title, cover: m.cover }); fav.textContent = on ? "♥ В избранном" : "♡ В избранное"; renderFavButton(); toast(on ? "Добавлено в избранное" : "Убрано из избранного"); };
     const back = $('button', null, '← Каталог');
     back.onclick = () => backToCatalog();
-    const more = $('div', 'more'); more.append(back);
+    const more = $('div', 'more'); more.append(fav, back);
 
     const body = $('div', 'wrap');
     if (resumeBlock) body.append(hero, resumeBlock, list, more); else body.append(hero, list, more);
@@ -673,11 +767,41 @@ async function openChapter(idx, resumePage) {
     const backBtn = $('button', null, '←');
     backBtn.onclick = (e) => { e.stopPropagation(); leaveReader(); };
     bar.append(backBtn, $('div', 'ttl', `${c.title || 'Глава ' + c.number} · ${data.pages.length} стр.`));
+    const dlBtn = $("button", null, "⤓");
+    dlBtn.title = "Скачать главу для офлайна";
+    dlBtn.onclick = async (ev) => {
+      ev.stopPropagation();
+      if (dlBtn.disabled) return;
+      dlBtn.disabled = true;
+      const total = data.pages.length;
+      let done = 0;
+      for (let pi = 0; pi < total; pi++) {
+        if (!(await cacheGetPage(c.id, pi))) {
+          try { await cachePutPage(c.id, pi, data.pages[pi]); } catch { /* страница не скачалась */ }
+        }
+        done++;
+        dlBtn.textContent = done + "/" + total;
+      }
+      dlBtn.textContent = "✓ офлайн";
+      dlBtn.disabled = false;
+      toast("Глава сохранена: " + total + " стр.");
+    };
+    bar.append(dlBtn);
+    cachedCount(c.id, data.pages.length).then((n) => { if (n === data.pages.length) dlBtn.textContent = "✓ офлайн"; }).catch(() => {});
     bar.onclick = toggleBars;
 
     const reader = $('div', 'reader');
+    // если страницы уже скачаны — показываем их из кэша (работает и без сети)
+    const cachedPages = [];
+    for (let pi = 0; pi < data.pages.length; pi++) {
+      const hit = await cacheGetPage(c.id, pi);
+      cachedPages.push(hit ? URL.createObjectURL(await hit.blob()) : null);
+    }
+    let pageIdx = -1;
     for (const src of data.pages) {
-      const img = $('img'); img.loading = 'lazy'; img.decoding = 'async'; img.referrerPolicy = 'no-referrer'; img.src = src; img.alt = '';
+      pageIdx++;
+      const useSrc = cachedPages[pageIdx] || src;
+      const img = $("img"); img.loading = "lazy"; img.decoding = "async"; img.referrerPolicy = "no-referrer"; img.src = useSrc; img.alt = "";
       reader.append(img);
     }
 

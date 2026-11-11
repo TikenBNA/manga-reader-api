@@ -283,6 +283,20 @@ function syncUrl() {
   history.replaceState(null, '', qs ? '?' + qs : location.pathname);
 }
 
+
+/* Прогресс чтения: глава и страница каждой работы (localStorage, без сервера). */
+const PROGRESS_KEY = "mr:progress";
+function readProgress() {
+  try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}"); } catch { return {}; }
+}
+function saveProgress(id, chapterId, page) {
+  if (!id || !chapterId) return;
+  const all = readProgress();
+  all[id] = { c: chapterId, p: page || 0, t: Date.now() };
+  try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(all)); } catch { /* приватный режим */ }
+}
+function getProgress(id) { return readProgress()[id] || null; }
+
 function mount(...nodes) {
   app.replaceChildren(...nodes);
   window.scrollTo(0, 0);
@@ -359,13 +373,35 @@ sortBtn.onclick = () => {
 document.getElementById('sortClose').onclick = () => { sortModal.hidden = true; document.body.style.overflow = ''; };
 sortModal.onclick = (e) => { if (e.target === sortModal) { sortModal.hidden = true; document.body.style.overflow = ''; } };
 
-searchInput.addEventListener('input', () => {
-  const q = searchInput.value.trim().toLowerCase();
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.trim();
   if (!state.grid) return;
-  state.grid.querySelectorAll('.card').forEach((c) => {
-    const hit = !q || (c.dataset.title || '').includes(q);
-    c.classList.toggle('hide', !hit);
-  });
+
+  // 1 символ — фильтруем уже загруженные карточки (мгновенно, без сети)
+  if (q.length < 2) {
+    state.grid.querySelectorAll(".card").forEach((c) => {
+      const hit = !q || (c.dataset.title || "").includes(q.toLowerCase());
+      c.classList.toggle("hide", !hit);
+    });
+    return;
+  }
+
+  // 2+ символа — ищем по всему каталогу на сервере (с задержкой, чтобы не спамить)
+  clearTimeout(state.searchTimer);
+  state.searchTimer = setTimeout(async () => {
+    try {
+      const items = await api("/manga?q=" + encodeURIComponent(q) + "&sort=" + state.sort);
+      state.page = 1;
+      state.grid.replaceChildren();
+      if (!items.length) {
+        state.grid.append($("div", "msg", "Ничего не найдено"));
+        if (state.more) state.more.remove();
+        return;
+      }
+      for (const m of items) state.grid.append(cardEl(m));
+      if (state.more) state.more.remove();
+    } catch (e) { toast("Поиск недоступен"); }
+  }, 300);
 });
 
 function renderTagButton() {
@@ -581,6 +617,16 @@ async function renderManga(id) {
     }
     hero.append(cover, info);
 
+    // «Продолжить»: последняя читавшаяся глава и страница
+    const prog = getProgress(id);
+    const progIdx = prog ? chapters.findIndex((c) => c.id === prog.c) : -1;
+    let resumeBlock = null;
+    if (progIdx >= 0) {
+      resumeBlock = $('div', 'more');
+      const cont = $('button', 'primary', 'Продолжить: Гл. ' + (chapters[progIdx].number ?? '') + ' · стр. ' + ((prog.p || 0) + 1));
+      cont.onclick = () => openChapter(progIdx, prog.p || 0);
+      resumeBlock.append(cont);
+    }
     const list = $('div', 'chapters');
     chapters.forEach((c, i) => {
       const row = $('div', 'ch');
@@ -597,7 +643,7 @@ async function renderManga(id) {
     const more = $('div', 'more'); more.append(back);
 
     const body = $('div', 'wrap');
-    body.append(hero, list, more);
+    if (resumeBlock) body.append(hero, resumeBlock, list, more); else body.append(hero, list, more);
     mount(body);
 
     // свайп вправо по карточке — назад в каталог
@@ -613,7 +659,7 @@ async function renderManga(id) {
   } catch (e) { mount($('div', 'err', 'Ошибка: ' + e.message)); }
 }
 
-async function openChapter(idx) {
+async function openChapter(idx, resumePage) {
   const c = state.chapters[idx];
   if (!c) return;
   state.chapterIdx = idx;
@@ -649,6 +695,17 @@ async function openChapter(idx) {
 
     view.append(bar, reader, bottom, zoneL, zoneR);
     mount(view);
+
+    // прогресс: запоминаем главу и восстанавливаем страницу
+    state.chapterId = c.id;
+    state.readerImgs = [...reader.querySelectorAll("img")];
+    saveProgress(state.mangaId, c.id, resumePage || 0);
+    if (resumePage) {
+      requestAnimationFrame(() => {
+        const img = state.readerImgs[resumePage];
+        if (img) window.scrollTo(0, Math.max(0, img.offsetTop - 8));
+      });
+    }
 
     let x0 = null, y0 = null;
     view.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
@@ -722,6 +779,22 @@ renderActiveBar();
 syncUrl();
 loadTags();
 renderList();
+
+// Один обработчик на всё приложение: пока открыта читалка, раз в 600 мс сохраняем страницу.
+let progressTimer = null;
+window.addEventListener("scroll", () => {
+  if (!document.body.classList.contains("reader") || !state.readerImgs || !state.chapterId) return;
+  if (progressTimer) return;
+  progressTimer = setTimeout(() => {
+    progressTimer = null;
+    const top = window.scrollY + 12;
+    let page = 0;
+    for (let i = 0; i < state.readerImgs.length; i++) {
+      if (state.readerImgs[i].offsetTop <= top) page = i;
+    }
+    saveProgress(state.mangaId, state.chapterId, page);
+  }, 600);
+}, { passive: true });
 </script>
 </body>
 </html>

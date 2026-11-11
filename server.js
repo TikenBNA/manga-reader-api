@@ -481,6 +481,39 @@ function capMap(map, max) {
     map.delete(k);
   }
 }
+/** Ключ поиска: регистр, ё→е, только буквы и цифры. Считается один раз на работу. */
+const searchKeys = new Map();
+function searchKey(text) {
+  return String(text || '').toLowerCase().replace(/ё/g, 'е').replace(/[^0-9a-zа-я]+/g, ' ').trim();
+}
+
+/** Поиск по названию среди всех работ каталога (без сети). */
+function searchWorks(query, sort, page, perPage) {
+  const q = searchKey(query);
+  if (!q) return [];
+  const raw = registry.listRaw(sort);
+  if (!raw) return null;
+  if (searchKeys.size !== raw.length) {
+    searchKeys.clear();
+    for (const w of raw) searchKeys.set(w, searchKey(w.title));
+  }
+  const words = q.split(' ').filter(Boolean);
+  const hits = [];
+  for (const w of raw) {
+    const k = searchKeys.get(w) || '';
+    if (!k) continue;
+    if (words.every((word) => k.includes(word))) hits.push(w);
+  }
+  const start = (page - 1) * perPage;
+  return hits.slice(start, start + perPage).map((w) => ({
+    id: `:`,
+    title: w.title,
+    cover: w.cover,
+    author: '',
+    genres: [],
+    sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
+  }));
+}
 const cleanCursors = new Map();
 const CLEAN_CHUNK = 40;
 
@@ -543,6 +576,7 @@ const server = http.createServer(async (req, res) => {
   }
   const page = Math.max(1, Number(url.searchParams.get('page') || 1) || 1);
   const tags = url.searchParams.getAll('tag').map((t) => t.trim()).filter(Boolean);
+  const query = String(url.searchParams.get('q') || '').trim();
   const source = url.searchParams.get('source');
   const sortRaw = String(url.searchParams.get('sort') || 'new').toLowerCase();
   const sort = ['new', 'old', 'az', 'za'].includes(sortRaw) ? sortRaw : 'new';
@@ -583,6 +617,11 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (route === '/api/manga') {
+      if (query) {
+        const found = searchWorks(query, sort, page, CONFIG.PER_PAGE);
+        if (!found) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
+        return json(res, 200, found);
+      }
       if (tags.length) {
         const tagged = await taggedList(tags, page, CONFIG.PER_PAGE, sort);
         const enriched = await enrichWorks(tagged);

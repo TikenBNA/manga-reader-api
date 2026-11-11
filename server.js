@@ -254,7 +254,7 @@ async function mergedChapters(workTitle, seed) {
     // у mm поиск глав по сайту — до 30 секунд; через туннель это 502, поэтому
     // каждый источник ограничен по времени, а недоделанное дочитывается в фоне
     const isSeed = seed && r.source === seed.source && r.extId === seed.extId;
-    const budget = isSeed ? 4000 : 3000;
+    const budget = isSeed ? 2000 : 1500;
     let chs = null;
     try {
       chs = await withTimeout(a.chapters(r.extId), budget, 'chapters:' + r.source);
@@ -360,9 +360,19 @@ async function apiChapters(id) {
   if (!parsed) return [];
   const adapter = registry.findAdapter(parsed.source);
   if (!adapter) return [];
-  const seed = await adapter.detail(parsed.extId).catch(() => null);
-  if (!seed) return [];
-  return mergedChapters(seed.work || seed.title, { source: parsed.source, extId: parsed.extId });
+
+  // название работы берём из собранного индекса каталога — без сетевого запроса.
+  // Раньше здесь ждали adapter.detail() (у hchan до 4.5 с), и запрос уходил в 502 через туннель.
+  const entry = state.merged?.find((w) => w.sources.some((s) => s.source === parsed.source && s.extId === parsed.extId));
+  let workTitle = entry && entry.title;
+  if (!workTitle) {
+    const seed = await withTimeout(adapter.detail(parsed.extId), 1500, 'detail').catch(() => null);
+    workTitle = (seed && (seed.work || seed.title)) || null;
+  }
+  if (!workTitle) {
+    return adapter.chapters(parsed.extId).catch(() => []);
+  }
+  return mergedChapters(workTitle, { source: parsed.source, extId: parsed.extId });
 }
 
 async function apiPages(id) {

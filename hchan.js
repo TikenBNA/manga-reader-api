@@ -10,8 +10,8 @@ const { fetchText, stripTags, absUrl } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://hentaichan.live';
-const TIMEOUT_MS = 8000;    // страницы глав: сайт медленный, но туннель не ждёт дольше
-const DETAIL_TIMEOUT = 4500;  // через туннель запрос дольше ~5 с уже отдаёт 502
+const TIMEOUT_MS = 4500;    // страницы глав: держимся ниже таймаута туннеля (~5 с)
+const DETAIL_TIMEOUT = 2500;  // карточку отдаём быстро: при таймауте есть fallback на каталог
 const known = new Map();     // extId → карточка из каталога (на случай медленной страницы)
 
 /** Часть CDN-хостов (img4/mimg4) у провайдера не отвечает — переводим на рабочий img2. */
@@ -136,7 +136,11 @@ async function pages(extId) {
     // читалка доступна напрямую, без захода на страницу поста (экономит один медленный запрос)
     const readerUrl = `${BASE}/online/${extId}.html`;
     const page = await fetchText(readerUrl, 0, TIMEOUT_MS).catch(() => '');
-    if (!page) return null;
+    if (!page) {
+      // не успели в таймаут туннеля — дочитываем в фоне, следующее открытие будет из кэша
+      setTimeout(() => { pages(extId).catch(() => {}); }, 800);
+      return null;
+    }
     const lang = (page.match(/"language"\s*:\s*"([^"]*)"/) || [])[1] || '';
     if (lang && !/рус/i.test(lang)) return null; // только переводы на русский
     const block = (page.match(/"fullimg"\s*:\s*\[([\s\S]*?)\]/) || [])[1];

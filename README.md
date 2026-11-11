@@ -62,6 +62,7 @@ npm test    # node --test: нормализация названий, partNumber
 |------|-------|
 | `GET /api/manga?page=1[&source=nudemoon]` | `[{ id, title, cover, author, genres, sources[] }]` |
 | `GET /api/manga?tag=<slug>&page=1` | работы с тегом; несколько параметров `tag` = строгое И |
+| `GET /api/manga?q=<текст>` | поиск по названию среди всех работ каталога |
 | `...&sort=new\|old\|az\|za` | по дате добавления или по названию (А-Я / Я-А) |
 | `GET /api/tags` | `[{ slug, name, sources[] }]` |
 | `GET /api/sources` | состояние источников и их прогресс |
@@ -69,7 +70,7 @@ npm test    # node --test: нормализация названий, partNumber
 | `GET /api/manga/<src:id>/chapters` | `[{ id, number, volume, title, date, source }]` |
 | `GET /api/chapter/<src:id>/pages` | `{ pages, prevChapterId, nextChapterId }` |
 | `GET /health` | `{ ok, mergedWorks, sources[] }` |
-| `GET /demo` | песочница: каталог, теги, сортировка, читалка |
+| `GET /demo` | песочница: каталог, поиск, теги, сортировка, читалка, прогресс |
 | `GET /MangaReader.apk` | последний APK |
 
 `id` — с префиксом источника (`mm:16737`, `nudemoon:31471`); старые числовые трактуются как `mm`.
@@ -100,6 +101,13 @@ npm test    # node --test: нормализация названий, partNumber
 Фильтр опрашивает источники параллельно с потолком 3 секунды на источник (иначе один лежащий
 сайт вешал весь запрос), результаты кэшируются на час, готовые страницы — на 10 минут.
 
+## Прогресс чтения и обновления
+
+`demo.html` хранит в `localStorage` последнюю главу и страницу каждой работы: на карточке появляется
+кнопка «Продолжить», читалка открывается на сохранённой странице.
+
+APK при запуске проверяет последний релиз на GitHub и предлагает обновиться, если версия новее.
+
 ## Деплой
 
 Готовый образ:
@@ -117,7 +125,7 @@ Hugging Face Spaces: тип Space — Docker, в настройках задат
 
 ## Android-приложение
 
-WebView-обёртка над читалкой. Последняя версия — **1.8**
+WebView-обёртка над читалкой. Последняя версия — **2.0**
 ([release](https://github.com/TikenBNA/manga-reader-api/releases/tag/apk-1.8)),
 сборка: `android/build.ps1` (aapt2 → javac → d8 → zipalign → apksigner, без Gradle).
 Приложение открывает адрес напрямую и переподключается при недоступности сервера.

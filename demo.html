@@ -38,7 +38,8 @@
   .searchbar input { flex:1; min-width:0; background:none; border:0; outline:none; color:var(--text); font-size:13.5px; font-family:inherit; }
   .searchbar input::placeholder { color:var(--dim); }
 
-  #quickbar { display:flex; gap:8px; overflow-x:auto; padding:10px 14px; scrollbar-width:none; }
+  #quickbar { position:sticky; top:var(--topbar-h, 56px); z-index:19; display:flex; gap:8px; overflow-x:auto;
+    padding:10px 14px; scrollbar-width:none; background:rgba(8,8,10,.95); backdrop-filter:blur(14px); }
   #quickbar::-webkit-scrollbar { display:none; }
   .chip { flex:0 0 auto; background:var(--surface2); border:1px solid var(--line); color:#cfcfd6;
     border-radius:11px; padding:8px 14px; font-size:12.5px; font-family:inherit; min-height:36px; }
@@ -349,6 +350,7 @@ function getProgress(id) { return readProgress()[id] || null; }
 function mount(...nodes) {
   app.replaceChildren(...nodes);
   window.scrollTo(0, 0);
+  syncHeaderHeight();
 }
 
 const tagBtn = document.getElementById('tagBtn');
@@ -502,6 +504,13 @@ function openHistory() {
   mount(wrap);
 }
 
+// Высота шапки → CSS-переменная, чтобы панель фильтров прилипала ровно под ней
+function syncHeaderHeight() {
+  const bar = document.getElementById('topbar');
+  if (bar) document.documentElement.style.setProperty('--topbar-h', bar.offsetHeight + 'px');
+}
+window.addEventListener('resize', syncHeaderHeight);
+window.addEventListener('orientationchange', () => setTimeout(syncHeaderHeight, 120));
 function renderActiveBar() {
   activebar.replaceChildren();
   if (!state.tags.length) { activebar.hidden = true; return; }
@@ -899,6 +908,7 @@ renderTagButton();
 renderActiveBar();
 syncUrl();
 loadTags();
+syncHeaderHeight();
 renderList();
 
 // Один обработчик на всё приложение: пока открыта читалка, раз в 600 мс сохраняем страницу.

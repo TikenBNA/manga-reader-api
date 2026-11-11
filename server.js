@@ -507,9 +507,10 @@ function searchWorks(query, sort, page, perPage) {
   }
   const start = (page - 1) * perPage;
   return hits.slice(start, start + perPage).map((w) => ({
-    id: `:`,
+    id: `${w.primary.source}:${w.primary.extId}`,
     title: w.title,
     cover: w.cover,
+    covers: w.covers || [w.cover].filter(Boolean),
     author: '',
     genres: [],
     sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
@@ -551,6 +552,7 @@ async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
       id: `${w.primary.source}:${w.primary.extId}`,
       title: w.title,
       cover: w.cover,
+      covers: w.covers || [w.cover].filter(Boolean),
       author: '',
       genres: [],
       sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),

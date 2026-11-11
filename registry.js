@@ -153,7 +153,7 @@ function groupSource(s) {
     const cmp = Number.isFinite(num) ? num : Number.MAX_SAFE_INTEGER; // у нецифровых id (например uuid) — в конец
     if (!g.primary || cmp < g._min) {
       g._min = cmp;
-      g.primary = { source: s.id, extId: item.extId, url: item.url };
+      g.primary = { source: s.id, extId: item.extId, url: item.url, cover: item.cover };
       g.cover = item.cover || g.cover;
       g.title = displayTitle(item.title);
       g.raw = item.title;
@@ -190,6 +190,12 @@ function buildMerged() {
       }
     }
   }
+  // обложки всех источников: если обложка основного битая, можно взять другую
+  for (const it of order) {
+    const all = [it.cover, ...it.sources.map((s) => s.cover)].filter(Boolean);
+    it.covers = [...new Set(all)];
+  }
+
   // одинаковые подписи у разных работ (например, общий русский подзаголовок) разводим
   // полным названием, иначе в каталоге выглядят как дубликаты
   const seenTitle = new Map();

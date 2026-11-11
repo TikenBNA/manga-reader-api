@@ -895,10 +895,9 @@ document.getElementById('bottomnav').addEventListener('click', (e) => {
 
 async function randomManga() {
   try {
-    const page = 1 + Math.floor(Math.random() * 120);
-    const items = await api('/manga?page=' + page);
-    if (!items.length) { toast('Пусто'); return; }
-    const pick = items[Math.floor(Math.random() * items.length)];
+    // сервер отдаёт случайную работу из каталога одним запросом (не тянем глубокую страницу)
+    const pick = await api('/random');
+    if (!pick || !pick.id) { toast('Пусто'); return; }
     renderManga(pick.id);
   } catch (e) { toast('Не вышло: ' + e.message); }
 }

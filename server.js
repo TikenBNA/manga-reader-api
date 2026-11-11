@@ -536,6 +536,10 @@ async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
     cleanCursors.set(key, cur);
   }
 
+  // Глубокие страницы (раньше 400-й работы в списке) отдаём напрямую из каталога:
+  // обогащение каждой карточки — сетевой запрос, и страница 120 ждала бы минутами.
+  const ENRICH_LIMIT = Number(process.env.MM_ENRICH_PAGES || 20) * perPage;
+
   const need = page * perPage;
   let guard = 0;
   while (cur.items.length < need && !cur.done && guard++ < 80) {
@@ -551,8 +555,13 @@ async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
       genres: [],
       sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
     }));
-    await enrichWorks(mapped, 1200);
-    for (const it of mapped) if (!it.drop) cur.items.push(it);
+    const plain = (page - 1) * perPage >= ENRICH_LIMIT;
+    if (!plain) {
+      await enrichWorks(mapped, 1200);
+      for (const it of mapped) if (!it.drop) cur.items.push(it);
+    } else {
+      for (const it of mapped) cur.items.push(it); // данные каталога достаточны для карточки
+    }
   }
 
   // готовим следующую страницу заранее, чтобы «Показать ещё» открывалось мгновенно
@@ -684,6 +693,17 @@ const server = http.createServer(async (req, res) => {
       return send(res, 200, html, 'text/html; charset=utf-8', { 'Cache-Control': 'no-store' });
     }
 
+    if (route === '/api/random') {
+      // Случайная работа: без запроса страницы (страница N — это до N*20 обогащений,
+      // из-за чего «Случайно» на публичном адресе падало 502)
+      const raw = registry.listRaw(sort);
+      if (!raw || !raw.length) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
+      let pool = raw;
+      if (source) pool = pool.filter((w) => w.sources.some((s) => s.source === source));
+      if (!pool.length) return json(res, 404, { error: 'nothing found' });
+      const w = pool[Math.floor(Math.random() * pool.length)];
+      return json(res, 200, { id: `${w.primary.source}:${w.primary.extId}`, title: w.title, cover: w.cover });
+    }
     if (route === '/api/manga') {
       if (query) {
         const found = searchWorks(query, sort, page, CONFIG.PER_PAGE);

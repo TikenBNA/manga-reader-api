@@ -99,6 +99,9 @@ const taggedCache = new Map(); // готовые страницы по тега�
 const TAG_COLLATOR = new Intl.Collator('ru', { numeric: true, sensitivity: 'base' });
 
 async function taggedList(tags, page, perPage, sort = 'new') {
+  const fast = taggedFromIndex(tags, page, perPage, sort);
+  console.log('[tag]', tags.join(','), 'page', page, 'fast:', fast === null ? 'нет индекса' : fast.length);
+  if (fast && fast.length) return fast;
   const cacheKey = [...tags].sort().join('\u0001') + '#' + page + '#' + perPage + '#' + sort;
   const cachedHit = taggedCache.get(cacheKey);
   if (cachedHit && cachedHit.exp > Date.now()) return cachedHit.value;
@@ -204,6 +207,7 @@ async function enrichWorks(items, budgetMs = ENRICH_BUDGET_MS) {
       }
       it.author = d.author || '';
       it.genres = d.genres || [];
+      noteTags(`${parsed.source}:${parsed.extId}`, it.genres);
       it.cover = it.cover || d.cover || '';
       it.date = d.date || null;
       enrichCache.set(it.id, {
@@ -255,15 +259,21 @@ async function mergedChapters(workTitle, seed) {
     // каждый источник ограничен по времени, а недоделанное дочитывается в фоне
     const isSeed = seed && r.source === seed.source && r.extId === seed.extId;
     const budget = isSeed ? 2000 : 1500;
-    let chs = null;
-    try {
-      chs = await withTimeout(a.chapters(r.extId), budget, 'chapters:' + r.source);
-    } catch {
-      slow.push(r);
-      chs = [];
-    }
     const sibs = registry.siblings(r.source, workTitle);
     const sibByExt = new Map(sibs.map((s) => [s.extId, s]));
+
+    let chs = null;
+    if (sibs.length >= 1) {
+      // вся серия уже есть в каталоге — на сайт не ходим (у mm поиск глав занимал до 30 с)
+      chs = sibs.map((s) => ({ extId: s.extId, number: s.part ?? null, title: s.title, date: null }));
+    } else {
+      try {
+        chs = await withTimeout(a.chapters(r.extId), budget, 'chapters:' + r.source);
+      } catch {
+        slow.push(r);
+        chs = [];
+      }
+    }
 
     const mapped = chs.map((c) => {
       // если адаптер не знает номер части (у zakura/nudemoon пост = часть серии),
@@ -430,6 +440,100 @@ function rateLimited(req) {
   if (rateHits.size > 5000) rateHits.clear();
   return rec.n > limit;
 }
+/**
+ * Страницы каталога «без дыр»: часть карточек отбрасывается при обогащении (нет глав,
+ * источник не ответил), поэтому нарезать список до фильтрации нельзя — страница тощала
+ * до 17 из 20. Здесь курсор идёт по общему списку и добирает карточки до полной страницы.
+ */
+/**
+ * Локальный индекс «тег → работы»: наполняется жанрами при обогащении карточек.
+ * Позволяет фильтровать по тегу в памяти, не обходя сайты (это было до 5 с и 502 через туннель).
+ */
+const tagWorkIndex = new Map(); // tagKey -> Set('source:extId')
+const tagIndexStats = { works: 0, tags: 0 };
+
+function noteTags(workId, genres) {
+  if (!Array.isArray(genres) || !genres.length) return;
+  let added = false;
+  for (const g of genres) {
+    const k = tagKey(g);
+    if (!k) continue;
+    let set = tagWorkIndex.get(k);
+    if (!set) { set = new Set(); tagWorkIndex.set(k, set); added = true; }
+    if (!set.has(workId)) { set.add(workId); added = true; }
+  }
+  if (added) { tagIndexStats.tags = tagWorkIndex.size; }
+}
+
+/** Работы, у которых есть все запрошенные теги (по локальному индексу), или null. */
+function taggedFromIndex(tags, page, perPage, sort) {
+  const sets = [];
+  for (const t of tags) {
+    const set = tagWorkIndex.get(tagKey(t));
+    if (!set || !set.size) return null; // индекса ещё нет — пойдём на сайты
+    sets.push(set);
+  }
+  const raw = registry.listRaw(sort);
+  if (!raw) return null;
+
+  const out = [];
+  for (const w of raw) {
+    const ok = sets.every((set) => w.sources.some((s) => set.has(`:`)));
+    if (ok) out.push(w);
+  }
+  const start = (page - 1) * perPage;
+  return out.slice(start, start + perPage).map((w) => ({
+    id: `:`,
+    title: w.title,
+    cover: w.cover,
+    author: '',
+    genres: [],
+    sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
+  }));
+}
+const cleanCursors = new Map();
+const CLEAN_CHUNK = 40;
+
+async function cleanPage(sort, sourceId, page, perPage) {
+  const raw = registry.listRaw(sort);
+  if (!raw) return null;
+
+  const key = `${sort}|${sourceId || ""}`;
+  let cur = cleanCursors.get(key);
+  // список пересобрали — курсор недействителен
+  if (!cur || cur.rawLen !== raw.length) {
+    cur = {
+      rawLen: raw.length,
+      all: sourceId ? raw.filter((w) => w.sources.some((s) => s.source === sourceId)) : raw,
+      idx: 0,
+      items: [],
+      done: false,
+    };
+    cleanCursors.set(key, cur);
+  }
+
+  const need = page * perPage;
+  let guard = 0;
+  while (cur.items.length < need && !cur.done && guard++ < 80) {
+    const slice = cur.all.slice(cur.idx, cur.idx + CLEAN_CHUNK);
+    if (!slice.length) { cur.done = true; break; }
+    cur.idx += slice.length;
+
+    const mapped = slice.map((w) => ({
+      id: `${w.primary.source}:${w.primary.extId}`,
+      title: w.title,
+      cover: w.cover,
+      author: '',
+      genres: [],
+      sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
+    }));
+    await enrichWorks(mapped, 1200);
+    for (const it of mapped) if (!it.drop) cur.items.push(it);
+  }
+
+  const start = (page - 1) * perPage;
+  return cur.items.slice(start, start + perPage);
+}
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
@@ -467,6 +571,7 @@ const server = http.createServer(async (req, res) => {
       ok: !state.crawling,
       crawling: state.crawling,
       mergedWorks: state.merged?.length ?? null,
+      tagIndex: { tags: tagWorkIndex.size, links: [...tagWorkIndex.values()].reduce((a, s) => a + s.size, 0) },
       sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
       uptime: Math.round(process.uptime()),
     });
@@ -494,10 +599,9 @@ const server = http.createServer(async (req, res) => {
         const enriched = await enrichWorks(tagged);
         return json(res, 200, enriched.filter((it) => !it.drop));
       }
-      const list = registry.listPage(page, CONFIG.PER_PAGE, source, sort);
+      const list = await cleanPage(sort, source, page, CONFIG.PER_PAGE);
       if (!list) return json(res, 503, { error: 'catalog not ready', crawling: state.crawling });
-        const enriched = await enrichWorks(list);
-        return json(res, 200, enriched.filter((it) => !it.drop));
+      return json(res, 200, list);
     }
 
     if (route === '/api/tags') return json(res, 200, await registry.tags(page, 500, source));

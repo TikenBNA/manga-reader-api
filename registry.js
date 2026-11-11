@@ -212,12 +212,12 @@ function buildMerged() {
 /** Номер части из хвоста заголовка: «Мама это должна быть ты 5» → 5. */
 function partNumber(title) {
   const t = String(title);
-  const m = t.match(/(?:№|#)\s*(\d{1,3}(?:[.,]\d+)?)/)          // «#2», «№3»
+  const m = t.match(/(?:глава|главы|главу|часть|том|chapter|part|vol)\s*[.\-–—:№#]?\s*(\d{1,3}(?:[.,]\d+)?)/i) // «глава 5», «часть 2»
+    || t.match(/(?:№|#)\s*(\d{1,3}(?:[.,]\d+)?)/)              // «#2», «№3»
     || t.match(/\s(\d{1,3}(?:[.,]\d+)?)\s*[-–—:|]\s*\S/)       // «3 - Глаза Люси»
     || t.match(/(?:№|#)?\s*(\d{1,3}(?:[.,]\d+)?)\s*$/);        // «… ты 5»
-  return m ? Number(m[1].replace(',', '.')) : null;
+  return m ? Number(m[1].replace(",", ".")) : null;
 }
-
 /**
  * Индекс «серия → все посты источника». Нужен там, где один пост = одна часть или глава:
  * карточка в каталоге одна, а главы собираются из этого индекса без запросов к сайту.
@@ -428,4 +428,4 @@ async function slugFor(sourceId, value) {
 function invalidateTagCache() { tagCache = { at: 0, list: [] }; }
 
 module.exports = {
-  siblings, displayTitle, sortKey, state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache };
+  siblings, displayTitle, sortKey, listRaw: sortedList, state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache };

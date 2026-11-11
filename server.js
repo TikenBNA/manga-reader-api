@@ -19,6 +19,7 @@ const path = require('node:path');
 
 const registry = require('./registry');
 const { workKey, tagKey, stripChapterSuffix } = require('./http');
+const tagsIndex = require('./tags');
 
 const CONFIG = {
   PORT: Number(process.env.PORT || 3001),
@@ -75,6 +76,19 @@ async function sourceTagSet(a, slug) {
   const hit = tagSetCache.get(key);
   if (hit && hit.exp > Date.now()) return hit.value;
 
+  // диск-кэш: после перезапуска первый запрос по тегу тоже мгновенный
+  const safe = String(slug).replace(/[^a-z0-9а-яё-]+/gi, "_").slice(0, 60);
+  const diskFile = path.join(registry.CACHE_DIR, `tagset-${a.id}-${safe}.json`);
+  try {
+    if (!diskFile) throw new Error('no cache dir');
+    const raw = JSON.parse(fs.readFileSync(diskFile, "utf8"));
+    if (raw && Date.now() - raw.at < 6 * 3600e3 && Array.isArray(raw.items)) {
+      const cachedMap = new Map(raw.items.map((it) => [it.key || workKey(it.title), it]));
+      tagSetCache.set(key, { exp: Date.now() + 60 * 60e3, value: cachedMap });
+      return cachedMap;
+    }
+  } catch { /* кэша ещё нет */ }
+
   const maxPages = Number(process.env.MM_TAG_PAGES || 3);
   const map = new Map();
   for (let p = 1; p <= maxPages; p++) {
@@ -83,10 +97,12 @@ async function sourceTagSet(a, slug) {
     for (const it of items) {
       const k = workKey(it.title);
       if (!k || map.has(k)) continue;
-      map.set(k, { source: a.id, extId: it.extId, title: it.title, cover: it.cover, url: it.url });
+      map.set(k, { key: k, source: a.id, extId: it.extId, title: it.title, cover: it.cover, url: it.url });
     }
   }
   tagSetCache.set(key, { exp: Date.now() + 60 * 60e3, value: map });
+  capMap(tagSetCache, 500);
+  try { fs.writeFileSync(diskFile, JSON.stringify({ at: Date.now(), items: [...map.values()] })); } catch { /* только чтение диска */ }
   return map;
 }
 
@@ -99,15 +115,13 @@ const taggedCache = new Map(); // готовые страницы по тега�
 const TAG_COLLATOR = new Intl.Collator('ru', { numeric: true, sensitivity: 'base' });
 
 async function taggedList(tags, page, perPage, sort = 'new') {
-  const fast = taggedFromIndex(tags, page, perPage, sort);
-  console.log('[tag]', tags.join(','), 'page', page, 'fast:', fast === null ? 'нет индекса' : fast.length);
-  if (fast && fast.length) return fast;
+
   const cacheKey = [...tags].sort().join('\u0001') + '#' + page + '#' + perPage + '#' + sort;
   const cachedHit = taggedCache.get(cacheKey);
   if (cachedHit && cachedHit.exp > Date.now()) return cachedHit.value;
 
   const sets = [];
-  const TAG_SOURCE_TIMEOUT = Number(process.env.MM_TAG_TIMEOUT || 3000);
+  const TAG_SOURCE_TIMEOUT = Number(process.env.MM_TAG_TIMEOUT || 2000);
 
   for (const tag of tags) {
     const merged = new Map();
@@ -115,7 +129,7 @@ async function taggedList(tags, page, perPage, sort = 'new') {
     // (или лежащий hchan) держал весь запрос, и через туннель возвращался 502
     const sources = registry.adapters.filter((a) => a.tagPage);
     const results = await Promise.all(sources.map(async (a) => {
-      const slug = (await registry.slugFor(a.id, tag).catch(() => null)) || tag;
+      const slug = registry.slugForFast(a.id, tag) || tag;
       const map = await withTimeout(sourceTagSet(a, slug), TAG_SOURCE_TIMEOUT, 'tag:' + a.id).catch(() => new Map());
       return map;
     }));
@@ -158,6 +172,7 @@ async function taggedList(tags, page, perPage, sort = 'new') {
   const start = (page - 1) * perPage;
   const result = out.slice(start, start + perPage);
   taggedCache.set(cacheKey, { exp: Date.now() + 10 * 60e3, value: result });
+  capMap(taggedCache, 200);
   return result;
 }
 
@@ -207,7 +222,6 @@ async function enrichWorks(items, budgetMs = ENRICH_BUDGET_MS) {
       }
       it.author = d.author || '';
       it.genres = d.genres || [];
-      noteTags(`${parsed.source}:${parsed.extId}`, it.genres);
       it.cover = it.cover || d.cover || '';
       it.date = d.date || null;
       enrichCache.set(it.id, {
@@ -235,7 +249,8 @@ async function enrichWorks(items, budgetMs = ENRICH_BUDGET_MS) {
       });
     }
   }
-  registry.invalidateTagCache();
+  // ВАЖНО: не сбрасываем кэш списка тегов — enrichWorks вызывается на каждый запрос каталога,
+  // из-за этого tagsList пересобирался (с сетевыми запросами) и тег открывался по 15-20 секунд.
   return items;
 }
 /**
@@ -430,8 +445,17 @@ async function warmTags(limit = 200) {
 }
 /** Примитивный лимит запросов на IP, чтобы публичный URL не превращался в открытый прокси. */
 const rateHits = new Map();
+function clientIp(req) {
+  // за туннелем все запросы приходят с 127.0.0.1, поэтому реальный IP берём из XFF
+  if (process.env.MM_TRUST_PROXY) {
+    const xff = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+    if (xff) return xff;
+  }
+  return req.socket.remoteAddress || '?';
+}
+
 function rateLimited(req) {
-  const ip = req.socket.remoteAddress || '?';
+  const ip = clientIp(req);
   const limit = Number(process.env.MM_RATE_LIMIT || 240);
   const now = Date.now();
   let rec = rateHits.get(ip);
@@ -449,47 +473,13 @@ function rateLimited(req) {
  * Локальный индекс «тег → работы»: наполняется жанрами при обогащении карточек.
  * Позволяет фильтровать по тегу в памяти, не обходя сайты (это было до 5 с и 502 через туннель).
  */
-const tagWorkIndex = new Map(); // tagKey -> Set('source:extId')
-const tagIndexStats = { works: 0, tags: 0 };
 
-function noteTags(workId, genres) {
-  if (!Array.isArray(genres) || !genres.length) return;
-  let added = false;
-  for (const g of genres) {
-    const k = tagKey(g);
-    if (!k) continue;
-    let set = tagWorkIndex.get(k);
-    if (!set) { set = new Set(); tagWorkIndex.set(k, set); added = true; }
-    if (!set.has(workId)) { set.add(workId); added = true; }
+/** Держим кэш в разумных пределах: Map хранит порядок вставки, старые записи уходят первыми. */
+function capMap(map, max) {
+  while (map.size > max) {
+    const k = map.keys().next().value;
+    map.delete(k);
   }
-  if (added) { tagIndexStats.tags = tagWorkIndex.size; }
-}
-
-/** Работы, у которых есть все запрошенные теги (по локальному индексу), или null. */
-function taggedFromIndex(tags, page, perPage, sort) {
-  const sets = [];
-  for (const t of tags) {
-    const set = tagWorkIndex.get(tagKey(t));
-    if (!set || !set.size) return null; // индекса ещё нет — пойдём на сайты
-    sets.push(set);
-  }
-  const raw = registry.listRaw(sort);
-  if (!raw) return null;
-
-  const out = [];
-  for (const w of raw) {
-    const ok = sets.every((set) => w.sources.some((s) => set.has(`:`)));
-    if (ok) out.push(w);
-  }
-  const start = (page - 1) * perPage;
-  return out.slice(start, start + perPage).map((w) => ({
-    id: `:`,
-    title: w.title,
-    cover: w.cover,
-    author: '',
-    genres: [],
-    sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
-  }));
 }
 const cleanCursors = new Map();
 const CLEAN_CHUNK = 40;
@@ -571,7 +561,6 @@ const server = http.createServer(async (req, res) => {
       ok: !state.crawling,
       crawling: state.crawling,
       mergedWorks: state.merged?.length ?? null,
-      tagIndex: { tags: tagWorkIndex.size, links: [...tagWorkIndex.values()].reduce((a, s) => a + s.size, 0) },
       sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
       uptime: Math.round(process.uptime()),
     });
@@ -645,3 +634,14 @@ server.listen(CONFIG.PORT, () => {
     .then(() => { if (!process.env.MM_NO_TAG_WARM) warmTags(Number(process.env.MM_TAG_WARM || 200)); })
     .catch((e) => console.error('[catalog] warm failed:', e.message));
 });
+// Аккуратное завершение: на хостинге приходит SIGTERM, кэши тегов должны успеть записаться.
+function shutdown(signal) {
+  console.log('[server] завершение по', signal);
+  server.close(() => {
+    try { tagsIndex.flush(); } catch { /* необязательно */ }
+    process.exit(0);
+  });
+  setTimeout(() => process.exit(0), 3000).unref();
+}
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));

@@ -113,7 +113,8 @@ function saveSource(s) {
     // не затираем хороший кэш маленьким
     try {
       const prev = JSON.parse(fs.readFileSync(cacheFile(s.id), 'utf8'));
-      if (prev.items && prev.items.length > 200 && s.items.length < prev.items.length * 0.4) {
+      // порог работает и для маленьких источников (mangashi 195, zakura 236): раньше они затирались нулём
+      if (prev.items && prev.items.length >= 50 && s.items.length < prev.items.length * 0.5) {
         console.error(`[${s.id}] каталог пришёл меньше обычного (${s.items.length} < ${prev.items.length}) — оставляю прежний`);
         return;
       }
@@ -412,6 +413,20 @@ async function tags(page, perPage, sourceId) {
   return list.slice(start, start + perPage);
 }
 
+/**
+ * Быстрый вариант slugFor: только по локальному индексу тегов, без сетевых запросов.
+ * Нужен в фильтре каталога — полный slugFor тянет списки тегов у всех источников (до 20 с).
+ */
+function slugForFast(sourceId, value) {
+  const raw = String(value || '').trim();
+  if (!raw) return null;
+  const vKey = tagKey(raw);
+  for (const t of tagsIndex.all()) {
+    if (t.source !== sourceId) continue;
+    if (t.slug === raw || tagKey(t.name) === vKey || tagKey(t.slug) === vKey) return t.slug;
+  }
+  return null;
+}
 /** Значение из ?tag= (канонический ключ или slug) → slug конкретного источника. */
 async function slugFor(sourceId, value) {
   const list = await tagsList();
@@ -428,4 +443,4 @@ async function slugFor(sourceId, value) {
 function invalidateTagCache() { tagCache = { at: 0, list: [] }; }
 
 module.exports = {
-  siblings, displayTitle, sortKey, listRaw: sortedList, state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache };
+  siblings, displayTitle, sortKey, partNumber, isChapterRange, listRaw: sortedList, CACHE_DIR, slugForFast, state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache };

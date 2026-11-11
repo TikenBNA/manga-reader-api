@@ -8,7 +8,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const FILE = path.join(__dirname, 'cache', 'tags.json');
+const CACHE_DIR = process.env.MM_CACHE_DIR || path.join(__dirname, 'cache');
+const FILE = path.join(CACHE_DIR, 'tags.json');
 const map = new Map(); // `${source}|${slug}` -> { source, slug, name }
 let dirty = false;
 let timer = null;

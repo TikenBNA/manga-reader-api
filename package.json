@@ -4,7 +4,7 @@
   "private": true,
   "description": "Прокси-парсер multi-manga.com под контракт MangaReader",
   "main": "server.js",
-  "scripts": {
+  "scripts": { "test": "node --test",
     "start": "node server.js"
   },
   "engines": {

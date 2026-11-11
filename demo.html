@@ -762,7 +762,8 @@ async function renderManga(id) {
       const row = $('div', 'ch');
       const left = $('div', 'left');
       left.append($('span', 'n', 'Гл. ' + c.number), $('span', 'ttl', c.title || ''));
-      const meta = [(c.date || '').slice(0, 10), c.source].filter(Boolean).join(' · ');
+      const srcs = (c.sources && c.sources.length ? c.sources.map((x) => x.source) : [c.source]);
+    const meta = [(c.date || '').slice(0, 10), srcs.join('+')].filter(Boolean).join(' · ');
     row.append(left, $('div', 'd', meta));
       row.onclick = () => openChapter(i);
       list.append(row);

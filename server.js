@@ -323,18 +323,64 @@ async function mergedChapters(workTitle, seed) {
     return mapped;
   }));
 
+  // --- склейка одинаковых глав из разных источников ---
+  // Одна и та же глава часто лежит на двух сайтах с разными подписями и номерами
+  // («Поедающие доставщиков жёны» = zakura гл.1 и mm гл.2). Признак: у источника
+  // ровно одна глава этой работы и её название после нормализации совпадает.
+  // сравнение по русской части названия: «Волнующее похищение (Tokimeki Abduction)»
+  // и «Tokimeki Abduction / Волнующее похищение» — одна и та же глава
+  const sigOf = (t) => {
+    const base = String(t || "").toLowerCase().replace(/ё/g, "е");
+    const ru = base.replace(/[^а-я]+/g, " ").trim();
+    if (ru) return ru;
+    return base.replace(/[^0-9a-zа-я]+/g, " ").trim();
+  };
+  const perSource = new Map();
+  for (const list of lists) {
+    for (const c of list) perSource.set(c.source, (perSource.get(c.source) || 0) + 1);
+  }
+
   const byNumber = new Map();
+  const out = [];
   for (const list of lists) {
     for (const c of list) {
       // том входит в ключ: «глава 1» из тома 1 и тома 2 — разные главы
-      const k = c.number != null ? `v:${c.volume ?? 0}|n:${c.number}` : `t:${String(c.title || '').toLowerCase()}`;
+      const k = c.number != null ? `v:${c.volume ?? 0}|n:${c.number}` : `t:${String(c.title || "").toLowerCase()}`;
       const prev = byNumber.get(k);
-      // при совпадении номера оставляем запись с более информативным названием
-      if (!prev || (!prev.title && c.title)) byNumber.set(k, c);
+      if (prev) {
+        // тот же номер из другого источника — одна глава, запоминаем оба
+        if (!prev.sources.some((s) => s.source === c.source)) prev.sources.push({ source: c.source, extId: c.id });
+        if (!prev.title && c.title) prev.title = c.title;
+        continue;
+      }
+      const copy = { ...c, sources: [{ source: c.source, extId: c.id }] };
+      byNumber.set(k, copy);
+      out.push(copy);
     }
   }
 
-  const out = [...byNumber.values()];
+  // второй проход: разные номера, но одна и та же глава (у источников по одной главе)
+  const sigGroups = new Map();
+  for (const ch of out) {
+    if (perSource.get(ch.source) !== 1) continue;
+    const s = sigOf(ch.title);
+    if (!s) continue;
+    const arr = sigGroups.get(s) || [];
+    arr.push(ch);
+    sigGroups.set(s, arr);
+  }
+  for (const [, arr] of sigGroups) {
+    if (arr.length < 2) continue;
+    const base = arr[0];
+    for (const other of arr.slice(1)) {
+      for (const s of other.sources) {
+        if (!base.sources.some((x) => x.source === s.source)) base.sources.push(s);
+      }
+      const idx = out.indexOf(other);
+      if (idx >= 0) out.splice(idx, 1);
+    }
+  }
+
   // у постов без номера в названии (первая часть серии) ставим свободный номер,
   // иначе такая глава уезжает в конец списка
   const used = new Set(out.filter((c) => c.number != null).map((c) => Number(c.number)));

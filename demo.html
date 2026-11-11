@@ -461,14 +461,18 @@ searchInput.addEventListener("input", () => {
     try {
       const items = await api("/manga?q=" + encodeURIComponent(q) + "&sort=" + state.sort);
       state.page = 1;
+      state.renderedIds = new Set();
       state.grid.replaceChildren();
       if (!items.length) {
         state.grid.append($("div", "msg", "Ничего не найдено"));
         if (state.more) state.more.remove();
         return;
       }
-      for (const m of items) state.grid.append(cardEl(m));
-      if (state.more) state.more.remove();
+      for (const m of items) {
+        if (state.renderedIds.has(m.id)) continue;
+        state.renderedIds.add(m.id);
+        state.grid.append(cardEl(m));
+      }
     } catch (e) { toast("Поиск недоступен"); }
   }, 300);
 });
@@ -610,6 +614,7 @@ async function loadTags() {
 async function renderList() {
   document.body.classList.remove('detail');
   state.page = 1;
+  state.renderedIds = new Set();
   const grid = $('div', 'grid');
   const more = $('div', 'more');
   const btn = $('button', 'primary', 'Показать ещё');
@@ -631,6 +636,7 @@ async function loadPage(btn) {
   state.loadingPage = true;
   if (btn) btn.disabled = true;
   const requested = state.page;
+  const grid = state.grid;
 
   try {
     const qs = new URLSearchParams({ page: String(requested) });
@@ -640,6 +646,7 @@ async function loadPage(btn) {
     const items = await api('/manga?' + qs.toString());
     // пока грузили, фильтры сбросили список — этот ответ уже не нужен
     if (requested !== state.page) return;
+    if (grid !== state.grid) return; // список успели пересобрать
 
     if (!items.length) {
       if (state.page === 1) {
@@ -650,7 +657,11 @@ async function loadPage(btn) {
       state.more.remove();
       return;
     }
-    for (const m of items) state.grid.append(cardEl(m));
+    for (const m of items) {
+      if (state.renderedIds.has(m.id)) continue; // уже показана (гонка при пересборке)
+      state.renderedIds.add(m.id);
+      grid.append(cardEl(m));
+    }
     state.page += 1;
     if (items.length < 20) state.more.remove();
   } catch (e) {

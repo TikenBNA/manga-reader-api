@@ -665,8 +665,7 @@ function cardEl(m) {
   const card = $('div', 'card');
   card.dataset.title = (m.title || '').toLowerCase();
   const cover = $('div', 'cover');
-  const img = $('img'); img.referrerPolicy = 'no-referrer'; img.alt = m.title; setCover(img, m);
-  cover.append(img);
+  const img = $('img'); img.referrerPolicy = 'no-referrer'; img.alt = m.title; setCover(img, m); cover.append(img);
   const src = (m.sources || []).map((x) => x.source).join('+');
   if (src) cover.append($('span', 'src', src));
   card.append(cover, $('div', 't', m.title), $('div', 'a', m.author || ''));
@@ -726,7 +725,7 @@ async function renderManga(id) {
 
     const hero = $('div', 'hero');
     const cover = $('div', 'cover');
-  const img = $('img'); img.referrerPolicy = 'no-referrer'; img.alt = m.title; setCover(img, m);
+  const img = $('img'); img.referrerPolicy = 'no-referrer'; img.alt = m.title; setCover(img, m); cover.append(img);
     const info = $('div');
     info.append($('h1', null, m.title));
     info.append($('div', 'meta', [m.author, `${chapters.length} гл.`, (m.sources || []).map((s) => s.source).join('+')].filter(Boolean).join(' · ')));

@@ -363,17 +363,21 @@ async function apiMangaDetail(id) {
   if (!d) return null;
 
   // другие источники с той же работой
+    let hitCovers = [];
   let others = [];
   try {
     const key = workKey(d.title);
     const hit = state.merged?.find((w) => w.key === key);
     if (hit) others = hit.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url }));
+        // обложки всех источников этой работы — пригодится, если основная битая
+        hitCovers = [hit.cover, ...hit.sources.map((s) => s.cover)].filter(Boolean);
   } catch { /* ignore */ }
 
   return {
     id: `${parsed.source}:${parsed.extId}`,
     title: stripChapterSuffix(d.title) || d.title,
-    cover: d.cover,
+      cover: d.cover || hitCovers[0] || '',
+      covers: hitCovers.length ? hitCovers : [d.cover].filter(Boolean),
     author: d.author || '',
     description: d.description || '',
     genres: d.genres || [],

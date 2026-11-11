@@ -347,6 +347,23 @@ function saveProgress(id, chapterId, page) {
 }
 function getProgress(id) { return readProgress()[id] || null; }
 
+/** Обложка с запасными вариантами: если CDN источника умер, берём обложку другого источника. */
+function setCover(img, item) {
+  const list = (item.covers && item.covers.length ? item.covers : [item.cover]).filter(Boolean);
+  let i = 0;
+  let timer = null;
+  const next = () => {
+    clearTimeout(timer);
+    if (i >= list.length) { img.onerror = null; return; }
+    const url = list[i++];
+    img.src = /^https:/i.test(url) ? url : '/img?u=' + encodeURIComponent(url);
+    // мёртвый CDN не всегда отвечает ошибкой — просто молчит; через 3 с пробуем следующую
+    timer = setTimeout(() => { if (!img.complete || img.naturalWidth === 0) next(); }, 3000);
+  };
+  img.onerror = next;
+  img.onload = () => clearTimeout(timer);
+  next();
+}
 function mount(...nodes) {
   app.replaceChildren(...nodes);
   window.scrollTo(0, 0);
@@ -648,8 +665,7 @@ function cardEl(m) {
   const card = $('div', 'card');
   card.dataset.title = (m.title || '').toLowerCase();
   const cover = $('div', 'cover');
-  const img = $('img');
-  img.loading = 'lazy'; img.decoding = 'async'; img.referrerPolicy = 'no-referrer'; img.src = m.cover || ''; img.alt = m.title;
+  const img = $('img'); img.referrerPolicy = 'no-referrer'; img.alt = m.title; setCover(img, m);
   cover.append(img);
   const src = (m.sources || []).map((x) => x.source).join('+');
   if (src) cover.append($('span', 'src', src));
@@ -710,7 +726,7 @@ async function renderManga(id) {
 
     const hero = $('div', 'hero');
     const cover = $('div', 'cover');
-    const img = $('img'); img.referrerPolicy = 'no-referrer'; img.src = m.cover || ''; img.alt = m.title; cover.append(img);
+  const img = $('img'); img.referrerPolicy = 'no-referrer'; img.alt = m.title; setCover(img, m);
     const info = $('div');
     info.append($('h1', null, m.title));
     info.append($('div', 'meta', [m.author, `${chapters.length} гл.`, (m.sources || []).map((s) => s.source).join('+')].filter(Boolean).join(' · ')));

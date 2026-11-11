@@ -230,10 +230,17 @@ function buildSiblingIndex() {
     for (const item of s.items) {
       const key = workKey(item.title);
       if (!key) continue;
-      const k = s.id + '|' + key;
-      let arr = index.get(k);
-      if (!arr) { arr = []; index.set(k, arr); }
-      arr.push({ extId: item.extId, title: item.title, url: item.url, part: partNumber(item.title) });
+      const entry = { extId: item.extId, title: item.title, url: item.url, part: partNumber(item.title) };
+      // два ключа: сырое название и «красивое» (displayTitle). Иначе главы ищутся
+      // по отображаемому названию и серия не находится.
+      const aliases = new Set([key, workKey(displayTitle(item.title))]);
+      for (const alias of aliases) {
+        if (!alias) continue;
+        const k = s.id + "|" + alias;
+        let arr = index.get(k);
+        if (!arr) { arr = []; index.set(k, arr); }
+        if (!arr.some((x) => x.extId === entry.extId)) arr.push(entry);
+      }
     }
   }
   return index;

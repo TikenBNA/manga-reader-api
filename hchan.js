@@ -6,7 +6,7 @@
  *   пост:     /manga/<id>-<slug>.html   (один пост = одна глава)
  *   читалка:  /online/<id>-<slug>.html?cacheId=…  →  var data = { "fullimg": [ … ] }
  */
-const { fetchText, stripTags, absUrl } = require('./http');
+const { fetchText, stripTags, absUrl, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://hentaichan.live';
@@ -24,7 +24,7 @@ const cached = async (key, ttl, fn) => {
   const hit = cache.get(key);
   if (hit && hit.exp > Date.now()) return hit.value;
   const v = await fn();
-  if (v != null && !(Array.isArray(v) && !v.length)) cache.set(key, { exp: Date.now() + ttl, value: v }); // пустоту не кэшируем
+  if (v != null && !(Array.isArray(v) && !v.length)) { cache.set(key, { exp: Date.now() + ttl, value: v }); trimCache(cache, 800); } // пустоту не кэшируем
   return v;
 };
 
@@ -44,6 +44,7 @@ async function catalogPage(page) {
       if (!title || out.some((x) => x.extId === extId)) continue;
       const item = { extId, title, url: `${BASE}/manga/${extId}.html`, cover: cover ? fixHost(absUrl(BASE, cover)) : null };
       known.set(extId, item);
+      trimCache(known, 4000);
       out.push(item);
     }
     return out;

@@ -7,7 +7,7 @@
  *   главы:    /manga/<slug>/chapters/?page=N   → ссылки /manga/<slug>/glava-N/
  *   страницы: страница главы, картинки /media/chapters/*.jpg
  */
-const { fetchText, stripTags, absUrl } = require('./http');
+const { fetchText, stripTags, absUrl, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://manga-shi.org';
@@ -20,6 +20,7 @@ const cached = async (key, ttl, fn) => {
   if (hit && hit.exp > Date.now()) return hit.value;
   const v = await fn();
   cache.set(key, { exp: Date.now() + ttl, value: v });
+  trimCache(cache, 400);
   return v;
 };
 

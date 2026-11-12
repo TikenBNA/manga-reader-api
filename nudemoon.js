@@ -4,7 +4,7 @@
  * Пост = сразу читалка: /view/<id>-<slug>/ (картинки в data-src).
  * Каталог — / и /page/N/ (карточки a.thumb), теги — /cat/<slug>/ (+ /page/N/).
  */
-const { fetchText, stripTags, absUrl } = require('./http');
+const { fetchText, stripTags, absUrl, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://kpez.nude-moon.pro';
@@ -16,6 +16,7 @@ const cached = async (key, ttl, fn) => {
   if (hit && hit.exp > Date.now()) return hit.value;
   const v = await fn();
   cache.set(key, { exp: Date.now() + ttl, value: v });
+  trimCache(cache, 800);
   return v;
 };
 
@@ -52,6 +53,7 @@ function parseCards(html) {
     if (isRangeTitle(title)) title = titleFromSlug(href);
     if (!title || !img) continue;
     urlCache.set(extId, BASE + href);
+  trimCache(urlCache, 5000);
     if (out.some((x) => x.extId === extId)) continue;
     out.push({ extId, title, url: BASE + href, cover: absUrl(BASE, img) });
   }

@@ -7,7 +7,7 @@
  *   главы:    /api/manga/<id>/chapters          (JSON)
  *   страницы: /api/manga/<id>/chapters/<chapId> (JSON, pages[].url)
  */
-const { fetchJson, fetchText, stripTags, absUrl } = require('./http');
+const { fetchJson, fetchText, stripTags, absUrl, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://desu.uno';
@@ -18,7 +18,7 @@ const cached = async (key, ttl, fn) => {
   const hit = cache.get(key);
   if (hit && hit.exp > Date.now()) return hit.value;
   const v = await fn();
-  if (v != null) cache.set(key, { exp: Date.now() + ttl, value: v }); // неудачу не кэшируем
+  if (v != null) { cache.set(key, { exp: Date.now() + ttl, value: v }); trimCache(cache, 800); } // неудачу не кэшируем
   return v;
 };
 

@@ -8,7 +8,7 @@
  *   GET /api/v2/manga?tag=<название тега>       — фильтр по тегу (русское название)
  * Одна запись = одна работа целиком (без разбивки на главы), читается сразу.
  */
-const { fetchJson, stripTags, stripChapterSuffix } = require('./http');
+const { fetchJson, stripTags, stripChapterSuffix, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = 'https://sexbase.org';
@@ -22,6 +22,7 @@ const cached = async (key, ttl, fn) => {
   if (hit && hit.exp > Date.now()) return hit.value;
   const v = await fn();
   cache.set(key, { exp: Date.now() + ttl, value: v });
+  trimCache(cache, 800);
   return v;
 };
 

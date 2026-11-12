@@ -6,6 +6,20 @@ const TIMEOUT = 15000;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/**
+ * Ограничивает размер кэша: удаляет самые старые записи (Map хранит порядок вставки).
+ * Без этого кэши адаптеров и обогащения растут всё время жизни процесса.
+ */
+function trimCache(map, max) {
+  if (!(map instanceof Map) || !(max > 0)) return map;
+  while (map.size > max) {
+    const first = map.keys().next();
+    if (first.done) break;
+    map.delete(first.value);
+  }
+  return map;
+}
+
 async function fetchText(url, attempt = 0, timeoutMs = TIMEOUT) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -146,4 +160,4 @@ function tagKey(name) {
     .trim();
 }
 
-module.exports = { UA, fetchText, fetchJson, decode, stripTags, absUrl, workKey, tagKey, stripChapterSuffix, sleep };
+module.exports = { UA, fetchText, fetchJson, decode, stripTags, absUrl, workKey, tagKey, stripChapterSuffix, sleep, trimCache };

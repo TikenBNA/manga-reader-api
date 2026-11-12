@@ -19,7 +19,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const registry = require('./registry');
-const { workKey, tagKey, stripChapterSuffix } = require('./http');
+const { workKey, tagKey, stripChapterSuffix, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const CONFIG = {
@@ -229,6 +229,7 @@ async function enrichWorks(items, budgetMs = ENRICH_BUDGET_MS) {
         exp: Date.now() + ENRICH_TTL_MS,
         data: { author: it.author, genres: it.genres, cover: it.cover, date: it.date },
       });
+      trimCache(enrichCache, 5000);
     }));
   };
 
@@ -248,6 +249,7 @@ async function enrichWorks(items, budgetMs = ENRICH_BUDGET_MS) {
         exp: Date.now() + ENRICH_PARTIAL_TTL_MS,
         data: { author: it.author || '', genres: it.genres || [], cover: it.cover || '', date: it.date || null },
       });
+      trimCache(enrichCache, 5000);
     }
   }
   // ВАЖНО: не сбрасываем кэш списка тегов — enrichWorks вызывается на каждый запрос каталога,
@@ -585,6 +587,7 @@ async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
       done: false,
     };
     cleanCursors.set(key, cur);
+    trimCache(cleanCursors, 24); // 4 сортировки × источники, без роста на весь аптайм
   }
 
   // Глубокие страницы (раньше 400-й работы в списке) отдаём напрямую из каталога:
@@ -592,8 +595,11 @@ async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
   const ENRICH_LIMIT = Number(process.env.MM_ENRICH_PAGES || 20) * perPage;
 
   const need = page * perPage;
+  const pageStart = (page - 1) * perPage;
+  const pageEnd = pageStart + perPage;
   let guard = 0;
   while (cur.items.length < need && !cur.done && guard++ < 80) {
+    const outStart = cur.items.length;
     const slice = cur.all.slice(cur.idx, cur.idx + CLEAN_CHUNK);
     if (!slice.length) { cur.done = true; break; }
     cur.idx += slice.length;
@@ -607,7 +613,11 @@ async function cleanPage(sort, sourceId, page, perPage, prefetch = false) {
       genres: [],
       sources: w.sources.map((s) => ({ source: s.source, id: s.extId, url: s.url })),
     }));
-    const plain = (page - 1) * perPage >= ENRICH_LIMIT;
+    // Обогащаем только чанки, попадающие в запрошенную страницу: при прыжке
+    // сразу на 10–20-ю страницу раньше обогащались все пропущенные карточки
+    // (6–12 секунд и 502 через туннель).
+    const touchesPage = outStart < pageEnd && outStart + slice.length > pageStart;
+    const plain = pageStart >= ENRICH_LIMIT || !touchesPage;
     if (!plain) {
       await enrichWorks(mapped, 1200);
       for (const it of mapped) if (!it.drop) cur.items.push(it);

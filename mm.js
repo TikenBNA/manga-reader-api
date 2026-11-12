@@ -1,6 +1,6 @@
 'use strict';
 /** Источник: multi-manga.com (DLE). */
-const { fetchText, fetchJson, stripTags, absUrl, workKey } = require('./http');
+const { fetchText, fetchJson, stripTags, absUrl, workKey, trimCache } = require('./http');
 const tagsIndex = require('./tags');
 
 const BASE = process.env.MM_BASE || 'https://multi-manga.com';
@@ -12,6 +12,7 @@ const cached = async (key, ttl, fn) => {
   if (hit && hit.exp > Date.now()) return hit.value;
   const v = await fn();
   cache.set(key, { exp: Date.now() + ttl, value: v });
+  trimCache(cache, 1200);
   return v;
 };
 
@@ -28,6 +29,7 @@ function parseCards(html) {
     if (!hit || seen.has(hit[1])) continue;
     seen.add(hit[1]);
     urlCache.set(hit[1], `${BASE}/${hit[1]}-${hit[2]}.html`);
+    trimCache(urlCache, 5000);
     out.push({ extId: hit[1], title: stripTags(caption), url: `${BASE}/${hit[1]}-${hit[2]}.html`, cover: absUrl(BASE, img) });
   }
   return out;
@@ -70,7 +72,7 @@ async function detail(extId) {
     const d = parseDetail(html, extId);
     if (!d) return null;
     const canonical = (html.match(/<link rel="canonical" href="([^"]+)"/i) || [])[1];
-    if (canonical) { d.url = canonical; urlCache.set(extId, canonical); }
+    if (canonical) { d.url = canonical; urlCache.set(extId, canonical); trimCache(urlCache, 5000); }
     return d;
   });
 }

@@ -2,7 +2,7 @@
   "name": "manga-api",
   "version": "0.1.0",
   "private": true,
-  "description": "Прокси-парсер multi-manga.com под контракт MangaReader",
+  "description": "Мультиисточниковый прокси каталогов манги (7 источников) под контракт MangaReader",
   "main": "server.js",
   "scripts": { "test": "node --test",
     "start": "node server.js"

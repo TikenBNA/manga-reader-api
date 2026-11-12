@@ -712,9 +712,10 @@ const server = http.createServer(async (req, res) => {
     if (route === '/') return json(res, 200, {
       ok: true,
       crawling: state.crawling,
+      refreshing: state.refreshing,
       mergedWorks: state.merged?.length ?? null,
-      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
-      endpoints: ['/api/manga?page=1', '/api/manga?tag=<slug>', '/api/tags', '/api/sources', '/api/manga/<src:id>', '/api/manga/<src:id>/chapters', '/api/chapter/<src:id>/pages'],
+      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, stale: s.stale, error: s.error })),
+      endpoints: ['/api/manga?page=1', '/api/manga?tag=<slug>', '/api/tags', '/api/sources', '/api/random', '/api/manga/<src:id>', '/api/manga/<src:id>/chapters', '/api/chapter/<src:id>/pages'],
       demo: '/demo',
     });
 
@@ -723,9 +724,11 @@ const server = http.createServer(async (req, res) => {
     if (route === '/health') return json(res, 200, {
       ok: !state.crawling,
       crawling: state.crawling,
+      refreshing: state.refreshing,
       mergedWorks: state.merged?.length ?? null,
-      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, error: s.error })),
+      sources: state.sources.map((s) => ({ id: s.id, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, stale: s.stale, error: s.error })),
       uptime: Math.round(process.uptime()),
+      memory: Math.round(process.memoryUsage().rss / 1048576),
     });
 
     if (route === '/MangaReader.apk') {
@@ -737,7 +740,7 @@ const server = http.createServer(async (req, res) => {
       });
     }
     if (route === '/api/sources') return json(res, 200, state.sources.map((s) => ({
-      id: s.id, name: s.name, base: s.base, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, error: s.error,
+      id: s.id, name: s.name, base: s.base, ready: s.ready, posts: s.posts, works: s.works, scanned: s.scanned, builtAt: s.builtAt, stale: s.stale, error: s.error,
     })));
 
     if (route === '/demo' || route === '/demo.html') {

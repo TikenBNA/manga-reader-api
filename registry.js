@@ -92,16 +92,19 @@ const adapters = [
 ];
 
 const TTL = Number(process.env.MM_CATALOG_TTL || 12 * 3600 * 1000);
+const REFRESH_CHECK_MS = Number(process.env.MM_REFRESH_MS || 10 * 60e3);
 
 const state = {
   sources: adapters.map((a) => ({
     id: a.id, name: a.name, base: a.base,
     ready: false, scanned: 0, works: 0, posts: 0, builtAt: 0, error: null,
+    stale: false, failures: 0, nextTry: 0,
     items: [],
   })),
   merged: null,       // [{ key, title, cover, primary: {source, extId}, sources: [...] }]
   mergedAt: 0,
   crawling: false,
+  refreshing: false,
 };
 
 const cacheFile = (id) => path.join(CACHE_DIR, `catalog-${id}.json`);
@@ -126,12 +129,13 @@ function saveSource(s) {
 function loadSource(s) {
   try {
     const raw = JSON.parse(fs.readFileSync(cacheFile(s.id), 'utf8'));
-    if (!raw.items?.length || Date.now() - raw.builtAt > TTL) return false;
+    if (!raw.items?.length) return false;
     s.items = raw.items;
-    s.builtAt = raw.builtAt;
+    s.builtAt = raw.builtAt || 0;
     s.scanned = raw.scanned || 0;
     s.posts = raw.items.length;
     s.ready = true;
+    s.stale = Date.now() - s.builtAt > TTL;
     return true;
   } catch { return false; }
 }
@@ -259,8 +263,16 @@ function siblings(source, title) {
   return state.siblings.get(source + '|' + key) || [];
 }
 
-async function crawlSource(s) {
-  const adapter = adapters.find((a) => a.id === s.id);
+/**
+ * Обход источника. Пишет во временный массив и подменяет каталог атомарно:
+ * если сайт оборвался на середине, старые данные остаются в памяти.
+ */
+async function crawlSource(s, adapterOverride = null) {
+  const adapter = adapterOverride || adapters.find((a) => a.id === s.id);
+  if (!adapter) {
+    s.error = 'adapter not found';
+    return false;
+  }
   const max = adapter.maxPages || 200;
   const items = [];
   const seen = new Set();
@@ -276,32 +288,95 @@ async function crawlSource(s) {
         items.push({ extId: c.extId, title: c.title, url: c.url, cover: c.cover });
       }
       s.scanned = p;
-      s.items = items;
       if (p % 50 === 0) console.log(`[${s.id}] ${p} стр., ${items.length} постов`);
     }
+    // нулевой каталог — это почти всегда сбой сайта/сети, а не «работы кончились»:
+    // не подменяем хорошие данные пустотой, уходим в ошибку и повторяем позже
+    if (!items.length) throw new Error('каталог пуст: источник не ответил');
+    // оборванный на середине обход тоже не должен затирать хороший кэш в памяти
+    if (s.items.length >= 50 && items.length < s.items.length * 0.5) {
+      throw new Error(`каталог короче обычного: ${items.length} < ${s.items.length}`);
+    }
+    s.items = items;
     s.builtAt = Date.now();
     s.posts = items.length;
     s.ready = true;
+    s.error = null;
+    s.failures = 0;
+    s.nextTry = 0;
+    s.stale = false;
     saveSource(s);
     console.log(`[${s.id}] каталог готов: ${items.length} постов за ${s.scanned} стр.`);
+    return true;
   } catch (e) {
     s.error = e.message;
+    s.failures = (s.failures || 0) + 1;
+    s.nextTry = Date.now() + Math.min(2 * 3600e3, 5 * 60e3 * 2 ** (s.failures - 1));
+    if (!s.items.length) s.ready = false;
     console.error(`[${s.id}] crawl failed:`, e.message);
+    return false;
   }
 }
 
-async function warm() {
-  const toCrawl = state.sources.filter((s) => !loadSource(s));
-  if (!toCrawl.length) {
-    buildMerged();
-    console.log('[catalog] все источники из кэша, работ:', state.merged.length);
-    return;
+/** Свежий ли каталог источника. */
+const isStale = (s, now = Date.now()) => s.ready && s.builtAt > 0 && now - s.builtAt > TTL;
+
+/**
+ * Фоновое обновление просроченных каталогов: по одному источнику, чтобы не забивать
+ * сайты и не устраивать пик запросов. После каждого успешного обхода пересобираем
+ * объединённый список — новые работы появляются без перезапуска сервера.
+ */
+async function refreshStale() {
+  if (state.refreshing || state.crawling) return;
+  const now = Date.now();
+  const due = state.sources.filter((s) => isStale(s, now) && (!s.nextTry || now >= s.nextTry));
+  if (!due.length) return;
+  state.refreshing = true;
+  try {
+    for (const s of due) {
+      const ok = await crawlSource(s);
+      if (ok) buildMerged();
+    }
+  } finally {
+    state.refreshing = false;
   }
-  state.crawling = true;
-  await Promise.all(toCrawl.map((s) => crawlSource(s)));
-  state.crawling = false;
-  buildMerged();
-  console.log('[catalog] слияние готово, уникальных работ:', state.merged.length);
+}
+
+let refreshTimer = null;
+function scheduleRefresh() {
+  if (refreshTimer) return;
+  refreshTimer = setTimeout(() => {
+    refreshTimer = null;
+    refreshStale()
+      .catch((e) => console.error('[catalog] refresh failed:', e.message))
+      .finally(scheduleRefresh);
+  }, REFRESH_CHECK_MS);
+  if (refreshTimer.unref) refreshTimer.unref();
+}
+
+async function warm() {
+  let loaded = 0;
+  for (const s of state.sources) if (loadSource(s)) loaded += 1;
+  if (loaded) {
+    buildMerged();
+    console.log(`[catalog] из кэша: ${loaded} источников, работ: ${state.merged.length}`);
+  }
+
+  const missing = state.sources.filter((s) => !s.ready);
+  if (missing.length) {
+    // кэша нет вовсе — без каталога API ответить не может, ждём обход
+    state.crawling = true;
+    await Promise.all(missing.map((s) => crawlSource(s)));
+    state.crawling = false;
+    buildMerged();
+    console.log('[catalog] слияние готово, уникальных работ:', state.merged.length);
+  }
+
+  scheduleRefresh();
+  if (state.sources.some((s) => isStale(s))) {
+    // старые данные уже отдаются, обход идёт в фоне
+    refreshStale().catch((e) => console.error('[catalog] refresh failed:', e.message));
+  }
 }
 
 function parseId(id) {
@@ -456,4 +531,7 @@ async function slugFor(sourceId, value) {
 function invalidateTagCache() { tagCache = { at: 0, list: [] }; }
 
 module.exports = {
-  siblings, displayTitle, sortKey, partNumber, isChapterRange, listRaw: sortedList, CACHE_DIR, slugForFast, state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache };
+  siblings, displayTitle, sortKey, partNumber, isChapterRange, listRaw: sortedList, CACHE_DIR, slugForFast, state, adapters, warm, parseId, findAdapter, listPage, tags, tagsList, slugFor, invalidateTagCache,
+  refreshStale, isStale,
+  _crawlSource: crawlSource, _loadSource: loadSource, _buildMerged: buildMerged,
+};
